@@ -1,10 +1,18 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { MarkerLayer } from "react-leaflet-marker";
 import { StationMarkerFactory } from "./StationMarkerFactory";
 
-export const MapView = () => {
+interface MapViewProps {
+  selectedStation: string | undefined;
+  setSelectedStation: React.Dispatch<SetStateAction<string>>;
+}
+
+export const MapView: React.FC<MapViewProps> = ({
+  selectedStation,
+  setSelectedStation,
+}) => {
   return (
     <MapContainer
       id="map-container"
@@ -19,7 +27,10 @@ export const MapView = () => {
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
       />
       <MarkerLayer>
-        <StationMarkerFactory />
+        <StationMarkerFactory
+          setSelectedStation={setSelectedStation}
+          selectedStation={selectedStation}
+        />
       </MarkerLayer>
     </MapContainer>
   );

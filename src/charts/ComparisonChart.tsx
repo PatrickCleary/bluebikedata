@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import { Bar } from "react-chartjs-2";
 import { useQuery } from "react-query";
 import { fetchAllData } from "../api/all_data";
@@ -6,7 +6,15 @@ import { Chart, registerables } from "chart.js";
 import { formatData } from "../helpers/dataFormatting";
 Chart.register(...registerables);
 
-export const ComparisonChart = () => {
+interface ComparisonChartProps {
+  selectedStation: string | undefined;
+  setSelectedStation: React.Dispatch<SetStateAction<string>>;
+}
+
+export const ComparisonChart: React.FC<ComparisonChartProps> = ({
+  selectedStation,
+  setSelectedStation,
+}) => {
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
 

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import { ComparisonChart } from "./charts/ComparisonChart";
 import { MapView } from "./maps/Map";
+import { Widget } from "./widgets/widget";
 
 function App() {
+  const [selectedStation, setSelectedStation] = useState("S32040");
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -16,16 +18,15 @@ function App() {
   });
 
   return (
-    <div className="w-full h-full px-16 py-8 bg-gray-900">
+    <div className="w-full h-[100vh] px-4 md:px-4 lg:px-16 py-8 bg-gray-900">
       <QueryClientProvider client={queryClient}>
-        <div className="w-full h-[640px]">
-          <MapView />
+        <div className="w-full xl:w-3/4 h-[480px] lg:h-[640px]">
+          <MapView
+            selectedStation={selectedStation}
+            setSelectedStation={setSelectedStation}
+          />
         </div>
-        <div className="flex flex-col overflow-auto  gap-16 pt-8 ">
-          <div className="left-2 w-[16000px]">
-            <ComparisonChart />
-          </div>
-        </div>
+        <Widget stationId={selectedStation} />
       </QueryClientProvider>
     </div>
   );
