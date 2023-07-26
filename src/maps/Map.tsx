@@ -1,5 +1,8 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import React from "react";
 import "leaflet/dist/leaflet.css";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MarkerLayer } from "react-leaflet-marker";
+import { StationMarkerFactory } from "./StationMarkerFactory";
 
 export const MapView = () => {
   return (
@@ -15,11 +18,9 @@ export const MapView = () => {
         attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
       />
-      <Marker position={[42.39790817, -71.14797131]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      <MarkerLayer>
+        <StationMarkerFactory />
+      </MarkerLayer>
     </MapContainer>
   );
 };

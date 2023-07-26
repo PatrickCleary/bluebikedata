@@ -1,3 +1,4 @@
+import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import { ComparisonChart } from "./charts/ComparisonChart";
@@ -15,13 +16,13 @@ function App() {
   });
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full px-16 py-8 bg-gray-900">
       <QueryClientProvider client={queryClient}>
-        <div className="w-full h-[512px]">
+        <div className="w-full h-[640px]">
           <MapView />
         </div>
-        <div className="flex flex-col gap-16 py-16 px-16">
-          <div className="h-64 left-2 overflow-auto w-[4000px]">
+        <div className="flex flex-col overflow-auto  gap-16 pt-8 ">
+          <div className="left-2 w-[16000px]">
             <ComparisonChart />
           </div>
         </div>
