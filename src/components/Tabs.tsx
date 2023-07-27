@@ -6,13 +6,13 @@ export interface TabOptions {
   options: {
     [key: string]: string;
   };
-  setDate: React.Dispatch<SetStateAction<string>>;
-  defaultIndex: number;
+  setValue: React.Dispatch<SetStateAction<string>>;
+  defaultIndex?: number;
 }
 
-export const DateTabs: React.FC<TabOptions> = ({
+export const Tabs: React.FC<TabOptions> = ({
   options,
-  setDate,
+  setValue: setDate,
   defaultIndex,
 }) => {
   return (
@@ -31,8 +31,8 @@ export const DateTabs: React.FC<TabOptions> = ({
                   <div
                     className={classNames(
                       selected
-                        ? "bg-gray-100 text-gray-900"
-                        : "bg-gray-900 text-gray-100",
+                        ? "bg-gray-200 text-gray-800"
+                        : "bg-gray-800 text-gray-200",
                       "px-4 py-1 "
                     )}
                   >

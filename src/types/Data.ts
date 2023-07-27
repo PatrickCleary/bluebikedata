@@ -27,3 +27,14 @@ export interface AggregatedTripData {
   median_distance_miles: number;
   mean_distance_miles: number;
 }
+
+export type MetricsType = keyof typeof Metrics;
+
+export enum Metrics {
+  total = "total",
+  median_trip_duration = "median_trip_duration",
+  median_distance_miles = "median_distance_miles",
+  median_mph = "median_mph",
+}
+
+export type DateOptions = "2022" | "2023" | "comp";

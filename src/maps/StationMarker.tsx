@@ -5,6 +5,8 @@ import { Marker } from "react-leaflet-marker";
 import { LatLngExpression } from "leaflet";
 import classNames from "classnames";
 import { getDivergingColor } from "../helpers/colors";
+import { useMapStore } from "../store/MapStore";
+import { zoomLevelToMarkerSize } from "../constants";
 
 interface StationMarkerProps {
   position: LatLngExpression;
@@ -26,23 +28,33 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
   isNew,
 }) => {
   const color = getDivergingColor(value);
+  const mapZoom = useMapStore((store) => store.zoom);
+  const size = zoomLevelToMarkerSize(mapZoom);
   return (
-    <Marker position={position} placement="top" riseOnHover={true}>
+    <Marker position={position} placement="center" riseOnHover={true}>
       <div
-        className="absolute flex items-center justify-center cursor-pointer h-6 w-6 group"
+        className={classNames(
+          "absolute flex items-center justify-center cursor-pointer group",
+          size[2]
+        )}
         onClick={() => onClick(id)}
       >
         {selected ? (
           <>
-            <div className="h-[2px] w-[100px] bg-red-500 absolute rotate-45" />
-            <div className="h-[100px] w-[2px] bg-red-500 rotate-45 absolute " />
+            <div
+              className={classNames(
+                size[2],
+                "absolute rounded-full bg-transparent border-red-500 border"
+              )}
+            />
           </>
         ) : null}
         <div
           className={classNames(
             isNew ? "border border-green-500" : "",
-            selected ? "opacity-100 w-6 h-6" : "opacity-80 w-2 h-2",
-            "absolute rounded-full w-3 h-3 group-hover:opacity-100 items-center justify-center flex overflow-visible"
+            "absolute rounded-full group-hover:opacity-100 items-center justify-center flex overflow-visible",
+            selected ? size[1] : size[0],
+            selected ? "opacity-100" : "opacity-80"
           )}
           style={{ backgroundColor: color }}
         ></div>
