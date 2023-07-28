@@ -24,9 +24,9 @@ export const DISTANCE_MIN_MAP: { [key in TripDistancesType]: string } = {
 
 export const METRIC_MAP: { [key in MetricsType]: string } = {
   total: "Trips",
-  median_trip_duration: "Trip duration",
-  median_distance_miles: "Trip distance",
-  median_mph: "Trip speed",
+  median_trip_duration: "Duration",
+  median_distance_miles: "Distance",
+  median_mph: "Speed",
 };
 
 export const TRIPS_MAX = 1000;
@@ -39,4 +39,23 @@ export const METRIC_TO_MAX_MAP: { [key in MetricsType]: number } = {
   median_trip_duration: DURATION_MAX,
   median_distance_miles: DISTANCE_MAX,
   median_mph: MPH_MAX,
+};
+
+export const DISTANCE_TITLE_MAP: { [key in TripDistancesType]: string } = {
+  all: "All trips",
+  nonzero: "Excludes trips returning to starting dock",
+  oneplus: "Trips ending at docks >1 mile away",
+};
+
+export const METRIC_TITLE_MAP: { [key in MetricsType]: string } = {
+  total: "Total trips",
+  median_trip_duration: "Trip duration",
+  median_distance_miles: "Trip distance",
+  median_mph: "Trip speed",
+};
+
+export const DATE_TITLE_MAP: { [key in DateOptions]: string } = {
+  comp: "June '22 vs. June '23",
+  "2022": "June 2022",
+  "2023": "June 2023",
 };

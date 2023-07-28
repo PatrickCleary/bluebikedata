@@ -44,7 +44,7 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
             <div
               className={classNames(
                 size[2],
-                "absolute rounded-full bg-transparent border-red-500 border"
+                "absolute bg-transparent border-white border"
               )}
             />
           </>

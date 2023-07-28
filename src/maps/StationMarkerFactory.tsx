@@ -22,9 +22,7 @@ export const StationMarkerFactory: React.FC<StationMarkerFactoryProps> = ({
   return (
     <>
       {Object.values(data_23.data).map((station: StationTrip) => {
-        if (
-          station.values[configStore.distance]?.total < configStore.ridershipMin
-        )
+        if (station.values["all"]?.total < configStore.ridershipMin)
           return null;
         const lat = station["latitude"];
         const lng = station["longitude"];

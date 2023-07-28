@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
-import { ComparisonChart } from "./charts/ComparisonChart";
 import { MapView } from "./maps/Map";
 import { StationsByRidership } from "./components/StationsByRidership";
 import { Widget } from "./widgets/widget";
@@ -20,12 +19,12 @@ function App() {
   });
 
   return (
-    <div className="w-full h-[100vh] px-4 md:px-4 lg:px-8 xl:px-16 py-8 bg-gray-900">
+    <div className="w-full h-min-[100vh] h-full px-4 md:px-2 lg:px-8 xl:px-16 py-4 bg-gray-900 gap-y-4 flex flex-col">
       <QueryClientProvider client={queryClient}>
-        <div className="grid xl:grid-cols-4 gap-4">
-          <Header />
-          <div className="xl:col-span-3">
-            <div className="w-full h-[480px] lg:h-[640px]">
+        <Header />
+        <div className="grid md:grid-cols-4 gap-4 w-full">
+          <div className="md:col-span-3 w-full ">
+            <div className="w-full h-[480px] md:h-[440px] 3xl:h-[640px] relative">
               <MapView
                 selectedStation={selectedStation}
                 setSelectedStation={setSelectedStation}

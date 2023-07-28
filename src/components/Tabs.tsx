@@ -2,7 +2,7 @@ import { Tab } from "@headlessui/react";
 import classNames from "classnames";
 import { SetStateAction } from "react";
 
-export interface TabOptions {
+export interface TabsProps {
   options: {
     [key: string]: string;
   };
@@ -10,7 +10,7 @@ export interface TabOptions {
   defaultIndex?: number;
 }
 
-export const Tabs: React.FC<TabOptions> = ({
+export const Tabs: React.FC<TabsProps> = ({
   options,
   setValue: setDate,
   defaultIndex,
@@ -22,10 +22,10 @@ export const Tabs: React.FC<TabOptions> = ({
         setDate(Object.keys(options)[index]);
       }}
     >
-      <Tab.List>
+      <Tab.List className="bg-gray-600 gap-[1px] flex flex-row rounded-md overflow-hidden">
         {Object.entries(options).map(([option, name]) => {
           return (
-            <Tab key={option} className="focus:outline-none ">
+            <Tab key={option} className="focus:outline-none w-full ">
               {({ selected }) => {
                 return (
                   <div
@@ -33,7 +33,7 @@ export const Tabs: React.FC<TabOptions> = ({
                       selected
                         ? "bg-gray-200 text-gray-800"
                         : "bg-gray-800 text-gray-200",
-                      "px-4 py-1 "
+                      "px-2 md:px-4 py-2 md:py-1 whitespace-nowrap"
                     )}
                   >
                     {name}
