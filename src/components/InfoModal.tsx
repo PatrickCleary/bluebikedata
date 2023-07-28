@@ -83,6 +83,10 @@ export const InfoModal = () => {
                         <span className="text-sky-400">blue</span> is a
                         decrease.
                       </li>
+                      <li>
+                        <span className="text-green-500">Green</span> circles
+                        are docks that opened since June 2022.
+                      </li>
                       <li>Values for distance and duration are medians.</li>
                       <li>Select a dock to get more details.</li>
                       <li>Use the filters to select different datasets.</li>
