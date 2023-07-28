@@ -7,7 +7,7 @@ import { StationMarker } from "./StationMarker";
 
 interface StationMarkerFactoryProps {
   selectedStation: string | undefined;
-  setSelectedStation: React.Dispatch<SetStateAction<string>>;
+  setSelectedStation: React.Dispatch<SetStateAction<string | undefined>>;
 }
 
 export const StationMarkerFactory: React.FC<StationMarkerFactoryProps> = ({
@@ -47,7 +47,11 @@ export const StationMarkerFactory: React.FC<StationMarkerFactoryProps> = ({
             key={station["id"]}
             name={station["name"]}
             selected={selected}
-            onClick={() => setSelectedStation(station.id)}
+            onClick={() =>
+              selected
+                ? setSelectedStation(undefined)
+                : setSelectedStation(station.id)
+            }
             value={value}
           />
         );

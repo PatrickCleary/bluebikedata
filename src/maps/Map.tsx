@@ -11,8 +11,6 @@ import { MarkerLayer } from "react-leaflet-marker";
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
-import { useConfigStore } from "../store/ConfigStore";
-import { DISTANCE_TITLE_MAP, METRIC_MAP, METRIC_TITLE_MAP } from "../constants";
 
 interface MapViewProps {
   selectedStation: string | undefined;

@@ -25,7 +25,7 @@ export const StationsByRidership: React.FC<StationsByRidershipProps> = ({
       valueA.values[configStore.distance]?.total
   );
   return (
-    <div className="text-gray-100 w-full md:col-span-1 h-full overflow-hidden">
+    <div className="text-gray-100 w-full md:col-span-1 h-full overflow-hidden rounded-br-md">
       <div className="w-full sticky flex flex-row h-10 justify-between py-2 bg-gray-800 px-2 truncate gap-4">
         <p>Station</p>
         <p className="truncate">

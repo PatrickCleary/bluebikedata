@@ -7,7 +7,7 @@ import { Widget } from "./widgets/widget";
 import { Header } from "./components/Header";
 
 function App() {
-  const [selectedStation, setSelectedStation] = useState("S32040");
+  const [selectedStation, setSelectedStation] = useState<string | undefined>();
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {

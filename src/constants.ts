@@ -26,7 +26,6 @@ export const METRIC_MAP: { [key in MetricsType]: string } = {
   total: "Trips",
   median_trip_duration: "Duration",
   median_distance_miles: "Distance",
-  median_mph: "Speed",
 };
 
 export const TRIPS_MAX = 1000;
@@ -38,7 +37,6 @@ export const METRIC_TO_MAX_MAP: { [key in MetricsType]: number } = {
   total: TRIPS_MAX,
   median_trip_duration: DURATION_MAX,
   median_distance_miles: DISTANCE_MAX,
-  median_mph: MPH_MAX,
 };
 
 export const DISTANCE_TITLE_MAP: { [key in TripDistancesType]: string } = {
@@ -51,7 +49,6 @@ export const METRIC_TITLE_MAP: { [key in MetricsType]: string } = {
   total: "Total trips",
   median_trip_duration: "Trip duration",
   median_distance_miles: "Trip distance",
-  median_mph: "Trip speed",
 };
 
 export const DATE_TITLE_MAP: { [key in DateOptions]: string } = {
