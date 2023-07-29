@@ -1,20 +1,13 @@
 import { SetStateAction } from "react";
 import { useQuery } from "react-query";
 import { fetchAllData } from "../api/all_data";
-import { useConfigStore } from "../store/ConfigStore";
+import { useConfigStore, useUpdateStation } from "../store/ConfigStore";
 import { StationTrip } from "../types/Data";
 import { StationMarker } from "./StationMarker";
 
-interface StationMarkerFactoryProps {
-  selectedStation: string | undefined;
-  setSelectedStation: React.Dispatch<SetStateAction<string | undefined>>;
-}
-
-export const StationMarkerFactory: React.FC<StationMarkerFactoryProps> = ({
-  selectedStation,
-  setSelectedStation,
-}) => {
+export const StationMarkerFactory: React.FC = () => {
   const configStore = useConfigStore((store) => store);
+  const updateStation = useUpdateStation();
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
   if (data_23.isError || data_23.isLoading || !data_23.data || !data_22.data)
@@ -27,7 +20,7 @@ export const StationMarkerFactory: React.FC<StationMarkerFactoryProps> = ({
         const lat = station["latitude"];
         const lng = station["longitude"];
         const isNew = data_22.data[station.id] == null;
-        const selected = station.id === selectedStation;
+        const selected = station.id === configStore.station;
         const value =
           (data_23.data[station.id]?.values[configStore.distance]?.[
             configStore.metric
@@ -48,9 +41,7 @@ export const StationMarkerFactory: React.FC<StationMarkerFactoryProps> = ({
             name={station["name"]}
             selected={selected}
             onClick={() =>
-              selected
-                ? setSelectedStation(undefined)
-                : setSelectedStation(station.id)
+              selected ? updateStation(undefined) : updateStation(station.id)
             }
             value={value}
           />

@@ -11,27 +11,28 @@ import {
 import { Tabs } from "../components/Tabs";
 import classNames from "classnames";
 import { getDivergingColor } from "../helpers/colors";
-import { MetricsType } from "../types/Data";
 import { useSearchParams } from "react-router-dom";
 
-export const Widget: React.FC<any> = ({ stationId }) => {
+export const Widget: React.FC = () => {
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
   const configStore = useConfigStore((store) => store);
+  const stationId = configStore.station;
 
   if (!data_22.data || !data_23.data) {
     if (data_22.isLoading || data_23.isLoading) return <p>Loading...</p>;
     return <p>Error</p>;
   }
-  const station_22 = data_22.data[stationId];
-  const station_23 = data_23.data[stationId];
-
   if (!stationId)
     return (
       <div className="w-full flex h-32 bg-gray-700 px-4 py-4 mt-4  rounded-bl-md items-center justify-center">
         <p className="text-gray-100 text-2xl">Select a dock to learn more.</p>
       </div>
     );
+
+  const station_22 = data_22.data[stationId];
+  const station_23 = data_23.data[stationId];
+
   return (
     <div className="w-full rounded-bl-md bg-gray-700 shadow-sm px-4 py-4 mt-4">
       <div className="flex flex-col md:flex-row gap-2 justify-between">

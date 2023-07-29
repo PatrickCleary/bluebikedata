@@ -8,7 +8,6 @@ import { useSearchParams } from "react-router-dom";
 import { paramsMap, useConfigStore } from "./store/ConfigStore";
 
 function App() {
-  const [selectedStation, setSelectedStation] = useState<string | undefined>();
   const [searchParams, setSearchParams] = useSearchParams();
   const loadFromParams = useConfigStore((store) => store.loadFromParams);
   loadFromParams(Object.fromEntries(searchParams.entries()));
@@ -30,12 +29,9 @@ function App() {
         <div className="grid md:grid-cols-4 gap-4 w-full">
           <div className="md:col-span-3 w-full ">
             <div className="w-full h-[480px] md:h-[440px] 3xl:h-[640px] relative">
-              <MapView
-                selectedStation={selectedStation}
-                setSelectedStation={setSelectedStation}
-              />
+              <MapView />
             </div>
-            <Widget stationId={selectedStation} />
+            <Widget />
           </div>
           {/* <StationsByRidership
             selectedStation={selectedStation}

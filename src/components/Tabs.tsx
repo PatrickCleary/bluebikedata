@@ -7,16 +7,19 @@ export interface TabsProps {
     [key: string]: string;
   };
   setValue: React.Dispatch<SetStateAction<string>>;
+  selectedIndex?: number;
   defaultIndex?: number;
 }
 
 export const Tabs: React.FC<TabsProps> = ({
   options,
   setValue: setDate,
+  selectedIndex,
   defaultIndex,
 }) => {
   return (
     <Tab.Group
+      selectedIndex={selectedIndex}
       defaultIndex={defaultIndex}
       onChange={(index) => {
         setDate(Object.keys(options)[index]);

@@ -18,11 +18,13 @@ interface ConfigStore {
   ridershipMin: number;
   metric: MetricsType;
   date: DateOptions;
+  station: string | undefined;
 
   setDistance: (distance: TripDistancesType) => void;
   setRidership: (ridershipMin: string | number) => void;
   setMetric: (metric: MetricsType) => void;
   setDate: (date: DateOptions) => void;
+  setStation: (station: string | undefined) => void;
   loadFromParams: (params: { [key: string]: string }) => void;
 }
 
@@ -31,6 +33,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   ridershipMin: 100,
   metric: "total",
   date: "comp",
+  station: undefined,
   setDistance: (distance) => set(() => ({ distance: distance })),
   setRidership: (ridershipMin) => {
     const _ridershipMin =
@@ -41,6 +44,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   },
   setMetric: (metric) => set(() => ({ metric: metric })),
   setDate: (date) => set(() => ({ date: date })),
+  setStation: (station) => set(() => ({ station: station })),
   loadFromParams: (searchParams) => {
     const configStoreObject = {};
     if (
@@ -57,6 +61,9 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     )
       configStoreObject["metric"] = searchParams["metric"];
 
+    if (searchParams["station"])
+      configStoreObject["station"] = searchParams["station"];
+
     if (
       searchParams["ridershipMin"] &&
       !isNaN(parseInt(searchParams["ridershipMin"]))
@@ -64,6 +71,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
       configStoreObject["ridershipMin"] = parseInt(
         searchParams["ridershipMin"]
       );
+    console.log("s", configStoreObject, searchParams["metric"]);
 
     return set(() => configStoreObject);
   },
@@ -87,6 +95,31 @@ export const useUpdateMetric = () => {
   return (metric: MetricsType) => {
     setMetric(metric);
     searchParams.set("metric", metric);
+    setSearchParams(searchParams);
+  };
+};
+
+export const useUpdateStation = () => {
+  const setStation = useConfigStore((store) => store.setStation);
+  const [searchParams, setSearchParams] = useSearchParams();
+  return (station: string | undefined) => {
+    if (station === undefined) {
+      searchParams.delete("station");
+      setSearchParams(searchParams);
+    } else {
+      searchParams.set("station", station);
+      setSearchParams(searchParams);
+    }
+    setStation(station);
+  };
+};
+
+export const useUpdateDistance = () => {
+  const setDistance = useConfigStore((store) => store.setDistance);
+  const [searchParams, setSearchParams] = useSearchParams();
+  return (distance: TripDistancesType) => {
+    setDistance(distance);
+    searchParams.set("distance", distance);
     setSearchParams(searchParams);
   };
 };

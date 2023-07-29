@@ -7,7 +7,11 @@ import {
   METRIC_MAP,
   METRIC_TITLE_MAP,
 } from "../constants";
-import { useConfigStore, useUpdateMetric } from "../store/ConfigStore";
+import {
+  useConfigStore,
+  useUpdateDistance,
+  useUpdateMetric,
+} from "../store/ConfigStore";
 import { TabsWithLabel } from "./TabsWithLabel";
 import { TripSlider } from "./Slider";
 import { Popover } from "@headlessui/react";
@@ -23,7 +27,7 @@ interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = () => {
   const configStore = useConfigStore((store) => store);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const updateDistance = useUpdateDistance();
   const updateMetric = useUpdateMetric();
   return (
     <div className="w-full xl:col-span-4 bg-gray-700 rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
@@ -47,6 +51,9 @@ export const Header: React.FC<HeaderProps> = () => {
             <Tabs
               setValue={(value) => updateMetric(value as MetricsType)}
               options={METRIC_MAP}
+              selectedIndex={Object.entries(METRIC_MAP).findIndex(
+                ([key, entry]) => key === configStore.metric
+              )}
             />
             <Popover>
               <Popover.Button className="outline-none w-full">
@@ -73,9 +80,9 @@ export const Header: React.FC<HeaderProps> = () => {
                 <div className="flex flex-col md:flex-row w-fit min-w-[20rem] md:min-w-[32rem] max-w-[48rem] bg-gray-700 z-20 absolute py-4 px-4 gap-4 rounded-md shadow-md mt-2">
                   <TabsWithLabel
                     label={"Trip distance"}
-                    setValue={configStore.setDistance}
+                    setValue={updateDistance}
                     options={DISTANCE_MIN_MAP}
-                    defaultIndex={Object.entries(DISTANCE_MIN_MAP).findIndex(
+                    selectedIndex={Object.entries(DISTANCE_MIN_MAP).findIndex(
                       ([key, entry]) => key === configStore.distance
                     )}
                   />

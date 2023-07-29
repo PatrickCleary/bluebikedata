@@ -11,20 +11,14 @@ import { MarkerLayer } from "react-leaflet-marker";
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
-
-interface MapViewProps {
-  selectedStation: string | undefined;
-  setSelectedStation: React.Dispatch<SetStateAction<string>>;
-}
+import { useConfigStore } from "../store/ConfigStore";
 
 const center: LatLngExpression = [42.336277, -71.09169];
 
-export const MapView: React.FC<MapViewProps> = ({
-  selectedStation,
-  setSelectedStation,
-}) => {
+export const MapView: React.FC = () => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
+  const { station, setStation } = useConfigStore((store) => store);
 
   const displayMap = useMemo(
     () => (
@@ -50,15 +44,12 @@ export const MapView: React.FC<MapViewProps> = ({
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
           <MarkerLayer>
-            <StationMarkerFactory
-              setSelectedStation={setSelectedStation}
-              selectedStation={selectedStation}
-            />
+            <StationMarkerFactory />
           </MarkerLayer>
         </MapContainer>
       </>
     ),
-    [mapStore.zoom, selectedStation, setSelectedStation]
+    [mapStore.zoom]
   );
 
   return (
