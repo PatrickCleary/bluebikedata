@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import { MapView } from "./maps/Map";
-import { StationsByRidership } from "./components/StationsByRidership";
 import { Widget } from "./widgets/widget";
 import { Header } from "./components/Header";
+import { useSearchParams } from "react-router-dom";
+import { paramsMap, useConfigStore } from "./store/ConfigStore";
 
 function App() {
   const [selectedStation, setSelectedStation] = useState<string | undefined>();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const loadFromParams = useConfigStore((store) => store.loadFromParams);
+  loadFromParams(Object.fromEntries(searchParams.entries()));
 
   const queryClient = new QueryClient({
     defaultOptions: {

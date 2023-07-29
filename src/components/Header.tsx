@@ -7,7 +7,7 @@ import {
   METRIC_MAP,
   METRIC_TITLE_MAP,
 } from "../constants";
-import { useConfigStore } from "../store/ConfigStore";
+import { useConfigStore, useUpdateMetric } from "../store/ConfigStore";
 import { TabsWithLabel } from "./TabsWithLabel";
 import { TripSlider } from "./Slider";
 import { Popover } from "@headlessui/react";
@@ -16,11 +16,15 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import { Tabs } from "./Tabs";
 import { InfoModal } from "./InfoModal";
+import { useSearchParams } from "react-router-dom";
+import { MetricsType } from "../types/Data";
 
 interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = () => {
   const configStore = useConfigStore((store) => store);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const updateMetric = useUpdateMetric();
   return (
     <div className="w-full xl:col-span-4 bg-gray-700 rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
       <div className="flex flex-col gap-4">
@@ -40,7 +44,10 @@ export const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="flex flex-row justify-between">
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 md:items-end w-full">
-            <Tabs setValue={configStore.setMetric} options={METRIC_MAP} />
+            <Tabs
+              setValue={(value) => updateMetric(value as MetricsType)}
+              options={METRIC_MAP}
+            />
             <Popover>
               <Popover.Button className="outline-none w-full">
                 {({ open }) => {

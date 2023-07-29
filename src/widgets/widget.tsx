@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { fetchAllData } from "../api/all_data";
 import { round } from "lodash";
-import { useConfigStore } from "../store/ConfigStore";
+import { useConfigStore, useUpdateMetric } from "../store/ConfigStore";
 import {
   DATE_MAP,
   DATE_TITLE_MAP,
@@ -11,6 +11,8 @@ import {
 import { Tabs } from "../components/Tabs";
 import classNames from "classnames";
 import { getDivergingColor } from "../helpers/colors";
+import { MetricsType } from "../types/Data";
+import { useSearchParams } from "react-router-dom";
 
 export const Widget: React.FC<any> = ({ stationId }) => {
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
@@ -106,13 +108,15 @@ const WidgetValue: React.FC<any> = ({
       value = after_value;
       break;
   }
+  const updateMetric = useUpdateMetric();
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <div
       className={classNames(
         selected ? "bg-gray-600 border-gray-300" : "border-gray-500",
         "flex flex-col gap-2 border rounded-sm p-4 w-full cursor-pointer"
       )}
-      onClick={() => configStore.setMetric(value_name)}
+      onClick={() => updateMetric(value_name)}
     >
       <div className="flex flex-row lg:flex-col 3xl:flex-row justify-between items-baseline">
         <h2 className="text-gray-300">{title ?? value_name}</h2>
