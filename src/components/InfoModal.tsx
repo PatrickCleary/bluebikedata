@@ -1,7 +1,4 @@
-import {
-  faQuestion,
-  faQuestionCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -19,14 +16,16 @@ export const InfoModal = () => {
 
   return (
     <>
-      <div className=" flex items-center justify-center">
-        <button type="button" onClick={openModal}>
-          <FontAwesomeIcon
-            icon={faQuestionCircle}
-            className="md:h-8 md:w-8 h-6 w-6 text-gray-100"
-          />
-        </button>
-      </div>
+      <button
+        type="button"
+        className="flex items-start justify-start"
+        onClick={openModal}
+      >
+        <FontAwesomeIcon
+          icon={faQuestionCircle}
+          className="md:h-6 md:w-6 h-4 w-4 text-gray-100"
+        />
+      </button>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -70,12 +69,13 @@ export const InfoModal = () => {
                     <p className="font-bold text-sm">How to use:</p>
                     <ul style={{ listStyleType: "disc" }} className="pl-4">
                       <li>
-                        Select one of three metrics: Trips, Duration or
-                        Distance.
+                        The map shows the percentage change from June 2022 to
+                        June 2023 for the chosen metric
+                        (trips/distance/duration)
                       </li>
                       <li>
-                        Each dot on the map is a dock, and the metrics are for
-                        trips which began at that dock.
+                        Each dot on the map represents trips leaving from that
+                        dock.
                       </li>
                       <li>
                         Brighter <span className="text-amber-500">orange</span>{" "}
@@ -87,9 +87,10 @@ export const InfoModal = () => {
                         <span className="text-green-500">Green</span> circles
                         are docks that opened since June 2022.
                       </li>
-                      <li>Values for distance and duration are medians.</li>
+
+                      <li>Filter docks by minimum trips (default 100).</li>
+                      <li>Filter trips by distance (default &gt; 0 mi).</li>
                       <li>Select a dock to get more details.</li>
-                      <li>Use the filters to select different datasets.</li>
                     </ul>
                   </div>
 

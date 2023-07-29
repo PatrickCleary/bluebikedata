@@ -15,7 +15,7 @@ interface ConfigStore {
 
 export const useConfigStore = create<ConfigStore>((set, get) => ({
   distance: "nonzero",
-  ridershipMin: 0,
+  ridershipMin: 100,
   metric: "total",
   date: "comp",
   setDistance: (distance) => set(() => ({ distance: distance })),

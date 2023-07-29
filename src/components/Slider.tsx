@@ -7,7 +7,7 @@ export const TripSlider = () => {
 
   return (
     <div className="max-w-[20rem] w-full md:w-auto flex-grow flex flex-col">
-      <p className="text-gray-300 italic">Riders (June 23)</p>
+      <p className="text-gray-300 italic">Trip min.</p>
 
       <div className="h-8 flex flex-row gap-4 items-center ">
         <input

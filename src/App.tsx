@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 
 function App() {
   const [selectedStation, setSelectedStation] = useState<string | undefined>();
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -32,10 +33,10 @@ function App() {
             </div>
             <Widget stationId={selectedStation} />
           </div>
-          <StationsByRidership
+          {/* <StationsByRidership
             selectedStation={selectedStation}
             setSelectedStation={setSelectedStation}
-          />
+          /> */}
         </div>
       </QueryClientProvider>
     </div>
