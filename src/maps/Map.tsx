@@ -5,6 +5,8 @@ import { MarkerLayer } from "react-leaflet-marker";
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 const whiteOptions = { color: "white" };
 
 const center: LatLngExpression = [42.336277, -71.09169];
@@ -17,8 +19,16 @@ export const MapView: React.FC = () => {
     () => (
       <>
         <div className="rounded-full shadow-sm h-6 bg-gradient-to-r from-sky-400 to-amber-500 via-neutral-400 absolute top-4 right-4 z-10 justify-between flex flex-row text-gray-100 text-sm gap-12 items-center px-2 font-bold">
-          <p className="text-neutral-100">-100%</p>
-          <p className="text-neutral-100">+100%</p>
+          <FontAwesomeIcon
+            icon={faArrowDown}
+            className="text-neutral-100 px-3"
+            size={"lg"}
+          />
+          <FontAwesomeIcon
+            icon={faArrowUp}
+            className="text-neutral-100 px-3"
+            size={"lg"}
+          />
         </div>
 
         <MapContainer
