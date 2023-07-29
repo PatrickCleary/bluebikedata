@@ -30,13 +30,11 @@ export const Widget: React.FC = () => {
   return (
     <div className="w-full rounded-bl-md bg-gray-700 shadow-sm px-4 py-4 mt-4">
       <div className="flex flex-col md:flex-row gap-2 justify-between">
-        <div className="text-gray-300 truncate">
-          <h1 className="text-base truncate md:text-lg">
-            <span className="truncate shrink">
-              Trips from {station_23.name}
-            </span>
+        <div className="text-gray-300 truncate w-full flex flex-col">
+          <h1 className="text-base w-10 md:w-full md:truncate md:text-lg block">
+            Trips from {station_23.name}
           </h1>
-          <h3 className="text-sm italic">
+          <h3 className="text-sm italic truncate block">
             {DISTANCE_TITLE_MAP[configStore.distance]}
           </h3>
         </div>
