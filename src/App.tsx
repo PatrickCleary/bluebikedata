@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import { MapView } from "./maps/Map";
 import { Widget } from "./widgets/widget";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
-import { paramsMap, useConfigStore } from "./store/ConfigStore";
+import { useConfigStore } from "./store/ConfigStore";
+import { ShapeSelection } from "./components/ShapeSelection";
+import { ContactAndInfo } from "./components/ContactAndInfo";
 
 function App() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const loadFromParams = useConfigStore((store) => store.loadFromParams);
   loadFromParams(Object.fromEntries(searchParams.entries()));
 
@@ -33,10 +35,8 @@ function App() {
             </div>
             <Widget />
           </div>
-          {/* <StationsByRidership
-            selectedStation={selectedStation}
-            setSelectedStation={setSelectedStation}
-          /> */}
+          <ShapeSelection />
+          <ContactAndInfo />
         </div>
       </QueryClientProvider>
     </div>

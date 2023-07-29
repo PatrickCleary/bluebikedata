@@ -1,4 +1,3 @@
-import { SetStateAction } from "react";
 import { useQuery } from "react-query";
 import { fetchAllData } from "../api/all_data";
 import { useConfigStore, useUpdateStation } from "../store/ConfigStore";

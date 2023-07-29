@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
 import { DateOptions, MetricsType, TripDistancesType } from "../types/Data";
@@ -71,7 +70,6 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
       configStoreObject["ridershipMin"] = parseInt(
         searchParams["ridershipMin"]
       );
-    console.log("s", configStoreObject, searchParams["metric"]);
 
     return set(() => configStoreObject);
   },

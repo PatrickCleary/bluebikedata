@@ -2,16 +2,10 @@ import { useQuery } from "react-query";
 import { fetchAllData } from "../api/all_data";
 import { round } from "lodash";
 import { useConfigStore, useUpdateMetric } from "../store/ConfigStore";
-import {
-  DATE_MAP,
-  DATE_TITLE_MAP,
-  DISTANCE_TITLE_MAP,
-  METRIC_TITLE_MAP,
-} from "../constants";
+import { DATE_MAP, DATE_TITLE_MAP, DISTANCE_TITLE_MAP } from "../constants";
 import { Tabs } from "../components/Tabs";
 import classNames from "classnames";
 import { getDivergingColor } from "../helpers/colors";
-import { useSearchParams } from "react-router-dom";
 
 export const Widget: React.FC = () => {
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
@@ -110,7 +104,6 @@ const WidgetValue: React.FC<any> = ({
       break;
   }
   const updateMetric = useUpdateMetric();
-  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <div
       className={classNames(

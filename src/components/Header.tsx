@@ -20,7 +20,6 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import { Tabs } from "./Tabs";
 import { InfoModal } from "./InfoModal";
-import { useSearchParams } from "react-router-dom";
 import { MetricsType } from "../types/Data";
 
 interface HeaderProps {}
