@@ -19,7 +19,7 @@ export const Widget: React.FC = () => {
   }
   if (!stationId)
     return (
-      <div className="w-full flex h-32 bg-gray-700 px-4 py-4 mt-4  rounded-bl-md items-center justify-center">
+      <div className="w-full flex h-32 bg-gray-700 px-4 py-4 mt-4 rounded-md md:rounded-none md:rounded-bl-md items-center justify-center">
         <p className="text-gray-100 text-2xl">Select a dock to learn more.</p>
       </div>
     );
@@ -28,7 +28,7 @@ export const Widget: React.FC = () => {
   const station_23 = data_23.data[stationId];
 
   return (
-    <div className="w-full rounded-bl-md bg-gray-700 shadow-sm px-4 py-4 mt-4">
+    <div className="w-full rounded-md md:rounded-none md:rounded-bl-md bg-gray-700 shadow-sm px-4 py-4 mt-4">
       <div className="flex flex-col md:flex-row gap-2 justify-between">
         <div className="text-gray-300 truncate w-full flex flex-col">
           <h1 className="text-base w-10 md:w-full md:truncate md:text-lg block">

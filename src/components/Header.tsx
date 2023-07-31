@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = () => {
   const updateDistance = useUpdateDistance();
   const updateMetric = useUpdateMetric();
   return (
-    <div className="w-full xl:col-span-4 bg-gray-700 rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
+    <div className="w-full xl:col-span-4 bg-gray-700 rounded-md md:rounded-none md:rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col ">
           <div className="flex flex-row gap-2 items-center">
