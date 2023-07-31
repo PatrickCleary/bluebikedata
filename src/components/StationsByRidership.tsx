@@ -26,7 +26,7 @@ export const StationsByRidership: React.FC<StationsByRidershipProps> = ({
   );
   return (
     <div className="text-gray-100 w-full md:col-span-1 h-full overflow-hidden rounded-br-md">
-      <div className="w-full sticky flex flex-row h-10 justify-between py-2 bg-gray-800 px-2 truncate gap-4">
+      <div className="w-full sticky flex flex-row h-10 justify-between py-2 bg-gray-900 px-2 truncate gap-4">
         <p>Station</p>
         <p className="truncate">
           Trips {configStore.date === "2022" ? "June 2022" : "June 2023"} (
@@ -34,14 +34,14 @@ export const StationsByRidership: React.FC<StationsByRidershipProps> = ({
         </p>
       </div>
       <div>
-        <ol className="w-full bg-gray-700 shadow-sm  h-[440px] md:h-[1048.68px] lg:h-[645.52px] xl:h-[646.13px] 3xl:h-[826.13px]  overflow-y-auto overflow-x-hidden px-1">
+        <ol className="w-full bg-gray-800 shadow-sm  h-[440px] md:h-[1048.68px] lg:h-[645.52px] xl:h-[646.13px] 3xl:h-[826.13px]  overflow-y-auto overflow-x-hidden px-1">
           {sortedData.map((entry: StationTrip) => (
             <li
               key={entry.id}
               className={classNames(
                 selectedStation === entry.id
                   ? "bg-gray-200 text-gray-900"
-                  : "bg-gray-700",
+                  : "bg-gray-800",
                 "w-full shadow-sm rounded-md py-2 px-2 cursor-pointer overflow-hidden "
               )}
               onClick={() => setSelectedStation(entry.id)}

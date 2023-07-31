@@ -12,7 +12,7 @@ export const TripSlider = () => {
 
       <div className="h-8 flex flex-row gap-4 items-center ">
         <input
-          className="h-full bg-gray-800 px-2 outline-none w-20"
+          className="h-full bg-gray-900 px-2 outline-none w-20"
           defaultValue={0}
           onChange={(event) => {
             updateRidership(event.target.value === "" ? 0 : event.target.value);

@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = () => {
   const updateDistance = useUpdateDistance();
   const updateMetric = useUpdateMetric();
   return (
-    <div className="w-full xl:col-span-4 bg-gray-700 rounded-md md:rounded-none md:rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
+    <div className="w-full xl:col-span-4 bg-gray-800 rounded-md md:rounded-none md:rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col ">
           <div className="flex flex-row gap-2 items-center">
@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = () => {
                     <div
                       className={classNames(
                         open ? "rounded-t-md" : "rounded-md",
-                        "py-2 md:py-1 bg-gray-700 w-full border border-gray-800 text-gray-200 px-4 gap-4 flex flex-row items-center justify-between"
+                        "py-2 md:py-1 bg-gray-800 w-full border border-gray-700 text-gray-200 px-4 gap-4 flex flex-row items-center justify-between"
                       )}
                     >
                       <p>Filters</p>
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = () => {
               <Popover.Overlay className="fixed inset-0 bg-black opacity-50 z-10" />
 
               <Popover.Panel>
-                <div className="flex flex-col md:flex-row w-fit min-w-[20rem] md:min-w-[32rem] max-w-[48rem] bg-gray-700 z-20 absolute py-4 px-4 gap-4 rounded-md shadow-md mt-2">
+                <div className="flex flex-col md:flex-row w-fit min-w-[20rem] md:min-w-[32rem] max-w-[48rem] bg-gray-800 z-20 absolute py-4 px-4 gap-4 rounded-md shadow-md mt-2">
                   <TabsWithLabel
                     label={"Trip distance"}
                     setValue={updateDistance}

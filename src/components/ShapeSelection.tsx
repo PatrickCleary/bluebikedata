@@ -6,7 +6,7 @@ import { useMapStore } from "../store/MapStore";
 export const ShapeSelection = () => {
   const { shapes, setShapes } = useMapStore();
   return (
-    <div className="h-full md:h-[1088.68px] lg:h-[685.52px] xl:h-[686.13px] 3xl:h-[866.13px] w-full bg-gray-700 gap-1 px-2 py-2 text-gray-100 rounded-md md:rounded-none md:rounded-br-md ">
+    <div className="h-full md:h-[1088.68px] lg:h-[685.52px] xl:h-[686.13px] 3xl:h-[866.13px] w-full bg-gray-800 gap-1 px-2 py-2 text-gray-100 rounded-md md:rounded-none md:rounded-br-md ">
       <h3 className="text-lg pb-2">Projects:</h3>
       {Object.entries(shapeOptions).map(([name, shape]) => {
         const selected = shapes[name];
@@ -28,7 +28,7 @@ export const ShapeSelection = () => {
             <div
               className={classNames(
                 "h-3 w-3 border border-gray-100 rounded-full",
-                selected ? "bg-gray-700" : ""
+                selected ? "bg-gray-800" : ""
               )}
             ></div>
             <p className="truncate">{name}</p>

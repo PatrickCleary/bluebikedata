@@ -34,8 +34,8 @@ export const Tabs: React.FC<TabsProps> = ({
                   <div
                     className={classNames(
                       selected
-                        ? "bg-gray-200 text-gray-800"
-                        : "bg-gray-800 text-gray-200",
+                        ? "bg-gray-200 text-gray-900"
+                        : "bg-gray-900 text-gray-200",
                       "px-2 md:px-4 py-2 md:py-1 whitespace-nowrap"
                     )}
                   >
