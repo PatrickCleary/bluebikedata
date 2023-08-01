@@ -27,7 +27,6 @@ export const StationMarkerFactory: React.FC<{
     .map((query) => query.data)
     .filter((entry) => entry !== undefined);
 
-  console.log(configStore.startStations);
   const destinations = formatDestinations(formattedDestinationsData);
   if (data_23.isError || data_23.isLoading || !data_23.data || !data_22.data)
     return null;

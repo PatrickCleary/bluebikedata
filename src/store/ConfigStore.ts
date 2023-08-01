@@ -121,10 +121,8 @@ export const useAddOrRemoveStartStation = () => {
   const setStartStations = useConfigStore((store) => store.setStartStations);
   const [searchParams, setSearchParams] = useSearchParams();
   return (startStation: string) => {
-    console.log(startStation);
     const searchParamsArray =
       searchParams.get("startStations")?.split(",") ?? [];
-    console.log(searchParamsArray);
     if (searchParamsArray.includes(startStation)) {
       searchParamsArray.splice(searchParamsArray.indexOf(startStation), 1);
       searchParamsArray.length > 0
