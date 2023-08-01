@@ -1,0 +1,14 @@
+{
+  "version": "2.0",
+  "app_name": "bluebikedataserver",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "dev",
+      "autogen_policy": false,
+      "iam_policy_file": "policy.json",
+      "environment_variables": {
+        "FRONTEND_HOST": "bluebikedata.com"
+      }
+    }
+  }
+}

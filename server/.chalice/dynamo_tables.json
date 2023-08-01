@@ -1,0 +1,54 @@
+{
+  "Resources": {
+    "BlueBikeTripsDB": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "BlueBikeTrips",
+        "KeySchema": [
+          {
+            "AttributeName": "ride_id",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "started_at",
+            "KeyType": "RANGE"
+          }
+        ],
+
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "ride_id",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "started_at",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "start_station_id",
+            "AttributeType": "S"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "start_station_id-index",
+            "KeySchema": [
+              {
+                "AttributeName": "start_station_id",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "started_at",
+                "KeyType": "RANGE"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

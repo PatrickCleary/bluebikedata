@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.2.7",
     "chart.js": "^4.3.1",
     "classnames": "^2.3.2",
+    "concurrently": "^8.2.0",
     "font-awesome": "^4.7.0",
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
@@ -38,7 +39,9 @@
     }
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently npm:start-python npm:start-react",
+    "start-python": "cd server && poetry run chalice local --port=8000",
+    "start-react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
