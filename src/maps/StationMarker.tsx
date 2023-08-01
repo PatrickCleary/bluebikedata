@@ -15,6 +15,7 @@ interface StationMarkerProps {
   isNew: boolean;
   selected: boolean;
   value: number;
+
   onClick: (stationId: string) => void;
 }
 
@@ -27,24 +28,23 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
   onClick,
   isNew,
 }) => {
+  const size = { width: `${8 + value * 16}px`, height: `${8 + value * 16}px` };
   const color = getDivergingColor(value);
-  const mapZoom = useMapStore((store) => store.zoom);
-  const size = zoomLevelToMarkerSize(mapZoom);
+  // const size = zoomLevelToMarkerSize(mapZoom);
   return (
     <Marker position={position} placement="center" riseOnHover={true}>
       <div
         className={classNames(
-          "absolute flex items-center justify-center cursor-pointer group",
-          size[2]
+          "absolute flex items-center justify-center cursor-pointer group"
         )}
+        style={size}
         onClick={() => onClick(id)}
       >
         {selected ? (
           <>
             <div
               className={classNames(
-                size[2],
-                "absolute bg-transparent border-white border"
+                "absolute bg-transparent border-white border h-full w-full"
               )}
             />
           </>
@@ -52,8 +52,7 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
         <div
           className={classNames(
             isNew ? "border border-green-500" : "",
-            "absolute rounded-full group-hover:opacity-100 items-center justify-center flex overflow-visible",
-            selected ? size[1] : size[0],
+            "absolute rounded-full group-hover:opacity-100 items-center justify-center flex overflow-visible h-full w-full",
             selected ? "opacity-100" : "opacity-80"
           )}
           style={{ backgroundColor: color }}

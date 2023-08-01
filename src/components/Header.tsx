@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = () => {
   const updateDistance = useUpdateDistance();
   const updateMetric = useUpdateMetric();
   return (
-    <div className="w-full xl:col-span-4 bg-gray-800 rounded-md md:rounded-none md:rounded-t-md px-2 md:px-4 py-4 text-gray-100 ">
+    <div className="w-full fixed top-0 z-10  bg-gray-700 m-2 rounded-md px-2 md:px-4 py-4 text-gray-100 ">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col ">
           <div className="flex flex-row gap-2 items-center">
@@ -47,13 +47,6 @@ export const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="flex flex-row justify-between">
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 md:items-end w-full">
-            <Tabs
-              setValue={(value) => updateMetric(value as MetricsType)}
-              options={METRIC_MAP}
-              selectedIndex={Object.entries(METRIC_MAP).findIndex(
-                ([key, entry]) => key === configStore.metric
-              )}
-            />
             <Popover>
               <Popover.Button className="outline-none w-full">
                 {({ open }) => {

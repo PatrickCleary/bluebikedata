@@ -1,12 +1,14 @@
 import classNames from "classnames";
 import React from "react";
 import { shapeOptions } from "../constants/shapes";
+import { useClearStartStations } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
 
 export const ShapeSelection = () => {
   const { shapes, setShapes } = useMapStore();
+  const clearSelection = useClearStartStations();
   return (
-    <div className="h-full md:h-[1088.68px] lg:h-[685.52px] xl:h-[686.13px] 3xl:h-[866.13px] w-full bg-gray-800 gap-1 px-2 py-2 text-gray-100 rounded-md md:rounded-none md:rounded-br-md ">
+    <div className="h-[25vh] md:h-[80vh] left-0 md:top-50 lg:top-40 bottom-0 top-auto fixed z-10 w-90 w-full md:w-auto m-2 bg-gray-700 gap-1 px-2 py-2 text-gray-100 rounded-md ">
       <h3 className="text-lg pb-2">Projects:</h3>
       {Object.entries(shapeOptions).map(([name, shape]) => {
         const selected = shapes[name];
@@ -35,6 +37,7 @@ export const ShapeSelection = () => {
           </div>
         );
       })}
+      <button onClick={clearSelection}>clear selection.</button>
       <p className="px-2 pt-4">More coming soon...</p>
     </div>
   );

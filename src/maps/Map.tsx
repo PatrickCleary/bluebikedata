@@ -1,12 +1,14 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, Polygon, TileLayer } from "react-leaflet";
+
 import { MarkerLayer } from "react-leaflet-marker";
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { useConfigStore } from "../store/ConfigStore";
 const whiteOptions = { color: "white" };
 
 const center: LatLngExpression = [42.336277, -71.09169];
@@ -14,6 +16,7 @@ const center: LatLngExpression = [42.336277, -71.09169];
 export const MapView: React.FC = () => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
+  const configStore = useConfigStore((store) => store);
 
   const displayMap = useMemo(
     () => (
@@ -56,13 +59,11 @@ export const MapView: React.FC = () => {
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
-          <MarkerLayer>
-            <StationMarkerFactory />
-          </MarkerLayer>
+          <StationMarkerFactory stationId={configStore.station} />
         </MapContainer>
       </>
     ),
-    [mapStore]
+    [mapStore, configStore]
   );
 
   return (
@@ -73,7 +74,7 @@ export const MapView: React.FC = () => {
   );
 };
 
-const UpdateMapValues = ({ map }) => {
+const UpdateMapValues: React.FC<{ map: Map }> = ({ map }) => {
   const mapStore = useMapStore((store) => store);
 
   const onZoom = useCallback(() => {

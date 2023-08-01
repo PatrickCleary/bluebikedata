@@ -18,12 +18,14 @@ interface ConfigStore {
   metric: MetricsType;
   date: DateOptions;
   station: string | undefined;
+  startStations: string[] | undefined;
 
   setDistance: (distance: TripDistancesType) => void;
   setRidership: (ridershipMin: string | number) => void;
   setMetric: (metric: MetricsType) => void;
   setDate: (date: DateOptions) => void;
   setStation: (station: string | undefined) => void;
+  setStartStations: (startStations: string[] | undefined) => void;
   loadFromParams: (params: { [key: string]: string }) => void;
 }
 
@@ -33,6 +35,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   metric: "total",
   date: "comp",
   station: undefined,
+  startStations: undefined,
   setDistance: (distance) => set(() => ({ distance: distance })),
   setRidership: (ridershipMin) => {
     const _ridershipMin =
@@ -44,6 +47,8 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   setMetric: (metric) => set(() => ({ metric: metric })),
   setDate: (date) => set(() => ({ date: date })),
   setStation: (station) => set(() => ({ station: station })),
+  setStartStations: (startStations) =>
+    set(() => ({ startStations: startStations })),
   loadFromParams: (searchParams) => {
     const configStoreObject = {};
     if (
@@ -109,6 +114,38 @@ export const useUpdateStation = () => {
       setSearchParams(searchParams);
     }
     setStation(station);
+  };
+};
+
+export const useAddOrRemoveStartStation = () => {
+  const setStartStations = useConfigStore((store) => store.setStartStations);
+  const [searchParams, setSearchParams] = useSearchParams();
+  return (startStation: string) => {
+    console.log(startStation);
+    const searchParamsArray =
+      searchParams.get("startStations")?.split(",") ?? [];
+    console.log(searchParamsArray);
+    if (searchParamsArray.includes(startStation)) {
+      searchParamsArray.splice(searchParamsArray.indexOf(startStation), 1);
+      searchParamsArray.length > 0
+        ? searchParams.set("startStations", searchParamsArray.join(","))
+        : searchParams.delete("startStations");
+    } else {
+      searchParamsArray.push(startStation);
+      searchParams.set("startStations", searchParamsArray.join(","));
+    }
+    setStartStations(searchParamsArray);
+    setSearchParams(searchParams);
+  };
+};
+
+export const useClearStartStations = () => {
+  const setStartStations = useConfigStore((store) => store.setStartStations);
+  const [searchParams, setSearchParams] = useSearchParams();
+  return () => {
+    searchParams.delete("startStations");
+    setSearchParams(searchParams);
+    setStartStations(undefined);
   };
 };
 

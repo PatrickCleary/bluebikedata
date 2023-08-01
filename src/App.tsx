@@ -25,18 +25,14 @@ function App() {
   });
 
   return (
-    <div className="w-full h-min-[100vh] h-full px-4 md:px-2 lg:px-8 xl:px-16 py-4 bg-[#222122] gap-y-4 flex flex-col">
+    <div className="w-full h-min-[100vh] h-full bg-[#222122] gap-y-4 flex flex-col">
       <QueryClientProvider client={queryClient}>
         <Header />
-        <div className="grid md:grid-cols-4 gap-4 w-full">
-          <div className="md:col-span-3 w-full ">
-            <div className="w-full h-[480px] md:h-[440px] 3xl:h-[640px] relative">
-              <MapView />
-            </div>
-            <Widget />
-          </div>
-          <ShapeSelection />
-          <ContactAndInfo />
+
+        <ShapeSelection />
+        <ContactAndInfo />
+        <div className="absolute z-0 h-[100vh] w-[100vw]">
+          <MapView />
         </div>
         <ReactQueryDevtools />
       </QueryClientProvider>
