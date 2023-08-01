@@ -1,6 +1,6 @@
 import React from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { MapView } from "./maps/Map";
 import { Widget } from "./widgets/widget";
 import { Header } from "./components/Header";
@@ -8,12 +8,12 @@ import { useSearchParams } from "react-router-dom";
 import { useConfigStore } from "./store/ConfigStore";
 import { ShapeSelection } from "./components/ShapeSelection";
 import { ContactAndInfo } from "./components/ContactAndInfo";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
   const [searchParams] = useSearchParams();
   const loadFromParams = useConfigStore((store) => store.loadFromParams);
   loadFromParams(Object.fromEntries(searchParams.entries()));
-
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -38,6 +38,7 @@ function App() {
           <ShapeSelection />
           <ContactAndInfo />
         </div>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </div>
   );

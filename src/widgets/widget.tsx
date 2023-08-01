@@ -1,15 +1,18 @@
-import { useQuery } from "react-query";
-import { fetchAllData } from "../api/all_data";
+import React from "react";
+import classNames from "classnames";
+import { useQuery } from "@tanstack/react-query";
 import { round } from "lodash";
+import { fetchAllData } from "../api/all_data";
 import { useConfigStore, useUpdateMetric } from "../store/ConfigStore";
 import { DATE_MAP, DATE_TITLE_MAP, DISTANCE_TITLE_MAP } from "../constants";
 import { Tabs } from "../components/Tabs";
-import classNames from "classnames";
 import { getDivergingColor } from "../helpers/colors";
+import { useMultipleDestinationsData } from "../api/destinations";
 
 export const Widget: React.FC = () => {
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
+
   const configStore = useConfigStore((store) => store);
   const stationId = configStore.station;
 

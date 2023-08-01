@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { SetStateAction } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { fetchAllData } from "../api/all_data";
 import { DISTANCE_MIN_MAP } from "../constants";
 import { useConfigStore } from "../store/ConfigStore";
