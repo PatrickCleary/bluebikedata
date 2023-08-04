@@ -1,13 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import { MarkerLayer } from "react-leaflet-marker";
+import { LayerGroup } from "react-leaflet";
 import { fetchAllData } from "../api/all_data";
 import { useMultipleDestinationsData } from "../api/destinations";
 import { formatDestinations } from "../helpers/formatDestinations";
+import { pointInsidePolygon } from "../helpers/testLocation";
 import {
   useAddOrRemoveStartStation,
   useConfigStore,
   useUpdateStation,
 } from "../store/ConfigStore";
+import { useMapStore } from "../store/MapStore";
 import { StationTrip } from "../types/Data";
 import { StationMarker } from "./StationMarker";
 
@@ -15,7 +17,7 @@ export const StationMarkerFactory: React.FC<{
   stationId: string | undefined;
 }> = ({ stationId }) => {
   const configStore = useConfigStore((store) => store);
-  const updateStation = useUpdateStation();
+  const mapStore = useMapStore((store) => store);
   const addOrRemoveStation = useAddOrRemoveStartStation();
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
@@ -31,9 +33,15 @@ export const StationMarkerFactory: React.FC<{
   if (data_23.isError || data_23.isLoading || !data_23.data || !data_22.data)
     return null;
   return (
-    <MarkerLayer>
+    <LayerGroup>
       {Object.values(data_23.data)
         .map((station: StationTrip) => {
+          const inside = mapStore.startShape?.length
+            ? pointInsidePolygon(
+                [station.latitude, station.longitude],
+                mapStore.startShape
+              )
+            : true;
           if (station.values["all"]?.total < configStore.ridershipMin)
             return null;
           if (!destinations[station.id] && configStore.startStations?.length)
@@ -44,20 +52,10 @@ export const StationMarkerFactory: React.FC<{
           const selected = Boolean(
             configStore.startStations?.includes(station.id)
           );
-          // const value =
-          //   (data_23.data[station.id]?.values[configStore.distance]?.[
-          //     configStore.metric
-          //   ] -
-          //     data_22.data[station.id]?.values[configStore.distance]?.[
-          //       configStore.metric
-          //     ]) /
-          //   data_22.data[station.id]?.values[configStore.distance]?.[
-          //     configStore.metric
-          //   ];
-          const value = configStore.startStations
+          const value = configStore.startStations?.length
             ? Math.min(1, destinations[station.id] / 100)
             : 1;
-
+          if (!inside) return null;
           return (
             <StationMarker
               isNew={isNew}
@@ -72,6 +70,6 @@ export const StationMarkerFactory: React.FC<{
           );
         })
         .filter((obj) => obj)}
-    </MarkerLayer>
+    </LayerGroup>
   );
 };

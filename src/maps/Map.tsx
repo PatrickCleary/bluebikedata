@@ -1,14 +1,21 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import "leaflet/dist/leaflet.css";
-import { MapContainer, Polygon, TileLayer } from "react-leaflet";
+import React, { useCallback, useMemo, useState } from "react";
 
-import { MarkerLayer } from "react-leaflet-marker";
+import {
+  LayerGroup,
+  MapContainer,
+  Polygon,
+  TileLayer,
+  useMap,
+  useMapEvent,
+} from "react-leaflet";
+
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useConfigStore } from "../store/ConfigStore";
+import { PolygonVertices } from "../shapes/PolygonVertices";
 const whiteOptions = { color: "white" };
 
 const center: LatLngExpression = [42.336277, -71.09169];
@@ -54,39 +61,42 @@ export const MapView: React.FC = () => {
               />
             </>
           ))}
-
+          <LayerGroup>
+            <Polygon
+              pathOptions={whiteOptions}
+              positions={mapStore.startShape?.map((entry) => entry.loc) || []}
+            />
+            <PolygonVertices />
+          </LayerGroup>
           <TileLayer
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
           <StationMarkerFactory stationId={configStore.station} />
+          <UpdateMapValues />
         </MapContainer>
       </>
     ),
     [mapStore, configStore]
   );
 
-  return (
-    <>
-      {map ? <UpdateMapValues map={map} /> : null}
-      {displayMap}
-    </>
-  );
+  return displayMap;
 };
 
-const UpdateMapValues: React.FC<{ map: Map }> = ({ map }) => {
+const UpdateMapValues: React.FC = () => {
   const mapStore = useMapStore((store) => store);
-
+  const map = useMap();
   const onZoom = useCallback(() => {
     mapStore.setZoom(map.getZoom());
+    console.log(map.getZoom());
   }, [map, mapStore]);
+  useMapEvent("zoom", onZoom);
 
-  useEffect(() => {
-    map.on("zoom", onZoom);
-    return () => {
-      map.off("zoom", onZoom);
-    };
-  }, [map, onZoom]);
+  useMapEvent("click", (e) => {
+    console.log(mapStore.startShape);
+    const latLng = e.latlng;
+    mapStore.addToStartShape([latLng.lat, latLng.lng]);
+  });
 
   return <></>;
 };

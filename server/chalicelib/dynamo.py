@@ -1,6 +1,6 @@
 import boto3
 
-def read_from_secondary_index(table_name, index_name, key_condition_expression, expression_attribute_values=None):
+def read_from_secondary_index(table_name, index_name, key_condition_expression, expression_attribute_values=None, projection_expression='start_station_id, end_station_id'):
     """
     Reads data from a DynamoDB secondary index.
 
@@ -22,6 +22,7 @@ def read_from_secondary_index(table_name, index_name, key_condition_expression, 
         IndexName=index_name,
         KeyConditionExpression=key_condition_expression,
         ExpressionAttributeValues=expression_attribute_values,
+        ProjectionExpression=projection_expression,  # Add the projection expression here
     )
 
 
