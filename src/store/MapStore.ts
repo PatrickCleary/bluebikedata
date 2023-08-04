@@ -33,7 +33,6 @@ export const useMapStore = create<MapStore>((set, get) => ({
       ss?.findIndex((point) => point.id === id),
       1
     );
-    console.log(ss);
     return set(() => ({
       startShape: ss,
     }));

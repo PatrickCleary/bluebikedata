@@ -88,12 +88,10 @@ const UpdateMapValues: React.FC = () => {
   const map = useMap();
   const onZoom = useCallback(() => {
     mapStore.setZoom(map.getZoom());
-    console.log(map.getZoom());
   }, [map, mapStore]);
   useMapEvent("zoom", onZoom);
 
   useMapEvent("click", (e) => {
-    console.log(mapStore.startShape);
     const latLng = e.latlng;
     mapStore.addToStartShape([latLng.lat, latLng.lng]);
   });
