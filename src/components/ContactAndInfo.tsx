@@ -16,14 +16,18 @@ export const ContactAndInfo = () => {
     <>
       <button
         type="button"
-        className="flex items-start justify-start"
+        className="flex items-start justify-start pointer-events-auto"
         onClick={openModal}
       >
         <p className="text-gray-100 underline">Contact</p>
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog
+          as="div"
+          className="relative pointer-events-auto"
+          onClose={closeModal}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

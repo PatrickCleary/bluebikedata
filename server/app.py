@@ -14,4 +14,5 @@ cors_config = CORSConfig(allow_origin=f"https://{FRONTEND_HOST}", max_age=3600)
 @app.route("/api/destinations", cors=True)
 def get_destinations():
     query = app.current_request.query_params
-    return json.dumps(get_destinations_by_count.get_destinations_by_count(query["station_id"]))
+    print(query)
+    return json.dumps(get_destinations_by_count.get_destinations_by_count(query["station_id"], query["start_time"], query["end_time"]))

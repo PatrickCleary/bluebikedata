@@ -1,12 +1,16 @@
 import boto3
 import csv
+import uuid
 
 def csv_to_json(csv_file_path):
     data = []
     with open(csv_file_path, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            data.append(row)
+            ride_id = str(uuid.uuid4())  # Generate a UUID for each row
+            row['ride_id'] = ride_id
+            if row['start_station_id'] != '':
+                data.append(row)
     return data
   
 
@@ -22,7 +26,7 @@ def upload_to_dynamodb(table_name, data):
 
 if __name__ == "__main__":
     # csv_file_path = "../../../../202306-bluebikes-tripdata_formatted.csv"
-    csv_file_path = "../../../202306-bluebikes-tripdata_formatted.csv"
+    csv_file_path = "../../../202206-bluebikes-tripdata_formatted.csv"
     table_name = "BlueBikeTrips"
     json_data = csv_to_json(csv_file_path)
     upload_to_dynamodb(table_name, json_data)

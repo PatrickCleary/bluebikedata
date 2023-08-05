@@ -4,8 +4,12 @@ from timeit import default_timer as timer
 
 
 
-def get_destinations_by_count(station_name: str):
-    expression_attribute_values = {':start_station_id': station_name}
+def get_destinations_by_count(station_name: str, start_time:str, end_time:str,):
+    expression_attribute_values = {
+        ":start_station_id": station_name,
+        ":start_time": start_time,
+        ":end_time": end_time
+    }
     result = dynamo.read_from_secondary_index('BlueBikeTrips', constants.dynamo_start_station_index, constants.key_condition_expression, expression_attribute_values)
     df = pd.DataFrame(result)
 

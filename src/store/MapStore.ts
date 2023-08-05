@@ -7,24 +7,27 @@ import { useConfigStore } from "./ConfigStore";
 
 interface MapStore {
   zoom: number;
-  shapes: { [key: string]: LatLngExpression[] };
+  shapeKey: string | undefined;
   startShape: { id: string; loc: LatLngExpression }[] | undefined;
   startId: number;
   originDocks: string[];
+  isDrawing: boolean;
   setZoom: (zoom: number) => void;
   addToStartShape: (latLng: LatLngExpression) => void;
   removeStartShape: (id: string) => void;
   clearStartShape: () => void;
   setOriginDocks: (docks: string[]) => void;
-  setShapes: (shapes: { [key: string]: LatLngExpression[] }) => void;
+  setShapeKey: (key: string | undefined) => void;
+  setIsDrawing: (isDrawing: boolean) => void;
 }
 
 export const useMapStore = create<MapStore>((set, get) => ({
   zoom: 12,
-  shapes: {},
+  shapeKey: undefined,
   startId: 0,
   startShape: [],
   originDocks: [],
+  isDrawing: false,
   addToStartShape: (latLng) => {
     const ss = get().startShape;
     const id = get().startId;
@@ -50,7 +53,10 @@ export const useMapStore = create<MapStore>((set, get) => ({
     })),
   clearStartShape: () => set(() => ({ startShape: [], startId: 0 })),
   setZoom: (zoom) => set(() => ({ zoom: zoom })),
-  setShapes: (shapes) => set(() => ({ shapes: shapes })),
+  setShapeKey: (key) => set(() => ({ shapeKey: key })),
+  setIsDrawing: (isDrawing) => {
+    return set(() => ({ isDrawing: isDrawing }));
+  },
 }));
 
 export const useSetOriginDocks = () => {

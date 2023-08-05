@@ -1,4 +1,8 @@
 import { LatLngExpression } from "leaflet";
+import React, { ReactElement } from "react";
+import { Polygon } from "react-leaflet";
+import { GeneralPolygon } from "./shapes/GeneralPolygon";
+import { GLXStations } from "./shapes/GLXStations";
 
 export const communityPath: LatLngExpression[] = [
   [42.3929031, -71.1062442],
@@ -51,7 +55,23 @@ export const communityPath: LatLngExpression[] = [
   [42.392395, -71.1052657],
   [42.3927199, -71.1058773],
 ];
+export const GLX_STATIONS: LatLngExpression[] = [
+  [42.4079561513032, -71.1170347551837],
+  [42.39989309559492, -71.11099159126597],
+  [42.39369289187466, -71.10637922458356],
+  [42.38793113145654, -71.09674141303367],
+  [42.379470147186424, -71.08662715569756],
+  [42.37735987718784, -71.09475896465707],
+  [42.37153740162477, -71.07654084480168],
+];
 
-export const PROJECT_OUTLINES: { [key: string]: LatLngExpression[] } = {
-  "Community Path Extension": communityPath,
+export const PROJECT_OUTLINES: {
+  [key: string]: { key: string; shape: ReactElement; name: string };
+} = {
+  "1": {
+    key: "1",
+    name: "Community Path Extension",
+    shape: <GeneralPolygon shapes={communityPath} />,
+  },
+  "2": { key: "2", name: "GLX Stations", shape: <GLXStations /> },
 };

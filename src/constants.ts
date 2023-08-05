@@ -11,7 +11,6 @@ export const zoomLevelToMarkerSize = (zoomLevel: number) => {
 };
 
 export const DATE_MAP: { [key in DateOptions]: string } = {
-  comp: "Comparison",
   "2022": "June 2022",
   "2023": "June 2023",
 };
@@ -52,7 +51,11 @@ export const METRIC_TITLE_MAP: { [key in MetricsType]: string } = {
 };
 
 export const DATE_TITLE_MAP: { [key in DateOptions]: string } = {
-  comp: "June '22 vs. June '23",
   "2022": "June 2022",
   "2023": "June 2023",
+};
+
+export const DATE_RANGES = {
+  "2022": { start_time: "2022-06-01", end_time: "2022-06-31" },
+  "2023": { start_time: "2023-06-01", end_time: "2023-06-31" },
 };

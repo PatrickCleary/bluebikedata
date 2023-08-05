@@ -36,4 +36,4 @@ export enum Metrics {
   median_distance_miles = "median_distance_miles",
 }
 
-export type DateOptions = "2022" | "2023" | "comp";
+export type DateOptions = "2022" | "2023";

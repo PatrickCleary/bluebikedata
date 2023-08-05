@@ -29,21 +29,15 @@ export const Header: React.FC<HeaderProps> = () => {
   const updateDistance = useUpdateDistance();
   const updateMetric = useUpdateMetric();
   return (
-    <div className="w-full fixed top-0 z-10  bg-gray-700 m-2 rounded-md px-2 md:px-4 py-4 text-gray-100 ">
+    <div className="w-full fixed top-0 z-20  bg-neutral-900 m-2 rounded-md px-2 md:px-4 py-4 text-gray-100 pointer-events-auto shadow-md">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col ">
           <div className="flex flex-row gap-2 items-center">
             <h1 className="text-lg md:text-2xl truncate items-baseline">
               {METRIC_TITLE_MAP[configStore.metric]}{" "}
-              <span className="text-xs truncate md:text-lg">
-                (June 2022 vs. June 2023)
-              </span>
             </h1>
             <InfoModal />
           </div>
-          <h3 className="italic text-xs md:text-lg">
-            {DISTANCE_TITLE_MAP[configStore.distance]}
-          </h3>
         </div>
         <div className="flex flex-row justify-between">
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 md:items-end w-full">
@@ -70,14 +64,6 @@ export const Header: React.FC<HeaderProps> = () => {
 
               <Popover.Panel>
                 <div className="flex flex-col md:flex-row w-fit min-w-[20rem] md:min-w-[32rem] max-w-[48rem] bg-gray-800 z-20 absolute py-4 px-4 gap-4 rounded-md shadow-md mt-2">
-                  <TabsWithLabel
-                    label={"Trip distance"}
-                    setValue={updateDistance}
-                    options={DISTANCE_MIN_MAP}
-                    selectedIndex={Object.entries(DISTANCE_MIN_MAP).findIndex(
-                      ([key, entry]) => key === configStore.distance
-                    )}
-                  />
                   <TripSlider />
                 </div>
               </Popover.Panel>

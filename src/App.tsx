@@ -9,6 +9,7 @@ import { useConfigStore } from "./store/ConfigStore";
 import { ShapeSelection } from "./components/ShapeSelection";
 import { ContactAndInfo } from "./components/ContactAndInfo";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NowDrawingPopup } from "./components/NowDrawingPopup";
 
 function App() {
   const [searchParams] = useSearchParams();
@@ -25,15 +26,18 @@ function App() {
   });
 
   return (
-    <div className="w-full h-min-[100vh] h-full bg-[#222122] gap-y-4 flex flex-col">
+    <div className="h-[100vh] w-[100vw] bg-[#222122] gap-y-4 flex flex-col">
       <QueryClientProvider client={queryClient}>
-        <Header />
+        <div className="absolute z-10 h-full w-full pointer-events-none">
+          <Header />
 
-        <ShapeSelection />
-        <ContactAndInfo />
-        <div className="absolute z-0 h-[100vh] w-[100vw]">
+          <ShapeSelection />
+          <ContactAndInfo />
+        </div>
+        <div className="absolute z-0 h-full w-full">
           <MapView />
         </div>
+        <NowDrawingPopup />
         <ReactQueryDevtools />
       </QueryClientProvider>
     </div>

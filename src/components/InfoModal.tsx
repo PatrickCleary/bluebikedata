@@ -69,28 +69,20 @@ export const InfoModal = () => {
                     <p className="font-bold text-sm">How to use:</p>
                     <ul style={{ listStyleType: "disc" }} className="pl-4">
                       <li>
-                        The map shows the percentage change from June 2022 to
-                        June 2023 for the chosen metric
-                        (trips/distance/duration)
+                        Use the <span className="text-green-500">draw</span>{" "}
+                        tool to create an origin group. Then press the{" "}
+                        <span className="text-sky-400">arrow</span> to see the
+                        results.
                       </li>
                       <li>
-                        Each dot on the map represents trips leaving from that
-                        dock.
-                      </li>
-                      <li>
-                        Brighter <span className="text-amber-500">orange</span>{" "}
-                        signifies an increase for the given metric, and brighter{" "}
-                        <span className="text-sky-400">blue</span> is a
-                        decrease.
-                      </li>
-                      <li>
-                        <span className="text-green-500">Green</span> circles
-                        are docks that opened since June 2022.
+                        Each dot on the map represents trips which began in the{" "}
+                        <span className="text-amber-500">origin group</span>.
+                        The size indicates the quantity of trips which ended at
+                        the station.
                       </li>
 
                       <li>Filter docks by minimum trips (default 100).</li>
-                      <li>Filter trips by distance (default &gt; 0 mi).</li>
-                      <li>Select a dock to get more details.</li>
+                      <li>hover over a dock to get more details.</li>
                     </ul>
                   </div>
 

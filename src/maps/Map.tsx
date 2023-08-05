@@ -10,12 +10,14 @@ import {
 } from "react-leaflet";
 
 import { StationMarkerFactory } from "./StationMarkerFactory";
-import { LatLngExpression, Map } from "leaflet";
+import { LatLngExpression, Layer, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useConfigStore } from "../store/ConfigStore";
 import { PolygonVertices } from "../shapes/PolygonVertices";
+import { GLXStations } from "../constants/shapes/GLXStations";
+import { PROJECT_OUTLINES } from "../constants/shapes";
 const whiteOptions = { color: "white" };
 
 const center: LatLngExpression = [42.336277, -71.09169];
@@ -52,21 +54,17 @@ export const MapView: React.FC = () => {
           scrollWheelZoom={true}
           style={{ width: "100%", height: "100%" }}
         >
-          {Object.entries(mapStore.shapes).map(([name, shape]) => (
-            <>
-              <Polygon
-                pathOptions={whiteOptions}
-                positions={shape}
-                key={name}
-              />
-            </>
-          ))}
           <LayerGroup>
             <Polygon
               pathOptions={{ color: "#f59e0b" }}
               positions={mapStore.startShape?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices />
+          </LayerGroup>
+          <LayerGroup>
+            {mapStore.shapeKey
+              ? PROJECT_OUTLINES[mapStore.shapeKey].shape
+              : null}
           </LayerGroup>
           <TileLayer
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
@@ -92,6 +90,7 @@ const UpdateMapValues: React.FC = () => {
   useMapEvent("zoom", onZoom);
 
   useMapEvent("click", (e) => {
+    if (!mapStore.isDrawing) return null;
     const latLng = e.latlng;
     mapStore.addToStartShape([latLng.lat, latLng.lng]);
   });

@@ -9,4 +9,6 @@ export enum FetchDestinationsParams {
 export type FetchDestinationsResponse = {
   name: string;
   end_docks: { [key: string]: number }[];
+  start_time: string;
+  end_time: string;
 };

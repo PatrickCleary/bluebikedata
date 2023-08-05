@@ -34,7 +34,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   distance: "all",
   ridershipMin: 0,
   metric: "total",
-  date: "comp",
+  date: "2023",
   station: undefined,
   startStations: undefined,
   setDistance: (distance) => set(() => ({ distance: distance })),

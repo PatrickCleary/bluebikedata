@@ -1,6 +1,8 @@
 import { useQuery, useQueries } from "@tanstack/react-query";
+import { DATE_RANGES } from "../constants";
 
 import { API_URL } from "../constants/api";
+import { useConfigStore } from "../store/ConfigStore";
 import {
   FetchDestinationsOptions,
   FetchDestinationsParams,
@@ -31,13 +33,26 @@ export const useMultipleDestinationsData = (
   stations: string[],
   enabled?: boolean
 ) => {
-  return useQueries({
-    queries: stations.map((station) => {
-      return {
-        queryKey: [station],
-        queryFn: () => fetchDestinations({ station_id: station }),
-        enabled,
-      };
+  return {
+    "2023": useQueries({
+      queries: stations.map((station) => {
+        return {
+          queryKey: [station, DATE_RANGES["2023"]],
+          queryFn: () =>
+            fetchDestinations({ station_id: station, ...DATE_RANGES["2023"] }),
+          enabled,
+        };
+      }),
     }),
-  });
+    "2022": useQueries({
+      queries: stations.map((station) => {
+        return {
+          queryKey: [station, DATE_RANGES["2022"]],
+          queryFn: () =>
+            fetchDestinations({ station_id: station, ...DATE_RANGES["2022"] }),
+          enabled,
+        };
+      }),
+    }),
+  };
 };

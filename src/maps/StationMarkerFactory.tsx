@@ -18,13 +18,20 @@ export const StationMarkerFactory: React.FC = () => {
   const destinationsData = useMultipleDestinationsData(
     configStore.startStations ?? []
   );
-  const formattedDestinationsData = destinationsData
+  const formattedDestinationsData_2023 = destinationsData["2023"]
+    .map((query) => query.data)
+    .filter((entry) => entry !== undefined);
+  const formattedDestinationsData_2022 = destinationsData["2022"]
     .map((query) => query.data)
     .filter((entry) => entry !== undefined);
 
-  const destinations = formatDestinations(formattedDestinationsData);
+  const destinations_23 = formatDestinations(formattedDestinationsData_2023);
+  const destinations_22 = formatDestinations(formattedDestinationsData_2022);
   if (data_23.isError || data_23.isLoading || !data_23.data || !data_22.data)
     return null;
+  const data = configStore.date === "2023" ? destinations_23 : destinations_22;
+  let total_out = 0;
+  let total = 0;
   return (
     <LayerGroup>
       {Object.values(data_23.data)
@@ -35,22 +42,24 @@ export const StationMarkerFactory: React.FC = () => {
                 mapStore.startShape
               )
             : false;
-          if (station.values["all"]?.total < configStore.ridershipMin)
+          if (!data[station.id] && configStore.startStations?.length)
             return null;
-          if (!destinations[station.id] && configStore.startStations?.length)
-            return null;
-          const value = Math.max(
-            0.25,
-            Math.min(destinations[station.id] / 50, 1)
+          const value = data[station.id];
+          if (value < configStore.ridershipMin) return null;
+          if (!inside) total_out += value;
+          total += value;
+          // console.log("total:", total);
+          // console.log("total_out:", total_out);
+          const pct_value = Math.max(
+            0.15,
+            Math.min(1 - Math.exp(-0.03 * value), 1)
           );
-          const lat = station["latitude"];
-          const lng = station["longitude"];
           return (
             <StationMarker
-              position={[lat, lng]}
+              position={[station["latitude"], station["longitude"]]}
               key={station["id"]}
-              value={value}
-              rides={destinations[station.id]}
+              value={pct_value}
+              rides={value}
               name={station["name"]}
               inside={inside}
             />
