@@ -22,9 +22,10 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
     <CircleMarker
       center={position}
       color={inside ? "#d97706" : "#38bdf8"}
-      fillOpacity={inside ? 1 : 0.25}
+      fillOpacity={inside ? 1 : 0.5}
       key={`${name}-${inside}`}
-      radius={inside ? 4 : value ? value * 10 : 10}
+      stroke={false}
+      radius={inside ? 4 : value ? value * 16 : 16}
     >
       <Popup>
         {name} - {rides}
