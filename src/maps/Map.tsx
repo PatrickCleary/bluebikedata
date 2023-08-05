@@ -63,7 +63,7 @@ export const MapView: React.FC = () => {
           ))}
           <LayerGroup>
             <Polygon
-              pathOptions={whiteOptions}
+              pathOptions={{ color: "#f59e0b" }}
               positions={mapStore.startShape?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices />
@@ -72,12 +72,12 @@ export const MapView: React.FC = () => {
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
-          <StationMarkerFactory stationId={configStore.station} />
+          <StationMarkerFactory />
           <UpdateMapValues />
         </MapContainer>
       </>
     ),
-    [mapStore, configStore]
+    [mapStore]
   );
 
   return displayMap;

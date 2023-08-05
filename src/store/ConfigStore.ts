@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
 import { DateOptions, MetricsType, TripDistancesType } from "../types/Data";
+import { useMapStore } from "./MapStore";
 
 export type paramsType = keyof typeof Params;
 
@@ -30,8 +31,8 @@ interface ConfigStore {
 }
 
 export const useConfigStore = create<ConfigStore>((set, get) => ({
-  distance: "nonzero",
-  ridershipMin: 100,
+  distance: "all",
+  ridershipMin: 0,
   metric: "total",
   date: "comp",
   station: undefined,
@@ -140,10 +141,12 @@ export const useAddOrRemoveStartStation = () => {
 export const useClearStartStations = () => {
   const setStartStations = useConfigStore((store) => store.setStartStations);
   const [searchParams, setSearchParams] = useSearchParams();
+  const clearStartShape = useMapStore((store) => store.clearStartShape);
   return () => {
     searchParams.delete("startStations");
     setSearchParams(searchParams);
     setStartStations(undefined);
+    clearStartShape();
   };
 };
 

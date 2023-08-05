@@ -4,21 +4,14 @@ import { fetchAllData } from "../api/all_data";
 import { useMultipleDestinationsData } from "../api/destinations";
 import { formatDestinations } from "../helpers/formatDestinations";
 import { pointInsidePolygon } from "../helpers/testLocation";
-import {
-  useAddOrRemoveStartStation,
-  useConfigStore,
-  useUpdateStation,
-} from "../store/ConfigStore";
+import { useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
 import { StationTrip } from "../types/Data";
 import { StationMarker } from "./StationMarker";
 
-export const StationMarkerFactory: React.FC<{
-  stationId: string | undefined;
-}> = ({ stationId }) => {
+export const StationMarkerFactory: React.FC = () => {
   const configStore = useConfigStore((store) => store);
   const mapStore = useMapStore((store) => store);
-  const addOrRemoveStation = useAddOrRemoveStartStation();
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
 
@@ -36,36 +29,30 @@ export const StationMarkerFactory: React.FC<{
     <LayerGroup>
       {Object.values(data_23.data)
         .map((station: StationTrip) => {
-          const inside = mapStore.startShape?.length
+          const inside = mapStore.startShape
             ? pointInsidePolygon(
                 [station.latitude, station.longitude],
                 mapStore.startShape
               )
-            : true;
+            : false;
           if (station.values["all"]?.total < configStore.ridershipMin)
             return null;
           if (!destinations[station.id] && configStore.startStations?.length)
             return null;
+          const value = Math.max(
+            0.25,
+            Math.min(destinations[station.id] / 50, 1)
+          );
           const lat = station["latitude"];
           const lng = station["longitude"];
-          const isNew = data_22.data[station.id] == null;
-          const selected = Boolean(
-            configStore.startStations?.includes(station.id)
-          );
-          const value = configStore.startStations?.length
-            ? Math.min(1, destinations[station.id] / 100)
-            : 1;
-          if (!inside) return null;
           return (
             <StationMarker
-              isNew={isNew}
-              id={station.id}
               position={[lat, lng]}
               key={station["id"]}
-              name={station["name"]}
-              selected={selected}
-              onClick={() => addOrRemoveStation(station.id)}
               value={value}
+              rides={destinations[station.id]}
+              name={station["name"]}
+              inside={inside}
             />
           );
         })

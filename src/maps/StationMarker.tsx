@@ -4,27 +4,31 @@ import { CircleMarker, Popup } from "react-leaflet";
 
 interface StationMarkerProps {
   position: LatLngExpression;
-  id: string;
-  name: string;
-  isNew: boolean;
-  selected: boolean;
-  value: number;
 
-  onClick: (stationId: string) => void;
+  name: string;
+  inside: boolean;
+  value: number | undefined;
+  rides: number | undefined;
 }
 
 export const StationMarker: React.FC<StationMarkerProps> = ({
   position,
-  id,
   name,
-  selected,
   value,
-  onClick,
-  isNew,
+  rides,
+  inside,
 }) => {
   return (
-    <CircleMarker center={position}>
-      <Popup>{name}</Popup>
+    <CircleMarker
+      center={position}
+      color={inside ? "#d97706" : "#38bdf8"}
+      fillOpacity={inside ? 1 : 0.25}
+      key={`${name}-${inside}`}
+      radius={inside ? 4 : value ? value * 10 : 10}
+    >
+      <Popup>
+        {name} - {rides}
+      </Popup>
     </CircleMarker>
   );
 };

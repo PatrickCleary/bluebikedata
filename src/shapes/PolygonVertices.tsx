@@ -1,5 +1,5 @@
 import React from "react";
-import { CircleMarker, Popup } from "react-leaflet";
+import { CircleMarker } from "react-leaflet";
 import { useMapStore } from "../store/MapStore";
 
 export const PolygonVertices: React.FC = () => {
@@ -9,9 +9,10 @@ export const PolygonVertices: React.FC = () => {
       return (
         <CircleMarker
           center={point.loc}
-          pathOptions={{ color: "#FFFFFF", fillOpacity: 1 }}
+          pathOptions={{ color: "#f59e0b", fillOpacity: 1 }}
           radius={5}
           stroke={false}
+          bubblingMouseEvents={false}
           eventHandlers={{
             click: (e) => {
               removeStartShape(point.id);

@@ -52,6 +52,6 @@ export const communityPath: LatLngExpression[] = [
   [42.3927199, -71.1058773],
 ];
 
-export const shapeOptions: { [key: string]: LatLngExpression[] } = {
+export const PROJECT_OUTLINES: { [key: string]: LatLngExpression[] } = {
   "Community Path Extension": communityPath,
 };
