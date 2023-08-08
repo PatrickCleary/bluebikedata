@@ -1,8 +1,9 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { SetStateAction, useCallback, useMemo, useState } from "react";
 
 import {
   LayerGroup,
   MapContainer,
+  Pane,
   Polygon,
   TileLayer,
   useMap,
@@ -11,7 +12,7 @@ import {
 
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Layer, Map } from "leaflet";
-import { useMapStore } from "../store/MapStore";
+import { useMapStore, useSetStartStations } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useConfigStore } from "../store/ConfigStore";
@@ -22,10 +23,13 @@ const whiteOptions = { color: "white" };
 
 const center: LatLngExpression = [42.336277, -71.09169];
 
-export const MapView: React.FC = () => {
+export const MapView: React.FC<{
+  setIsLoading: React.Dispatch<SetStateAction<boolean>>;
+}> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
   const configStore = useConfigStore((store) => store);
+  map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
     () => (
@@ -54,23 +58,25 @@ export const MapView: React.FC = () => {
           scrollWheelZoom={true}
           style={{ width: "100%", height: "100%" }}
         >
-          <LayerGroup>
+          <Pane name="stations">
+            <StationMarkerFactory setIsLoading={setIsLoading} />
+          </Pane>
+          <Pane name="projects">
+            {mapStore.shapeKey
+              ? PROJECT_OUTLINES[mapStore.shapeKey].shape
+              : null}
+          </Pane>
+          <Pane name={"originDocks"}>
             <Polygon
               pathOptions={{ color: "#f59e0b" }}
               positions={mapStore.startShape?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices />
-          </LayerGroup>
-          <LayerGroup>
-            {mapStore.shapeKey
-              ? PROJECT_OUTLINES[mapStore.shapeKey].shape
-              : null}
-          </LayerGroup>
+          </Pane>
           <TileLayer
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
-          <StationMarkerFactory />
           <UpdateMapValues />
         </MapContainer>
       </>
@@ -84,6 +90,7 @@ export const MapView: React.FC = () => {
 const UpdateMapValues: React.FC = () => {
   const mapStore = useMapStore((store) => store);
   const map = useMap();
+  const setStartStations = useSetStartStations();
   const onZoom = useCallback(() => {
     mapStore.setZoom(map.getZoom());
   }, [map, mapStore]);
@@ -93,6 +100,7 @@ const UpdateMapValues: React.FC = () => {
     if (!mapStore.isDrawing) return null;
     const latLng = e.latlng;
     mapStore.addToStartShape([latLng.lat, latLng.lng]);
+    setStartStations();
   });
 
   return <></>;

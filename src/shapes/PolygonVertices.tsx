@@ -1,9 +1,10 @@
 import React from "react";
 import { CircleMarker } from "react-leaflet";
-import { useMapStore } from "../store/MapStore";
+import { useMapStore, useSetStartStations } from "../store/MapStore";
 
 export const PolygonVertices: React.FC = () => {
   const { startShape, removeStartShape } = useMapStore((store) => store);
+  const setStartStations = useSetStartStations();
   return (
     startShape?.map((point) => {
       return (
@@ -16,6 +17,7 @@ export const PolygonVertices: React.FC = () => {
           eventHandlers={{
             click: (e) => {
               removeStartShape(point.id);
+              setStartStations();
             },
           }}
         ></CircleMarker>

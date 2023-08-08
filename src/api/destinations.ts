@@ -40,7 +40,8 @@ export const useMultipleDestinationsData = (
           queryKey: [station, DATE_RANGES["2023"]],
           queryFn: () =>
             fetchDestinations({ station_id: station, ...DATE_RANGES["2023"] }),
-          enabled,
+          stations,
+          enabled: enabled,
         };
       }),
     }),
@@ -50,7 +51,7 @@ export const useMultipleDestinationsData = (
           queryKey: [station, DATE_RANGES["2022"]],
           queryFn: () =>
             fetchDestinations({ station_id: station, ...DATE_RANGES["2022"] }),
-          enabled,
+          enabled: enabled,
         };
       }),
     }),

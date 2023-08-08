@@ -1,19 +1,17 @@
 import React from "react";
-import { useClearStartStations, useConfigStore } from "../store/ConfigStore";
-import { useMapStore, useSetOriginDocks } from "../store/MapStore";
+import { useBreakpoint } from "../helpers/breakpoints";
 import { DateToggle } from "./DateToggle";
 import { DrawingMenu } from "./DrawingMenu";
 import { ProjectOutlines } from "./ProjectOutlines";
 
 export const ShapeSelection = () => {
-  const { setOriginDocks } = useMapStore();
-  const configStore = useConfigStore((store) => store);
+  const isMobile = !useBreakpoint("md");
   return (
-    <div className="h-[25vh] md:h-[80vh] left-0 md:top-50 lg:top-40 flex flex-col bottom-0 top-auto fixed z-10 w-90 w-full md:w-auto m-2 bg-neutral-900 gap-4 px-4 py-2 text-gray-100 rounded-md pointer-events-auto shadow-md items-center ">
+    <div className="md:h-full my-2 flex flex-row md:flex-col z-10 w-full md:w-fit bg-gray-800 md:gap-4 gap-2 px-1 md:px-4 py-2 text-gray-100 rounded-md pointer-events-auto  items-center border border-gray-500">
       <DrawingMenu />
-      <hr className="h-[1px] w-full bg-neutral-800" />
+      <hr className="md:h-[1px] h-full w-[1px] md:w-full bg-neutral-200" />
       <DateToggle />
-      <ProjectOutlines />
+      {!isMobile ? <ProjectOutlines /> : null}
     </div>
   );
 };

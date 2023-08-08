@@ -18,15 +18,14 @@ interface ConfigStore {
   ridershipMin: number;
   metric: MetricsType;
   date: DateOptions;
-  station: string | undefined;
   startStations: string[] | undefined;
 
   setDistance: (distance: TripDistancesType) => void;
   setRidership: (ridershipMin: string | number) => void;
   setMetric: (metric: MetricsType) => void;
   setDate: (date: DateOptions) => void;
-  setStation: (station: string | undefined) => void;
   setStartStations: (startStations: string[] | undefined) => void;
+  setOrClearStartStation: (startStation: string) => void;
   loadFromParams: (params: { [key: string]: string }) => void;
 }
 
@@ -35,7 +34,6 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   ridershipMin: 0,
   metric: "total",
   date: "2023",
-  station: undefined,
   startStations: undefined,
   setDistance: (distance) => set(() => ({ distance: distance })),
   setRidership: (ridershipMin) => {
@@ -47,7 +45,12 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   },
   setMetric: (metric) => set(() => ({ metric: metric })),
   setDate: (date) => set(() => ({ date: date })),
-  setStation: (station) => set(() => ({ station: station })),
+  setOrClearStartStation: (startStation) => {
+    const startStations = get().startStations;
+    if (startStations?.includes(startStation))
+      return set(() => ({ startStations: undefined }));
+    return set(() => ({ startStations: [startStation] }));
+  },
   setStartStations: (startStations) =>
     set(() => ({ startStations: startStations })),
   loadFromParams: (searchParams) => {
@@ -100,21 +103,6 @@ export const useUpdateMetric = () => {
     setMetric(metric);
     searchParams.set("metric", metric);
     setSearchParams(searchParams);
-  };
-};
-
-export const useUpdateStation = () => {
-  const setStation = useConfigStore((store) => store.setStation);
-  const [searchParams, setSearchParams] = useSearchParams();
-  return (station: string | undefined) => {
-    if (station === undefined) {
-      searchParams.delete("station");
-      setSearchParams(searchParams);
-    } else {
-      searchParams.set("station", station);
-      setSearchParams(searchParams);
-    }
-    setStation(station);
   };
 };
 

@@ -59,9 +59,9 @@ export const useMapStore = create<MapStore>((set, get) => ({
   },
 }));
 
-export const useSetOriginDocks = () => {
+export const useSetStartStations = () => {
   const docks = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
-  const { setOriginDocks, startShape } = useMapStore((store) => store);
+  const { startShape } = useMapStore((store) => store);
   const setStartStations = useConfigStore((store) => store.setStartStations);
   return () => {
     if (docks.data && startShape) {
@@ -70,7 +70,6 @@ export const useSetOriginDocks = () => {
           pointInsidePolygon([dock.latitude, dock.longitude], startShape)
         )
         .map((dock) => dock.id);
-      setOriginDocks(originDocks);
       setStartStations(originDocks);
     }
   };

@@ -5,8 +5,8 @@ import { useMapStore } from "../store/MapStore";
 export const ProjectOutlines = () => {
   const { shapeKey, setShapeKey } = useMapStore();
   return (
-    <>
-      <h3 className="text-lg w-full">Projects</h3>
+    <div className="flex flex-col gap-1">
+      <h3 className="text-sm w-full italix">Projects</h3>
       <div className="flex flex-col gap-1">
         {Object.values(PROJECT_OUTLINES).map((shape) => {
           const selected = shapeKey === shape.key;
@@ -35,6 +35,6 @@ export const ProjectOutlines = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };

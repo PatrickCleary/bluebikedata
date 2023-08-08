@@ -1,4 +1,8 @@
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInfo,
+  faInfoCircle,
+  faQuestionCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -22,8 +26,8 @@ export const InfoModal = () => {
         onClick={openModal}
       >
         <FontAwesomeIcon
-          icon={faQuestionCircle}
-          className="md:h-6 md:w-6 h-4 w-4 text-gray-100"
+          icon={faInfoCircle}
+          className="md:h-6 md:w-6 h-4 w-4 text-gray-100 pl-2"
         />
       </button>
 
