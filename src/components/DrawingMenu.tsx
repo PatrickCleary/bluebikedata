@@ -1,17 +1,7 @@
 import {
-  faArrowCircleRight,
-  faCircleXmark,
-  faDrawPolygon,
-  faHandPointer,
-  faICursor,
-  faMouse,
-  faMousePointer,
-  faPencil,
+  faCircle,
+  faCircleNodes,
   faRotateLeft,
-  faTrash,
-  faX,
-  faXmark,
-  faXmarkCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Switch } from "@headlessui/react";
@@ -35,7 +25,7 @@ export const DrawingMenu = () => {
       <div className="w-full flex flex-row md:px-6 justify-between px-2">
         <div className="w-full flex flex-row gap-2 justify-center md:justify-start">
           <FontAwesomeIcon
-            icon={faHandPointer}
+            icon={faCircle}
             className={classNames(
               "h-6 w-6 cursor-pointer ",
               mapStore.isDrawing ? "text-white" : "text-amber-500"
@@ -62,7 +52,7 @@ export const DrawingMenu = () => {
             />
           </Switch>
           <FontAwesomeIcon
-            icon={faPencil}
+            icon={faCircleNodes}
             className={classNames(
               "h-6 w-6 cursor-pointer ",
               !mapStore.isDrawing ? "text-white" : "text-amber-500"
@@ -80,7 +70,7 @@ export const DrawingMenu = () => {
             clearStartStations();
           }}
         >
-          <FontAwesomeIcon icon={faTrash} className="h-6 w-6" />
+          <FontAwesomeIcon icon={faRotateLeft} className="h-6 w-6" />
         </button>
       </div>
     </div>

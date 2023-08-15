@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
+import { shallow } from "zustand/shallow";
+
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
@@ -18,8 +20,8 @@ function App() {
   const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const loadFromParams = useConfigStore((store) => store.loadFromParams);
-
   loadFromParams(Object.fromEntries(searchParams.entries()));
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -42,7 +44,7 @@ function App() {
           <MapView setIsLoading={setIsLoading} />
         </div>
         <NowDrawingPopup />
-        <StationCountPopUp />
+        {/* <StationCountPopUp /> */}
 
         {isLoading ? <Loading /> : null}
       </QueryClientProvider>

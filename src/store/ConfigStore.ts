@@ -75,12 +75,14 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     if (
       searchParams["ridershipMin"] &&
       !isNaN(parseInt(searchParams["ridershipMin"]))
-    )
+    ) {
       configStoreObject["ridershipMin"] = parseInt(
         searchParams["ridershipMin"]
       );
-
-    return set(() => configStoreObject);
+      return set(() => ({
+        ridershipMin: configStoreObject["ridershipMin"],
+      }));
+    }
   },
 }));
 

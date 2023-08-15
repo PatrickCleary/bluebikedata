@@ -37,3 +37,7 @@ export enum Metrics {
 }
 
 export type DateOptions = "2022" | "2023";
+
+export interface Destinations {
+  [startStation: string]: { [endStation: string]: number }[];
+}

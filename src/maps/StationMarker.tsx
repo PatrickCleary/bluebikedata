@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LatLngExpression } from "leaflet";
 import { CircleMarker, Tooltip } from "react-leaflet";
+import classNames from "classnames";
 
 interface StationMarkerProps {
   position: LatLngExpression;
@@ -24,13 +25,24 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
   inside,
 }) => {
   const [size, setSize] = useState(6);
-  const targetSize = getSize(isMobile, inside, percentageValue, absValue);
   const getOpacity = () => {
-    if (!startStationsSelected) return 1;
-    if (inside) return 1;
-
-    return 0.5;
+    if (absValue === undefined && startStationsSelected) return "opacity-50";
+    if (!startStationsSelected) return "opacity-100";
+    if (inside) return "opacity-100";
+    return "opacity-50";
   };
+  const getSize = () => {
+    if (inside) return isMobile ? 4 : 6;
+    if (startStationsSelected && absValue === undefined) {
+      return 0;
+    }
+    if (absValue !== undefined && percentageValue)
+      return isMobile ? percentageValue * 20 : percentageValue * 32;
+    return isMobile ? 6 : 6;
+  };
+  const targetSize = getSize();
+
+  const opacity = getOpacity();
 
   useEffect(() => {
     const startSize = size;
@@ -52,7 +64,7 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
     <CircleMarker
       center={position}
       color={inside ? "#f59e0b" : "#38bdf8"}
-      // className={`transition-all `}
+      className={classNames(opacity)}
       eventHandlers={
         select
           ? {
@@ -60,24 +72,18 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
             }
           : undefined
       }
-      fillOpacity={getOpacity()}
       key={`${name}-${inside}-${absValue}-${isMobile}-${targetSize}-${startStationsSelected}`}
       stroke={false}
+      fillOpacity={1}
       radius={size}
     >
-      <Tooltip>
-        <p className="text-base">
-          {name} {absValue ? `- ${absValue}` : ""}
-        </p>
-      </Tooltip>
+      {!isMobile ? (
+        <Tooltip>
+          <p className="text-base">
+            {name} {absValue ? `- ${absValue}` : ""}
+          </p>
+        </Tooltip>
+      ) : null}
     </CircleMarker>
   );
-};
-
-const getSize = (isMobile, inside, percentageValue, absValue) => {
-  if (inside) return isMobile ? 4 : 6;
-  if (absValue === 0) return 0;
-  if (absValue !== undefined)
-    return isMobile ? percentageValue * 20 : percentageValue * 32;
-  return isMobile ? 6 : 6;
 };
