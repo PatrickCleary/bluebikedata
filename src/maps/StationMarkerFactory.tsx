@@ -4,7 +4,7 @@ import React, { SetStateAction } from "react";
 import { LayerGroup } from "react-leaflet";
 import { fetchAllData, useMonthlyDestinations } from "../api/all_data";
 import { useBreakpoint } from "../helpers/breakpoints";
-import { pointInsidePolygon } from "../helpers/testLocation";
+import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
 import { StationTrip } from "../types/Data";
@@ -61,12 +61,8 @@ export const StationMarkerFactory: React.FC<{
             !data_22_static[station.id]
           )
             return null;
-          const inside = mapStore.startShape
-            ? pointInsidePolygon(
-                [station.latitude, station.longitude],
-                mapStore.startShape
-              )
-            : false;
+
+          const inside = configStore.startStations?.includes(station.id)
           let absValue = data ? data[station.id] : undefined;
           if (
             startStationsSelected &&
@@ -78,6 +74,7 @@ export const StationMarkerFactory: React.FC<{
           const percentageValue = absValue
             ? Math.max(0.1, Math.min(1 - Math.exp(-0.03 * absValue), 1))
             : 0;
+          const size = getSize(inside, isMobile, startStationsSelected, absValue, percentageValue)
           return (
             <StationMarker
               position={[station["latitude"], station["longitude"]]}
@@ -85,9 +82,9 @@ export const StationMarkerFactory: React.FC<{
                 mapStore.isDrawing
                   ? undefined
                   : () => {
-                      configStore.setOrClearStartStation(station["id"]);
-                      mapStore.clearStartShape();
-                    }
+                    configStore.setOrClearStartStation(station["id"]);
+                    mapStore.clearStartShape();
+                  }
               }
               key={station["id"]}
               percentageValue={percentageValue}
@@ -95,11 +92,8 @@ export const StationMarkerFactory: React.FC<{
               startStationsSelected={Boolean(startStationsSelected)}
               isMobile={isMobile}
               name={station["name"]}
-              inside={
-                (inside ||
-                  configStore.startStations?.includes(station["id"])) ??
-                false
-              }
+              inside={inside ?? false}
+              size={size}
             />
           );
         })

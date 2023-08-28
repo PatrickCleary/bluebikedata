@@ -12,6 +12,7 @@ interface StationMarkerProps {
   startStationsSelected: boolean;
   percentageValue: number | undefined;
   absValue: number | undefined;
+  size: number;
 }
 
 export const StationMarker: React.FC<StationMarkerProps> = ({
@@ -23,43 +24,24 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
   absValue,
   isMobile,
   inside,
+  size,
 }) => {
-  const [size, setSize] = useState(6);
   const getOpacity = () => {
     if (absValue === undefined && startStationsSelected) return "opacity-50";
     if (!startStationsSelected) return "opacity-100";
     if (inside) return "opacity-100";
     return "opacity-50";
   };
-  const getSize = () => {
-    if (inside) return isMobile ? 4 : 6;
-    if (startStationsSelected && absValue === undefined) {
-      return 0;
-    }
-    if (absValue !== undefined && percentageValue)
-      return isMobile ? percentageValue * 20 : percentageValue * 32;
-    return isMobile ? 6 : 6;
-  };
-  const targetSize = getSize();
-
   const opacity = getOpacity();
+  const [currentSize, setCurrentSize] = useState(0);
 
   useEffect(() => {
-    const startSize = size;
-
-    const animate = () => {
-      if (Math.abs(targetSize - size) <= 1) return null;
-      let newSize = startSize;
-      if (size < targetSize) newSize += 1;
-      if (size > targetSize) newSize -= 1;
-
-      setSize(newSize);
-      requestAnimationFrame(animate);
-      return null;
-    };
-
-    requestAnimationFrame(animate);
-  }, [size, targetSize, percentageValue]);
+    if (!startStationsSelected || size === 0)
+      setCurrentSize(size)
+    else if (Math.abs(size - currentSize) > 1) {
+      setTimeout(() => setCurrentSize(currentSize + (size - currentSize) / (2 * Math.abs((size - currentSize)))), 5);
+    }
+  }, [currentSize, size, startStationsSelected])
   return (
     <CircleMarker
       center={position}
@@ -68,14 +50,14 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
       eventHandlers={
         select
           ? {
-              click: select,
-            }
+            click: select,
+          }
           : undefined
       }
-      key={`${name}-${inside}-${absValue}-${isMobile}-${targetSize}-${startStationsSelected}`}
+      key={`${name}-${inside}-${absValue}-${isMobile}-${size}-${startStationsSelected}`}
       stroke={false}
       fillOpacity={1}
-      radius={size}
+      radius={currentSize}
     >
       {!isMobile ? (
         <Tooltip>

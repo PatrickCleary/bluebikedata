@@ -1,26 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { shallow } from "zustand/shallow";
-
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
 import { useConfigStore } from "./store/ConfigStore";
 import { ShapeSelection } from "./components/ShapeSelection";
-import { ContactAndInfo } from "./components/ContactAndInfo";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NowDrawingPopup } from "./components/NowDrawingPopup";
 import { MobileFilters } from "./components/MobileFilters";
-import { StationCountPopUp } from "./components/StationCountPopUp";
 import { Loading } from "./components/Loading";
-import { MAX_STATIONS } from "./constants";
 
 function App() {
   const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const loadFromParams = useConfigStore((store) => store.loadFromParams);
-  loadFromParams(Object.fromEntries(searchParams.entries()));
+  useEffect(() => {
+    loadFromParams(Object.fromEntries(searchParams.entries()));
+
+  }, [loadFromParams, searchParams])
 
   const queryClient = new QueryClient({
     defaultOptions: {
