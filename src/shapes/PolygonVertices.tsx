@@ -11,7 +11,7 @@ export const PolygonVertices: React.FC = () => {
         <CircleMarker
           key={point.id}
           center={point.loc}
-          pathOptions={{ color: "#f59e0b", fillOpacity: 1 }}
+          pathOptions={{ color: "#f59e0b80", fillOpacity: 1 }}
           radius={5}
           stroke={false}
           bubblingMouseEvents={false}

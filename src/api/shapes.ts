@@ -7,7 +7,7 @@ export const saveShape = async (
 ) => {
   const id = uuidv4().slice(0, 8);
   const body = { id: id, shape: shape };
-  const response = await fetch(`/api/saveshape`, {
+  const response = await fetch(`${API_URL}/api/saveshape`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

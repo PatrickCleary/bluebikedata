@@ -65,7 +65,7 @@ export const MapView: React.FC<{
           </Pane>
           <Pane name={"originDocks"}>
             <Polygon
-              pathOptions={{ color: "#f59e0b" }}
+              pathOptions={{ color: "#f59e0b80" }}
               positions={mapStore.startShape?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices />
