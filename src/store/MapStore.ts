@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllData } from "../api/all_data";
+import { getShape } from "../api/shapes";
 import { pointInsidePolygon } from "../helpers/testLocation";
 import { useConfigStore } from "./ConfigStore";
 
@@ -15,6 +16,7 @@ interface MapStore {
   setZoom: (zoom: number) => void;
   addToStartShape: (latLng: LatLngExpression) => void;
   removeStartShape: (id: string) => void;
+  setStartShape: (shape: { id: string; loc: LatLngExpression }[]) => void;
   clearStartShape: () => void;
   setOriginDocks: (docks: string[]) => void;
   setShapeKey: (key: string | undefined) => void;
@@ -31,11 +33,16 @@ export const useMapStore = create<MapStore>((set, get) => ({
   addToStartShape: (latLng) => {
     const ss = get().startShape;
     const id = get().startId;
+    console.log(id);
     ss?.push({ id: id.toString(), loc: latLng });
     return set(() => ({
       startId: id + 1,
       startShape: ss,
     }));
+  },
+  setStartShape: (shape) => {
+    console.log("here", shape.length);
+    return set(() => ({ startShape: shape, startId: shape.length }));
   },
   removeStartShape: (id) => {
     const ss = get().startShape;
@@ -60,17 +67,36 @@ export const useMapStore = create<MapStore>((set, get) => ({
 }));
 
 export const useSetStartStations = () => {
-  const docks = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
   const { startShape } = useMapStore((store) => store);
   const setStartStations = useConfigStore((store) => store.setStartStations);
-  return () => {
-    if (docks.data && startShape) {
-      const originDocks = Object.values(docks.data)
+  return async (shape?: { id: string; loc: LatLngExpression }[]) => {
+    const docks = await fetchAllData("2023");
+    const loadedShapeOrCurrent = shape ?? startShape;
+    if (docks && loadedShapeOrCurrent) {
+      const originDocks = Object.values(docks)
         ?.filter((dock) =>
-          pointInsidePolygon([dock.latitude, dock.longitude], startShape)
+          pointInsidePolygon(
+            [dock.latitude, dock.longitude],
+            loadedShapeOrCurrent
+          )
         )
         .map((dock) => dock.id);
       setStartStations(originDocks);
     }
+  };
+};
+
+export const useSetShapeFromId = () => {
+  const setStartShape = useMapStore((store) => store.setStartShape);
+  const setStartStations = useSetStartStations();
+  return async (id: string) => {
+    const shape = await getShape(id);
+    const formattedShape = JSON.parse(shape[0].shape);
+    const reassignIds = formattedShape.map((point, index) => ({
+      ...point,
+      id: index,
+    }));
+    setStartShape(reassignIds);
+    setStartStations(reassignIds);
   };
 };

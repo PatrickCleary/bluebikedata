@@ -22,7 +22,16 @@ def upload_to_dynamodb(table_name, data):
         for item in data:
                 batch.put_item(Item=item)
 
-            
+
+
+def upload_entry_to_dynamodb(table_name, data):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table(table_name)
+        # Upload the item to the DynamoDB table
+    table.put_item(
+        TableName=table_name,
+        Item=data
+    )
 
 if __name__ == "__main__":
     # csv_file_path = "../../../../202306-bluebikes-tripdata_formatted.csv"

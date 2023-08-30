@@ -79,6 +79,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
       configStoreObject["ridershipMin"] = parseInt(
         searchParams["ridershipMin"]
       );
+  
       return set(() => ({
         ridershipMin: configStoreObject["ridershipMin"],
       }));
