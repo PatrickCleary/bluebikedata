@@ -16,6 +16,13 @@
       "Resource": [
         "arn:aws:dynamodb:us-east-1:331311613047:table/BlueBikeTrips/*"
       ]
+    },
+    {
+      "Action": ["dynamodb:Query", "dynamodb:PutItem"],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:dynamodb:us-east-1:331311613047:table/BlueBikeData-Shapes"
+      ]
     }
   ]
 }
