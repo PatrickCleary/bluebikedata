@@ -70,9 +70,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
         searchParams["ridershipMin"]
       );
 
-      return set(() => ({
-        ridershipMin: configStoreObject["ridershipMin"],
-      }));
+      return set(() => configStoreObject);
     }
   },
 }));
@@ -85,6 +83,17 @@ export const useUpdateRidershipMin = () => {
       typeof ridershipMin === "number" ? ridershipMin : parseInt(ridershipMin);
     setRidership(_ridershipMin);
     searchParams.set("ridershipMin", _ridershipMin.toString());
+    setSearchParams(searchParams);
+  };
+};
+
+export const useUpdateShape = () => {
+  const setShape = useConfigStore((store) => store.setShape);
+  const [searchParams, setSearchParams] = useSearchParams();
+  return (shape?: string) => {
+    setShape(shape);
+    if (!shape) searchParams.delete("shape");
+    else searchParams.set("shape", shape);
     setSearchParams(searchParams);
   };
 };
