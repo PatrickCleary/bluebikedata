@@ -37,7 +37,7 @@ export const ShareButton = () => {
     }, [mapStore.startShape])
 
     return (
-        <div className="flex flex-row py-1 border border-gray-600 rounded-md hover:bg-gray-500 relative">
+        <div className="flex flex-row py-1 border box-border border-gray-600 rounded-md hover:bg-gray-500 relative">
             <button
                 className={classNames(
                     !mapStore.startShape?.length ? "text-neutral-700" : "text-neutral-100",
@@ -51,7 +51,7 @@ export const ShareButton = () => {
                 <p>Share</p>
 
             </button>
-            <div className="absolute top-0 left-0 overflow-hidden h-full w-full pointer-events-none	rounded-md border-gray-500">
+            <div className="absolute top-0 left-0 overflow-hidden h-full w-full rounded-md pointer-events-none	border-gray-500 border border-transparent box-border">
                 <Transition
                     as={Fragment}
                     show={showMsg}
@@ -62,7 +62,7 @@ export const ShareButton = () => {
                     leaveFrom="opacity-100 bg-gray-700 text-gray-200"
                     leaveTo=" scale-150 bg-gray-500 text-gray-500"
                 >
-                    <div className="absolute top-0 left-0 h-full w-full text-gray-200 rounded-md bg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none" >
+                    <div className="absolute top-0 left-0 h-full w-full rounded-[.25rem] text-gray-200 rounded-smbg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none" >
                         <p className=" text-sm">Copied to clipboard</p>
                     </div>
                 </Transition>
