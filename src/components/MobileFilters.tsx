@@ -11,12 +11,12 @@ export const MobileFilters = () => {
     <>
       <button
         type="button"
-        className="flex items-start justify-start w-fit md:hidden bg-gray-800 border border-gray-300  p-2 pointer-events-auto shadow-md rounded-md"
+        className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md"
         onClick={() => setIsOpen(true)}
       >
         <FontAwesomeIcon
           icon={faSliders}
-          className="md:h-6 md:w-6 h-6 w-6 text-gray-100 pl-1"
+          className="md:h-6 md:w-6 h-6 w-6 text-gray-100 "
         />
       </button>
 

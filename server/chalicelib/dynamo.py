@@ -24,6 +24,14 @@ def read_from_secondary_index(table_name, index_name, key_condition_expression, 
         ExpressionAttributeValues=expression_attribute_values,
         ProjectionExpression=projection_expression,  # Add the projection expression here
     )
+    return response['Items']
 
 
+def read_from_shape_table(table_name, id):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table(table_name)
+    response =  table.query(
+        KeyConditionExpression='id = :id',
+        ExpressionAttributeValues = {':id': id }
+    )
     return response['Items']

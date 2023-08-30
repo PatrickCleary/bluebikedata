@@ -26,7 +26,7 @@ export const NowDrawingPopup = () => {
           <p>
             {isDrawing
               ? "Click/tap on the map to draw."
-              : "Double tap a dock to select."}
+              : "Click/tap a dock to select."}
           </p>
         </div>
       </Transition>

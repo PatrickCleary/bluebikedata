@@ -9,6 +9,7 @@ export const PolygonVertices: React.FC = () => {
     startShape?.map((point) => {
       return (
         <CircleMarker
+          key={point.id}
           center={point.loc}
           pathOptions={{ color: "#f59e0b", fillOpacity: 1 }}
           radius={5}

@@ -11,15 +11,12 @@ import {
 } from "react-leaflet";
 
 import { StationMarkerFactory } from "./StationMarkerFactory";
-import { LatLngExpression, Layer, Map } from "leaflet";
+import { LatLngExpression, Map } from "leaflet";
 import { useMapStore, useSetStartStations } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { useConfigStore } from "../store/ConfigStore";
 import { PolygonVertices } from "../shapes/PolygonVertices";
-import { GLXStations } from "../constants/shapes/GLXStations";
 import { PROJECT_OUTLINES } from "../constants/shapes";
-const whiteOptions = { color: "white" };
 
 const center: LatLngExpression = [42.336277, -71.09169];
 
@@ -28,7 +25,6 @@ export const MapView: React.FC<{
 }> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
-  const configStore = useConfigStore((store) => store);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(

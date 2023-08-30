@@ -1,3 +1,5 @@
+import { LatLngExpression } from "leaflet";
+
 export type FetchDestinationsOptions = {
   [key in FetchDestinationsParams]?: string;
 };
@@ -12,3 +14,8 @@ export type FetchDestinationsResponse = {
   start_time: string;
   end_time: string;
 };
+
+
+export type SaveShapeParams = {
+  shape: { id: string; loc: LatLngExpression }[]
+} 
