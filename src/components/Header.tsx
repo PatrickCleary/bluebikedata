@@ -2,30 +2,20 @@ import React from "react";
 import "rc-slider/assets/index.css";
 
 import {
-  DISTANCE_MIN_MAP,
-  DISTANCE_TITLE_MAP,
-  METRIC_MAP,
-  METRIC_TITLE_MAP,
-} from "../constants";
-import {
   useConfigStore,
-  useUpdateDistance,
-  useUpdateMetric,
 } from "../store/ConfigStore";
-import { TabsWithLabel } from "./TabsWithLabel";
 import { TripSlider } from "./Slider";
 import { Popover } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
-import { Tabs } from "./Tabs";
 import { InfoModal } from "./InfoModal";
-import { MetricsType, StationTripMap } from "../types/Data";
+import { StationTripMap } from "../types/Data";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAllData } from "../api/all_data";
 
-interface HeaderProps {}
+interface HeaderProps { }
 
 export const Header: React.FC<HeaderProps> = () => {
   const configStore = useConfigStore((store) => store);
@@ -53,7 +43,7 @@ export const Header: React.FC<HeaderProps> = () => {
                       <div
                         className={classNames(
                           open ? "rounded-t-md" : "rounded-md",
-                          "py-2 md:py-1 bg-gray-800 w-full border border-gray-700 text-gray-200 px-4 gap-4 flex flex-row items-center justify-between"
+                          "py-2 md:py-1 bg-gray-800 w-full border border-gray-500 text-gray-200 px-4 gap-4 flex flex-row items-center justify-between"
                         )}
                       >
                         <p>Filters</p>

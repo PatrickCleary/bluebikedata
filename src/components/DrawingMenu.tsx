@@ -20,8 +20,8 @@ export const DrawingMenu = () => {
   return (
     <div className="flex flex-col gap-2 w-full items-center">
 
-      <div className="w-full flex flex-row md:px-6 justify-between px-2">
-        <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-white border overflow-hidden">
+      <div className="w-full flex flex-row gap-2">
+        <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-gray-500 border border-gray-500 overflow-hidden">
           <FontAwesomeIcon
             icon={faCircle}
             className={classNames(
@@ -42,7 +42,7 @@ export const DrawingMenu = () => {
         <button
           disabled={!clearEnabled}
           className={classNames(
-            !clearEnabled ? "text-neutral-700" : "text-neutral-100",
+            !clearEnabled ? "text-neutral-700" : "text-gray-100",
             "rounded-full gap-1 flex flex-row px-2 items-center py-[2px] "
           )}
           onClick={() => {

@@ -1,36 +1,36 @@
 import classNames from "classnames";
 import { PROJECT_OUTLINES } from "../constants/shapes";
-import { useMapStore } from "../store/MapStore";
+import { useConfigStore } from "../store/ConfigStore";
 
 export const ProjectOutlines = () => {
-  const { shapeKey, setShapeKey } = useMapStore();
+  const { shape, setShape } = useConfigStore();
   return (
     <div className="flex flex-col gap-1">
       <h3 className="text-sm w-full italix">Projects</h3>
       <div className="flex flex-col gap-1">
-        {Object.values(PROJECT_OUTLINES).map((shape) => {
-          const selected = shapeKey === shape.key;
+        {Object.values(PROJECT_OUTLINES).map((shapeObject) => {
+          const selected = shape === shapeObject.key;
           return (
             <div
               className={classNames(
-                selected ? "text-gray-800" : "text-gray-100 bg-opacity-10",
-                "px-4 py-1  flex flex-row gap-2 items-center select-none cursor-pointer w-full rounded-sm bg-neutral-100"
+                selected ? "bg-gray-500" : "",
+                "px-4 py-1  flex flex-row gap-2  text-gray-100 items-center select-none cursor-pointer w-full rounded-sm bg-gray-700"
               )}
               onClick={() => {
                 if (selected) {
-                  setShapeKey(undefined);
+                  setShape(undefined);
                 } else {
-                  setShapeKey(shape.key);
+                  setShape(shapeObject.key);
                 }
               }}
             >
               <div
                 className={classNames(
                   "h-3 w-3 border border-gray-100 rounded-full",
-                  selected ? "bg-gray-800" : ""
+                  selected ? "bg-gray-100" : ""
                 )}
               ></div>
-              <p className="truncate">{shape.name}</p>
+              <p className="truncate">{shapeObject.name}</p>
             </div>
           );
         })}

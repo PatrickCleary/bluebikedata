@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
+import { PROJECT_OUTLINES } from "../constants/shapes";
 import { DateOptions, MetricsType, TripDistancesType } from "../types/Data";
 import { useMapStore } from "./MapStore";
 
@@ -19,10 +20,12 @@ interface ConfigStore {
   metric: MetricsType;
   date: DateOptions;
   startStations: string[] | undefined;
+  shape?: string;
 
   setDistance: (distance: TripDistancesType) => void;
   setRidership: (ridershipMin: string | number) => void;
   setMetric: (metric: MetricsType) => void;
+  setShape: (shape?: string) => void;
   setDate: (date: DateOptions) => void;
   setStartStations: (startStations: string[] | undefined) => void;
   setOrClearStartStation: (startStation: string) => void;
@@ -33,9 +36,11 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   distance: "all",
   ridershipMin: 0,
   metric: "total",
+  shape: undefined,
   date: "2023",
   startStations: undefined,
   setDistance: (distance) => set(() => ({ distance: distance })),
+  setShape: (shape) => set(() => ({ shape: shape })),
   setRidership: (ridershipMin) => {
     const _ridershipMin =
       typeof ridershipMin === "number" ? ridershipMin : parseInt(ridershipMin);
@@ -62,6 +67,12 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
       configStoreObject["distance"] = searchParams["distance"];
 
     if (
+      searchParams["shape"] &&
+      PROJECT_OUTLINES[searchParams["shape"]] !== undefined
+    )
+      configStoreObject["shape"] = searchParams["shape"];
+
+    if (
       searchParams["metric"] &&
       ["total", "median_trip_duration", "median_distance_miles"].includes(
         searchParams["metric"]
@@ -79,7 +90,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
       configStoreObject["ridershipMin"] = parseInt(
         searchParams["ridershipMin"]
       );
-  
+
       return set(() => ({
         ridershipMin: configStoreObject["ridershipMin"],
       }));

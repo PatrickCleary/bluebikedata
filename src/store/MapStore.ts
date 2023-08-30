@@ -8,7 +8,6 @@ import { useConfigStore } from "./ConfigStore";
 
 interface MapStore {
   zoom: number;
-  shapeKey: string | undefined;
   startShape: { id: string; loc: LatLngExpression }[] | undefined;
   startId: number;
   originDocks: string[];
@@ -19,13 +18,11 @@ interface MapStore {
   setStartShape: (shape: { id: string; loc: LatLngExpression }[]) => void;
   clearStartShape: () => void;
   setOriginDocks: (docks: string[]) => void;
-  setShapeKey: (key: string | undefined) => void;
   setIsDrawing: (isDrawing: boolean) => void;
 }
 
 export const useMapStore = create<MapStore>((set, get) => ({
   zoom: 12,
-  shapeKey: undefined,
   startId: 0,
   startShape: [],
   originDocks: [],
@@ -33,7 +30,6 @@ export const useMapStore = create<MapStore>((set, get) => ({
   addToStartShape: (latLng) => {
     const ss = get().startShape;
     const id = get().startId;
-    console.log(id);
     ss?.push({ id: id.toString(), loc: latLng });
     return set(() => ({
       startId: id + 1,
@@ -41,7 +37,6 @@ export const useMapStore = create<MapStore>((set, get) => ({
     }));
   },
   setStartShape: (shape) => {
-    console.log("here", shape.length);
     return set(() => ({ startShape: shape, startId: shape.length }));
   },
   removeStartShape: (id) => {
@@ -60,7 +55,6 @@ export const useMapStore = create<MapStore>((set, get) => ({
     })),
   clearStartShape: () => set(() => ({ startShape: [], startId: 0 })),
   setZoom: (zoom) => set(() => ({ zoom: zoom })),
-  setShapeKey: (key) => set(() => ({ shapeKey: key })),
   setIsDrawing: (isDrawing) => {
     return set(() => ({ isDrawing: isDrawing }));
   },

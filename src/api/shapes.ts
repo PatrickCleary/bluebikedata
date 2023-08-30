@@ -21,7 +21,6 @@ export const saveShape = async (
 };
 
 export const getShape = async (id: string) => {
-  console.log(id);
   const url = new URL(`${API_URL}/api/getshape`, window.location.origin);
   url.searchParams.append("id", id);
   const response = await fetch(url.toString());

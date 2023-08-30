@@ -1,7 +1,6 @@
 import React, { SetStateAction, useCallback, useMemo, useState } from "react";
 
 import {
-  LayerGroup,
   MapContainer,
   Pane,
   Polygon,
@@ -17,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
+import { useConfigStore } from "../store/ConfigStore";
 
 const center: LatLngExpression = [42.336277, -71.09169];
 
@@ -25,6 +25,7 @@ export const MapView: React.FC<{
 }> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
+  const shape = useConfigStore((store) => store.shape);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
@@ -58,8 +59,8 @@ export const MapView: React.FC<{
             <StationMarkerFactory setIsLoading={setIsLoading} />
           </Pane>
           <Pane name="projects">
-            {mapStore.shapeKey
-              ? PROJECT_OUTLINES[mapStore.shapeKey].shape
+            {shape
+              ? PROJECT_OUTLINES[shape].shape
               : null}
           </Pane>
           <Pane name={"originDocks"}>
@@ -77,7 +78,7 @@ export const MapView: React.FC<{
         </MapContainer>
       </>
     ),
-    [mapStore]
+    [mapStore, shape]
   );
 
   return displayMap;
