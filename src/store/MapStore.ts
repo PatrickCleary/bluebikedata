@@ -22,7 +22,7 @@ interface MapStore {
 }
 
 export const useMapStore = create<MapStore>((set, get) => ({
-  zoom: 12,
+  zoom: 13,
   startId: 0,
   startShape: [],
   originDocks: [],

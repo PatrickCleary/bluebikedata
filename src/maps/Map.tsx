@@ -18,7 +18,7 @@ import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { useConfigStore } from "../store/ConfigStore";
 
-const center: LatLngExpression = [42.336277, -71.09169];
+const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 
 export const MapView: React.FC<{
   setIsLoading: React.Dispatch<SetStateAction<boolean>>;
