@@ -11,7 +11,7 @@ import { Loading } from "./components/Loading";
 import { useSetShapeFromId, useSetStartStations } from "./store/MapStore";
 
 export const Main = () => {
-    const [searchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const setShapeFromId = useSetShapeFromId();
     const setStartStations = useSetStartStations();
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,8 +25,9 @@ export const Main = () => {
         if (id) {
             setShapeFromId(id);
             searchParams.delete('id')
+            setSearchParams(searchParams)
         }
-    }, [loadFromParams, searchParams, setShapeFromId, setStartStations])
+    }, [loadFromParams, searchParams, setSearchParams, setShapeFromId, setStartStations])
 
 
     return (

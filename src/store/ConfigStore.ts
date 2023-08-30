@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
 import { PROJECT_OUTLINES } from "../constants/shapes";
@@ -52,13 +53,11 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     set(() => ({ startStations: startStations })),
   loadFromParams: (searchParams) => {
     const configStoreObject = {};
-
     if (
       searchParams["shape"] &&
       PROJECT_OUTLINES[searchParams["shape"]] !== undefined
     )
       configStoreObject["shape"] = searchParams["shape"];
-
     if (searchParams["station"])
       configStoreObject["station"] = searchParams["station"];
 
@@ -69,9 +68,8 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
       configStoreObject["ridershipMin"] = parseInt(
         searchParams["ridershipMin"]
       );
-
-      return set(() => configStoreObject);
     }
+    return set(() => configStoreObject);
   },
 }));
 
