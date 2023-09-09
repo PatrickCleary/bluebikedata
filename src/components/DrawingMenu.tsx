@@ -5,7 +5,6 @@ import {
   faRotateLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Switch } from "@headlessui/react";
 import classNames from "classnames";
 import { useClearStartStations, useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
@@ -19,22 +18,25 @@ export const DrawingMenu = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full items-center">
-
       <div className="w-full flex flex-row gap-2">
         <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-gray-500 border border-gray-500 overflow-hidden">
           <FontAwesomeIcon
             icon={faCircle}
             className={classNames(
               "h-3 w-3 cursor-pointer py-2 px-3 ",
-              mapStore.isDrawing ? "text-white bg-gray-700" : "text-amber-500 bg-gray-500"
+              mapStore.isDrawing
+                ? "text-white bg-gray-700"
+                : "text-amber-500 bg-gray-500"
             )}
             onClick={() => mapStore.setIsDrawing(false)}
           />
           <FontAwesomeIcon
             icon={faCircleNodes}
             className={classNames(
-              "h-5 w-5 cursor-pointer py-1 px-2 bg-gray-700",
-              !mapStore.isDrawing ? "text-white bg-gray-700" : "text-amber-500 bg-gray-500"
+              "h-5 w-5 cursor-pointer py-1 px-2",
+              !mapStore.isDrawing
+                ? "text-white bg-gray-700"
+                : "text-amber-500 bg-gray-500"
             )}
             onClick={() => mapStore.setIsDrawing(true)}
           />
@@ -52,6 +54,6 @@ export const DrawingMenu = () => {
           <FontAwesomeIcon icon={faRotateLeft} className="h-6 w-6" />
         </button>
       </div>
-    </div >
+    </div>
   );
 };

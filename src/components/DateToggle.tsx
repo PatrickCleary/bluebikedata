@@ -10,7 +10,7 @@ export const DateToggle: React.FC = () => {
 
         <div
           onClick={() => configStore.setDate("2022")}
-          className={classNames(configStore.date === '2022' ? 'bg-gray-500 ' : 'bg-gray-700', "cursor-pointer w-full items-center justify-center flex ")}
+          className={classNames(configStore.date === '2022' ? 'bg-gray-500 ' : 'bg-gray-700', "cursor-pointer w-full items-center justify-center flex border border-gray-700 rounded-l-md")}
         >
           <p>
             {"June 2022"}
@@ -18,7 +18,7 @@ export const DateToggle: React.FC = () => {
         </div>
         <div
           onClick={() => configStore.setDate("2023")}
-          className={classNames(configStore.date === '2023' ? 'bg-gray-500 ' : 'bg-gray-700', "cursor-pointer w-full items-center justify-center flex ")}
+          className={classNames(configStore.date === '2023' ? 'bg-gray-500 ' : 'bg-gray-700', "cursor-pointer w-full items-center justify-center flex border border-gray-700 rounded-r-md")}
         >
           <p
           >

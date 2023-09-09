@@ -1,6 +1,5 @@
 import { LatLngExpression } from "leaflet";
 import React, { ReactElement } from "react";
-import { Polygon } from "react-leaflet";
 import { GeneralPolygon } from "./shapes/GeneralPolygon";
 import { GLXStations } from "./shapes/GLXStations";
 

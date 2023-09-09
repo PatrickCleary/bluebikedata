@@ -1,6 +1,6 @@
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dialog, Popover, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { ProjectOutlines } from "./ProjectOutlines";
 import { TripSlider } from "./Slider";
@@ -11,7 +11,7 @@ export const MobileFilters = () => {
     <>
       <button
         type="button"
-        className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md"
+        className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md shadow-md"
         onClick={() => setIsOpen(true)}
       >
         <FontAwesomeIcon

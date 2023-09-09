@@ -14,10 +14,11 @@ export const StationMarkerFactory: React.FC<{
   setIsLoading: React.Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsLoading }) => {
   const configStore = useConfigStore((store) => store);
+
+
   const mapStore = useMapStore((store) => store);
   const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
-
   const data_22_static = useMonthlyDestinations(
     configStore.startStations ?? [],
     "2022"
@@ -30,26 +31,11 @@ export const StationMarkerFactory: React.FC<{
   const startStationsSelected =
     configStore.startStations && configStore.startStations.length > 0;
 
-  // const destinationsData = useMultipleDestinationsData(
-  //   configStore.startStations ?? [],
-  //   configStore.startStations &&
-  //     configStore.startStations.length <= MAX_STATIONS
-  // );
-  // const formattedDestinationsData_2023 = destinationsData["2023"]
-  //   .map((query) => query.data)
-  //   .filter((entry) => entry !== undefined);
-  // const formattedDestinationsData_2022 = destinationsData["2022"]
-  //   .map((query) => query.data)
-  //   .filter((entry) => entry !== undefined);
-
   if (!data_23_static || !data_22_static || !data_23.data || data_23.isError)
     return null;
   const data = configStore.date === "2023" ? data_23_static : data_22_static;
 
-  // if (destinationsData[configStore.date].some((query) => query.isLoading)) {
-  //   setIsLoading(true);
-  //   return null;
-  // }
+  const maxSizeMultiplier = Math.log(.0001) / 100;
   setIsLoading(false);
   return (
     <LayerGroup>
@@ -70,9 +56,8 @@ export const StationMarkerFactory: React.FC<{
             absValue < configStore.ridershipMin
           )
             absValue = 0;
-
           const percentageValue = absValue
-            ? Math.max(0.1, Math.min(1 - Math.exp(-0.03 * absValue), 1))
+            ? Math.max(0.1, 1 - Math.pow(1.2, maxSizeMultiplier * absValue))
             : 0;
           const size = getSize(inside, isMobile, startStationsSelected, absValue, percentageValue)
           return (
