@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
 import { PROJECT_OUTLINES } from "../constants/shapes";
@@ -18,10 +17,12 @@ interface ConfigStore {
   date: DateOptions;
   startStations: string[] | undefined;
   shape?: string;
-
+  maxSize?: number; // defaults to undefined. only used when manually set.
   setRidership: (ridershipMin: string | number) => void;
   setShape: (shape?: string) => void;
   setDate: (date: DateOptions) => void;
+  setMaxSize: (maxSize: number) => void;
+  getMaxSize: () => number;
   setStartStations: (startStations: string[] | undefined) => void;
   setOrClearStartStation: (startStation: string) => void;
   loadFromParams: (params: { [key: string]: string }) => void;
@@ -41,6 +42,12 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     return set(() => ({
       ridershipMin: _ridershipMin,
     }));
+  },
+  setMaxSize: (maxSize) => set(() => ({ maxSize: maxSize })),
+  getMaxSize: () => {
+    const size = get().maxSize;
+    if (size) return size;
+    return (get().startStations?.length ?? 1) * 200;
   },
   setDate: (date) => set(() => ({ date: date })),
   setOrClearStartStation: (startStation) => {
@@ -126,4 +133,15 @@ export const useClearStartStations = () => {
     setStartStations(undefined);
     clearStartShape();
   };
+};
+
+export const useMaxSize = () => {
+  const { maxSize, startStations } = useConfigStore((store) => store);
+  if (maxSize) return maxSize;
+  if (!startStations) return 200;
+
+  const max = Math.round(
+    100 + 1000 * (1 - Math.pow(1.6, -0.1 * startStations?.length))
+  );
+  return max;
 };
