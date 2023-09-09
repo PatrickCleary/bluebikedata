@@ -1,11 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
 import { LatLngExpression } from "leaflet";
 import { API_URL } from "../constants/api";
 
 export const saveShape = async (
-  shape: { id: string; loc: LatLngExpression }[]
+  shape: { id: string; loc: LatLngExpression }[],
+  id: string
 ) => {
-  const id = uuidv4().slice(0, 8);
   const body = { id: id, shape: shape };
   const response = await fetch(`${API_URL}/api/saveshape`, {
     method: "POST",

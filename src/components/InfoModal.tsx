@@ -1,7 +1,7 @@
 import {
-  faInfo,
+  faCircle,
+  faCircleNodes,
   faInfoCircle,
-  faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
@@ -66,27 +66,33 @@ export const InfoModal = () => {
                   <div className="mt-2">
                     <p className="text-sm ">
                       Use this tool to discover insights into Blue Bike
-                      ridership between June 2022 and June 2023 (more dates to
-                      come).
+                      ridership in June 2022 and June 2023 (more dates to come).
                     </p>
                     <br />
                     <p className="font-bold text-sm">How to use:</p>
                     <ul style={{ listStyleType: "disc" }} className="pl-4">
                       <li>
-                        Use the <span className="text-green-500">draw</span>{" "}
-                        tool to create an origin group. Then press the{" "}
-                        <span className="text-sky-400">arrow</span> to see the
-                        results.
+                        Tap/click a station{" "}
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="text-amber-500"
+                        />{" "}
+                        to select as the <b>origin</b> station or use the multiselect{" "}
+                        <FontAwesomeIcon
+                          icon={faCircleNodes}
+                          className="text-amber-500"
+                        />{" "}
+                        to draw an <b>origin</b> region.
                       </li>
                       <li>
-                        Each dot on the map represents trips which began in the{" "}
-                        <span className="text-amber-500">origin group</span>.
-                        The size indicates the quantity of trips which ended at
-                        the station.
+                        The size of the other docks{" "}
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="text-sky-400 opacity-60"
+                        />{" "}
+                        represent the number of trips from the <b>origin</b> dock/region which terminated at the dock.
                       </li>
-
-                      <li>Filter docks by minimum trips (default 100).</li>
-                      <li>hover over a dock to get more details.</li>
+                      <li>hover over a dock to get exact numbers.</li>
                     </ul>
                   </div>
 

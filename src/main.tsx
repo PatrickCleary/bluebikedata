@@ -4,11 +4,12 @@ import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
 import { useConfigStore } from "./store/ConfigStore";
-import { ShapeSelection } from "./components/ShapeSelection";
+import { ShapeSelection as DesktopMenu } from "./components/ShapeSelection";
 import { NowDrawingPopup } from "./components/NowDrawingPopup";
 import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetShapeFromId, useSetStartStations } from "./store/MapStore";
+import { DateLabel } from "./components/DateLabel";
 
 export const Main = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -34,7 +35,10 @@ export const Main = () => {
         <div className="h-full w-[100vw] bg-[#222122] gap-y-4 flex flex-col">
             <div className="absolute z-10 h-full w-full pointer-events-none p-2 flex gap-1 md:gap-0  flex-col pb-5">
                 <Header />
-                <ShapeSelection />
+                <div className="md:w-full md:justify-between md:flex md:h-full">
+                    <DateLabel />
+                    <DesktopMenu />
+                </div>
                 <MobileFilters />
             </div>
             <div className="absolute z-0 h-full w-full">

@@ -2,6 +2,7 @@ import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Transition } from '@headlessui/react';
 import classNames from 'classnames';
+import { v4 as uuidv4 } from "uuid";
 import React, { Fragment, useEffect, useState } from 'react';
 import { saveShape } from '../api/shapes';
 import { useMapStore } from '../store/MapStore';
@@ -22,14 +23,15 @@ export const ShareButton = () => {
         const url = new URL(window.location.toString())
         if (shareID) {
             url.searchParams.set('id', shareID)
+            navigator.clipboard.writeText(url.toString())
         }
         if (!shareID && mapStore.startShape?.length) {
-            const newID = await saveShape(mapStore.startShape)
-            setShareID(newID)
+            const newID = uuidv4().slice(0, 8);
             url.searchParams.set('id', newID)
+            navigator.clipboard.writeText(url.toString())
+            await saveShape(mapStore.startShape, newID)
+            setShareID(newID)
         }
-        navigator.clipboard.writeText(url.toString())
-
     }
 
     useEffect(() => {

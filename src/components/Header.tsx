@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = () => {
 
   const isMobile = !useBreakpoint("md");
   return (
-    <div className="w-full top-0 z-20  bg-gray-800 rounded-md px-2 md:px-4 md:py-4 py-2 text-gray-100 pointer-events-auto border border-gray-500">
+    <div className="w-full top-0 z-20 bg-gray-800 rounded-md px-2 md:px-4 md:py-4 py-2 text-gray-100 pointer-events-auto border border-gray-500 shadow-md">
       <div className="flex flex-col gap-2 md:gap-4">
         <div className="flex flex-col ">
           <div className="flex flex-row gap-2 items-center">

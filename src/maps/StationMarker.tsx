@@ -54,13 +54,14 @@ export const StationMarker: React.FC<StationMarkerProps> = ({
           }
           : undefined
       }
+
       key={`${name}-${inside}-${absValue}-${isMobile}-${size}-${startStationsSelected}`}
       stroke={false}
       fillOpacity={1}
       radius={currentSize}
     >
       {!isMobile ? (
-        <Tooltip>
+        <Tooltip >
           <p className="text-base">
             {name} {absValue ? `- ${absValue}` : ""}
           </p>

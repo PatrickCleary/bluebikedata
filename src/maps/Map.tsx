@@ -59,9 +59,7 @@ export const MapView: React.FC<{
             <StationMarkerFactory setIsLoading={setIsLoading} />
           </Pane>
           <Pane name="projects">
-            {shape
-              ? PROJECT_OUTLINES[shape].shape
-              : null}
+            {shape ? PROJECT_OUTLINES[shape].shape : null}
           </Pane>
           <Pane name={"originDocks"}>
             <Polygon

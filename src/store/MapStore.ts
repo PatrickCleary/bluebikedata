@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllData } from "../api/all_data";
