@@ -1,19 +1,32 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import "leaflet/dist/leaflet.css";
-import { MapContainer, Polygon, TileLayer } from "react-leaflet";
-import { MarkerLayer } from "react-leaflet-marker";
+import React, { SetStateAction, useCallback, useMemo, useState } from "react";
+
+import {
+  MapContainer,
+  Pane,
+  Polygon,
+  TileLayer,
+  useMap,
+  useMapEvent,
+} from "react-leaflet";
+
 import { StationMarkerFactory } from "./StationMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
-import { useMapStore } from "../store/MapStore";
+import { useMapStore, useSetStartStations } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
-const whiteOptions = { color: "white" };
+import { PolygonVertices } from "../shapes/PolygonVertices";
+import { PROJECT_OUTLINES } from "../constants/shapes";
+import { useConfigStore } from "../store/ConfigStore";
 
-const center: LatLngExpression = [42.336277, -71.09169];
+const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 
-export const MapView: React.FC = () => {
+export const MapView: React.FC<{
+  setIsLoading: React.Dispatch<SetStateAction<boolean>>;
+}> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
+  const shape = useConfigStore((store) => store.shape);
+  map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
     () => (
@@ -42,50 +55,48 @@ export const MapView: React.FC = () => {
           scrollWheelZoom={true}
           style={{ width: "100%", height: "100%" }}
         >
-          {Object.entries(mapStore.shapes).map(([name, shape]) => (
-            <>
-              <Polygon
-                pathOptions={whiteOptions}
-                positions={shape}
-                key={name}
-              />
-            </>
-          ))}
-
+          <Pane name="stations">
+            <StationMarkerFactory setIsLoading={setIsLoading} />
+          </Pane>
+          <Pane name="projects">
+            {shape ? PROJECT_OUTLINES[shape].shape : null}
+          </Pane>
+          <Pane name={"originDocks"}>
+            <Polygon
+              pathOptions={{ color: "#f59e0b80" }}
+              positions={mapStore.startShape?.map((entry) => entry.loc) || []}
+            />
+            <PolygonVertices />
+          </Pane>
           <TileLayer
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
-          <MarkerLayer>
-            <StationMarkerFactory />
-          </MarkerLayer>
+          <UpdateMapValues />
         </MapContainer>
       </>
     ),
-    [mapStore]
+    [mapStore, shape]
   );
 
-  return (
-    <>
-      {map ? <UpdateMapValues map={map} /> : null}
-      {displayMap}
-    </>
-  );
+  return displayMap;
 };
 
-const UpdateMapValues = ({ map }) => {
+const UpdateMapValues: React.FC = () => {
   const mapStore = useMapStore((store) => store);
-
+  const map = useMap();
+  const setStartStations = useSetStartStations();
   const onZoom = useCallback(() => {
     mapStore.setZoom(map.getZoom());
   }, [map, mapStore]);
+  useMapEvent("zoom", onZoom);
 
-  useEffect(() => {
-    map.on("zoom", onZoom);
-    return () => {
-      map.off("zoom", onZoom);
-    };
-  }, [map, onZoom]);
+  useMapEvent("click", (e) => {
+    if (!mapStore.isDrawing) return null;
+    const latLng = e.latlng;
+    mapStore.addToStartShape([latLng.lat, latLng.lng]);
+    setStartStations();
+  });
 
   return <></>;
 };

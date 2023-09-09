@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:*:logs:*:*:*"
+    },
+    {
+      "Action": ["dynamodb:Query"],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:dynamodb:us-east-1:331311613047:table/BlueBikeTrips/*"
+      ]
+    },
+    {
+      "Action": ["dynamodb:Query", "dynamodb:PutItem"],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:dynamodb:us-east-1:331311613047:table/BlueBikeData-Shapes"
+      ]
+    }
+  ]
+}

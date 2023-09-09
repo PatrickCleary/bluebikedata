@@ -22,7 +22,7 @@ export const TripSlider = () => {
         <Slider
           min={0}
           value={configStore.ridershipMin}
-          max={1000}
+          max={150}
           onChange={(value) =>
             Array.isArray(value) ? value[0] : updateRidership(value)
           }

@@ -1,9 +1,9 @@
 import React, { SetStateAction } from "react";
 import { Bar } from "react-chartjs-2";
-import { useQuery } from "react-query";
 import { fetchAllData } from "../api/all_data";
 import { Chart, registerables } from "chart.js";
 import { formatData } from "../helpers/dataFormatting";
+import { useQuery } from "@tanstack/react-query";
 Chart.register(...registerables);
 
 interface ComparisonChartProps {

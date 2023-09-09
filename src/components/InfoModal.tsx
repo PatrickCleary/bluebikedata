@@ -1,4 +1,8 @@
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircle,
+  faCircleNodes,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -22,8 +26,8 @@ export const InfoModal = () => {
         onClick={openModal}
       >
         <FontAwesomeIcon
-          icon={faQuestionCircle}
-          className="md:h-6 md:w-6 h-4 w-4 text-gray-100"
+          icon={faInfoCircle}
+          className="md:h-6 md:w-6 h-4 w-4 text-gray-100 pl-2"
         />
       </button>
 
@@ -62,35 +66,33 @@ export const InfoModal = () => {
                   <div className="mt-2">
                     <p className="text-sm ">
                       Use this tool to discover insights into Blue Bike
-                      ridership between June 2022 and June 2023 (more dates to
-                      come).
+                      ridership in June 2022 and June 2023 (more dates to come).
                     </p>
                     <br />
                     <p className="font-bold text-sm">How to use:</p>
                     <ul style={{ listStyleType: "disc" }} className="pl-4">
                       <li>
-                        The map shows the percentage change from June 2022 to
-                        June 2023 for the chosen metric
-                        (trips/distance/duration)
+                        Tap/click a station{" "}
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="text-amber-500"
+                        />{" "}
+                        to select as the <b>origin</b> station or use the multiselect{" "}
+                        <FontAwesomeIcon
+                          icon={faCircleNodes}
+                          className="text-amber-500"
+                        />{" "}
+                        to draw an <b>origin</b> region.
                       </li>
                       <li>
-                        Each dot on the map represents trips leaving from that
-                        dock.
+                        The size of the other docks{" "}
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="text-sky-400 opacity-60"
+                        />{" "}
+                        represent the number of trips from the <b>origin</b> dock/region which terminated at the dock.
                       </li>
-                      <li>
-                        Brighter <span className="text-amber-500">orange</span>{" "}
-                        signifies an increase for the given metric, and brighter{" "}
-                        <span className="text-sky-400">blue</span> is a
-                        decrease.
-                      </li>
-                      <li>
-                        <span className="text-green-500">Green</span> circles
-                        are docks that opened since June 2022.
-                      </li>
-
-                      <li>Filter docks by minimum trips (default 100).</li>
-                      <li>Filter trips by distance (default &gt; 0 mi).</li>
-                      <li>Select a dock to get more details.</li>
+                      <li>hover over a dock to get exact numbers.</li>
                     </ul>
                   </div>
 
