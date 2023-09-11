@@ -10,7 +10,6 @@ import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetShapeFromId, useSetStartStations } from "./store/MapStore";
 import { DateLabel } from "./components/DateLabel";
-import { MobileShare } from "./components/MobileShare";
 import { ShareButton } from "./components/ShareButton";
 
 export const Main = () => {
