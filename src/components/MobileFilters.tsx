@@ -17,7 +17,7 @@ export const MobileFilters = () => {
       >
         <FontAwesomeIcon
           icon={faSliders}
-          className="md:h-6 md:w-6 h-6 w-6 text-gray-100 "
+          className="md:h-6 md:w-6 h-6 w-6 text-gray-300"
         />
       </button>
 

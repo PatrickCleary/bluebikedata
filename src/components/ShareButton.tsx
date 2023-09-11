@@ -1,47 +1,66 @@
-import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Transition } from '@headlessui/react';
-import classNames from 'classnames';
+import { faShareFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Transition } from "@headlessui/react";
+import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
-import React, { Fragment, useEffect, useState } from 'react';
-import { saveShape } from '../api/shapes';
-import { useMapStore } from '../store/MapStore';
+import React, { Fragment, useEffect, useState } from "react";
+import { saveShape } from "../api/shapes";
+import { useMapStore } from "../store/MapStore";
+import { useBreakpoint } from "../helpers/breakpoints";
+import { useNotificationStore } from "../store/NotificationStore";
 export const ShareButton = () => {
-
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
-    const mapStore = useMapStore((store) => store)
+    const setNotification = useNotificationStore((store) => store.setNotification);
+    const mapStore = useMapStore((store) => store);
     const isShapeCreated = !mapStore.startShape?.length;
+    const isMobile = !useBreakpoint("md");
     useEffect(() => {
         if (showMsg) {
-            setTimeout(() => setShowMsg(false), 1500)
+            setTimeout(() => setShowMsg(false), 1500);
         }
-
-    }, [showMsg])
+    }, [showMsg]);
 
     const saveShapeById = async () => {
-        setShowMsg(true)
-        const url = new URL(window.location.toString())
+        setShowMsg(true);
+        const url = new URL(window.location.toString());
         if (shareID) {
-            url.searchParams.set('id', shareID)
-            navigator.clipboard.writeText(url.toString())
+            url.searchParams.set("id", shareID);
+            navigator.clipboard.writeText(url.toString());
         }
         if (!shareID && mapStore.startShape?.length) {
             const newID = uuidv4().slice(0, 8);
-            url.searchParams.set('id', newID)
-            navigator.clipboard.writeText(url.toString())
-            await saveShape(mapStore.startShape, newID)
-            setShareID(newID)
+            url.searchParams.set("id", newID);
+            navigator.clipboard.writeText(url.toString());
+            await saveShape(mapStore.startShape, newID);
+            setShareID(newID);
         } else {
-            navigator.clipboard.writeText(url.toString())
+            navigator.clipboard.writeText(url.toString());
         }
-
-    }
+    };
 
     useEffect(() => {
-        setShareID(undefined)
-    }, [mapStore.startShape])
+        setShareID(undefined);
+    }, [mapStore.startShape]);
 
+    if (isMobile)
+        return (
+            <>
+                <button
+                    type="button"
+                    className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md"
+                    onClick={() => {
+                        saveShapeById()
+                        setNotification({ text: 'Link copied to clipboard' })
+                    }}
+                >
+                    <FontAwesomeIcon
+                        icon={faShareFromSquare}
+                        className="md:h-6 md:w-6 h-6 w-6 text-gray-300 "
+                    />
+                </button>
+            </>
+        );
     return (
         <div className="flex flex-row py-1 border box-border border-gray-600 rounded-md hover:bg-gray-500 relative">
             <button
@@ -51,10 +70,15 @@ export const ShareButton = () => {
                 )}
                 onClick={saveShapeById}
             >
-                <FontAwesomeIcon icon={faShareFromSquare} className={classNames(isShapeCreated ? "text-neutral-100" : "text-neutral-700", "h-4 w-4 cursor-pointer")} />
+                <FontAwesomeIcon
+                    icon={faShareFromSquare}
+                    className={classNames(
+                        isShapeCreated ? "text-neutral-100" : "text-neutral-700",
+                        "h-4 w-4 cursor-pointer"
+                    )}
+                />
 
                 <p>Share</p>
-
             </button>
             <div className="absolute top-0 left-0 overflow-hidden h-full w-full rounded-md pointer-events-none	border-gray-500 border border-transparent box-border">
                 <Transition
@@ -67,10 +91,11 @@ export const ShareButton = () => {
                     leaveFrom="opacity-100 bg-gray-700 text-gray-200"
                     leaveTo=" scale-150 bg-gray-500 text-gray-500"
                 >
-                    <div className="absolute top-0 left-0 h-full w-full rounded-[.25rem] text-gray-200 rounded-smbg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none" >
+                    <div className="absolute top-0 left-0 h-full w-full rounded-[.25rem] text-gray-200 rounded-smbg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none">
                         <p className=" text-sm">Copied to clipboard</p>
                     </div>
                 </Transition>
             </div>
-        </div >)
-}
+        </div>
+    );
+};

@@ -8,10 +8,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { useClearStartStations, useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
+import { useNotificationStore } from "../store/NotificationStore";
 
 export const DrawingMenu = () => {
   const clearStartStations = useClearStartStations();
   const mapStore = useMapStore((store) => store);
+  const setNotification = useNotificationStore(
+    (store) => store.setNotification
+  );
   const configStore = useConfigStore((store) => store);
   const clearEnabled =
     configStore.startStations?.length || mapStore.startShape?.length;
@@ -28,7 +32,10 @@ export const DrawingMenu = () => {
                 ? "text-white bg-gray-700"
                 : "text-amber-500 bg-gray-500"
             )}
-            onClick={() => mapStore.setIsDrawing(false)}
+            onClick={() => {
+              mapStore.setIsDrawing(false);
+              setNotification({ text: "Tap/click a dock to select." });
+            }}
           />
           <FontAwesomeIcon
             icon={faCircleNodes}
@@ -38,7 +45,10 @@ export const DrawingMenu = () => {
                 ? "text-white bg-gray-700"
                 : "text-amber-500 bg-gray-500"
             )}
-            onClick={() => mapStore.setIsDrawing(true)}
+            onClick={() => {
+              mapStore.setIsDrawing(true);
+              setNotification({ text: "Click/tap on the map to draw." });
+            }}
           />
         </div>
         <button

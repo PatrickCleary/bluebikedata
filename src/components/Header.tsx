@@ -80,7 +80,7 @@ const getTitle = (
     return (
       <h1>
         Trips from{" "}
-        <span className="italic text-sm text-amber-500">
+        <span className="italic text-amber-500">
           {data_23 ? data_23[startStations[0]]?.name : "..."}
         </span>
       </h1>

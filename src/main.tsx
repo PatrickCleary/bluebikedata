@@ -10,6 +10,8 @@ import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetShapeFromId, useSetStartStations } from "./store/MapStore";
 import { DateLabel } from "./components/DateLabel";
+import { MobileShare } from "./components/MobileShare";
+import { ShareButton } from "./components/ShareButton";
 
 export const Main = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +41,10 @@ export const Main = () => {
                     <DateLabel />
                     <DesktopMenu />
                 </div>
-                <MobileFilters />
+                <div className="w-full flex justify-between md:hidden">
+                    <MobileFilters />
+                    <ShareButton />
+                </div>
             </div>
             <div className="absolute z-0 h-full w-full">
                 <MapView setIsLoading={setIsLoading} />
