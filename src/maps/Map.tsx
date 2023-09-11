@@ -25,7 +25,7 @@ export const MapView: React.FC<{
 }> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
-  const shape = useConfigStore((store) => store.shape);
+  const project = useConfigStore((store) => store.project);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
@@ -56,7 +56,7 @@ export const MapView: React.FC<{
           style={{ width: "100%", height: "100%" }}
         >
           <Pane name="projects">
-            {shape ? PROJECT_OUTLINES[shape].shape : null}
+            {project ? PROJECT_OUTLINES[project].shape : null}
           </Pane>
           <StationMarkerFactory setIsLoading={setIsLoading} />
 
@@ -75,7 +75,7 @@ export const MapView: React.FC<{
         </MapContainer>
       </>
     ),
-    [mapStore, shape]
+    [mapStore, project]
   );
 
   return displayMap;
@@ -93,7 +93,7 @@ const UpdateMapValues: React.FC = () => {
   useMapEvent("click", (e) => {
     if (!mapStore.isDrawing) return null;
     const latLng = e.latlng;
-    mapStore.addToStartShape([latLng.lat, latLng.lng]);
+    mapStore.addToStartShape([parseFloat(latLng.lat.toPrecision(7)), parseFloat(latLng.lng.toPrecision(7))]);
     setStartStations();
   });
 

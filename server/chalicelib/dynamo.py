@@ -27,7 +27,7 @@ def read_from_secondary_index(table_name, index_name, key_condition_expression, 
     return response['Items']
 
 
-def read_from_shape_table(table_name, id):
+def read_from_config_table(table_name, id):
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table(table_name)
     response =  table.query(

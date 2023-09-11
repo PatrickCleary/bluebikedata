@@ -50,17 +50,17 @@
         ]
       }
     },
-    "shapesDB": {
+    "configDB": {
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
-        "TableName": "BlueBikeData-Shapes",
+        "TableName": "BlueBikeData-Configs",
         "KeySchema": [
           {
             "AttributeName": "id",
             "KeyType": "HASH"
           },
           {
-            "AttributeName": "shape",
+            "AttributeName": "timestamp",
             "KeyType": "RANGE"
           }
         ],
@@ -71,9 +71,9 @@
             "AttributeType": "S"
           },
           {
-            "AttributeName": "shape",
+            "AttributeName": "timestamp",
             "AttributeType": "S"
-          } 
+          }
         ],
         "BillingMode": "PAY_PER_REQUEST"
       }
