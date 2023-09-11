@@ -4,15 +4,17 @@ import { Transition } from "@headlessui/react";
 import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
 import React, { Fragment, useEffect, useState } from "react";
-import { saveShape } from "../api/shapes";
+import { saveConfig } from "../api/shapes";
 import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";
+import { useConfigStore } from "../store/ConfigStore";
 export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
     const setNotification = useNotificationStore((store) => store.setNotification);
     const mapStore = useMapStore((store) => store);
+    const configStore = useConfigStore((store) => store);
     const isShapeCreated = !mapStore.startShape?.length;
     const isMobile = !useBreakpoint("md");
     useEffect(() => {
@@ -28,11 +30,25 @@ export const ShareButton = () => {
             url.searchParams.set("id", shareID);
             navigator.clipboard.writeText(url.toString());
         }
-        if (!shareID && mapStore.startShape?.length) {
+        if (!shareID) {
             const newID = uuidv4().slice(0, 8);
             url.searchParams.set("id", newID);
             navigator.clipboard.writeText(url.toString());
-            await saveShape(mapStore.startShape, newID);
+            const station = mapStore.startShape?.length ? undefined : configStore.startStations?.[0]
+
+            await saveConfig({
+                id: newID,
+                version: '1',
+                configParams: {
+                    center: [40, -71],
+                    zoom: 13,
+                    ridershipMin: configStore.ridershipMin,
+                    shape: mapStore.startShape,
+                    project: configStore.project,
+                    date: configStore.date,
+                    station: station,
+                }
+            });
             setShareID(newID);
         } else {
             navigator.clipboard.writeText(url.toString());
@@ -41,7 +57,7 @@ export const ShareButton = () => {
 
     useEffect(() => {
         setShareID(undefined);
-    }, [mapStore.startShape]);
+    }, [mapStore, configStore]);
 
     if (isMobile)
         return (

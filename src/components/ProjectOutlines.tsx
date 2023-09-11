@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { PROJECT_OUTLINES } from "../constants/shapes";
-import { useConfigStore, useUpdateShape } from "../store/ConfigStore";
+import { useConfigStore, useUpdateProject } from "../store/ConfigStore";
 
 export const ProjectOutlines = () => {
-  const updateShape = useUpdateShape();
-  const { shape } = useConfigStore();
+  const updateShape = useUpdateProject();
+  const { project: shape } = useConfigStore();
   return (
     <div className="flex flex-col gap-1">
       <h3 className="text-sm w-full italix">Projects</h3>

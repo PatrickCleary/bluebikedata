@@ -3,33 +3,29 @@ import "./App.css";
 import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
-import { useConfigStore } from "./store/ConfigStore";
 import { ShapeSelection as DesktopMenu } from "./components/ShapeSelection";
 import { NowDrawingPopup } from "./components/NowDrawingPopup";
 import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
-import { useSetShapeFromId, useSetStartStations } from "./store/MapStore";
+import { useSetConfigFromId } from "./store/MapStore";
 import { DateLabel } from "./components/DateLabel";
 import { ShareButton } from "./components/ShareButton";
 
 export const Main = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const setShapeFromId = useSetShapeFromId();
-    const setStartStations = useSetStartStations();
+    const setConfigFromId = useSetConfigFromId();
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const loadFromParams = useConfigStore((store) => store.loadFromParams);
     useEffect(() => {
-        loadFromParams(Object.fromEntries(searchParams.entries()));
         const url = new URL(window.location.toString())
         url.searchParams.delete('id')
         window.history.replaceState(null, '', url);
         const id = searchParams.get('id')
         if (id) {
-            setShapeFromId(id);
+            setConfigFromId(id);
             searchParams.delete('id')
             setSearchParams(searchParams)
         }
-    }, [loadFromParams, searchParams, setSearchParams, setShapeFromId, setStartStations])
+    }, [searchParams, setSearchParams, setConfigFromId])
 
 
     return (
@@ -49,7 +45,6 @@ export const Main = () => {
                 <MapView setIsLoading={setIsLoading} />
             </div>
             <NowDrawingPopup />
-            {/* <StationCountPopUp /> */}
 
             {isLoading ? <Loading /> : null}
         </div>

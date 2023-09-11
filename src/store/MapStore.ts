@@ -1,7 +1,7 @@
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllData } from "../api/all_data";
-import { getShape } from "../api/shapes";
+import { getConfig } from "../api/shapes";
 import { pointInsidePolygon } from "../helpers/testLocation";
 import { useConfigStore } from "./ConfigStore";
 
@@ -79,17 +79,21 @@ export const useSetStartStations = () => {
   };
 };
 
-export const useSetShapeFromId = () => {
+export const useSetConfigFromId = () => {
   const setStartShape = useMapStore((store) => store.setStartShape);
+  const setFromConfig = useConfigStore((store) => store.setFromConfig);
   const setStartStations = useSetStartStations();
   return async (id: string) => {
-    const shape = await getShape(id);
-    const formattedShape = JSON.parse(shape[0].shape);
-    const reassignIds = formattedShape.map((point, index) => ({
-      ...point,
-      id: index,
-    }));
-    setStartShape(reassignIds);
-    setStartStations(reassignIds);
+    const config = await getConfig(id);
+    const formattedShape = config[0].shape;
+    if (formattedShape.length) {
+      const reassignIds = formattedShape.map((point, index) => ({
+        ...point,
+        id: index,
+      }));
+      setStartShape(reassignIds);
+      setStartStations(reassignIds);
+    }
+    setFromConfig(config[0]);
   };
 };

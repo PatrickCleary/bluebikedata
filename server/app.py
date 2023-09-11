@@ -1,3 +1,4 @@
+from decimal import Decimal
 import json
 from chalice import Chalice, CORSConfig, ForbiddenError
 import os
@@ -18,15 +19,15 @@ def get_destinations():
     return json.dumps(get_destinations_by_count.get_destinations_by_count(query["station_id"], query["start_time"], query["end_time"]))
 
 
-@app.route("/api/saveshape", cors=True, methods=['POST'])
+@app.route("/api/saveconfig", cors=True, methods=['POST'])
 def save_shapes():
-    shape = app.current_request.json_body
-    if(len(shape['shape']) > 50):
+    params = json.loads(json.dumps(app.current_request.json_body), parse_float=Decimal)
+    if(len(params['configParams']['shape']) > 150):
         raise ForbiddenError("Shape is too large.")
-    return shapes_api.save_shape(shape)
+    return shapes_api.save_config(params)
 
-@app.route("/api/getshape", cors=True)
-def get_shapes():
+@app.route("/api/getconfig", cors=True)
+def get_config():
     query = app.current_request.query_params
     print(query['id'])
-    return shapes_api.get_shape(query['id'])
+    return shapes_api.get_config(query['id'])
