@@ -68,6 +68,8 @@ export const ContactAndInfo = () => {
                         patrickcleary.com
                       </a>
                     </p>
+                    <br />
+                    <p>This project is a private endeavor and is not affiliated with Bluebikes.</p>
                   </div>
 
                   <div className="mt-4">

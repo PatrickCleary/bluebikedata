@@ -61,7 +61,7 @@ export const InfoModal = () => {
                     as="h3"
                     className="text-lg font-medium leading-6 "
                   >
-                    Blue Bike Data
+                    Bluebikes Data
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm ">
