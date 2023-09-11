@@ -55,12 +55,11 @@ export const MapView: React.FC<{
           scrollWheelZoom={true}
           style={{ width: "100%", height: "100%" }}
         >
-          <Pane name="stations">
-            <StationMarkerFactory setIsLoading={setIsLoading} />
-          </Pane>
           <Pane name="projects">
             {shape ? PROJECT_OUTLINES[shape].shape : null}
           </Pane>
+          <StationMarkerFactory setIsLoading={setIsLoading} />
+
           <Pane name={"originDocks"}>
             <Polygon
               pathOptions={{ color: "#f59e0b80" }}
