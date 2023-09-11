@@ -6,6 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { ContactAndInfo } from "./ContactAndInfo";
 
 export const InfoModal = () => {
   let [isOpen, setIsOpen] = useState(true);
@@ -72,12 +73,8 @@ export const InfoModal = () => {
                     <p className="font-bold text-sm">How to use:</p>
                     <ul style={{ listStyleType: "disc" }} className="pl-4">
                       <li>
-                        Tap/click a station{" "}
-                        <FontAwesomeIcon
-                          icon={faCircle}
-                          className="text-amber-500"
-                        />{" "}
-                        to select as the <b>origin</b> station or use the multiselect{" "}
+                        Tap/click a station to select as the <b>origin</b>{" "}
+                        station or use the multiselect{" "}
                         <FontAwesomeIcon
                           icon={faCircleNodes}
                           className="text-amber-500"
@@ -85,14 +82,14 @@ export const InfoModal = () => {
                         to draw an <b>origin</b> region.
                       </li>
                       <li>
-                        The size of the other docks{" "}
+                        Other docks{" "}
                         <FontAwesomeIcon
                           icon={faCircle}
                           className="text-sky-400 opacity-60"
-                        />{" "}
-                        represent the number of trips from the <b>origin</b> dock/region which terminated at the dock.
+                        /> will inflate according to the number of trips which end at that dock.
+
                       </li>
-                      <li>hover over a dock to get exact numbers.</li>
+                      <li>hover over a dock to see exact numbers.</li>
                     </ul>
                   </div>
 

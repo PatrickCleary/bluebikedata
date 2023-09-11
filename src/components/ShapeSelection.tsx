@@ -1,5 +1,6 @@
 import React from "react";
 import { useBreakpoint } from "../helpers/breakpoints";
+import { ContactAndInfo } from "./ContactAndInfo";
 import { DateToggle } from "./DateToggle";
 import { DrawingMenu } from "./DrawingMenu";
 import { ProjectOutlines } from "./ProjectOutlines";
@@ -15,8 +16,9 @@ export const ShapeSelection = () => {
       <hr className="md:h-[1px] h-full invisible md:visible md:w-full border-gray-600" />
 
       {!isMobile ? <ProjectOutlines /> : null}
-      <div className="absolute bottom-4 invisible md:visible">
+      <div className="absolute flex-col  gap-2 items-center flex bottom-4 invisible md:visible">
         <ShareButton />
+        <ContactAndInfo />
       </div>
     </div>
   );

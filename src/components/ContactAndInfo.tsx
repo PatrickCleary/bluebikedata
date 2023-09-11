@@ -19,7 +19,7 @@ export const ContactAndInfo = () => {
         className="flex items-start justify-start pointer-events-auto"
         onClick={openModal}
       >
-        <p className="text-gray-100 underline">Contact</p>
+        <p className="text-gray-100 text-sm underline">Contact</p>
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -59,9 +59,8 @@ export const ContactAndInfo = () => {
                     Contact
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p>Email me: patrickdaviscleary@gmail.com</p>
+                    <p>patrickdaviscleary@gmail.com</p>
                     <p>
-                      My website:{" "}
                       <a
                         href="https://www.patrickcleary.com"
                         className="text-blue-400"
