@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
 import { PROJECT_OUTLINES } from "../constants/shapes";

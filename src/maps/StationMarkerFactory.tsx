@@ -17,7 +17,6 @@ export const StationMarkerFactory: React.FC<{
 
 
   const mapStore = useMapStore((store) => store);
-  const data_22 = useQuery(["all_stations_2022"], () => fetchAllData("2022"));
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
   const data_22_static = useMonthlyDestinations(
     configStore.startStations ?? [],

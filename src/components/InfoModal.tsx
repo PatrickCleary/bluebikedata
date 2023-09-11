@@ -6,7 +6,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { ContactAndInfo } from "./ContactAndInfo";
 
 export const InfoModal = () => {
   let [isOpen, setIsOpen] = useState(true);
