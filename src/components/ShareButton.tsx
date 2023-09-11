@@ -15,7 +15,6 @@ export const ShareButton = () => {
     const setNotification = useNotificationStore((store) => store.setNotification);
     const mapStore = useMapStore((store) => store);
     const configStore = useConfigStore((store) => store);
-    const isShapeCreated = !mapStore.startShape?.length;
     const isMobile = !useBreakpoint("md");
     useEffect(() => {
         if (showMsg) {
@@ -81,16 +80,14 @@ export const ShareButton = () => {
         <div className="flex flex-row py-1 border box-border border-gray-600 rounded-md hover:bg-gray-500 relative">
             <button
                 className={classNames(
-                    !isShapeCreated ? "text-neutral-700" : "text-neutral-100",
-                    "rounded-full gap-2 flex flex-row px-10 items-center py-[2px]"
+                    "rounded-full gap-2 flex flex-row px-10 items-center py-[2px] text-neutral-100"
                 )}
                 onClick={saveShapeById}
             >
                 <FontAwesomeIcon
                     icon={faShareFromSquare}
                     className={classNames(
-                        isShapeCreated ? "text-neutral-100" : "text-neutral-700",
-                        "h-4 w-4 cursor-pointer"
+                        "h-4 w-4 cursor-pointer text-neutral-100"
                     )}
                 />
 
