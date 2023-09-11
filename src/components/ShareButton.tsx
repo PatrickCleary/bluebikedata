@@ -11,6 +11,7 @@ export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
     const mapStore = useMapStore((store) => store)
+    const isShapeCreated = !mapStore.startShape?.length;
     useEffect(() => {
         if (showMsg) {
             setTimeout(() => setShowMsg(false), 1500)
@@ -31,7 +32,10 @@ export const ShareButton = () => {
             navigator.clipboard.writeText(url.toString())
             await saveShape(mapStore.startShape, newID)
             setShareID(newID)
+        } else {
+            navigator.clipboard.writeText(url.toString())
         }
+
     }
 
     useEffect(() => {
@@ -42,13 +46,12 @@ export const ShareButton = () => {
         <div className="flex flex-row py-1 border box-border border-gray-600 rounded-md hover:bg-gray-500 relative">
             <button
                 className={classNames(
-                    !mapStore.startShape?.length ? "text-neutral-700" : "text-neutral-100",
+                    !isShapeCreated ? "text-neutral-700" : "text-neutral-100",
                     "rounded-full gap-2 flex flex-row px-10 items-center py-[2px]"
                 )}
-                disabled={!mapStore.startShape?.length}
                 onClick={saveShapeById}
             >
-                <FontAwesomeIcon icon={faShareFromSquare} className={classNames(mapStore.startShape?.length ? "text-neutral-100" : "text-neutral-700", "h-4 w-4 cursor-pointer")} />
+                <FontAwesomeIcon icon={faShareFromSquare} className={classNames(isShapeCreated ? "text-neutral-100" : "text-neutral-700", "h-4 w-4 cursor-pointer")} />
 
                 <p>Share</p>
 

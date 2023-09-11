@@ -16,7 +16,7 @@ export const DateLabel = () => {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 -translate-y-full"
             >
-                <h3 className="fixed font-bold font-mono text-2xl shadow-md text-white">{`June ${date}`}</h3>
+                <h3 className="fixed font-bold font-mono text-2xl text-white">{`June ${date}`}</h3>
             </Transition>
             <Transition
                 show={date === "2023"}
@@ -28,7 +28,7 @@ export const DateLabel = () => {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-full"
             >
-                <h3 className="fixed font-bold font-mono text-2xl shadow-md text-white">{`June ${date}`}</h3>
+                <h3 className="fixed font-bold font-mono text-2xl text-white">{`June ${date}`}</h3>
             </Transition>
         </div>
     );
