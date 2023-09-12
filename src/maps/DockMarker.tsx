@@ -3,23 +3,21 @@ import { LatLngExpression } from "leaflet";
 import { CircleMarker, Tooltip } from "react-leaflet";
 import classNames from "classnames";
 
-interface StationMarkerProps {
+interface DockMarkerProps {
   position: LatLngExpression;
   name: string;
   select: (() => void) | undefined;
   inside: boolean;
   isMobile: boolean;
   startStationsSelected: boolean;
-  percentageValue: number | undefined;
   absValue: number | undefined;
   size: number;
 }
 
-export const StationMarker: React.FC<StationMarkerProps> = ({
+export const DockMarker: React.FC<DockMarkerProps> = ({
   position,
   name,
   select,
-  percentageValue,
   startStationsSelected,
   absValue,
   isMobile,

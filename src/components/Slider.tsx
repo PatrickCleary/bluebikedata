@@ -1,10 +1,10 @@
 import Slider from "rc-slider";
 import React from "react";
-import { useConfigStore, useUpdateRidershipMin } from "../store/ConfigStore";
+import { useConfigStore } from "../store/ConfigStore";
 
 export const TripSlider = () => {
   const configStore = useConfigStore((store) => store);
-  const updateRidership = useUpdateRidershipMin();
+  const setRidership = useConfigStore((store) => store.setRidership);
 
   return (
     <div className="max-w-[20rem] w-full md:w-auto flex-grow flex flex-col">
@@ -15,7 +15,7 @@ export const TripSlider = () => {
           className="h-full bg-gray-900 px-2 outline-none w-20"
           defaultValue={0}
           onChange={(event) => {
-            updateRidership(event.target.value === "" ? 0 : event.target.value);
+            setRidership(event.target.value === "" ? 0 : parseInt(event.target.value));
           }}
           value={configStore.ridershipMin}
         />
@@ -24,7 +24,7 @@ export const TripSlider = () => {
           value={configStore.ridershipMin}
           max={150}
           onChange={(value) =>
-            Array.isArray(value) ? value[0] : updateRidership(value)
+            Array.isArray(value) ? undefined : setRidership(value)
           }
           className="h-full py-2"
         />

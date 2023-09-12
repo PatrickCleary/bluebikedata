@@ -1,9 +1,9 @@
 export const getSize = (
-  inside,
-  isMobile,
-  startStationsSelected,
-  absValue,
-  percentageValue
+  inside: boolean | undefined,
+  isMobile: boolean,
+  startStationsSelected: boolean | undefined,
+  absValue: number | undefined,
+  percentageValue: number
 ) => {
   if (inside) return isMobile ? 4 : 6;
   if (startStationsSelected && absValue === undefined) {

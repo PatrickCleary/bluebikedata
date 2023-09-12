@@ -4,7 +4,7 @@ import { Transition } from "@headlessui/react";
 import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
 import React, { Fragment, useEffect, useState } from "react";
-import { saveConfig } from "../api/shapes";
+import { saveConfig } from "../api/config";
 import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";

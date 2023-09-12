@@ -1,7 +1,7 @@
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllData } from "../api/all_data";
-import { getConfig } from "../api/shapes";
+import { getConfig } from "../api/config";
 import { pointInsidePolygon } from "../helpers/testLocation";
 import { useConfigStore } from "./ConfigStore";
 

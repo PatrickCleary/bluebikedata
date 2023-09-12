@@ -4,7 +4,7 @@ import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
 import { ShapeSelection as DesktopMenu } from "./components/ShapeSelection";
-import { NowDrawingPopup } from "./components/NowDrawingPopup";
+import { NotificationPopUp } from "./components/NowDrawingPopup";
 import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetConfigFromId } from "./store/MapStore";
@@ -44,7 +44,7 @@ export const Main = () => {
             <div className="absolute z-0 h-full w-full">
                 <MapView setIsLoading={setIsLoading} />
             </div>
-            <NowDrawingPopup />
+            <NotificationPopUp />
 
             {isLoading ? <Loading /> : null}
         </div>
