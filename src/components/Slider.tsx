@@ -8,7 +8,7 @@ export const TripSlider = () => {
 
   return (
     <div className="max-w-[20rem] w-full md:w-auto flex-grow flex flex-col">
-      <p className="text-gray-300 italic">Trip min.</p>
+      <p className="text-gray-300 italic">trip count minimum</p>
 
       <div className="h-8 flex flex-row gap-4 items-center ">
         <input
