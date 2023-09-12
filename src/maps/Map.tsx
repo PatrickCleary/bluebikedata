@@ -9,7 +9,7 @@ import {
   useMapEvent,
 } from "react-leaflet";
 
-import { StationMarkerFactory } from "./StationMarkerFactory";
+import { StationMarkerFactory } from "./DockMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore, useSetStartStations } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

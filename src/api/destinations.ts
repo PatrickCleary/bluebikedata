@@ -2,7 +2,6 @@ import { useQuery, useQueries } from "@tanstack/react-query";
 import { DATE_RANGES } from "../constants";
 
 import { API_URL } from "../constants/api";
-import { useConfigStore } from "../store/ConfigStore";
 import {
   FetchDestinationsOptions,
   FetchDestinationsParams,

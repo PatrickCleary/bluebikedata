@@ -8,7 +8,7 @@ import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
 import { StationTrip } from "../types/Data";
-import { StationMarker } from "./StationMarker";
+import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{
   setIsLoading: React.Dispatch<SetStateAction<boolean>>;
@@ -60,7 +60,7 @@ export const StationMarkerFactory: React.FC<{
             : 0;
           const size = getSize(inside, isMobile, startStationsSelected, absValue, percentageValue)
           return (
-            <StationMarker
+            <DockMarker
               position={[station["latitude"], station["longitude"]]}
               select={
                 mapStore.isDrawing
@@ -71,7 +71,6 @@ export const StationMarkerFactory: React.FC<{
                   }
               }
               key={station["id"]}
-              percentageValue={percentageValue}
               absValue={absValue}
               startStationsSelected={Boolean(startStationsSelected)}
               isMobile={isMobile}
