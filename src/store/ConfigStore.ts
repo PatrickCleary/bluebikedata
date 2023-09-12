@@ -1,4 +1,3 @@
-import { useSearchParams } from "react-router-dom";
 import { create } from "zustand";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { DateOptions } from "../types/Data";
@@ -64,23 +63,6 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     return set(() => configStoreObject);
   },
 }));
-
-// TODO: The following 3 functions were made to be used with search params. I stopped using URL params so these can be simplified.
-export const useUpdateRidershipMin = () => {
-  const setRidership = useConfigStore((store) => store.setRidership);
-  return (ridershipMin: string | number) => {
-    const _ridershipMin =
-      typeof ridershipMin === "number" ? ridershipMin : parseInt(ridershipMin);
-    setRidership(_ridershipMin);
-  };
-};
-
-export const useUpdateProject = () => {
-  const setProject = useConfigStore((store) => store.setProject);
-  return (project?: string) => {
-    setProject(project);
-  };
-};
 
 export const useClearStartStations = () => {
   const setStartStations = useConfigStore((store) => store.setStartStations);

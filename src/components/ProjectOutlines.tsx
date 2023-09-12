@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { PROJECT_OUTLINES } from "../constants/shapes";
-import { useConfigStore, useUpdateProject } from "../store/ConfigStore";
+import { useConfigStore } from "../store/ConfigStore";
 
 export const ProjectOutlines = () => {
-  const updateShape = useUpdateProject();
+  const setProject = useConfigStore((store) => store.setProject);
   const { project: shape } = useConfigStore();
   return (
     <div className="flex flex-col gap-1">
@@ -19,9 +19,9 @@ export const ProjectOutlines = () => {
               )}
               onClick={() => {
                 if (selected) {
-                  updateShape(undefined);
+                  setProject(undefined);
                 } else {
-                  updateShape(shapeObject.key);
+                  setProject(shapeObject.key);
                 }
               }}
             >
