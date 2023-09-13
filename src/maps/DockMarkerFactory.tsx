@@ -18,21 +18,18 @@ export const StationMarkerFactory: React.FC<{
 
   const mapStore = useMapStore((store) => store);
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
-  const data_22_static = useMonthlyDestinations(
+
+  const data = useMonthlyDestinations(
     configStore.startStations ?? [],
-    "2022"
-  );
-  const data_23_static = useMonthlyDestinations(
-    configStore.startStations ?? [],
-    "2023"
+    configStore.date.year,
+    configStore.date.month
   );
   const isMobile = !useBreakpoint("md");
   const startStationsSelected =
     configStore.startStations && configStore.startStations.length > 0;
 
-  if (!data_23_static || !data_22_static || !data_23.data || data_23.isError)
+  if (!data || !data_23 || !data_23.data)
     return null;
-  const data = configStore.date === "2023" ? data_23_static : data_22_static;
 
   const maxSizeMultiplier = Math.log(.0001) / 100;
   setIsLoading(false);
@@ -42,8 +39,7 @@ export const StationMarkerFactory: React.FC<{
         .map((station: StationTrip) => {
           if (
             startStationsSelected &&
-            !data_23_static[station.id] &&
-            !data_22_static[station.id]
+            !data[station.id]
           )
             return null;
 

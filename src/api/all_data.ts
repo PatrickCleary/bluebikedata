@@ -7,24 +7,30 @@ export const fetchAllData = (year: string): Promise<StationTripMap> => {
 };
 
 export const fetchMonthlyDestinations = (
-  year: string
+  year: number,
+  month: number
 ): Promise<Destinations> => {
-  const url = new URL(`/static/${year}_output.json`, window.location.origin);
+  const url = new URL(
+    `/static/destinations_data/output_${year.toString()}${(month + 1)
+      .toString()
+      .padStart(2, "0")}.json`,
+    window.location.origin
+  );
   return fetch(url.toString()).then((resp) => resp.json());
 };
 
 export const useMonthlyDestinations = (
   stations: string[],
-  year: "2022" | "2023"
+  year: number,
+  month: number
 ): { [key: string]: number } | undefined => {
-  const destinationsData = useQuery(["destinations", year], () =>
-    fetchMonthlyDestinations(year)
+  const destinationsData = useQuery(["destinations", year, month], () =>
+    fetchMonthlyDestinations(year, month)
   );
   if (!destinationsData.data) return undefined;
   const totals = {};
   stations.forEach((station) => {
     if (!destinationsData.data[station]) return undefined;
-
     destinationsData.data[station].forEach((value) => {
       const [station, count] = Object.entries(value).flat();
       if (!totals[station]) totals[station] = count;

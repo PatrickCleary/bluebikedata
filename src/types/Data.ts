@@ -28,7 +28,10 @@ export interface AggregatedTripData {
   mean_distance_miles: number;
 }
 
-export type DateOptions = "2022" | "2023";
+export type DateOptions = {
+  month: number;
+  year: number;
+};
 
 export interface Destinations {
   [startStation: string]: { [endStation: string]: number }[];

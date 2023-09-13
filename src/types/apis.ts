@@ -21,7 +21,7 @@ export type ConfigParams = {
   shape?: { id: string; loc: LatLngExpression }[];
   project?: string;
   ridershipMin?: number;
-  date?: string;
+  date?: { year: number; month: number };
   station?: string; // Only used when no shape is drawn and there is a station selected.
 };
 

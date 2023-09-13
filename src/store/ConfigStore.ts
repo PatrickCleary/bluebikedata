@@ -16,7 +16,7 @@ interface ConfigStore {
   date: DateOptions;
   startStations: string[] | undefined;
   project?: string;
-
+  incrementMonth: () => void;
   setRidership: (ridershipMin: string | number) => void;
   setProject: (shape?: string) => void;
   setDate: (date: DateOptions) => void;
@@ -30,7 +30,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   ridershipMin: 0,
   metric: "total",
   project: undefined,
-  date: "2023",
+  date: { year: 2023, month: 0 },
   startStations: undefined,
   setProject: (project) => set(() => ({ project: project })),
   setRidership: (ridershipMin) => {
@@ -41,6 +41,13 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     }));
   },
   setDate: (date) => set(() => ({ date: date })),
+  incrementMonth: () => {
+    const date = get().date;
+    if (date.month < 11)
+      return set(() => ({ date: { month: date.month + 1, year: date.year } }));
+    if (date.month === 11)
+      return set(() => ({ date: { month: 0, year: date.year + 1 } }));
+  },
   setOrClearStartStation: (startStation) => {
     const startStations = get().startStations;
     if (startStations?.includes(startStation))
