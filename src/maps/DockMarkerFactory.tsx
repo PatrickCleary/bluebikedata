@@ -20,7 +20,7 @@ export const StationMarkerFactory: React.FC<{
   const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
 
   const data = useMonthlyDestinations(
-    configStore.startStations ?? [],
+    configStore.startStations ?? undefined,
     configStore.date.year,
     configStore.date.month
   );
@@ -33,16 +33,21 @@ export const StationMarkerFactory: React.FC<{
 
   const maxSizeMultiplier = Math.log(.0001) / 100;
   setIsLoading(false);
+
   return (
     <LayerGroup>
       {Object.values(all_docks.data)
-        .map((station: StationTrip) => {
+        .map((station) => {
+          console.log(station.id)
           if (
-            startStationsSelected &&
-            !data[station.id]
-          )
+            // startStationsSelected &&
+            !data.includes[station.id.toString()]
+          ) {
+            // console.log('no', station.id)
             return null;
-
+          } else {
+            console.log(station.id)
+          }
           const inside = configStore.startStations?.includes(station.id)
           let absValue = data ? data[station.id] : undefined;
           if (
@@ -67,6 +72,7 @@ export const StationMarkerFactory: React.FC<{
                   }
               }
               key={station["id"]}
+              id={station["id"]}
               absValue={absValue}
               startStationsSelected={Boolean(startStationsSelected)}
               isMobile={isMobile}

@@ -13,11 +13,14 @@ export interface StationTripMap {
 export interface StationTrip {
   name: string;
   id: string;
-  latitude: number;
-  longitude: number;
-  values: { [key in TripDistancesType]: AggregatedTripData };
+  Latitude: number;
+  Longitude: number;
+  "Deployment Year"?: string;
+  District?: string;
+  Public?: boolean;
+  Total?: number;
+  LastUsed?: string;
 }
-
 export interface AggregatedTripData {
   total: number;
   median_trip_duration: number;

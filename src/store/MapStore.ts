@@ -69,7 +69,7 @@ export const useSetStartStations = () => {
       const originDocks = Object.values(docks)
         ?.filter((dock) =>
           pointInsidePolygon(
-            [dock.latitude, dock.longitude],
+            [dock.Latitude, dock.Longitude],
             loadedShapeOrCurrent
           )
         )

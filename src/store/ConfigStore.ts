@@ -30,7 +30,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   ridershipMin: 0,
   metric: "total",
   project: undefined,
-  date: { year: 2023, month: 0 },
+  date: { year: 2015, month: 0 },
   startStations: undefined,
   setProject: (project) => set(() => ({ project: project })),
   setRidership: (ridershipMin) => {

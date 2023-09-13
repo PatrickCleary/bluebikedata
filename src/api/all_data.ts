@@ -6,7 +6,7 @@ export const fetchAllData = (year: string): Promise<StationTripMap> => {
   return fetch(url.toString()).then((resp) => resp.json());
 };
 
-export const fetchAllDocks = (): Promise<any> => {
+export const fetchAllDocks = (): Promise<StationTripMap> => {
   const url = new URL(`/static/all_docks.json`, window.location.origin);
   return fetch(url.toString()).then((resp) => resp.json());
 };
@@ -25,13 +25,18 @@ export const fetchMonthlyDestinations = (
 };
 
 export const useMonthlyDestinations = (
-  stations: string[],
+  stations: string[] | undefined,
   year: number,
   month: number
-): { [key: string]: number } | undefined => {
+): { [key: string]: number } | string[] | undefined => {
   const destinationsData = useQuery(["destinations", year, month], () =>
     fetchMonthlyDestinations(year, month)
   );
+  if (!stations)
+    // If no start stations selected, just return all stations.
+    return destinationsData.data
+      ? Object.keys(destinationsData.data)
+      : undefined;
   if (!destinationsData.data) return undefined;
   const totals = {};
   stations.forEach((station) => {

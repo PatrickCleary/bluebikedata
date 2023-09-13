@@ -6,6 +6,7 @@ import classNames from "classnames";
 interface DockMarkerProps {
   position: LatLngExpression;
   name: string;
+  id: string;
   select: (() => void) | undefined;
   inside: boolean;
   isMobile: boolean;
@@ -17,6 +18,7 @@ interface DockMarkerProps {
 export const DockMarker: React.FC<DockMarkerProps> = ({
   position,
   name,
+  id,
   select,
   startStationsSelected,
   absValue,
@@ -61,7 +63,7 @@ export const DockMarker: React.FC<DockMarkerProps> = ({
       {!isMobile ? (
         <Tooltip >
           <p className="text-base">
-            {name} {absValue ? `- ${absValue}` : ""}
+            {id}{name} {absValue ? `- ${absValue}` : ""}
           </p>
         </Tooltip>
       ) : null}
