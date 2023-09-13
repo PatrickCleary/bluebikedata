@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import "./App.css";
 import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
@@ -29,7 +29,7 @@ export const Main = () => {
     }, [searchParams, setSearchParams, setConfigFromId])
 
     useEffect(() => {
-        ReactGA.pageview(window.location.pathname);
+        ReactGA.send({ hitType: "pageview" });
 
     }, [])
 
