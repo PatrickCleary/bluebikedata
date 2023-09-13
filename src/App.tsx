@@ -1,9 +1,11 @@
 import React from "react";
+import ReactGA from 'react-ga';
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Main } from "./main";
 
 function App() {
+  ReactGA.initialize('G-YLTKJQHRYM')
 
   const queryClient = new QueryClient({
     defaultOptions: {
