@@ -6,6 +6,11 @@ export const fetchAllData = (year: string): Promise<StationTripMap> => {
   return fetch(url.toString()).then((resp) => resp.json());
 };
 
+export const fetchAllDocks = (): Promise<any> => {
+  const url = new URL(`/static/all_docks.json`, window.location.origin);
+  return fetch(url.toString()).then((resp) => resp.json());
+};
+
 export const fetchMonthlyDestinations = (
   year: number,
   month: number

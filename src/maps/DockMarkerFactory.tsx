@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { SetStateAction } from "react";
 
 import { LayerGroup } from "react-leaflet";
-import { fetchAllData, useMonthlyDestinations } from "../api/all_data";
+import { fetchAllDocks, useMonthlyDestinations } from "../api/all_data";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
@@ -17,7 +17,7 @@ export const StationMarkerFactory: React.FC<{
 
 
   const mapStore = useMapStore((store) => store);
-  const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
+  const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
 
   const data = useMonthlyDestinations(
     configStore.startStations ?? [],
@@ -28,14 +28,14 @@ export const StationMarkerFactory: React.FC<{
   const startStationsSelected =
     configStore.startStations && configStore.startStations.length > 0;
 
-  if (!data || !data_23 || !data_23.data)
+  if (!data || !all_docks || !all_docks.data)
     return null;
 
   const maxSizeMultiplier = Math.log(.0001) / 100;
   setIsLoading(false);
   return (
     <LayerGroup>
-      {Object.values(data_23.data)
+      {Object.values(all_docks.data)
         .map((station: StationTrip) => {
           if (
             startStationsSelected &&
@@ -57,7 +57,7 @@ export const StationMarkerFactory: React.FC<{
           const size = getSize(inside, isMobile, startStationsSelected, absValue, percentageValue)
           return (
             <DockMarker
-              position={[station["latitude"], station["longitude"]]}
+              position={[station["Latitude"], station["Longitude"]]}
               select={
                 mapStore.isDrawing
                   ? undefined
