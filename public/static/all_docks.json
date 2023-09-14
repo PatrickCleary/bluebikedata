@@ -1,0 +1,6341 @@
+{
+  "X32999:18 Dorrance Warehouse": {
+    "id": "X32999",
+    "name": "18 Dorrance Warehouse",
+    "Latitude": 42.387151,
+    "Longitude": -71.075978,
+    "LastUsed": "2023-07-20 17:04:24"
+  },
+  "BCBS01:BCBS Hingham": {
+    "id": "BCBS01",
+    "name": "BCBS Hingham",
+    "Latitude": 42.167226,
+    "Longitude": -70.905558,
+    "LastUsed": "2023-07-13 00:40:10"
+  },
+  "BCBS02:BCBS Quincy": {
+    "id": "BCBS02",
+    "name": "BCBS Quincy",
+    "Latitude": 42.276005,
+    "Longitude": -71.03925,
+    "LastUsed": "2023-07-04 12:40:09"
+  },
+  "D32007:Boylston St at Charles St (Temp Winter Location)": {
+    "id": "D32007",
+    "name": "Boylston St at Charles St (Temp Winter Location)",
+    "Latitude": 42.352585,
+    "Longitude": -71.067703,
+    "LastUsed": "2023-04-12 21:12:49"
+  },
+  "M32086:Morgan Ave at North First St": {
+    "id": "M32086",
+    "name": "Morgan Ave at North First St",
+    "Latitude": 42.371977,
+    "Longitude": -71.075858,
+    "LastUsed": "2023-07-29 18:51:22"
+  },
+  "1:18 Dorrance Warehouse": {
+    "id": 1,
+    "name": "18 Dorrance Warehouse",
+    "Latitude": 42.387151,
+    "Longitude": -71.075978,
+    "LastUsed": "2022-12-22 16:47:23.9980"
+  },
+  "330:30 Dane St.": {
+    "id": 330,
+    "name": "30 Dane St.",
+    "Latitude": 42.38100143038052,
+    "Longitude": -71.10402522613185,
+    "LastUsed": "2019-01-31 23:00:46.3790"
+  },
+  "286:30 Dane St. (former)": {
+    "id": 286,
+    "name": "30 Dane St. (former)",
+    "Latitude": 42.38112284630097,
+    "Longitude": -71.10410027224134,
+    "LastUsed": "2018-10-23 14:40:41.7940"
+  },
+  "591:515 Somerville Ave (Temp. Winter Location)": {
+    "id": 591,
+    "name": "515 Somerville Ave (Temp. Winter Location)",
+    "Latitude": 42.38322726839113,
+    "Longitude": -71.10606908798218,
+    "LastUsed": "2023-03-09 14:09:24.4880"
+  },
+  "237:699 Mt Auburn St (former)": {
+    "id": 237,
+    "name": "699 Mt Auburn St (former)",
+    "Latitude": 42.37497659215716,
+    "Longitude": -71.14863030630659,
+    "LastUsed": "2018-10-23 14:28:58.0490"
+  },
+  "158:8D OPS 01": {
+    "id": 158,
+    "name": "8D OPS 01",
+    "Latitude": 0.0,
+    "Longitude": 0.0,
+    "LastUsed": "2018-07-18 15:17:17.6460"
+  },
+  "153:8D OPS 03": {
+    "id": 153,
+    "name": "8D OPS 03",
+    "Latitude": 45.505086,
+    "Longitude": -73.566921,
+    "LastUsed": "2017-02-10 15:28:34"
+  },
+  "229:8D QC Station 01": {
+    "id": 229,
+    "name": "8D QC Station 01",
+    "Latitude": 42.34503315560333,
+    "Longitude": -71.09664916992188,
+    "LastUsed": "2019-01-23 16:44:09.1690"
+  },
+  "230:8D QC Station 02": {
+    "id": 230,
+    "name": "8D QC Station 02",
+    "Latitude": 0.0,
+    "Longitude": 0.0,
+    "LastUsed": "2017-10-04 16:32:26"
+  },
+  "9:Agganis Arena - 925 Comm Ave.": {
+    "id": 9,
+    "name": "Agganis Arena - 925 Comm Ave.",
+    "Latitude": 42.351246,
+    "Longitude": -71.115639,
+    "LastUsed": "2017-01-06 16:09:34"
+  },
+  "66:Allston Green District - Commonwealth Ave & Griggs St": {
+    "id": 66,
+    "name": "Allston Green District - Commonwealth Ave & Griggs St",
+    "Latitude": 42.348607,
+    "Longitude": -71.13401,
+    "LastUsed": "2016-11-30 23:13:11"
+  },
+  "66:Allston Green District - Griggs St at Commonwealth Ave": {
+    "id": 66,
+    "name": "Allston Green District - Griggs St at Commonwealth Ave",
+    "Latitude": 42.34922469338298,
+    "Longitude": -71.13275302578586,
+    "LastUsed": "2019-11-30 20:34:33.1270"
+  },
+  "66:Allston Green District - Griggs St at Commonwealth Ave TEMPORARY WINTER LOCATION": {
+    "id": 66,
+    "name": "Allston Green District - Griggs St at Commonwealth Ave TEMPORARY WINTER LOCATION",
+    "Latitude": 42.34922469338298,
+    "Longitude": -71.13275302578586,
+    "LastUsed": "2018-03-31 23:58:30"
+  },
+  "422:American Legion Hwy at Canterbury St": {
+    "id": 422,
+    "name": "American Legion Hwy at Canterbury St",
+    "Latitude": 42.278811581565975,
+    "Longitude": -71.11687703062671,
+    "LastUsed": "2021-08-31 21:15:53.9670"
+  },
+  "113:Andrew Station - Dorchester Ave at Humboldt Pl": {
+    "id": 113,
+    "name": "Andrew Station - Dorchester Ave at Humboldt Pl",
+    "Latitude": 42.330716,
+    "Longitude": -71.057044,
+    "LastUsed": "2016-11-29 09:16:26"
+  },
+  "20:Aquarium Station - 200 Atlantic Ave.": {
+    "id": 20,
+    "name": "Aquarium Station - 200 Atlantic Ave.",
+    "Latitude": 42.35977,
+    "Longitude": -71.051601,
+    "LastUsed": "2017-01-06 17:15:50"
+  },
+  "244:Archdale Rd at Washington St (former)": {
+    "id": 244,
+    "name": "Archdale Rd at Washington St (former)",
+    "Latitude": 42.292706,
+    "Longitude": -71.121145,
+    "LastUsed": "2018-10-23 13:52:11.6580"
+  },
+  "308:BCBS Hingham": {
+    "id": 308,
+    "name": "BCBS Hingham",
+    "Latitude": 42.16722555541654,
+    "Longitude": -70.90555783370291,
+    "LastUsed": "2022-11-07 12:38:15.3200"
+  },
+  "317:BCBS Quincy": {
+    "id": 317,
+    "name": "BCBS Quincy",
+    "Latitude": 42.27600498756665,
+    "Longitude": -71.03924982267927,
+    "LastUsed": "2022-11-28 13:01:44.1220"
+  },
+  "122:BIDMC - Brookline at Burlington St": {
+    "id": 122,
+    "name": "BIDMC - Brookline at Burlington St",
+    "Latitude": 42.345733,
+    "Longitude": -71.100694,
+    "LastUsed": "2016-11-28 08:23:58"
+  },
+  "16:Back Bay / South End Station": {
+    "id": 16,
+    "name": "Back Bay / South End Station",
+    "Latitude": 42.34807412317439,
+    "Longitude": -71.07657015323639,
+    "LastUsed": "2017-01-06 21:41:31"
+  },
+  "293:Bartlett St at John Elliot Sq (former)": {
+    "id": 293,
+    "name": "Bartlett St at John Elliot Sq (former)",
+    "Latitude": 42.32946325922549,
+    "Longitude": -71.09015820552486,
+    "LastUsed": "2018-10-30 13:31:32.7380"
+  },
+  "53:Beacon St / Mass Ave": {
+    "id": 53,
+    "name": "Beacon St / Mass Ave",
+    "Latitude": 42.350851,
+    "Longitude": -71.089886,
+    "LastUsed": "2016-11-28 13:40:22"
+  },
+  "58:Beacon St at Arlington St": {
+    "id": 58,
+    "name": "Beacon St at Arlington St",
+    "Latitude": 42.35553628489709,
+    "Longitude": -71.07286870479584,
+    "LastUsed": "2018-09-30 21:58:38.4820"
+  },
+  "450:Beacon St at Englewood Ave": {
+    "id": 450,
+    "name": "Beacon St at Englewood Ave",
+    "Latitude": 42.33736915370925,
+    "Longitude": -71.14485977232107,
+    "LastUsed": "2020-08-25 10:13:09.9300"
+  },
+  "453:Beacon St at Hawes St": {
+    "id": 453,
+    "name": "Beacon St at Hawes St",
+    "Latitude": 42.34496783328529,
+    "Longitude": -71.11040176903771,
+    "LastUsed": "2020-10-15 10:31:31.9260"
+  },
+  "452:Beacon St at St. Paul St": {
+    "id": 452,
+    "name": "Beacon St at St. Paul St",
+    "Latitude": 42.34373094998716,
+    "Longitude": -71.11614107161584,
+    "LastUsed": "2020-12-16 12:39:09.7540"
+  },
+  "274:Bennington St at Constitution Beach (former)": {
+    "id": 274,
+    "name": "Bennington St at Constitution Beach (former)",
+    "Latitude": 42.385249,
+    "Longitude": -71.010601,
+    "LastUsed": "2018-10-26 14:12:38.8900"
+  },
+  "400:Big Papi Station": {
+    "id": 400,
+    "name": "Big Papi Station",
+    "Latitude": 42.34734473177431,
+    "Longitude": -71.1001680795016,
+    "LastUsed": "2019-11-30 20:26:54.1050"
+  },
+  "245:Blue Hill Ave at Almont St (former)": {
+    "id": 245,
+    "name": "Blue Hill Ave at Almont St (former)",
+    "Latitude": 42.27454525528758,
+    "Longitude": -71.09372016051566,
+    "LastUsed": "2018-10-22 18:21:12.3340"
+  },
+  "306:Blue Hill Ave at Southwood St (former)": {
+    "id": 306,
+    "name": "Blue Hill Ave at Southwood St (former)",
+    "Latitude": 42.31784,
+    "Longitude": -71.07796,
+    "LastUsed": "2018-10-28 07:23:38.7630"
+  },
+  "65:Boston Convention & Exhibition Center": {
+    "id": 65,
+    "name": "Boston Convention & Exhibition Center",
+    "Latitude": 42.3475,
+    "Longitude": -71.0441,
+    "LastUsed": "2017-01-02 20:16:11"
+  },
+  "13:Boston Medical Center -  East Concord at Harrison Ave": {
+    "id": 13,
+    "name": "Boston Medical Center -  East Concord at Harrison Ave",
+    "Latitude": 42.336437,
+    "Longitude": -71.073089,
+    "LastUsed": "2016-11-29 09:23:40"
+  },
+  "36:Boston Public Library - 700 Boylston St.": {
+    "id": 36,
+    "name": "Boston Public Library - 700 Boylston St.",
+    "Latitude": 42.349673,
+    "Longitude": -71.077303,
+    "LastUsed": "2017-01-07 11:56:12"
+  },
+  "369:Boston Public Market": {
+    "id": 369,
+    "name": "Boston Public Market",
+    "Latitude": 42.36254854409333,
+    "Longitude": -71.0573735833168,
+    "LastUsed": "2021-05-18 13:22:18.9790"
+  },
+  "55:Boylston / Mass Ave": {
+    "id": 55,
+    "name": "Boylston / Mass Ave",
+    "Latitude": 42.347265,
+    "Longitude": -71.088088,
+    "LastUsed": "2016-11-28 08:31:35"
+  },
+  "50:Boylston St / Berkeley St": {
+    "id": 50,
+    "name": "Boylston St / Berkeley St",
+    "Latitude": 42.350989,
+    "Longitude": -71.073644,
+    "LastUsed": "2016-11-28 10:22:51"
+  },
+  "81:Boylston St / Washington St": {
+    "id": 81,
+    "name": "Boylston St / Washington St",
+    "Latitude": 42.352409,
+    "Longitude": -71.062679,
+    "LastUsed": "2017-01-06 18:58:51"
+  },
+  "42:Boylston St at Arlington St TEMPORARY WINTER LOCATION": {
+    "id": 42,
+    "name": "Boylston St at Arlington St TEMPORARY WINTER LOCATION",
+    "Latitude": 42.352583438377,
+    "Longitude": -71.06766249993596,
+    "LastUsed": "2018-03-31 20:24:47"
+  },
+  "476:Boylston St at Charles St": {
+    "id": 476,
+    "name": "Boylston St at Charles St",
+    "Latitude": 42.3525760946701,
+    "Longitude": -71.06764405041758,
+    "LastUsed": "2022-12-06 14:00:15.0380"
+  },
+  "42:Boylston St at Charles St (Temp Winter Location)": {
+    "id": 42,
+    "name": "Boylston St at Charles St (Temp Winter Location)",
+    "Latitude": 42.35258524849636,
+    "Longitude": -71.06770277023315,
+    "LastUsed": "2023-03-31 22:58:57.7710"
+  },
+  "134:Boylston St at Dartmouth St FORMER": {
+    "id": 134,
+    "name": "Boylston St at Dartmouth St FORMER",
+    "Latitude": 42.350413,
+    "Longitude": -71.07655,
+    "LastUsed": "2020-07-27 09:46:47.7070"
+  },
+  "247:Boylston St at Jersey St (former)": {
+    "id": 247,
+    "name": "Boylston St at Jersey St (former)",
+    "Latitude": 42.344695708662215,
+    "Longitude": -71.09723791480063,
+    "LastUsed": "2018-10-24 09:06:43.6560"
+  },
+  "81:Boylston St at Washington St": {
+    "id": 81,
+    "name": "Boylston St at Washington St",
+    "Latitude": 42.352409,
+    "Longitude": -71.062679,
+    "LastUsed": "2018-04-30 21:57:50.6880"
+  },
+  "42:Boylston St. at Arlington St.": {
+    "id": 42,
+    "name": "Boylston St. at Arlington St.",
+    "Latitude": 42.35255006465652,
+    "Longitude": -71.06782078742981,
+    "LastUsed": "2017-01-06 18:21:38"
+  },
+  "61:Boylston at Fairfield": {
+    "id": 61,
+    "name": "Boylston at Fairfield",
+    "Latitude": 42.348762,
+    "Longitude": -71.082383,
+    "LastUsed": "2016-11-28 09:08:59"
+  },
+  "195:Brian P. Murphy Staircase at Child Street": {
+    "id": 195,
+    "name": "Brian P. Murphy Staircase at Child Street",
+    "Latitude": 42.37150494100319,
+    "Longitude": -71.07249312120985,
+    "LastUsed": "2018-04-30 18:57:55.3630"
+  },
+  "30:Brigham Cir / Huntington Ave": {
+    "id": 30,
+    "name": "Brigham Cir / Huntington Ave",
+    "Latitude": 42.334073,
+    "Longitude": -71.105221,
+    "LastUsed": "2017-01-06 01:40:09"
+  },
+  "175:Brighton Center": {
+    "id": 175,
+    "name": "Brighton Center",
+    "Latitude": 42.34894857235593,
+    "Longitude": -71.15027189254761,
+    "LastUsed": "2017-01-03 07:13:39"
+  },
+  "498:Broadway Opposite Norwood Ave  (Temp Winter Station)": {
+    "id": 498,
+    "name": "Broadway Opposite Norwood Ave  (Temp Winter Station)",
+    "Latitude": 42.396764,
+    "Longitude": -71.102376,
+    "LastUsed": "2023-03-13 08:59:09.8560"
+  },
+  "307:Broadway T Stop (former)": {
+    "id": 307,
+    "name": "Broadway T Stop (former)",
+    "Latitude": 42.3428,
+    "Longitude": -71.05751,
+    "LastUsed": "2018-10-30 07:43:39.5410"
+  },
+  "86:Brookline Village - Pearl Street @ MBTA": {
+    "id": 86,
+    "name": "Brookline Village - Pearl Street @ MBTA",
+    "Latitude": 42.332799,
+    "Longitude": -71.116205,
+    "LastUsed": "2015-11-23 21:42:23"
+  },
+  "86:Brookline Village - Pearl Street at MBTA": {
+    "id": 86,
+    "name": "Brookline Village - Pearl Street at MBTA",
+    "Latitude": 42.3329989199507,
+    "Longitude": -71.11634425762531,
+    "LastUsed": "2019-05-31 21:08:08.0170"
+  },
+  "193:Brookline Village - Station Street @ MBTA": {
+    "id": 193,
+    "name": "Brookline Village - Station Street @ MBTA",
+    "Latitude": 42.33376472623494,
+    "Longitude": -71.12046446660315,
+    "LastUsed": "2018-04-30 23:33:26.8480"
+  },
+  "193:Brookline Village - Station Street @ MBTA TEMPORARY WINTER LOCATION": {
+    "id": 193,
+    "name": "Brookline Village - Station Street @ MBTA TEMPORARY WINTER LOCATION",
+    "Latitude": 42.33376472623494,
+    "Longitude": -71.12046446660315,
+    "LastUsed": "2018-03-31 22:05:37"
+  },
+  "19:Buswell St. at Park Dr.": {
+    "id": 19,
+    "name": "Buswell St. at Park Dr.",
+    "Latitude": 42.347241,
+    "Longitude": -71.105301,
+    "LastUsed": "2017-01-07 10:55:40"
+  },
+  "6:Cambridge St. at Joy St.": {
+    "id": 6,
+    "name": "Cambridge St. at Joy St.",
+    "Latitude": 42.361174,
+    "Longitude": -71.065142,
+    "LastUsed": "2017-01-07 10:19:59"
+  },
+  "219:Central Square - East Boston": {
+    "id": 219,
+    "name": "Central Square - East Boston",
+    "Latitude": 42.373312125824704,
+    "Longitude": -71.0410200806291,
+    "LastUsed": "2018-04-28 12:45:29.8660"
+  },
+  "219:Central Square East Boston - Porter Street at London Street": {
+    "id": 219,
+    "name": "Central Square East Boston - Porter Street at London Street",
+    "Latitude": 42.37430131617823,
+    "Longitude": -71.03808671246952,
+    "LastUsed": "2017-01-03 09:40:31"
+  },
+  "278:Centre St at Seaverns Ave (former)": {
+    "id": 278,
+    "name": "Centre St at Seaverns Ave (former)",
+    "Latitude": 42.312120283566095,
+    "Longitude": -71.11429806807791,
+    "LastUsed": "2018-10-30 12:45:05.3900"
+  },
+  "60:Charles Circle - Charles St at Cambridge St TEMPORARY WINTER LOCATION": {
+    "id": 60,
+    "name": "Charles Circle - Charles St at Cambridge St TEMPORARY WINTER LOCATION",
+    "Latitude": 42.36075761041193,
+    "Longitude": -71.07132909824031,
+    "LastUsed": "2018-03-31 18:48:56"
+  },
+  "60:Charles Circle - Charles St. at Cambridge St.": {
+    "id": 60,
+    "name": "Charles Circle - Charles St. at Cambridge St.",
+    "Latitude": 42.360624982690496,
+    "Longitude": -71.0708999633789,
+    "LastUsed": "2016-11-22 09:05:49"
+  },
+  "537:Charles River Greenway - California St. at Fifth Ave": {
+    "id": 537,
+    "name": "Charles River Greenway - California St. at Fifth Ave",
+    "Latitude": 42.36455361053197,
+    "Longitude": -71.19100391864777,
+    "LastUsed": "2022-08-14 18:26:21.9240"
+  },
+  "120:Charles St and Beacon St": {
+    "id": 120,
+    "name": "Charles St and Beacon St",
+    "Latitude": 42.356052,
+    "Longitude": -71.069849,
+    "LastUsed": "2018-09-30 23:47:25.3770"
+  },
+  "120:Charles St at Beacon St": {
+    "id": 120,
+    "name": "Charles St at Beacon St",
+    "Latitude": 42.356052,
+    "Longitude": -71.069849,
+    "LastUsed": "2016-11-22 11:09:14"
+  },
+  "420:Charles St at Pinckney St": {
+    "id": 420,
+    "name": "Charles St at Pinckney St",
+    "Latitude": 42.35872530462163,
+    "Longitude": -71.07079532006537,
+    "LastUsed": "2019-11-21 13:19:10.6100"
+  },
+  "120:Charles st and Beacon St": {
+    "id": 120,
+    "name": "Charles st and Beacon St",
+    "Latitude": 42.356052,
+    "Longitude": -71.069849,
+    "LastUsed": "2017-09-30 22:30:42"
+  },
+  "94:Charlestown - Main St at Austin St": {
+    "id": 94,
+    "name": "Charlestown - Main St at Austin St",
+    "Latitude": 42.375603,
+    "Longitude": -71.064608,
+    "LastUsed": "2017-01-05 09:25:38"
+  },
+  "98:Charlestown - Warren St at Chelsea St": {
+    "id": 98,
+    "name": "Charlestown - Warren St at Chelsea St",
+    "Latitude": 42.371848,
+    "Longitude": -71.060292,
+    "LastUsed": "2017-01-05 08:41:26"
+  },
+  "277:Charlestown Navy Yard (former)": {
+    "id": 277,
+    "name": "Charlestown Navy Yard (former)",
+    "Latitude": 42.37401065384493,
+    "Longitude": -71.0548335313797,
+    "LastUsed": "2018-10-29 12:32:06.7100"
+  },
+  "209:Chelsea St at Saratoga St": {
+    "id": 209,
+    "name": "Chelsea St at Saratoga St",
+    "Latitude": 42.379772,
+    "Longitude": -71.027448,
+    "LastUsed": "2021-04-23 01:55:09.5720"
+  },
+  "195:Child St at North St": {
+    "id": 195,
+    "name": "Child St at North St",
+    "Latitude": 42.37228487344452,
+    "Longitude": -71.07383824772114,
+    "LastUsed": "2022-04-30 23:51:47.5050"
+  },
+  "59:Chinatown Gate Plaza - Surface Rd. at Beach St.": {
+    "id": 59,
+    "name": "Chinatown Gate Plaza - Surface Rd. at Beach St.",
+    "Latitude": 42.351356,
+    "Longitude": -71.059367,
+    "LastUsed": "2017-01-07 02:04:09"
+  },
+  "46:Christian Science Plaza": {
+    "id": 46,
+    "name": "Christian Science Plaza",
+    "Latitude": 42.343864,
+    "Longitude": -71.085918,
+    "LastUsed": "2017-01-07 11:34:20"
+  },
+  "384:Clarendon St at Commonwealth Ave": {
+    "id": 384,
+    "name": "Clarendon St at Commonwealth Ave",
+    "Latitude": 42.35219035145307,
+    "Longitude": -71.0760041699723,
+    "LastUsed": "2019-04-30 22:41:16.0300"
+  },
+  "252:Cleveland Circle (former)": {
+    "id": 252,
+    "name": "Cleveland Circle (former)",
+    "Latitude": 42.33553091872319,
+    "Longitude": -71.15072786808014,
+    "LastUsed": "2018-10-24 12:11:25.7840"
+  },
+  "257:Codman Square Library (former)": {
+    "id": 257,
+    "name": "Codman Square Library (former)",
+    "Latitude": 42.2873611,
+    "Longitude": -71.0711111,
+    "LastUsed": "2018-10-23 08:08:09.2280"
+  },
+  "3:Colleges of the Fenway": {
+    "id": 3,
+    "name": "Colleges of the Fenway",
+    "Latitude": 42.340021,
+    "Longitude": -71.100812,
+    "LastUsed": "2017-01-05 21:43:53"
+  },
+  "295:Columbia Rd at Tierney Community Center (former)": {
+    "id": 295,
+    "name": "Columbia Rd at Tierney Community Center (former)",
+    "Latitude": 42.33023264684929,
+    "Longitude": -71.0505741463021,
+    "LastUsed": "2018-10-30 08:40:57.4870"
+  },
+  "57:Columbus Ave at Massachusetts Ave": {
+    "id": 57,
+    "name": "Columbus Ave at Massachusetts Ave",
+    "Latitude": 42.34054261551636,
+    "Longitude": -71.08138847914233,
+    "LastUsed": "2019-11-30 18:47:49.8650"
+  },
+  "57:Columbus Ave. at Mass. Ave.": {
+    "id": 57,
+    "name": "Columbus Ave. at Mass. Ave.",
+    "Latitude": 42.340799,
+    "Longitude": -71.081572,
+    "LastUsed": "2017-01-07 09:15:11"
+  },
+  "9:Commonwealth Ave at Buick St": {
+    "id": 9,
+    "name": "Commonwealth Ave at Buick St",
+    "Latitude": 42.35062177153799,
+    "Longitude": -71.11288218766276,
+    "LastUsed": "2018-04-30 22:58:57.9720"
+  },
+  "249:Commonwealth Ave at Chiswick Rd (former)": {
+    "id": 249,
+    "name": "Commonwealth Ave at Chiswick Rd (former)",
+    "Latitude": 42.3402177416592,
+    "Longitude": -71.1517309399278,
+    "LastUsed": "2018-10-24 08:52:30.2630"
+  },
+  "243:Commonwealth Ave at Kelton St (former)": {
+    "id": 243,
+    "name": "Commonwealth Ave at Kelton St (former)",
+    "Latitude": 42.348368023549895,
+    "Longitude": -71.13997621466297,
+    "LastUsed": "2018-10-24 11:41:38.0100"
+  },
+  "64:Congress / Sleeper": {
+    "id": 64,
+    "name": "Congress / Sleeper",
+    "Latitude": 42.3511,
+    "Longitude": -71.0496,
+    "LastUsed": "2016-11-30 09:53:01"
+  },
+  "186:Congress St and Northern Ave": {
+    "id": 186,
+    "name": "Congress St and Northern Ave",
+    "Latitude": 42.3482032222746,
+    "Longitude": -71.0376513004303,
+    "LastUsed": "2017-01-05 09:37:59"
+  },
+  "44:Congress St at North St": {
+    "id": 44,
+    "name": "Congress St at North St",
+    "Latitude": 42.36041774637169,
+    "Longitude": -71.05752243543975,
+    "LastUsed": "2019-11-30 16:46:40.5930"
+  },
+  "499:Conway Park @ Bleachery Ct (Temp Winter Station)": {
+    "id": 499,
+    "name": "Conway Park @ Bleachery Ct (Temp Winter Station)",
+    "Latitude": 42.3834575023727,
+    "Longitude": -71.10771059989929,
+    "LastUsed": "2023-03-09 10:43:08.5340"
+  },
+  "69:Coolidge Corner - Beacon St @ Centre St": {
+    "id": 69,
+    "name": "Coolidge Corner - Beacon St @ Centre St",
+    "Latitude": 42.341598,
+    "Longitude": -71.123338,
+    "LastUsed": "2018-04-30 19:21:05.2300"
+  },
+  "47:Cross St. at Hanover St.": {
+    "id": 47,
+    "name": "Cross St. at Hanover St.",
+    "Latitude": 42.362811,
+    "Longitude": -71.056067,
+    "LastUsed": "2017-01-07 04:20:04"
+  },
+  "422:Cummins at American Legion": {
+    "id": 422,
+    "name": "Cummins at American Legion",
+    "Latitude": 42.278811581565975,
+    "Longitude": -71.11687703062671,
+    "LastUsed": "2019-11-30 13:35:28.2100"
+  },
+  "124:Curtis Hall at South Street": {
+    "id": 124,
+    "name": "Curtis Hall at South Street",
+    "Latitude": 42.309054,
+    "Longitude": -71.11543,
+    "LastUsed": "2017-01-03 08:14:44"
+  },
+  "370:Dartmouth St at Newbury St": {
+    "id": 370,
+    "name": "Dartmouth St at Newbury St",
+    "Latitude": 42.35096144421219,
+    "Longitude": -71.07782810926437,
+    "LastUsed": "2023-02-08 09:57:01.8950"
+  },
+  "146:Day Boulevard": {
+    "id": 146,
+    "name": "Day Boulevard",
+    "Latitude": 42.336448,
+    "Longitude": -71.023739,
+    "LastUsed": "2017-01-04 16:58:30"
+  },
+  "294:Deerfield St at Commonwealth Ave (former)": {
+    "id": 294,
+    "name": "Deerfield St at Commonwealth Ave (former)",
+    "Latitude": 42.349205689770685,
+    "Longitude": -71.09727063041646,
+    "LastUsed": "2018-10-30 15:20:43.2570"
+  },
+  "63:Dorchester Ave. at Gillette Park": {
+    "id": 63,
+    "name": "Dorchester Ave. at Gillette Park",
+    "Latitude": 42.344023,
+    "Longitude": -71.057054,
+    "LastUsed": "2017-01-03 08:24:51"
+  },
+  "56:Dudley Square": {
+    "id": 56,
+    "name": "Dudley Square",
+    "Latitude": 42.328654,
+    "Longitude": -71.084198,
+    "LastUsed": "2017-01-06 17:41:01"
+  },
+  "56:Dudley Square - Dudley St at Warren St": {
+    "id": 56,
+    "name": "Dudley Square - Dudley St at Warren St",
+    "Latitude": 42.329842993518085,
+    "Longitude": -71.08386572459494,
+    "LastUsed": "2019-11-30 21:49:51.9050"
+  },
+  "128:E. Cottage St at Columbia Rd": {
+    "id": 128,
+    "name": "E. Cottage St at Columbia Rd",
+    "Latitude": 42.320561,
+    "Longitude": -71.06198,
+    "LastUsed": "2016-11-29 08:31:18"
+  },
+  "213:EBNHC - 20 Maverick Sq": {
+    "id": 213,
+    "name": "EBNHC - 20 Maverick Sq",
+    "Latitude": 42.369562869377,
+    "Longitude": -71.03942692279814,
+    "LastUsed": "2017-01-02 21:50:46"
+  },
+  "169:Edwards Playground - Main Street & Eden Street": {
+    "id": 169,
+    "name": "Edwards Playground - Main Street & Eden Street",
+    "Latitude": 42.378965,
+    "Longitude": -71.068607,
+    "LastUsed": "2017-01-05 09:15:59"
+  },
+  "126:Egleston Square at Columbus Ave": {
+    "id": 126,
+    "name": "Egleston Square at Columbus Ave",
+    "Latitude": 42.315692,
+    "Longitude": -71.098634,
+    "LastUsed": "2017-01-03 08:36:18"
+  },
+  "44:Faneuil Hall - Union St. at North St.": {
+    "id": 44,
+    "name": "Faneuil Hall - Union St. at North St.",
+    "Latitude": 42.360613,
+    "Longitude": -71.057452,
+    "LastUsed": "2017-01-07 10:54:26"
+  },
+  "262:Faneuil St at Arlington St": {
+    "id": 262,
+    "name": "Faneuil St at Arlington St",
+    "Latitude": 42.3528611,
+    "Longitude": -71.1600278,
+    "LastUsed": "2018-09-30 19:05:38.3290"
+  },
+  "351:Faneuil St at Arlington St": {
+    "id": 351,
+    "name": "Faneuil St at Arlington St",
+    "Latitude": 42.35276620545606,
+    "Longitude": -71.15988485533308,
+    "LastUsed": "2023-03-18 18:27:35.8760"
+  },
+  "262:Faneuil St at Arlington St (former)": {
+    "id": 262,
+    "name": "Faneuil St at Arlington St (former)",
+    "Latitude": 42.3528611,
+    "Longitude": -71.1600278,
+    "LastUsed": "2018-10-24 12:44:08.0290"
+  },
+  "207:Faneuil St at Market St": {
+    "id": 207,
+    "name": "Faneuil St at Market St",
+    "Latitude": 42.35484,
+    "Longitude": -71.150226,
+    "LastUsed": "2018-10-09 11:24:04.4320"
+  },
+  "393:Ferry St at Pleasantview Ave": {
+    "id": 393,
+    "name": "Ferry St at Pleasantview Ave",
+    "Latitude": 42.412504507772105,
+    "Longitude": -71.05842225271772,
+    "LastUsed": "2020-06-30 18:52:59.2000"
+  },
+  "162:Franklin Park - Seaver St at Humbolt Ave": {
+    "id": 162,
+    "name": "Franklin Park - Seaver St at Humbolt Ave",
+    "Latitude": 42.309796,
+    "Longitude": -71.092225,
+    "LastUsed": "2020-09-30 23:48:52.7320"
+  },
+  "162:Franklin Park - Seaver Street at Humbolt Ave": {
+    "id": 162,
+    "name": "Franklin Park - Seaver Street at Humbolt Ave",
+    "Latitude": 42.309796,
+    "Longitude": -71.092225,
+    "LastUsed": "2016-11-26 16:06:20"
+  },
+  "170:Franklin Park Zoo": {
+    "id": 170,
+    "name": "Franklin Park Zoo",
+    "Latitude": 42.303469,
+    "Longitude": -71.085347,
+    "LastUsed": "2017-01-02 14:16:14"
+  },
+  "35:Franklin St. / Arch St.": {
+    "id": 35,
+    "name": "Franklin St. / Arch St.",
+    "Latitude": 42.355402,
+    "Longitude": -71.058087,
+    "LastUsed": "2016-11-30 10:53:52"
+  },
+  "133:Green St T": {
+    "id": 133,
+    "name": "Green St T",
+    "Latitude": 42.310579,
+    "Longitude": -71.107341,
+    "LastUsed": "2017-01-05 10:35:49"
+  },
+  "202:Grove Hall Library": {
+    "id": 202,
+    "name": "Grove Hall Library",
+    "Latitude": 42.308035,
+    "Longitude": -71.081159,
+    "LastUsed": "2016-11-30 17:41:38"
+  },
+  "220:Grove St at Community Path (former)": {
+    "id": 220,
+    "name": "Grove St at Community Path (former)",
+    "Latitude": 42.3963838795032,
+    "Longitude": -71.12010508775711,
+    "LastUsed": "2018-10-23 11:06:18.9200"
+  },
+  "14:HMS / HSPH - Ave. Louis Pasteur at Longwood Ave.": {
+    "id": 14,
+    "name": "HMS / HSPH - Ave. Louis Pasteur at Longwood Ave.",
+    "Latitude": 42.337171,
+    "Longitude": -71.102797,
+    "LastUsed": "2017-01-05 21:59:18"
+  },
+  "302:Harrison Ave at Bennet St (former)": {
+    "id": 302,
+    "name": "Harrison Ave at Bennet St (former)",
+    "Latitude": 42.3493102175903,
+    "Longitude": -71.06210500001907,
+    "LastUsed": "2018-10-30 14:47:24.2070"
+  },
+  "299:Harrison Ave at Mullins Way (former)": {
+    "id": 299,
+    "name": "Harrison Ave at Mullins Way (former)",
+    "Latitude": 42.34510857037852,
+    "Longitude": -71.06392078119825,
+    "LastUsed": "2018-10-30 14:03:19.0930"
+  },
+  "168:Harvard Ave at Brainerd Rd (former)": {
+    "id": 168,
+    "name": "Harvard Ave at Brainerd Rd (former)",
+    "Latitude": 42.34956188545412,
+    "Longitude": -71.1302706227616,
+    "LastUsed": "2018-10-23 12:28:24.1060"
+  },
+  "15:Harvard Real Estate - Brighton Mills - 370 Western Ave": {
+    "id": 15,
+    "name": "Harvard Real Estate - Brighton Mills - 370 Western Ave",
+    "Latitude": 42.361667,
+    "Longitude": -71.13802,
+    "LastUsed": "2017-01-05 11:07:47"
+  },
+  "240:Harvard St at Greene-Rose Heritage Park (former)": {
+    "id": 240,
+    "name": "Harvard St at Greene-Rose Heritage Park (former)",
+    "Latitude": 42.36599406030789,
+    "Longitude": -71.09516322612761,
+    "LastUsed": "2018-10-23 15:39:22.7370"
+  },
+  "110:Harvard University Gund Hall at Quincy St / Kirkland S": {
+    "id": 110,
+    "name": "Harvard University Gund Hall at Quincy St / Kirkland S",
+    "Latitude": 42.376369,
+    "Longitude": -71.114025,
+    "LastUsed": "2020-01-31 23:57:06.9190"
+  },
+  "17:Harvard University Housing - 111 Western Ave. at Soldiers Field Park": {
+    "id": 17,
+    "name": "Harvard University Housing - 111 Western Ave. at Soldiers Field Park",
+    "Latitude": 42.365064,
+    "Longitude": -71.119233,
+    "LastUsed": "2017-01-06 20:01:29"
+  },
+  "149:Harvard University Transportation Services - 175 North Harvard St": {
+    "id": 149,
+    "name": "Harvard University Transportation Services - 175 North Harvard St",
+    "Latitude": 42.363796,
+    "Longitude": -71.129164,
+    "LastUsed": "2017-01-06 16:16:48"
+  },
+  "129:Hayes Square at Vine St.": {
+    "id": 129,
+    "name": "Hayes Square at Vine St.",
+    "Latitude": 42.377022,
+    "Longitude": -71.056605,
+    "LastUsed": "2016-11-30 12:36:58"
+  },
+  "159:Heath St at South Huntington": {
+    "id": 159,
+    "name": "Heath St at South Huntington",
+    "Latitude": 42.32797270205962,
+    "Longitude": -71.11089706420898,
+    "LastUsed": "2017-01-05 19:30:32"
+  },
+  "155:Huntington Ave at Mass Art (former)": {
+    "id": 155,
+    "name": "Huntington Ave at Mass Art (former)",
+    "Latitude": 42.33651909304393,
+    "Longitude": -71.0989692435578,
+    "LastUsed": "2018-10-23 02:08:48.3520"
+  },
+  "181:Huron Ave. At Vassal Lane": {
+    "id": 181,
+    "name": "Huron Ave. At Vassal Lane",
+    "Latitude": 42.381650612901176,
+    "Longitude": -71.13426981498378,
+    "LastUsed": "2018-04-30 18:33:31.2610"
+  },
+  "125:Hyde Square at Barbara St": {
+    "id": 125,
+    "name": "Hyde Square at Barbara St",
+    "Latitude": 42.320998,
+    "Longitude": -71.110833,
+    "LastUsed": "2016-11-28 08:02:02"
+  },
+  "152:Ink Block": {
+    "id": 152,
+    "name": "Ink Block",
+    "Latitude": 42.345901,
+    "Longitude": -71.063187,
+    "LastUsed": "2017-01-06 19:04:23"
+  },
+  "88:Inman Square at Vellucci Plaza / Hampshire St": {
+    "id": 88,
+    "name": "Inman Square at Vellucci Plaza / Hampshire St",
+    "Latitude": 42.374035,
+    "Longitude": -71.101427,
+    "LastUsed": "2019-01-17 10:50:28.9910"
+  },
+  "29:Innovation Lab - 125 Western Ave. at Batten Way": {
+    "id": 29,
+    "name": "Innovation Lab - 125 Western Ave. at Batten Way",
+    "Latitude": 42.363732,
+    "Longitude": -71.124565,
+    "LastUsed": "2017-01-06 17:34:53"
+  },
+  "93:JFK / UMASS at MBTA Station": {
+    "id": 93,
+    "name": "JFK / UMASS at MBTA Station",
+    "Latitude": 42.320494,
+    "Longitude": -71.051122,
+    "LastUsed": "2017-01-07 00:19:39"
+  },
+  "123:JP Center - Centre Street at Myrtle Street": {
+    "id": 123,
+    "name": "JP Center - Centre Street at Myrtle Street",
+    "Latitude": 42.313156,
+    "Longitude": -71.11414,
+    "LastUsed": "2015-11-17 10:33:38"
+  },
+  "131:Jackson Square T at Centre St": {
+    "id": 131,
+    "name": "Jackson Square T at Centre St",
+    "Latitude": 42.32285835413575,
+    "Longitude": -71.10034391283989,
+    "LastUsed": "2017-01-07 11:13:02"
+  },
+  "45:Jersey St. at Boylston St.": {
+    "id": 45,
+    "name": "Jersey St. at Boylston St.",
+    "Latitude": 42.3446808403874,
+    "Longitude": -71.09785348176956,
+    "LastUsed": "2018-11-14 09:39:27.9800"
+  },
+  "151:John F Fitzgerald - Surface Road at India Street": {
+    "id": 151,
+    "name": "John F Fitzgerald - Surface Road at India Street",
+    "Latitude": 42.358155,
+    "Longitude": -71.052163,
+    "LastUsed": "2017-01-06 18:54:23"
+  },
+  "33:Kenmore Sq / Comm Ave": {
+    "id": 33,
+    "name": "Kenmore Sq / Comm Ave",
+    "Latitude": 42.348706,
+    "Longitude": -71.097009,
+    "LastUsed": "2017-01-06 23:12:10"
+  },
+  "32:Landmark Centre": {
+    "id": 32,
+    "name": "Landmark Centre",
+    "Latitude": 42.343912,
+    "Longitude": -71.102221,
+    "LastUsed": "2017-01-06 21:00:09"
+  },
+  "163:Lawn on D": {
+    "id": 163,
+    "name": "Lawn on D",
+    "Latitude": 42.344792,
+    "Longitude": -71.044024,
+    "LastUsed": "2017-01-02 20:43:25"
+  },
+  "40:Lewis Wharf - Atlantic Ave.": {
+    "id": 40,
+    "name": "Lewis Wharf - Atlantic Ave.",
+    "Latitude": 42.363871,
+    "Longitude": -71.050877,
+    "LastUsed": "2017-01-06 18:10:25"
+  },
+  "11:Longwood Ave / Binney St": {
+    "id": 11,
+    "name": "Longwood Ave / Binney St",
+    "Latitude": 42.338629,
+    "Longitude": -71.1065,
+    "LastUsed": "2017-01-05 23:31:54"
+  },
+  "105:Lower Cambridgeport at Magazine St/Riverside Rd": {
+    "id": 105,
+    "name": "Lower Cambridgeport at Magazine St/Riverside Rd",
+    "Latitude": 42.357218503176526,
+    "Longitude": -71.1138716340065,
+    "LastUsed": "2017-09-30 20:05:40"
+  },
+  "382:MTL-ECO4-01": {
+    "id": 382,
+    "name": "MTL-ECO4-01",
+    "Latitude": 0.0,
+    "Longitude": 0.0,
+    "LastUsed": "2020-02-14 13:13:56.5970"
+  },
+  "383:MTL-ECO5.1-01": {
+    "id": 383,
+    "name": "MTL-ECO5.1-01",
+    "Latitude": 0.0,
+    "Longitude": 0.0,
+    "LastUsed": "2019-07-30 16:07:42.5300"
+  },
+  "396:Main St at Beacon St": {
+    "id": 396,
+    "name": "Main St at Beacon St",
+    "Latitude": 42.4093300667225,
+    "Longitude": -71.06381878293178,
+    "LastUsed": "2020-06-30 20:28:04.9940"
+  },
+  "283:Main St at Thompson Sq (former)": {
+    "id": 283,
+    "name": "Main St at Thompson Sq (former)",
+    "Latitude": 42.374917,
+    "Longitude": -71.063829,
+    "LastUsed": "2018-10-23 11:23:14.1620"
+  },
+  "388:Main Street at Carter Street": {
+    "id": 388,
+    "name": "Main Street at Carter Street",
+    "Latitude": 42.406151572663504,
+    "Longitude": -71.0604074504954,
+    "LastUsed": "2020-10-15 18:11:34.6990"
+  },
+  "207:Market St at Faneuil St": {
+    "id": 207,
+    "name": "Market St at Faneuil St",
+    "Latitude": 42.35480179069945,
+    "Longitude": -71.15025043487549,
+    "LastUsed": "2016-11-30 08:46:33"
+  },
+  "238:Mass Ave at Hadley/Walden (former)": {
+    "id": 238,
+    "name": "Mass Ave at Hadley/Walden (former)",
+    "Latitude": 42.39138548863825,
+    "Longitude": -71.12288117408751,
+    "LastUsed": "2018-10-23 11:22:25.8120"
+  },
+  "138:Mass Ave at Newmarket Square": {
+    "id": 138,
+    "name": "Mass Ave at Newmarket Square",
+    "Latitude": 42.326599,
+    "Longitude": -71.066498,
+    "LastUsed": "2017-01-04 16:07:18"
+  },
+  "263:Mattapan Library (former)": {
+    "id": 263,
+    "name": "Mattapan Library (former)",
+    "Latitude": 42.2773889,
+    "Longitude": -71.09325,
+    "LastUsed": "2018-10-28 19:10:34.1320"
+  },
+  "241:Mattapan T Stop (former)": {
+    "id": 241,
+    "name": "Mattapan T Stop (former)",
+    "Latitude": 42.267902,
+    "Longitude": -71.093641,
+    "LastUsed": "2018-10-22 10:40:55.3380"
+  },
+  "212:Maverick Sq - Lewis Mall": {
+    "id": 212,
+    "name": "Maverick Sq - Lewis Mall",
+    "Latitude": 42.3688385713652,
+    "Longitude": -71.03976666949166,
+    "LastUsed": "2016-11-28 17:55:08"
+  },
+  "23:Mayor Martin J Walsh - 28 State St": {
+    "id": 23,
+    "name": "Mayor Martin J Walsh - 28 State St",
+    "Latitude": 42.35892,
+    "Longitude": -71.057629,
+    "LastUsed": "2017-01-07 08:53:17"
+  },
+  "281:Medford St at Charlestown BCYF (former)": {
+    "id": 281,
+    "name": "Medford St at Charlestown BCYF (former)",
+    "Latitude": 42.380584,
+    "Longitude": -71.060875,
+    "LastUsed": "2018-10-30 15:23:00.7410"
+  },
+  "438:Mobile Temporary Station": {
+    "id": 438,
+    "name": "Mobile Temporary Station",
+    "Latitude": 42.35147849233603,
+    "Longitude": -71.044162200742,
+    "LastUsed": "2019-11-15 14:46:19.2530"
+  },
+  "223:Mobile Temporary Station 2": {
+    "id": 223,
+    "name": "Mobile Temporary Station 2",
+    "Latitude": 0.0,
+    "Longitude": 0.0,
+    "LastUsed": "2019-08-27 11:59:03.1540"
+  },
+  "248:Morton St T (former)": {
+    "id": 248,
+    "name": "Morton St T (former)",
+    "Latitude": 42.28075382961448,
+    "Longitude": -71.08621831150231,
+    "LastUsed": "2018-10-24 09:23:35.6750"
+  },
+  "106:Mt Pleasant Ave / Dudley Town Common": {
+    "id": 106,
+    "name": "Mt Pleasant Ave / Dudley Town Common",
+    "Latitude": 42.325333,
+    "Longitude": -71.075354,
+    "LastUsed": "2016-11-28 09:47:40"
+  },
+  "457:N. Beacon St at N. Beacon Ct": {
+    "id": 457,
+    "name": "N. Beacon St at N. Beacon Ct",
+    "Latitude": 42.36444157139109,
+    "Longitude": -71.18091373646166,
+    "LastUsed": "2020-12-06 17:03:13.4580"
+  },
+  "37:New Balance - 20 Guest St.": {
+    "id": 37,
+    "name": "New Balance - 20 Guest St.",
+    "Latitude": 42.357402,
+    "Longitude": -71.147782,
+    "LastUsed": "2017-01-04 07:24:03"
+  },
+  "134:New Balance Store - Boylston at Dartmouth": {
+    "id": 134,
+    "name": "New Balance Store - Boylston at Dartmouth",
+    "Latitude": 42.350413,
+    "Longitude": -71.07655,
+    "LastUsed": "2016-11-27 17:09:16"
+  },
+  "52:Newbury St / Hereford St": {
+    "id": 52,
+    "name": "Newbury St / Hereford St",
+    "Latitude": 42.34872432400896,
+    "Longitude": -71.08583986759186,
+    "LastUsed": "2016-11-30 09:26:33"
+  },
+  "387:Norman St at Kelvin St": {
+    "id": 387,
+    "name": "Norman St at Kelvin St",
+    "Latitude": 42.41143222973408,
+    "Longitude": -71.06823265090497,
+    "LastUsed": "2020-06-30 20:37:19.5000"
+  },
+  "5:Northeastern U / North Parking Lot": {
+    "id": 5,
+    "name": "Northeastern U / North Parking Lot",
+    "Latitude": 42.341814,
+    "Longitude": -71.090179,
+    "LastUsed": "2017-01-07 10:26:41"
+  },
+  "208:Oak Square YMCA": {
+    "id": 208,
+    "name": "Oak Square YMCA",
+    "Latitude": 42.35048161669747,
+    "Longitude": -71.16636693499458,
+    "LastUsed": "2017-01-02 09:11:57"
+  },
+  "284:One Brigham Circle (former)": {
+    "id": 284,
+    "name": "One Brigham Circle (former)",
+    "Latitude": 42.333919727205775,
+    "Longitude": -71.10446777203833,
+    "LastUsed": "2018-10-30 15:31:31.4030"
+  },
+  "111:Packard Ave / Powderhouse Blvd": {
+    "id": 111,
+    "name": "Packard Ave / Powderhouse Blvd",
+    "Latitude": 42.40449,
+    "Longitude": -71.123413,
+    "LastUsed": "2018-04-30 21:02:48.1860"
+  },
+  "41:Packard's Corner - Comm. Ave. at Brighton Ave.": {
+    "id": 41,
+    "name": "Packard's Corner - Comm. Ave. at Brighton Ave.",
+    "Latitude": 42.352261,
+    "Longitude": -71.123831,
+    "LastUsed": "2017-01-06 12:04:51"
+  },
+  "345:Park Plaza at Charles St": {
+    "id": 345,
+    "name": "Park Plaza at Charles St",
+    "Latitude": 42.35182806892068,
+    "Longitude": -71.06781138111728,
+    "LastUsed": "2019-01-31 21:43:15.0870"
+  },
+  "250:Park Plaza at Charles St (former)": {
+    "id": 250,
+    "name": "Park Plaza at Charles St (former)",
+    "Latitude": 42.35186,
+    "Longitude": -71.067688,
+    "LastUsed": "2018-10-24 12:19:06.4870"
+  },
+  "250:Park Plaza at Columbus Ave": {
+    "id": 250,
+    "name": "Park Plaza at Columbus Ave",
+    "Latitude": 42.35186,
+    "Longitude": -71.067688,
+    "LastUsed": "2018-09-30 21:08:04.9600"
+  },
+  "514:Pearl St at Medford St": {
+    "id": 514,
+    "name": "Pearl St at Medford St",
+    "Latitude": 42.38815705419525,
+    "Longitude": -71.09588742256165,
+    "LastUsed": "2021-12-14 01:02:55.3950"
+  },
+  "211:Piers Park- Marginal St at East Boston Shipyard": {
+    "id": 211,
+    "name": "Piers Park- Marginal St at East Boston Shipyard",
+    "Latitude": 42.36489045541549,
+    "Longitude": -71.0350424052376,
+    "LastUsed": "2016-11-28 12:56:58"
+  },
+  "48:Post Office Square - Pearl St at Milk St": {
+    "id": 48,
+    "name": "Post Office Square - Pearl St at Milk St",
+    "Latitude": 42.356755,
+    "Longitude": -71.055407,
+    "LastUsed": "2019-05-31 17:48:42.3130"
+  },
+  "21:Prudential Center - Belvedere St": {
+    "id": 21,
+    "name": "Prudential Center - Belvedere St",
+    "Latitude": 42.34652003998412,
+    "Longitude": -71.08065776545118,
+    "LastUsed": "2019-11-30 21:40:35.9630"
+  },
+  "21:Prudential Center / Belvidere": {
+    "id": 21,
+    "name": "Prudential Center / Belvidere",
+    "Latitude": 42.345959,
+    "Longitude": -71.082578,
+    "LastUsed": "2017-01-07 09:57:23"
+  },
+  "242:Roslindale Village - South St (former)": {
+    "id": 242,
+    "name": "Roslindale Village - South St (former)",
+    "Latitude": 42.287072,
+    "Longitude": -71.127754,
+    "LastUsed": "2018-10-23 12:56:00.6680"
+  },
+  "246:Roslindale Village - Washington St (former)": {
+    "id": 246,
+    "name": "Roslindale Village - Washington St (former)",
+    "Latitude": 42.2861532,
+    "Longitude": -71.1283744,
+    "LastUsed": "2018-10-23 21:13:39.2260"
+  },
+  "43:Rowes Wharf - Atlantic Ave": {
+    "id": 43,
+    "name": "Rowes Wharf - Atlantic Ave",
+    "Latitude": 42.357143,
+    "Longitude": -71.050699,
+    "LastUsed": "2017-01-07 09:38:00"
+  },
+  "27:Roxbury Crossing Station": {
+    "id": 27,
+    "name": "Roxbury Crossing Station",
+    "Latitude": 42.331184,
+    "Longitude": -71.095171,
+    "LastUsed": "2017-01-07 09:24:31"
+  },
+  "196:Roxbury YMCA": {
+    "id": 196,
+    "name": "Roxbury YMCA",
+    "Latitude": 42.317963,
+    "Longitude": -71.082254,
+    "LastUsed": "2017-01-05 17:42:06"
+  },
+  "12:Ruggles Station / Columbus Ave.": {
+    "id": 12,
+    "name": "Ruggles Station / Columbus Ave.",
+    "Latitude": 42.335911,
+    "Longitude": -71.088496,
+    "LastUsed": "2017-01-07 09:38:26"
+  },
+  "167:Ryan Playground - Dorchester Avenue Station": {
+    "id": 167,
+    "name": "Ryan Playground - Dorchester Avenue Station",
+    "Latitude": 42.317642,
+    "Longitude": -71.056664,
+    "LastUsed": "2016-11-09 09:01:26"
+  },
+  "173:Savin Hill MBTA Station": {
+    "id": 173,
+    "name": "Savin Hill MBTA Station",
+    "Latitude": 42.310599,
+    "Longitude": -71.053927,
+    "LastUsed": "2017-01-03 08:29:41"
+  },
+  "31:Seaport Hotel": {
+    "id": 31,
+    "name": "Seaport Hotel",
+    "Latitude": 42.348833,
+    "Longitude": -71.041747,
+    "LastUsed": "2017-01-03 07:49:47"
+  },
+  "24:Seaport Square - Seaport Blvd. at Boston Wharf": {
+    "id": 24,
+    "name": "Seaport Square - Seaport Blvd. at Boston Wharf",
+    "Latitude": 42.351205,
+    "Longitude": -71.043983,
+    "LastUsed": "2017-01-05 08:48:32"
+  },
+  "386:Sennott Park  Broadway at Norfolk Street": {
+    "id": 386,
+    "name": "Sennott Park  Broadway at Norfolk Street",
+    "Latitude": 42.36860524248197,
+    "Longitude": -71.09930185605663,
+    "LastUsed": "2020-03-31 23:21:16.3020"
+  },
+  "184:Sidney Research Campus/ Erie Street at Waverly": {
+    "id": 184,
+    "name": "Sidney Research Campus/ Erie Street at Waverly",
+    "Latitude": 42.35775309465199,
+    "Longitude": -71.10393404960632,
+    "LastUsed": "2020-03-31 23:03:28.2640"
+  },
+  "112:Somerville Hospital at Highland Ave / Crocker St": {
+    "id": 112,
+    "name": "Somerville Hospital at Highland Ave / Crocker St",
+    "Latitude": 42.39082,
+    "Longitude": -71.10942,
+    "LastUsed": "2016-11-30 14:17:13"
+  },
+  "119:South Boston Library - 646 East Broadway": {
+    "id": 119,
+    "name": "South Boston Library - 646 East Broadway",
+    "Latitude": 42.335741,
+    "Longitude": -71.03877,
+    "LastUsed": "2017-01-07 09:44:56"
+  },
+  "22:South Station - 700 Atlantic Ave.": {
+    "id": 22,
+    "name": "South Station - 700 Atlantic Ave.",
+    "Latitude": 42.352175,
+    "Longitude": -71.055547,
+    "LastUsed": "2017-01-06 19:47:09"
+  },
+  "49:Stuart St. at Charles St.": {
+    "id": 49,
+    "name": "Stuart St. at Charles St.",
+    "Latitude": 42.351146,
+    "Longitude": -71.066289,
+    "LastUsed": "2017-01-06 21:35:37"
+  },
+  "132:Summer St at Cutter St": {
+    "id": 132,
+    "name": "Summer St at Cutter St",
+    "Latitude": 42.394002,
+    "Longitude": -71.120406,
+    "LastUsed": "2015-11-24 08:32:38"
+  },
+  "109:TD Garden - Causeway at Portal Park #1": {
+    "id": 109,
+    "name": "TD Garden - Causeway at Portal Park #1",
+    "Latitude": 42.365942,
+    "Longitude": -71.060515,
+    "LastUsed": "2016-06-30 22:21:56"
+  },
+  "38:TD Garden - Causeway at Portal Park #2": {
+    "id": 38,
+    "name": "TD Garden - Causeway at Portal Park #2",
+    "Latitude": 42.366222,
+    "Longitude": -71.059914,
+    "LastUsed": "2016-09-22 14:07:42"
+  },
+  "109:TD Garden - West End Park": {
+    "id": 109,
+    "name": "TD Garden - West End Park",
+    "Latitude": 42.36590788445084,
+    "Longitude": -71.06446668505669,
+    "LastUsed": "2019-02-28 22:21:52.7690"
+  },
+  "254:Talbot Ave At Blue Hill Ave (former)": {
+    "id": 254,
+    "name": "Talbot Ave At Blue Hill Ave (former)",
+    "Latitude": 42.2945833,
+    "Longitude": -71.087111,
+    "LastUsed": "2018-10-23 14:36:09.8420"
+  },
+  "114:Teele Square at 239 Holland St": {
+    "id": 114,
+    "name": "Teele Square at 239 Holland St",
+    "Latitude": 42.402763,
+    "Longitude": -71.126908,
+    "LastUsed": "2017-12-05 09:18:40"
+  },
+  "164:Test 000e3": {
+    "id": 164,
+    "name": "Test 000e3",
+    "Latitude": 0.0,
+    "Longitude": 0.0,
+    "LastUsed": "2017-10-19 13:14:16"
+  },
+  "215:The Eddy at New Street": {
+    "id": 215,
+    "name": "The Eddy at New Street",
+    "Latitude": 42.37078454600501,
+    "Longitude": -71.04426160454749,
+    "LastUsed": "2017-01-04 08:42:23"
+  },
+  "58:The Esplanade - Beacon St. at Arlington St.": {
+    "id": 58,
+    "name": "The Esplanade - Beacon St. at Arlington St.",
+    "Latitude": 42.355596,
+    "Longitude": -71.07278,
+    "LastUsed": "2017-01-07 10:39:07"
+  },
+  "253:Thetford Ave at Norfolk St (former)": {
+    "id": 253,
+    "name": "Thetford Ave at Norfolk St (former)",
+    "Latitude": 42.286251,
+    "Longitude": -71.079463,
+    "LastUsed": "2018-10-21 10:26:55.0860"
+  },
+  "25:Tremont St / W Newton St": {
+    "id": 25,
+    "name": "Tremont St / W Newton St",
+    "Latitude": 42.341332,
+    "Longitude": -71.076847,
+    "LastUsed": "2017-01-06 17:20:58"
+  },
+  "54:Tremont St / West St": {
+    "id": 54,
+    "name": "Tremont St / West St",
+    "Latitude": 42.354979,
+    "Longitude": -71.063348,
+    "LastUsed": "2017-01-07 11:06:25"
+  },
+  "374:Tremont St at Hamilton Place": {
+    "id": 374,
+    "name": "Tremont St at Hamilton Place",
+    "Latitude": 42.35668334969929,
+    "Longitude": -71.06166645884514,
+    "LastUsed": "2019-01-31 22:04:15.7830"
+  },
+  "300:Tremont St at Northampton St (former)": {
+    "id": 300,
+    "name": "Tremont St at Northampton St (former)",
+    "Latitude": 42.33884970690809,
+    "Longitude": -71.08140613892829,
+    "LastUsed": "2018-10-30 13:12:30.6510"
+  },
+  "4:Tremont St. at Berkeley St.": {
+    "id": 4,
+    "name": "Tremont St. at Berkeley St.",
+    "Latitude": 42.345392,
+    "Longitude": -71.069616,
+    "LastUsed": "2017-01-06 19:13:24"
+  },
+  "496:Trum Field @ Cedar St (Temp Winter Station)": {
+    "id": 496,
+    "name": "Trum Field @ Cedar St (Temp Winter Station)",
+    "Latitude": 42.398444,
+    "Longitude": -71.107833,
+    "LastUsed": "2023-03-13 13:16:56.2530"
+  },
+  "92:UMass Boston Integrated Sciences Complex": {
+    "id": 92,
+    "name": "UMass Boston Integrated Sciences Complex",
+    "Latitude": 42.3139036,
+    "Longitude": -71.0405121,
+    "LastUsed": "2017-01-06 16:26:06"
+  },
+  "8:Union Square - Brighton Ave. at Cambridge St.": {
+    "id": 8,
+    "name": "Union Square - Brighton Ave. at Cambridge St.",
+    "Latitude": 42.353334,
+    "Longitude": -71.137313,
+    "LastUsed": "2017-01-07 11:34:24"
+  },
+  "495:Union Square East (Temp Winter Station)": {
+    "id": 495,
+    "name": "Union Square East (Temp Winter Station)",
+    "Latitude": 42.380078,
+    "Longitude": -71.090098,
+    "LastUsed": "2021-03-18 15:13:11.4590"
+  },
+  "470:Union St at Herrick Rd - Newton Centre Green Line": {
+    "id": 470,
+    "name": "Union St at Herrick Rd - Newton Centre Green Line",
+    "Latitude": 42.32956868185623,
+    "Longitude": -71.19367271661758,
+    "LastUsed": "2022-12-10 23:17:22.6180"
+  },
+  "92:University of Massachusetts Boston - Integrated Sciences Complex": {
+    "id": 92,
+    "name": "University of Massachusetts Boston - Integrated Sciences Complex",
+    "Latitude": 42.313917,
+    "Longitude": -71.04025,
+    "LastUsed": "2019-05-31 16:50:46.3580"
+  },
+  "130:Upham's Corner": {
+    "id": 130,
+    "name": "Upham's Corner",
+    "Latitude": 42.31727474327453,
+    "Longitude": -71.06537003967787,
+    "LastUsed": "2019-11-04 08:42:34.5190"
+  },
+  "130:Upham's Corner - Columbia Rd": {
+    "id": 130,
+    "name": "Upham's Corner - Columbia Rd",
+    "Latitude": 42.31756858003556,
+    "Longitude": -71.06403708501603,
+    "LastUsed": "2017-01-02 15:25:33"
+  },
+  "130:Upham's Corner - Ramsey St at Dudley St": {
+    "id": 130,
+    "name": "Upham's Corner - Ramsey St at Dudley St",
+    "Latitude": 42.317225,
+    "Longitude": -71.065421,
+    "LastUsed": "2016-06-30 10:43:52"
+  },
+  "199:Upham's Corner T Stop": {
+    "id": 199,
+    "name": "Upham's Corner T Stop",
+    "Latitude": 42.31884382360106,
+    "Longitude": -71.06975734233856,
+    "LastUsed": "2016-11-22 05:58:39"
+  },
+  "199:Upham's Corner T Stop - Magnolia St at Dudley St": {
+    "id": 199,
+    "name": "Upham's Corner T Stop - Magnolia St at Dudley St",
+    "Latitude": 42.318697341722434,
+    "Longitude": -71.0697814822197,
+    "LastUsed": "2019-11-07 07:23:24.5520"
+  },
+  "130:Upham's Corner TEMPORARY WINTER LOCATION": {
+    "id": 130,
+    "name": "Upham's Corner TEMPORARY WINTER LOCATION",
+    "Latitude": 42.31750891943043,
+    "Longitude": -71.06416625906604,
+    "LastUsed": "2018-03-31 18:19:17"
+  },
+  "311:Vassal Lane at Tobin/VLUS (former)": {
+    "id": 311,
+    "name": "Vassal Lane at Tobin/VLUS (former)",
+    "Latitude": 42.383928224564585,
+    "Longitude": -71.13962350417751,
+    "LastUsed": "2018-10-30 07:47:09.6660"
+  },
+  "201:Walnut Ave at Crawford St": {
+    "id": 201,
+    "name": "Walnut Ave at Crawford St",
+    "Latitude": 42.316873,
+    "Longitude": -71.091955,
+    "LastUsed": "2017-01-02 16:38:50"
+  },
+  "396:Wasgatt Playground": {
+    "id": 396,
+    "name": "Wasgatt Playground",
+    "Latitude": 42.4093300667225,
+    "Longitude": -71.06381878293178,
+    "LastUsed": "2021-04-28 16:03:53.2170"
+  },
+  "82:Washington Square at Washington St. / Beacon St.": {
+    "id": 82,
+    "name": "Washington Square at Washington St. / Beacon St.",
+    "Latitude": 42.33826680058037,
+    "Longitude": -71.13894682028331,
+    "LastUsed": "2018-04-30 14:17:53.2310"
+  },
+  "82:Washington Square at Washington St. / Beacon St. TEMPORARY WINTER LOCATION": {
+    "id": 82,
+    "name": "Washington Square at Washington St. / Beacon St. TEMPORARY WINTER LOCATION",
+    "Latitude": 42.338254270769454,
+    "Longitude": -71.13905482012342,
+    "LastUsed": "2018-03-31 17:18:26"
+  },
+  "497:Washington St @ New Washington St (Temp Winter Station)": {
+    "id": 497,
+    "name": "Washington St @ New Washington St (Temp Winter Station)",
+    "Latitude": 42.38103731531107,
+    "Longitude": -71.08709779349738,
+    "LastUsed": "2023-03-08 13:03:00.7850"
+  },
+  "259:Washington St at Bradlee St": {
+    "id": 259,
+    "name": "Washington St at Bradlee St",
+    "Latitude": 42.29916497936589,
+    "Longitude": -71.07345871645519,
+    "LastUsed": "2021-05-31 06:34:16.4390"
+  },
+  "264:Washington St at Egremont Rd (former)": {
+    "id": 264,
+    "name": "Washington St at Egremont Rd (former)",
+    "Latitude": 42.3429444,
+    "Longitude": -71.1413333,
+    "LastUsed": "2018-10-29 10:51:54.7100"
+  },
+  "402:Washington St at Griggs Rd": {
+    "id": 402,
+    "name": "Washington St at Griggs Rd",
+    "Latitude": 42.33985827126298,
+    "Longitude": -71.13421171095978,
+    "LastUsed": "2022-04-30 22:58:20.7350"
+  },
+  "231:Washington St at Myrtle St (former)": {
+    "id": 231,
+    "name": "Washington St at Myrtle St (former)",
+    "Latitude": 42.38172115782515,
+    "Longitude": -71.08376650152422,
+    "LastUsed": "2018-10-23 08:58:15.5950"
+  },
+  "256:Washington St at Talbot Ave (former)": {
+    "id": 256,
+    "name": "Washington St at Talbot Ave (former)",
+    "Latitude": 42.290333,
+    "Longitude": -71.071806,
+    "LastUsed": "2018-10-22 12:59:17.6470"
+  },
+  "51:Washington St. at Lenox St.": {
+    "id": 51,
+    "name": "Washington St. at Lenox St.",
+    "Latitude": 42.3348756,
+    "Longitude": -71.0790969,
+    "LastUsed": "2017-01-06 08:31:39"
+  },
+  "39:Washington St. at Rutland St.": {
+    "id": 39,
+    "name": "Washington St. at Rutland St.",
+    "Latitude": 42.33849279283789,
+    "Longitude": -71.07401937246323,
+    "LastUsed": "2017-01-07 10:28:34"
+  },
+  "26:Washington St. at Waltham St.": {
+    "id": 26,
+    "name": "Washington St. at Waltham St.",
+    "Latitude": 42.341522,
+    "Longitude": -71.068922,
+    "LastUsed": "2016-11-30 09:22:29"
+  },
+  "218:Watermark Seaport": {
+    "id": 218,
+    "name": "Watermark Seaport",
+    "Latitude": 42.351543104723206,
+    "Longitude": -71.04573011398315,
+    "LastUsed": "2017-01-04 23:31:05"
+  },
+  "160:Wentworth Institute of Technology": {
+    "id": 160,
+    "name": "Wentworth Institute of Technology",
+    "Latitude": 42.337596,
+    "Longitude": -71.096391,
+    "LastUsed": "2017-01-05 17:22:11"
+  },
+  "161:West Broadway at D Street": {
+    "id": 161,
+    "name": "West Broadway at D Street",
+    "Latitude": 42.3391085,
+    "Longitude": -71.0514432,
+    "LastUsed": "2017-01-03 09:02:44"
+  },
+  "121:West Broadway at Dorchester St": {
+    "id": 121,
+    "name": "West Broadway at Dorchester St",
+    "Latitude": 42.335693,
+    "Longitude": -71.045859,
+    "LastUsed": "2017-01-07 07:46:24"
+  },
+  "474:West Newton Armory": {
+    "id": 474,
+    "name": "West Newton Armory",
+    "Latitude": 42.34947178098653,
+    "Longitude": -71.22000678911718,
+    "LastUsed": "2021-11-30 23:48:54.8240"
+  },
+  "45:Yawkey Way at Boylston St.": {
+    "id": 45,
+    "name": "Yawkey Way at Boylston St.",
+    "Latitude": 42.3446808403874,
+    "Longitude": -71.09785348176956,
+    "LastUsed": "2018-04-30 22:41:21.6590"
+  },
+  "K32015:1200 Beacon St": {
+    "id": "K32015",
+    "name": "1200 Beacon St",
+    "Latitude": 42.34414899,
+    "Longitude": -71.11467361,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "W32006:160 Arsenal": {
+    "id": "W32006",
+    "name": "160 Arsenal",
+    "Latitude": 42.36466403,
+    "Longitude": -71.17569387,
+    "District": "Watertown",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "A32019:175 N Harvard St": {
+    "id": "A32019",
+    "name": "175 N Harvard St",
+    "Latitude": 42.36447457,
+    "Longitude": -71.12840831,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2014.0
+  },
+  "S32035:191 Beacon St": {
+    "id": "S32035",
+    "name": "191 Beacon St",
+    "Latitude": 42.38032335,
+    "Longitude": -71.10878613,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32094:2 Hummingbird Lane at Olmsted Green": {
+    "id": "C32094",
+    "name": "2 Hummingbird Lane at Olmsted Green",
+    "Latitude": 42.28887,
+    "Longitude": -71.095003,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2020.0
+  },
+  "S32023:30 Dane St": {
+    "id": "S32023",
+    "name": "30 Dane St",
+    "Latitude": 42.38100143,
+    "Longitude": -71.10402523,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32026:359 Broadway - Broadway at Fayette Street": {
+    "id": "M32026",
+    "name": "359 Broadway - Broadway at Fayette Street",
+    "Latitude": 42.370803,
+    "Longitude": -71.104412,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2013.0
+  },
+  "C32106:555 Metropolitan Ave": {
+    "id": "C32106",
+    "name": "555 Metropolitan Ave",
+    "Latitude": 42.2681,
+    "Longitude": -71.11924,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2021.0
+  },
+  "C32105:606 American Legion Hwy at Canterbury St": {
+    "id": "C32105",
+    "name": "606 American Legion Hwy at Canterbury St",
+    "Latitude": 42.28578,
+    "Longitude": -71.109725,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2021.0
+  },
+  "C32091:645 Summer St": {
+    "id": "C32091",
+    "name": "645 Summer St",
+    "Latitude": 42.34178089,
+    "Longitude": -71.03987017,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "M32054:699 Mt Auburn St": {
+    "id": "M32054",
+    "name": "699 Mt Auburn St",
+    "Latitude": 42.37500235,
+    "Longitude": -71.14871614,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2018.0
+  },
+  "V32001:7 Acre Park": {
+    "id": "V32001",
+    "name": "7 Acre Park",
+    "Latitude": 42.41143223,
+    "Longitude": -71.06823265,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "B32060:700 Commonwealth Ave.": {
+    "id": "B32060",
+    "name": "700 Commonwealth Ave.",
+    "Latitude": 42.34960945,
+    "Longitude": -71.10391524,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2019.0
+  },
+  "M32060:700 Huron Ave": {
+    "id": "M32060",
+    "name": "700 Huron Ave",
+    "Latitude": 42.38078817,
+    "Longitude": -71.15412891,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "M32064:75 Binney St": {
+    "id": "M32064",
+    "name": "75 Binney St",
+    "Latitude": 42.36550729,
+    "Longitude": -71.0801376,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "M32058:84 Cambridgepark Dr": {
+    "id": "M32058",
+    "name": "84 Cambridgepark Dr",
+    "Latitude": 42.3936,
+    "Longitude": -71.143941,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2018.0
+  },
+  "H32006:855 Broadway": {
+    "id": "H32006",
+    "name": "855 Broadway",
+    "Latitude": 42.39841773,
+    "Longitude": -71.02390923,
+    "District": "Chelsea",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "M32084:87-101 Cambridgepark Drive": {
+    "id": "M32084",
+    "name": "87-101 Cambridgepark Drive",
+    "Latitude": 42.39522187,
+    "Longitude": -71.14421904,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2023.0
+  },
+  "M32073:955 Mass Ave": {
+    "id": "M32073",
+    "name": "955 Mass Ave",
+    "Latitude": 42.36895181,
+    "Longitude": -71.1099878,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "C32098:Adams Branch Library": {
+    "id": "C32098",
+    "name": "Adams Branch Library",
+    "Latitude": 42.286011,
+    "Longitude": -71.054689,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 0.0,
+    "Deployment Year": 2021.0
+  },
+  "C32065:Adams St at Lonsdale St": {
+    "id": "C32065",
+    "name": "Adams St at Lonsdale St",
+    "Latitude": 42.29167943,
+    "Longitude": -71.05726346,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "A32054:Addison St at Saratoga St": {
+    "id": "A32054",
+    "name": "Addison St at Saratoga St",
+    "Latitude": 42.38518147,
+    "Longitude": -71.0151367,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "A32032:Airport T Stop - Bremen St at Brooks St": {
+    "id": "A32032",
+    "name": "Airport T Stop - Bremen St at Brooks St",
+    "Latitude": 42.37535377,
+    "Longitude": -71.03131771,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "C32061:Albany St at E. Brookline St": {
+    "id": "C32061",
+    "name": "Albany St at E. Brookline St",
+    "Latitude": 42.33664795,
+    "Longitude": -71.0689446,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "M32046:Alewife MBTA at Steel Place": {
+    "id": "M32046",
+    "name": "Alewife MBTA at Steel Place",
+    "Latitude": 42.39558846,
+    "Longitude": -71.14260614,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "M32033:Alewife Station at Russell Field": {
+    "id": "M32033",
+    "name": "Alewife Station at Russell Field",
+    "Latitude": 42.396105,
+    "Longitude": -71.139459,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2014.0
+  },
+  "C32079:American Legion Hwy at Cummins Hwy": {
+    "id": "C32079",
+    "name": "American Legion Hwy at Cummins Hwy",
+    "Latitude": 42.27881158,
+    "Longitude": -71.11687703,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "C32101:American Legion Hwy at Hyde Park Ave": {
+    "id": "C32101",
+    "name": "American Legion Hwy at Hyde Park Ave",
+    "Latitude": 42.27265394,
+    "Longitude": -71.11990392,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "M32059:Ames St at Broadway": {
+    "id": "M32059",
+    "name": "Ames St at Broadway",
+    "Latitude": 42.3636929,
+    "Longitude": -71.0875672,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2018.0
+  },
+  "M32037:Ames St at Main St": {
+    "id": "M32037",
+    "name": "Ames St at Main St",
+    "Latitude": 42.3625,
+    "Longitude": -71.08822,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "C32012:Andrew T Stop - Dorchester Ave at Dexter St": {
+    "id": "C32012",
+    "name": "Andrew T Stop - Dorchester Ave at Dexter St",
+    "Latitude": 42.33073333,
+    "Longitude": -71.05699851,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "B32004:Aquarium T Stop - 200 Atlantic Ave": {
+    "id": "B32004",
+    "name": "Aquarium T Stop - 200 Atlantic Ave",
+    "Latitude": 42.35991176,
+    "Longitude": -71.05142981,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2011.0
+  },
+  "D32004:Arch St at Franklin St": {
+    "id": "D32004",
+    "name": "Arch St at Franklin St",
+    "Latitude": 42.35533502,
+    "Longitude": -71.05822917,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 31.0,
+    "Deployment Year": 2011.0
+  },
+  "C32048:Archdale Rd at Washington St": {
+    "id": "C32048",
+    "name": "Archdale Rd at Washington St",
+    "Latitude": 42.29266593,
+    "Longitude": -71.12119539,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "W32004:Arsenal Yards": {
+    "id": "W32004",
+    "name": "Arsenal Yards",
+    "Latitude": 42.36277389,
+    "Longitude": -71.15764854,
+    "District": "Watertown",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2020.0
+  },
+  "C32062:Ashmont T Stop": {
+    "id": "C32062",
+    "name": "Ashmont T Stop",
+    "Latitude": 42.2856944,
+    "Longitude": -71.0641389,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2019.0
+  },
+  "S32018:Assembly Square T": {
+    "id": "S32018",
+    "name": "Assembly Square T",
+    "Latitude": 42.39223284,
+    "Longitude": -71.07746601,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "N32015:Auburndale": {
+    "id": "N32015",
+    "name": "Auburndale",
+    "Latitude": 42.34805541,
+    "Longitude": -71.24775946,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "A32003:B.U. Central - 725 Comm. Ave.": {
+    "id": "A32003",
+    "name": "B.U. Central - 725 Comm. Ave.",
+    "Latitude": 42.350406,
+    "Longitude": -71.108279,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2011.0
+  },
+  "C32003:Back Bay T Stop - Dartmouth St at Stuart St": {
+    "id": "C32003",
+    "name": "Back Bay T Stop - Dartmouth St at Stuart St",
+    "Latitude": 42.34807412,
+    "Longitude": -71.07657015,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2011.0
+  },
+  "N32003:Bacon St at Washington St": {
+    "id": "N32003",
+    "name": "Bacon St at Washington St",
+    "Latitude": 42.35711921,
+    "Longitude": -71.18604537,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "S32007:Ball Sq": {
+    "id": "S32007",
+    "name": "Ball Sq",
+    "Latitude": 42.39936816,
+    "Longitude": -71.11111522,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "B32055:Bartlett St at John Elliot Sq": {
+    "id": "B32055",
+    "name": "Bartlett St at John Elliot Sq",
+    "Latitude": 42.3294633,
+    "Longitude": -71.0901582,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "N32012:Beacon at Walnut": {
+    "id": "N32012",
+    "name": "Beacon at Walnut",
+    "Latitude": 42.33006232,
+    "Longitude": -71.20668411,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "D32024:Beacon St at Charles St": {
+    "id": "D32024",
+    "name": "Beacon St at Charles St",
+    "Latitude": 42.356052,
+    "Longitude": -71.069849,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2013.0
+  },
+  "B32016:Beacon St at Massachusetts Ave": {
+    "id": "B32016",
+    "name": "Beacon St at Massachusetts Ave",
+    "Latitude": 42.35082681,
+    "Longitude": -71.08981088,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "K32002:Beacon St at Tappan St": {
+    "id": "K32002",
+    "name": "Beacon St at Tappan St",
+    "Latitude": 42.3382668,
+    "Longitude": -71.13894682,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "S32003:Beacon St at Washington / Kirkland": {
+    "id": "S32003",
+    "name": "Beacon St at Washington / Kirkland",
+    "Latitude": 42.37875351,
+    "Longitude": -71.10707223,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "C32059:Belgrade Ave at Walworth St": {
+    "id": "C32059",
+    "name": "Belgrade Ave at Walworth St",
+    "Latitude": 42.28634589,
+    "Longitude": -71.1367213,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2018.0
+  },
+  "C32095:Bellevue T Stop": {
+    "id": "C32095",
+    "name": "Bellevue T Stop",
+    "Latitude": 42.28611421,
+    "Longitude": -71.14636928,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "H32002:Bellingham Square": {
+    "id": "H32002",
+    "name": "Bellingham Square",
+    "Latitude": 42.39319611,
+    "Longitude": -71.0334456,
+    "District": "Chelsea",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "A32028:Bennington St at Byron St": {
+    "id": "A32028",
+    "name": "Bennington St at Byron St",
+    "Latitude": 42.38353252,
+    "Longitude": -71.01619095,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "A32039:Bennington St at Constitution Beach": {
+    "id": "A32039",
+    "name": "Bennington St at Constitution Beach",
+    "Latitude": 42.38522394,
+    "Longitude": -71.01063069,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2016.0
+  },
+  "M32067:Berkshire Street at Cambridge Street": {
+    "id": "M32067",
+    "name": "Berkshire Street at Cambridge Street",
+    "Latitude": 42.37207658,
+    "Longitude": -71.08995434,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "M32027:Binney St / Sixth St": {
+    "id": "M32027",
+    "name": "Binney St / Sixth St",
+    "Latitude": 42.36608797,
+    "Longitude": -71.08633604,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2013.0
+  },
+  "D32050:Blossom St at Charles St": {
+    "id": "D32050",
+    "name": "Blossom St at Charles St",
+    "Latitude": 42.36435589,
+    "Longitude": -71.06959369,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "C32044:Blue Hill Ave at Almont St": {
+    "id": "C32044",
+    "name": "Blue Hill Ave at Almont St",
+    "Latitude": 42.27462067,
+    "Longitude": -71.09372552,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32092:Blue Hill Ave at Havelock St": {
+    "id": "C32092",
+    "name": "Blue Hill Ave at Havelock St",
+    "Latitude": 42.286012,
+    "Longitude": -71.090986,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2020.0
+  },
+  "B32057:Blue Hill Ave at Southwood St": {
+    "id": "B32057",
+    "name": "Blue Hill Ave at Southwood St",
+    "Latitude": 42.31786021,
+    "Longitude": -71.07798629,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2018.0
+  },
+  "B32008:Boston City Hall - 28 State St": {
+    "id": "B32008",
+    "name": "Boston City Hall - 28 State St",
+    "Latitude": 42.35892,
+    "Longitude": -71.057629,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 25.0,
+    "Deployment Year": 2011.0
+  },
+  "N32009:Boston College T": {
+    "id": "N32009",
+    "name": "Boston College T",
+    "Latitude": 42.33987892,
+    "Longitude": -71.16708934,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2021.0
+  },
+  "D32018:Boston Convention and Exhibition Center - Summer St at West Side Dr": {
+    "id": "D32018",
+    "name": "Boston Convention and Exhibition Center - Summer St at West Side Dr",
+    "Latitude": 42.34776345,
+    "Longitude": -71.04535997,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2012.0
+  },
+  "A32036:Boston East - 126 Border St": {
+    "id": "A32036",
+    "name": "Boston East - 126 Border St",
+    "Latitude": 42.37331213,
+    "Longitude": -71.04102008,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "A32045:Boston Landing": {
+    "id": "A32045",
+    "name": "Boston Landing",
+    "Latitude": 42.35656092,
+    "Longitude": -71.14167538,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2019.0
+  },
+  "C32002:Boston Medical Center - E Concord St at Harrison Ave": {
+    "id": "C32002",
+    "name": "Boston Medical Center - E Concord St at Harrison Ave",
+    "Latitude": 42.33639915,
+    "Longitude": -71.07306711,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "B32031:Bowdoin St at Quincy St": {
+    "id": "B32031",
+    "name": "Bowdoin St at Quincy St",
+    "Latitude": 42.30785224,
+    "Longitude": -71.06512249,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "D32007:Boylston St at Arlington St": {
+    "id": "D32007",
+    "name": "Boylston St at Arlington St",
+    "Latitude": 42.35206005,
+    "Longitude": -71.07046366,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 31.0,
+    "Deployment Year": 2011.0
+  },
+  "D32013:Boylston St at Berkeley St": {
+    "id": "D32013",
+    "name": "Boylston St at Berkeley St",
+    "Latitude": 42.35114198,
+    "Longitude": -71.07329249,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "D32055:Boylston St at Dartmouth St": {
+    "id": "D32055",
+    "name": "Boylston St at Dartmouth St",
+    "Latitude": 42.3501932,
+    "Longitude": -71.07744187,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2013.0
+  },
+  "D32046:Boylston St at Exeter St": {
+    "id": "D32046",
+    "name": "Boylston St at Exeter St",
+    "Latitude": 42.34958942,
+    "Longitude": -71.07946779,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32008:Boylston St at Fairfield St": {
+    "id": "C32008",
+    "name": "Boylston St at Fairfield St",
+    "Latitude": 42.34880382,
+    "Longitude": -71.08236909,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "B32034:Boylston St at Jersey St": {
+    "id": "B32034",
+    "name": "Boylston St at Jersey St",
+    "Latitude": 42.34465063,
+    "Longitude": -71.09732501,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2018.0
+  },
+  "B32018:Boylston St at Massachusetts Ave": {
+    "id": "B32018",
+    "name": "Boylston St at Massachusetts Ave",
+    "Latitude": 42.34740621,
+    "Longitude": -71.08678415,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "S32050:Boynton Yards at 101 South Street": {
+    "id": "S32050",
+    "name": "Boynton Yards at 101 South Street",
+    "Latitude": 42.3754476,
+    "Longitude": -71.09117389,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2023.0
+  },
+  "A32055:Bremen St at Marion St": {
+    "id": "A32055",
+    "name": "Bremen St at Marion St",
+    "Latitude": 42.37410622,
+    "Longitude": -71.03276253,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "T32016:Bridge Street Neck": {
+    "id": "T32016",
+    "name": "Bridge Street Neck",
+    "Latitude": 42.52810052,
+    "Longitude": -70.88971138,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "B32013:Brigham Circle - Francis St at Huntington Ave": {
+    "id": "B32013",
+    "name": "Brigham Circle - Francis St at Huntington Ave",
+    "Latitude": 42.33462893,
+    "Longitude": -71.10407918,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "D32058:Brighton Ave at Linden St": {
+    "id": "D32058",
+    "name": "Brighton Ave at Linden St",
+    "Latitude": 42.3528376,
+    "Longitude": -71.1296752,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "D32028:Brighton Center - Washington St at Cambridge St": {
+    "id": "D32028",
+    "name": "Brighton Center - Washington St at Cambridge St",
+    "Latitude": 42.34894857,
+    "Longitude": -71.15027189,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2015.0
+  },
+  "A32005:Brighton Mills - 370 Western Ave": {
+    "id": "A32005",
+    "name": "Brighton Mills - 370 Western Ave",
+    "Latitude": 42.36154571,
+    "Longitude": -71.13776207,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "M32082:Broad Canal Way at Third Street": {
+    "id": "M32082",
+    "name": "Broad Canal Way at Third Street",
+    "Latitude": 42.3630455,
+    "Longitude": -71.08287079,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "A32047:Broad St at Central St": {
+    "id": "A32047",
+    "name": "Broad St at Central St",
+    "Latitude": 42.35849449,
+    "Longitude": -71.0542647,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2020.0
+  },
+  "V32011:Broadway at Beacham St": {
+    "id": "V32011",
+    "name": "Broadway at Beacham St",
+    "Latitude": 42.3983606,
+    "Longitude": -71.06373843,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "S32016:Broadway at Central St": {
+    "id": "S32016",
+    "name": "Broadway at Central St",
+    "Latitude": 42.3951715,
+    "Longitude": -71.09850592,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "H32004:Broadway at Gerrish Ave": {
+    "id": "H32004",
+    "name": "Broadway at Gerrish Ave",
+    "Latitude": 42.39453079,
+    "Longitude": -71.03085594,
+    "District": "Chelsea",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "L32004:Broadway at Grafton St": {
+    "id": "L32004",
+    "name": "Broadway at Grafton St",
+    "Latitude": 42.40994213,
+    "Longitude": -71.1400932,
+    "District": "Arlington",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "V32004:Broadway at Lynde St": {
+    "id": "V32004",
+    "name": "Broadway at Lynde St",
+    "Latitude": 42.39648358,
+    "Longitude": -71.0654676,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "V32008:Broadway at Maple St": {
+    "id": "V32008",
+    "name": "Broadway at Maple St",
+    "Latitude": 42.41034691,
+    "Longitude": -71.05260458,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2019.0
+  },
+  "S32014:Broadway St at Mt Pleasant St": {
+    "id": "S32014",
+    "name": "Broadway St at Mt Pleasant St",
+    "Latitude": 42.38614141,
+    "Longitude": -71.0782814,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "C32053:Broadway T Stop": {
+    "id": "C32053",
+    "name": "Broadway T Stop",
+    "Latitude": 42.34304858,
+    "Longitude": -71.0580343,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "K32005:Brookline Town Hall": {
+    "id": "K32005",
+    "name": "Brookline Town Hall",
+    "Latitude": 42.33376473,
+    "Longitude": -71.12046447,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "K32003:Brookline Village - Station Street at MBTA": {
+    "id": "K32003",
+    "name": "Brookline Village - Station Street at MBTA",
+    "Latitude": 42.33274392,
+    "Longitude": -71.11626681,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2012.0
+  },
+  "A32023:Bunker Hill Community College": {
+    "id": "A32023",
+    "name": "Bunker Hill Community College",
+    "Latitude": 42.37408991,
+    "Longitude": -71.06905997,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2015.0
+  },
+  "B32020:Burlington Ave at Brookline Ave": {
+    "id": "B32020",
+    "name": "Burlington Ave at Brookline Ave",
+    "Latitude": 42.345733,
+    "Longitude": -71.100694,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "N32011:California at Chapel": {
+    "id": "N32011",
+    "name": "California at Chapel",
+    "Latitude": 42.36514871,
+    "Longitude": -71.20236039,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2021.0
+  },
+  "M32077:Cambridge Crossing at North First Street": {
+    "id": "M32077",
+    "name": "Cambridge Crossing at North First Street",
+    "Latitude": 42.371141,
+    "Longitude": -71.076198,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2021.0
+  },
+  "M32052:Cambridge Dept. of Public Works -147 Hampshire St.": {
+    "id": "M32052",
+    "name": "Cambridge Dept. of Public Works -147 Hampshire St.",
+    "Latitude": 42.37119728,
+    "Longitude": -71.09759867,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2017.0
+  },
+  "M32013:Cambridge Main Library at Broadway / Trowbridge St": {
+    "id": "M32013",
+    "name": "Cambridge Main Library at Broadway / Trowbridge St",
+    "Latitude": 42.373379,
+    "Longitude": -71.111075,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "M32007:Cambridge St - at Columbia St / Webster Ave": {
+    "id": "M32007",
+    "name": "Cambridge St - at Columbia St / Webster Ave",
+    "Latitude": 42.372969,
+    "Longitude": -71.094445,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "D32000:Cambridge St at Joy St": {
+    "id": "D32000",
+    "name": "Cambridge St at Joy St",
+    "Latitude": 42.36125722,
+    "Longitude": -71.06528744,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "M32019:CambridgeSide Galleria - CambridgeSide PL at Land Blvd": {
+    "id": "M32019",
+    "name": "CambridgeSide Galleria - CambridgeSide PL at Land Blvd",
+    "Latitude": 42.36707407,
+    "Longitude": -71.07679278,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "A32046:Canal St at Causeway St": {
+    "id": "A32046",
+    "name": "Canal St at Causeway St",
+    "Latitude": 42.36530095,
+    "Longitude": -71.06092191,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2011.0
+  },
+  "H32001:Cary Square": {
+    "id": "H32001",
+    "name": "Cary Square",
+    "Latitude": 42.39813565,
+    "Longitude": -71.03070972,
+    "District": "Chelsea",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2021.0
+  },
+  "C32088:Central Ave at River St": {
+    "id": "C32088",
+    "name": "Central Ave at River St",
+    "Latitude": 42.27094707,
+    "Longitude": -71.07337901,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "M32012:Central Sq Post Office / Cambridge City Hall at Mass Ave / Pleasant St": {
+    "id": "M32012",
+    "name": "Central Sq Post Office / Cambridge City Hall at Mass Ave / Pleasant St",
+    "Latitude": 42.366426,
+    "Longitude": -71.105495,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2012.0
+  },
+  "M32011:Central Square at Mass Ave / Essex St": {
+    "id": "M32011",
+    "name": "Central Square at Mass Ave / Essex St",
+    "Latitude": 42.36507,
+    "Longitude": -71.1031,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "A32041:Central Square East Boston": {
+    "id": "A32041",
+    "name": "Central Square East Boston",
+    "Latitude": 42.37544913,
+    "Longitude": -71.03918549,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2019.0
+  },
+  "N32018:Centre St at Commonwealth Ave": {
+    "id": "N32018",
+    "name": "Centre St at Commonwealth Ave",
+    "Latitude": 42.3362358,
+    "Longitude": -71.1934421,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "C32086:Centre St at Parkway YMCA": {
+    "id": "C32086",
+    "name": "Centre St at Parkway YMCA",
+    "Latitude": 42.28277901,
+    "Longitude": -71.15728851,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2019.0
+  },
+  "E32008:Centre St at Seaverns Ave": {
+    "id": "E32008",
+    "name": "Centre St at Seaverns Ave",
+    "Latitude": 42.3121203,
+    "Longitude": -71.1142981,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32085:Centre St at W. Roxbury Post Office": {
+    "id": "C32085",
+    "name": "Centre St at W. Roxbury Post Office",
+    "Latitude": 42.28633199,
+    "Longitude": -71.15344755,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "N32000:Centre St at Washington St": {
+    "id": "N32000",
+    "name": "Centre St at Washington St",
+    "Latitude": 42.35574335,
+    "Longitude": -71.18641943,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "D32016:Charles Circle - Charles St at Cambridge St": {
+    "id": "D32016",
+    "name": "Charles Circle - Charles St at Cambridge St",
+    "Latitude": 42.36079297,
+    "Longitude": -71.07118962,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "D32039:Charlestown Navy Yard": {
+    "id": "D32039",
+    "name": "Charlestown Navy Yard",
+    "Latitude": 42.37412455,
+    "Longitude": -71.054812,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2018.0
+  },
+  "H32003:Chelsea Square": {
+    "id": "H32003",
+    "name": "Chelsea Square",
+    "Latitude": 42.39022671,
+    "Longitude": -71.03857018,
+    "District": "Chelsea",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "V32009:Chelsea St at Vine St": {
+    "id": "V32009",
+    "name": "Chelsea St at Vine St",
+    "Latitude": 42.4203487,
+    "Longitude": -71.04419768,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "H32005:Chelsea Station": {
+    "id": "H32005",
+    "name": "Chelsea Station",
+    "Latitude": 42.39636528,
+    "Longitude": -71.03987179,
+    "District": "Chelsea",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "M32049:Child Street at Brian P. Murphy Staircase": {
+    "id": "M32049",
+    "name": "Child Street at Brian P. Murphy Staircase",
+    "Latitude": 42.37197678,
+    "Longitude": -71.07200496,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2016.0
+  },
+  "D32015:Chinatown Gate Plaza": {
+    "id": "D32015",
+    "name": "Chinatown Gate Plaza",
+    "Latitude": 42.351356,
+    "Longitude": -71.059367,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "D32019:Chinatown T Stop": {
+    "id": "D32019",
+    "name": "Chinatown T Stop",
+    "Latitude": 42.352409,
+    "Longitude": -71.062679,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "B32005:Christian Science Plaza - Massachusetts Ave at Westland Ave": {
+    "id": "B32005",
+    "name": "Christian Science Plaza - Massachusetts Ave at Westland Ave",
+    "Latitude": 42.34366582,
+    "Longitude": -71.08582377,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "M32087:Church St": {
+    "id": "M32087",
+    "name": "Church St",
+    "Latitude": 42.37433925,
+    "Longitude": -71.11966431,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0
+  },
+  "C32099:Circuit Drive at American Legion Hwy": {
+    "id": "C32099",
+    "name": "Circuit Drive at American Legion Hwy",
+    "Latitude": 42.29704126,
+    "Longitude": -71.09171927,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "S32010:Clarendon Hill at Broadway": {
+    "id": "S32010",
+    "name": "Clarendon Hill at Broadway",
+    "Latitude": 42.406302,
+    "Longitude": -71.132446,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "D32047:Clarendon St at Newbury St": {
+    "id": "D32047",
+    "name": "Clarendon St at Newbury St",
+    "Latitude": 42.35159662,
+    "Longitude": -71.07561663,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "C32104:Cleary Sq": {
+    "id": "C32104",
+    "name": "Cleary Sq",
+    "Latitude": 42.2556,
+    "Longitude": -71.12444,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2021.0
+  },
+  "B32035:Cleveland Circle": {
+    "id": "B32035",
+    "name": "Cleveland Circle",
+    "Latitude": 42.33554308,
+    "Longitude": -71.1506152,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "D32057:Clinton St at North St": {
+    "id": "D32057",
+    "name": "Clinton St at North St",
+    "Latitude": 42.36070284,
+    "Longitude": -71.05524927,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2021.0
+  },
+  "C32055:Codman Square Library": {
+    "id": "C32055",
+    "name": "Codman Square Library",
+    "Latitude": 42.2873611,
+    "Longitude": -71.071111,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2018.0
+  },
+  "B32006:Colleges of the Fenway - Fenway at Avenue Louis Pasteur": {
+    "id": "B32006",
+    "name": "Colleges of the Fenway - Fenway at Avenue Louis Pasteur",
+    "Latitude": 42.34011512,
+    "Longitude": -71.10061884,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2011.0
+  },
+  "B32029:Columbia Rd at Ceylon St": {
+    "id": "B32029",
+    "name": "Columbia Rd at Ceylon St",
+    "Latitude": 42.309572,
+    "Longitude": -71.0729,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "C32052:Columbia Rd at Tierney Community Center": {
+    "id": "C32052",
+    "name": "Columbia Rd at Tierney Community Center",
+    "Latitude": 42.33023071,
+    "Longitude": -71.05060093,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32077:Columbus Ave at W. Canton St": {
+    "id": "C32077",
+    "name": "Columbus Ave at W. Canton St",
+    "Latitude": 42.34474225,
+    "Longitude": -71.07648162,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "A32002:Commonwealth Ave at Agganis Way": {
+    "id": "A32002",
+    "name": "Commonwealth Ave at Agganis Way",
+    "Latitude": 42.35169202,
+    "Longitude": -71.11903489,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "K32006:Commonwealth Ave At Babcock St": {
+    "id": "K32006",
+    "name": "Commonwealth Ave At Babcock St",
+    "Latitude": 42.35154735,
+    "Longitude": -71.12126246,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2017.0
+  },
+  "D32033:Commonwealth Ave at Chiswick Rd": {
+    "id": "D32033",
+    "name": "Commonwealth Ave at Chiswick Rd",
+    "Latitude": 42.34024645,
+    "Longitude": -71.15168806,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "A32017:Commonwealth Ave at Griggs St": {
+    "id": "A32017",
+    "name": "Commonwealth Ave at Griggs St",
+    "Latitude": 42.34922469,
+    "Longitude": -71.13275303,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "D32034:Commonwealth Ave at Kelton St": {
+    "id": "D32034",
+    "name": "Commonwealth Ave at Kelton St",
+    "Latitude": 42.34835863,
+    "Longitude": -71.13997217,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "T32013:Community Life Center": {
+    "id": "T32013",
+    "name": "Community Life Center",
+    "Latitude": 42.520136,
+    "Longitude": -70.906271,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 9.0,
+    "Deployment Year": 2022.0
+  },
+  "S32022:Community Path at Cedar Street": {
+    "id": "S32022",
+    "name": "Community Path at Cedar Street",
+    "Latitude": 42.39407224,
+    "Longitude": -71.11133695,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "S32040:Community Path at Lowell St": {
+    "id": "S32040",
+    "name": "Community Path at Lowell St",
+    "Latitude": 42.392525,
+    "Longitude": -71.105587,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "M32074:Concord Ave at Spinelli Place": {
+    "id": "M32074",
+    "name": "Concord Ave at Spinelli Place",
+    "Latitude": 42.390719,
+    "Longitude": -71.1538877,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "D32009:Congress St at Boston City Hall": {
+    "id": "D32009",
+    "name": "Congress St at Boston City Hall",
+    "Latitude": 42.36041775,
+    "Longitude": -71.05752244,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2011.0
+  },
+  "C32032:Congress St at Northern Ave": {
+    "id": "C32032",
+    "name": "Congress St at Northern Ave",
+    "Latitude": 42.3481,
+    "Longitude": -71.03764,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 13.0,
+    "Deployment Year": 2016.0
+  },
+  "C32010:Congress St at Sleeper St": {
+    "id": "C32010",
+    "name": "Congress St at Sleeper St",
+    "Latitude": 42.3510045,
+    "Longitude": -71.04930013,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "S32004:Conway Park - Somerville Avenue": {
+    "id": "S32004",
+    "name": "Conway Park - Somerville Avenue",
+    "Latitude": 42.38363895,
+    "Longitude": -71.10853672,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2012.0
+  },
+  "K32001:Coolidge Corner - Beacon St at Centre St": {
+    "id": "K32001",
+    "name": "Coolidge Corner - Beacon St at Centre St",
+    "Latitude": 42.341598,
+    "Longitude": -71.123338,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "W32001:Coolidge Sq.": {
+    "id": "W32001",
+    "name": "Coolidge Sq.",
+    "Latitude": 42.37207611,
+    "Longitude": -71.15683131,
+    "District": "Watertown",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2020.0
+  },
+  "D32005:Copley Square - Dartmouth St at Boylston St": {
+    "id": "D32005",
+    "name": "Copley Square - Dartmouth St at Boylston St",
+    "Latitude": 42.34992828,
+    "Longitude": -71.07739207,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 29.0,
+    "Deployment Year": 2011.0
+  },
+  "S32037:Craigie at Summer St": {
+    "id": "S32037",
+    "name": "Craigie at Summer St",
+    "Latitude": 42.38831608,
+    "Longitude": -71.11068249,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "D32010:Cross St at Hanover St": {
+    "id": "D32010",
+    "name": "Cross St at Hanover St",
+    "Latitude": 42.362811,
+    "Longitude": -71.056067,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "E32001:Curtis Hall - South St at Centre St": {
+    "id": "E32001",
+    "name": "Curtis Hall - South St at Centre St",
+    "Latitude": 42.309054,
+    "Longitude": -71.11543,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "K32009:Cypress St at Clark Playground": {
+    "id": "K32009",
+    "name": "Cypress St at Clark Playground",
+    "Latitude": 42.32784317,
+    "Longitude": -71.12536222,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32030:Dana Park": {
+    "id": "M32030",
+    "name": "Dana Park",
+    "Latitude": 42.36178044,
+    "Longitude": -71.10809952,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2014.0
+  },
+  "M32031:Danehy Park": {
+    "id": "M32031",
+    "name": "Danehy Park",
+    "Latitude": 42.388966,
+    "Longitude": -71.132788,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2014.0
+  },
+  "M32075:Danehy Park at New Street": {
+    "id": "M32075",
+    "name": "Danehy Park at New Street",
+    "Latitude": 42.389456,
+    "Longitude": -71.139019,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "S32006:Davis Square": {
+    "id": "S32006",
+    "name": "Davis Square",
+    "Latitude": 42.396969,
+    "Longitude": -71.123024,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 25.0,
+    "Deployment Year": 2012.0
+  },
+  "A32051:Day Sq": {
+    "id": "A32051",
+    "name": "Day Sq",
+    "Latitude": 42.379295,
+    "Longitude": -71.027733,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2020.0
+  },
+  "B32037:Deerfield St at Commonwealth Ave": {
+    "id": "B32037",
+    "name": "Deerfield St at Commonwealth Ave",
+    "Latitude": 42.34924377,
+    "Longitude": -71.0972821,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "T32018:Derby Street": {
+    "id": "T32018",
+    "name": "Derby Street",
+    "Latitude": 42.52009618,
+    "Longitude": -70.89139044,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "M32066:Discovery Park - 30 Acorn Park Drive": {
+    "id": "M32066",
+    "name": "Discovery Park - 30 Acorn Park Drive",
+    "Latitude": 42.39790817,
+    "Longitude": -71.14797131,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2019.0
+  },
+  "C32009:Dorchester Ave at Gillette Park": {
+    "id": "C32009",
+    "name": "Dorchester Ave at Gillette Park",
+    "Latitude": 42.34404051,
+    "Longitude": -71.05737627,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "C32066:Dorchester Ave at King St": {
+    "id": "C32066",
+    "name": "Dorchester Ave at King St",
+    "Latitude": 42.291718,
+    "Longitude": -71.062571,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "B32017:Dudley Square - Bolling Building": {
+    "id": "B32017",
+    "name": "Dudley Square - Bolling Building",
+    "Latitude": 42.32984299,
+    "Longitude": -71.08386572,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2011.0
+  },
+  "C32015:Dudley Town Common - Mt Pleasant Ave at Blue Hill Ave": {
+    "id": "C32015",
+    "name": "Dudley Town Common - Mt Pleasant Ave at Blue Hill Ave",
+    "Latitude": 42.325333,
+    "Longitude": -71.075354,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "C32018:E Cottage St at Columbia Rd": {
+    "id": "C32018",
+    "name": "E Cottage St at Columbia Rd",
+    "Latitude": 42.320561,
+    "Longitude": -71.06198,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2013.0
+  },
+  "A32031:East Boston Neighborhood Health Center - 20 Maverick Square": {
+    "id": "A32031",
+    "name": "East Boston Neighborhood Health Center - 20 Maverick Square",
+    "Latitude": 42.369536,
+    "Longitude": -71.039431,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2016.0
+  },
+  "S32017:East Somerville Library (Broadway and Illinois)": {
+    "id": "S32017",
+    "name": "East Somerville Library (Broadway and Illinois)",
+    "Latitude": 42.38762811,
+    "Longitude": -71.08318716,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "S32038:Edgerly Education Center": {
+    "id": "S32038",
+    "name": "Edgerly Education Center",
+    "Latitude": 42.38717463,
+    "Longitude": -71.08714389,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "A32022:Edwards Playground - Main St at Eden St": {
+    "id": "A32022",
+    "name": "Edwards Playground - Main St at Eden St",
+    "Latitude": 42.378965,
+    "Longitude": -71.068607,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2015.0
+  },
+  "M32034:EF - North Point Park": {
+    "id": "M32034",
+    "name": "EF - North Point Park",
+    "Latitude": 42.369885,
+    "Longitude": -71.069957,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2014.0
+  },
+  "E32004:Egleston Square - Atherton St at Washington St": {
+    "id": "E32004",
+    "name": "Egleston Square - Atherton St at Washington St",
+    "Latitude": 42.315692,
+    "Longitude": -71.098634,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "S32039:Elm St at White St": {
+    "id": "S32039",
+    "name": "Elm St at White St",
+    "Latitude": 42.38952436,
+    "Longitude": -71.1169414,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "V32005:Encore": {
+    "id": "V32005",
+    "name": "Encore",
+    "Latitude": 42.39329263,
+    "Longitude": -71.0724476,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "T32011:Essex St at Dalton Parkway": {
+    "id": "T32011",
+    "name": "Essex St at Dalton Parkway",
+    "Latitude": 42.516223,
+    "Longitude": -70.905535,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "V32003:Everett Square (Broadway at Chelsea St)": {
+    "id": "V32003",
+    "name": "Everett Square (Broadway at Chelsea St)",
+    "Latitude": 42.40701602,
+    "Longitude": -71.05645001,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2019.0
+  },
+  "A32000:Fan Pier": {
+    "id": "A32000",
+    "name": "Fan Pier",
+    "Latitude": 42.35339051,
+    "Longitude": -71.0445714,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "C32051:Farragut Rd at E. 6th St": {
+    "id": "C32051",
+    "name": "Farragut Rd at E. 6th St",
+    "Latitude": 42.3334,
+    "Longitude": -71.02495,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2018.0
+  },
+  "C32041:Fields Corner T Stop": {
+    "id": "C32041",
+    "name": "Fields Corner T Stop",
+    "Latitude": 42.29963349,
+    "Longitude": -71.06068976,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "B32064:Flat 9 at Whittier": {
+    "id": "B32064",
+    "name": "Flat 9 at Whittier",
+    "Latitude": 42.33420351,
+    "Longitude": -71.08767617,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2022.0
+  },
+  "S32047:Foley St at Grand Union Blvd": {
+    "id": "S32047",
+    "name": "Foley St at Grand Union Blvd",
+    "Latitude": 42.3930184,
+    "Longitude": -71.08071685,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "E32010:Forest Hills": {
+    "id": "E32010",
+    "name": "Forest Hills",
+    "Latitude": 42.300923,
+    "Longitude": -71.114249,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 40.0,
+    "Deployment Year": 2019.0
+  },
+  "T32010:Forest River Park": {
+    "id": "T32010",
+    "name": "Forest River Park",
+    "Latitude": 42.506395,
+    "Longitude": -70.88693,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "B32062:Forsyth St at Huntington Ave": {
+    "id": "B32062",
+    "name": "Forsyth St at Huntington Ave",
+    "Latitude": 42.339202,
+    "Longitude": -71.090511,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "S32015:Foss Park": {
+    "id": "S32015",
+    "name": "Foss Park",
+    "Latitude": 42.39108438,
+    "Longitude": -71.09039426,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32037:Four Corners - 157 Washington St": {
+    "id": "C32037",
+    "name": "Four Corners - 157 Washington St",
+    "Latitude": 42.30412793,
+    "Longitude": -71.07929528,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2018.0
+  },
+  "C32027:Franklin Park - Seaver St at Humboldt Ave": {
+    "id": "C32027",
+    "name": "Franklin Park - Seaver St at Humboldt Ave",
+    "Latitude": 42.309796,
+    "Longitude": -71.092225,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2015.0
+  },
+  "C32030:Franklin Park Zoo - Franklin Park Rd at Blue Hill Ave": {
+    "id": "C32030",
+    "name": "Franklin Park Zoo - Franklin Park Rd at Blue Hill Ave",
+    "Latitude": 42.303469,
+    "Longitude": -71.085347,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2015.0
+  },
+  "M32051:Fresh Pond Reservation": {
+    "id": "M32051",
+    "name": "Fresh Pond Reservation",
+    "Latitude": 42.38267828,
+    "Longitude": -71.14347895,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2017.0
+  },
+  "M32078:Galileo Galilei Way at Fulkerson St/Binney St": {
+    "id": "M32078",
+    "name": "Galileo Galilei Way at Fulkerson St/Binney St",
+    "Latitude": 42.3664204,
+    "Longitude": -71.0885418,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "M32072:Galileo Galilei Way at Main Street": {
+    "id": "M32072",
+    "name": "Galileo Galilei Way at Main Street",
+    "Latitude": 42.36300378,
+    "Longitude": -71.08974038,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "C32040:Gallivan Blvd at Adams St": {
+    "id": "C32040",
+    "name": "Gallivan Blvd at Adams St",
+    "Latitude": 42.28297568,
+    "Longitude": -71.05466698,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32090:Geiger Gibson Community Health Center": {
+    "id": "C32090",
+    "name": "Geiger Gibson Community Health Center",
+    "Latitude": 42.31886468,
+    "Longitude": -71.04536798,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "S32046:Gilman Square T at Medford St": {
+    "id": "S32046",
+    "name": "Gilman Square T at Medford St",
+    "Latitude": 42.3867355,
+    "Longitude": -71.0946444,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "V32006:Glendale Square (Ferry St at Broadway)": {
+    "id": "V32006",
+    "name": "Glendale Square (Ferry St at Broadway)",
+    "Latitude": 42.41427294,
+    "Longitude": -71.04479656,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "A32034:Glendon St at Condor St": {
+    "id": "A32034",
+    "name": "Glendon St at Condor St",
+    "Latitude": 42.38240378,
+    "Longitude": -71.03024304,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "T32014:Goodhue St at Grove St": {
+    "id": "T32014",
+    "name": "Goodhue St at Grove St",
+    "Latitude": 42.520897,
+    "Longitude": -70.910528,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "M32081:Gore Street at Lambert Street": {
+    "id": "M32081",
+    "name": "Gore Street at Lambert Street",
+    "Latitude": 42.3730798,
+    "Longitude": -71.08634234,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "A32049:Gove St at Orleans St": {
+    "id": "A32049",
+    "name": "Gove St at Orleans St",
+    "Latitude": 42.37057753,
+    "Longitude": -71.0355854,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "B32032:Government Center - Cambridge St at Court St": {
+    "id": "B32032",
+    "name": "Government Center - Cambridge St at Court St",
+    "Latitude": 42.3598254,
+    "Longitude": -71.05979576,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 35.0,
+    "Deployment Year": 2018.0
+  },
+  "M32068:Graham and Parks School - Linnaean St at Walker St": {
+    "id": "M32068",
+    "name": "Graham and Parks School - Linnaean St at Walker St",
+    "Latitude": 42.3829443,
+    "Longitude": -71.12449831,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2020.0
+  },
+  "V32015:Gramsdorf Playground": {
+    "id": "V32015",
+    "name": "Gramsdorf Playground",
+    "Latitude": 42.408156,
+    "Longitude": -71.0429,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2022.0
+  },
+  "E32005:Green Street T Stop - Green St at Amory St": {
+    "id": "E32005",
+    "name": "Green Street T Stop - Green St at Amory St",
+    "Latitude": 42.310579,
+    "Longitude": -71.107341,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2013.0
+  },
+  "B32028:Grove Hall Library - 41 Geneva Ave": {
+    "id": "B32028",
+    "name": "Grove Hall Library - 41 Geneva Ave",
+    "Latitude": 42.30791,
+    "Longitude": -71.080952,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "S32019:Grove St at Community Path": {
+    "id": "S32019",
+    "name": "Grove St at Community Path",
+    "Latitude": 42.39638681,
+    "Longitude": -71.12011306,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "F32005:Haines Square": {
+    "id": "F32005",
+    "name": "Haines Square",
+    "Latitude": 42.42333137,
+    "Longitude": -71.09124541,
+    "District": "Medford",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "V32012:Hale Park": {
+    "id": "V32012",
+    "name": "Hale Park",
+    "Latitude": 42.4206487,
+    "Longitude": -71.0437126,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 0.0,
+    "Deployment Year": 2020.0
+  },
+  "F32004:Harris Park": {
+    "id": "F32004",
+    "name": "Harris Park",
+    "Latitude": 42.41081837,
+    "Longitude": -71.08152866,
+    "District": "Medford",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "D32043:Harrison Ave at Bennet St": {
+    "id": "D32043",
+    "name": "Harrison Ave at Bennet St",
+    "Latitude": 42.3494261,
+    "Longitude": -71.0620996,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32093:Harrison Ave at E. Dedham St": {
+    "id": "C32093",
+    "name": "Harrison Ave at E. Dedham St",
+    "Latitude": 42.339194,
+    "Longitude": -71.06975,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "C32057:Harrison Ave at Mullins Way": {
+    "id": "C32057",
+    "name": "Harrison Ave at Mullins Way",
+    "Latitude": 42.34521562,
+    "Longitude": -71.06384031,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "D32035:Harvard Ave at Brainerd Rd": {
+    "id": "D32035",
+    "name": "Harvard Ave at Brainerd Rd",
+    "Latitude": 42.34953017,
+    "Longitude": -71.13022771,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32016:Harvard Kennedy School at Bennett St / Eliot St": {
+    "id": "M32016",
+    "name": "Harvard Kennedy School at Bennett St / Eliot St",
+    "Latitude": 42.3722168,
+    "Longitude": -71.12188071,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2012.0
+  },
+  "M32020:Harvard Law School at Mass Ave / Jarvis St": {
+    "id": "M32020",
+    "name": "Harvard Law School at Mass Ave / Jarvis St",
+    "Latitude": 42.379011,
+    "Longitude": -71.119945,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "M32017:Harvard Square at Brattle St / Eliot St": {
+    "id": "M32017",
+    "name": "Harvard Square at Brattle St / Eliot St",
+    "Latitude": 42.3733288,
+    "Longitude": -71.12098601,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "M32018:Harvard Square at Mass Ave/ Dunster": {
+    "id": "M32018",
+    "name": "Harvard Square at Mass Ave/ Dunster",
+    "Latitude": 42.373268,
+    "Longitude": -71.118579,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "K32017:Harvard St and Stedman St": {
+    "id": "K32017",
+    "name": "Harvard St and Stedman St",
+    "Latitude": 42.34435176,
+    "Longitude": -71.12490356,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "M32055:Harvard St at Greene-Rose Heritage Park": {
+    "id": "M32055",
+    "name": "Harvard St at Greene-Rose Heritage Park",
+    "Latitude": 42.36599433,
+    "Longitude": -71.09522222,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "A32052:Harvard Stadium: N. Harvard St at Soldiers Field Rd": {
+    "id": "A32052",
+    "name": "Harvard Stadium: N. Harvard St at Soldiers Field Rd",
+    "Latitude": 42.368019,
+    "Longitude": -71.1242,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2020.0
+  },
+  "M32023:Harvard University / SEAS Cruft-Pierce Halls at 29 Oxford St": {
+    "id": "M32023",
+    "name": "Harvard University / SEAS Cruft-Pierce Halls at 29 Oxford St",
+    "Latitude": 42.377945,
+    "Longitude": -71.116865,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2012.0
+  },
+  "M32021:Harvard University Gund Hall at Quincy St / Kirkland St": {
+    "id": "M32021",
+    "name": "Harvard University Gund Hall at Quincy St / Kirkland St",
+    "Latitude": 42.376369,
+    "Longitude": -71.114025,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "M32014:Harvard University Housing - 115 Putnam Ave at Peabody Terrace": {
+    "id": "M32014",
+    "name": "Harvard University Housing - 115 Putnam Ave at Peabody Terrace",
+    "Latitude": 42.366621,
+    "Longitude": -71.114214,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "M32024:Harvard University Radcliffe Quadrangle at Shepard St / Garden St": {
+    "id": "M32024",
+    "name": "Harvard University Radcliffe Quadrangle at Shepard St / Garden St",
+    "Latitude": 42.380287,
+    "Longitude": -71.125107,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "M32038:Harvard University River Houses at DeWolfe St / Cowperthwaite St": {
+    "id": "M32038",
+    "name": "Harvard University River Houses at DeWolfe St / Cowperthwaite St",
+    "Latitude": 42.36923907,
+    "Longitude": -71.11687034,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 21.0,
+    "Deployment Year": 2012.0
+  },
+  "T32008:Hawthorne Boulevard": {
+    "id": "T32008",
+    "name": "Hawthorne Boulevard",
+    "Latitude": 42.5223714,
+    "Longitude": -70.8903331,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 9.0,
+    "Deployment Year": 2022.0
+  },
+  "D32026:Hayes Square - Vine St at Moulton St": {
+    "id": "D32026",
+    "name": "Hayes Square - Vine St at Moulton St",
+    "Latitude": 42.377022,
+    "Longitude": -71.056605,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2013.0
+  },
+  "K32010:High St at Cypress St": {
+    "id": "K32010",
+    "name": "High St at Cypress St",
+    "Latitude": 42.32464511,
+    "Longitude": -71.12135231,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "B32003:HMS/HSPH - Avenue Louis Pasteur at Longwood Ave": {
+    "id": "B32003",
+    "name": "HMS/HSPH - Avenue Louis Pasteur at Longwood Ave",
+    "Latitude": 42.33741748,
+    "Longitude": -71.10286117,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 25.0,
+    "Deployment Year": 2011.0
+  },
+  "A32040:Honan Library": {
+    "id": "A32040",
+    "name": "Honan Library",
+    "Latitude": 42.3602737,
+    "Longitude": -71.12852452,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "D32060:Hood Park": {
+    "id": "D32060",
+    "name": "Hood Park",
+    "Latitude": 42.38004535,
+    "Longitude": -71.07304573,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2022.0
+  },
+  "F32006:Hormel Stadium": {
+    "id": "F32006",
+    "name": "Hormel Stadium",
+    "Latitude": 42.40721644,
+    "Longitude": -71.09651506,
+    "District": "Medford",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "B32033:Huntington Ave at Mass Art": {
+    "id": "B32033",
+    "name": "Huntington Ave at Mass Art",
+    "Latitude": 42.33658555,
+    "Longitude": -71.09886996,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32044:Huron Ave At Vassal Lane": {
+    "id": "M32044",
+    "name": "Huron Ave At Vassal Lane",
+    "Latitude": 42.38165061,
+    "Longitude": -71.13426981,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2017.0
+  },
+  "C32100:Hyde Park Ave at Arlington St": {
+    "id": "C32100",
+    "name": "Hyde Park Ave at Arlington St",
+    "Latitude": 42.26286746,
+    "Longitude": -71.12163126,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "C32089:Hyde Park Ave at Walk Hill St": {
+    "id": "C32089",
+    "name": "Hyde Park Ave at Walk Hill St",
+    "Latitude": 42.29606705,
+    "Longitude": -71.116012,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "E32013:Hyde Park Library": {
+    "id": "E32013",
+    "name": "Hyde Park Library",
+    "Latitude": 42.2568376,
+    "Longitude": -71.122509,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "E32003:Hyde Square - Barbara St at Centre St": {
+    "id": "E32003",
+    "name": "Hyde Square - Barbara St at Centre St",
+    "Latitude": 42.32176526,
+    "Longitude": -71.10984161,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "C32020:ID Building East": {
+    "id": "C32020",
+    "name": "ID Building East",
+    "Latitude": 42.344827,
+    "Longitude": -71.028664,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2014.0
+  },
+  "C32021:ID Building West": {
+    "id": "C32021",
+    "name": "ID Building West",
+    "Latitude": 42.344796,
+    "Longitude": -71.031614,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2014.0
+  },
+  "C32025:Ink Block - Harrison Ave at Herald St": {
+    "id": "C32025",
+    "name": "Ink Block - Harrison Ave at Herald St",
+    "Latitude": 42.345901,
+    "Longitude": -71.063187,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2015.0
+  },
+  "M32062:Inman Square at Springfield St.": {
+    "id": "M32062",
+    "name": "Inman Square at Springfield St.",
+    "Latitude": 42.37426714,
+    "Longitude": -71.10026479,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 25.0,
+    "Deployment Year": 2019.0
+  },
+  "A32011:Innovation Lab - 125 Western Ave at Batten Way": {
+    "id": "A32011",
+    "name": "Innovation Lab - 125 Western Ave at Batten Way",
+    "Latitude": 42.36371276,
+    "Longitude": -71.12459779,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "E32006:Jackson Square T Stop": {
+    "id": "E32006",
+    "name": "Jackson Square T Stop",
+    "Latitude": 42.32293117,
+    "Longitude": -71.10014141,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2013.0
+  },
+  "D32052:Jamaica St at South St": {
+    "id": "D32052",
+    "name": "Jamaica St at South St",
+    "Latitude": 42.30604563,
+    "Longitude": -71.11570891,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "K32004:JFK Crossing at Harvard St. / Thorndike St.": {
+    "id": "K32004",
+    "name": "JFK Crossing at Harvard St. / Thorndike St.",
+    "Latitude": 42.34655124,
+    "Longitude": -71.12833211,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "C32013:JFK/UMass T Stop": {
+    "id": "C32013",
+    "name": "JFK/UMass T Stop",
+    "Latitude": 42.32033974,
+    "Longitude": -71.05118036,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "M32083:John Ahern Field at Kennedy-Longfellow School": {
+    "id": "M32083",
+    "name": "John Ahern Field at Kennedy-Longfellow School",
+    "Latitude": 42.36903567,
+    "Longitude": -71.0863096,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "V32013:Kearins Playground": {
+    "id": "V32013",
+    "name": "Kearins Playground",
+    "Latitude": 42.40616124,
+    "Longitude": -71.06041655,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "M32032:Kendall Street": {
+    "id": "M32032",
+    "name": "Kendall Street",
+    "Latitude": 42.36356016,
+    "Longitude": -71.08216792,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2014.0
+  },
+  "M32004:Kendall T": {
+    "id": "M32004",
+    "name": "Kendall T",
+    "Latitude": 42.36242784,
+    "Longitude": -71.08495474,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2016.0
+  },
+  "B32010:Kenmore Square": {
+    "id": "B32010",
+    "name": "Kenmore Square",
+    "Latitude": 42.348706,
+    "Longitude": -71.097009,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 26.0,
+    "Deployment Year": 2011.0
+  },
+  "M32065:Kennedy-Longfellow School 158 Spring St": {
+    "id": "M32065",
+    "name": "Kennedy-Longfellow School 158 Spring St",
+    "Latitude": 42.36955298,
+    "Longitude": -71.08579015,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "C32096:Knoll St at Centre St": {
+    "id": "C32096",
+    "name": "Knoll St at Centre St",
+    "Latitude": 42.29376656,
+    "Longitude": -71.1365658,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "T32006:Lafayette at Leach St": {
+    "id": "T32006",
+    "name": "Lafayette at Leach St",
+    "Latitude": 42.51142784,
+    "Longitude": -70.89183301,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "M32009:Lafayette Square at Mass Ave / Main St / Columbia St": {
+    "id": "M32009",
+    "name": "Lafayette Square at Mass Ave / Main St / Columbia St",
+    "Latitude": 42.36346469,
+    "Longitude": -71.10057324,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "B32015:Landmark Center - Brookline Ave at Park Dr": {
+    "id": "B32015",
+    "name": "Landmark Center - Brookline Ave at Park Dr",
+    "Latitude": 42.34369056,
+    "Longitude": -71.10235287,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "N32008:Langley Lot": {
+    "id": "N32008",
+    "name": "Langley Lot",
+    "Latitude": 42.330528,
+    "Longitude": -71.192861,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "B32058:Lansdowne T Stop": {
+    "id": "B32058",
+    "name": "Lansdowne T Stop",
+    "Latitude": 42.34734473,
+    "Longitude": -71.10016808,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2019.0
+  },
+  "M32001:Lechmere Station at Cambridge St / First St": {
+    "id": "M32001",
+    "name": "Lechmere Station at Cambridge St / First St",
+    "Latitude": 42.370677,
+    "Longitude": -71.076529,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "D32061:Lenox St at Kendall St": {
+    "id": "D32061",
+    "name": "Lenox St at Kendall St",
+    "Latitude": 42.33759485,
+    "Longitude": -71.08255059,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2023.0
+  },
+  "M32039:Lesley University": {
+    "id": "M32039",
+    "name": "Lesley University",
+    "Latitude": 42.38674802,
+    "Longitude": -71.11901879,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2015.0
+  },
+  "A32057:Lewis Mall Wharf": {
+    "id": "A32057",
+    "name": "Lewis Mall Wharf",
+    "Latitude": 42.36567871,
+    "Longitude": -71.04030132,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 21.0
+  },
+  "D32006:Lewis Wharf at Atlantic Ave": {
+    "id": "D32006",
+    "name": "Lewis Wharf at Atlantic Ave",
+    "Latitude": 42.363871,
+    "Longitude": -71.050877,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "M32025:Linear Park - Mass. Ave. at Cameron Ave.": {
+    "id": "M32025",
+    "name": "Linear Park - Mass. Ave. at Cameron Ave.",
+    "Latitude": 42.397828,
+    "Longitude": -71.130516,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0
+  },
+  "L32002:Linwood St at Minuteman Bikeway": {
+    "id": "L32002",
+    "name": "Linwood St at Minuteman Bikeway",
+    "Latitude": 42.40935396,
+    "Longitude": -71.14906519,
+    "District": "Arlington",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "A32004:Longwood Ave at Binney St": {
+    "id": "A32004",
+    "name": "Longwood Ave at Binney St",
+    "Latitude": 42.338629,
+    "Longitude": -71.1065,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "M32022:Lower Cambridgeport at Magazine St / Riverside Rd": {
+    "id": "M32022",
+    "name": "Lower Cambridgeport at Magazine St / Riverside Rd",
+    "Latitude": 42.3572185,
+    "Longitude": -71.11387163,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "S32013:Magoun Square at Trum Field": {
+    "id": "S32013",
+    "name": "Magoun Square at Trum Field",
+    "Latitude": 42.3977834,
+    "Longitude": -71.10594004,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2014.0
+  },
+  "D32020:Main St at Austin St": {
+    "id": "D32020",
+    "name": "Main St at Austin St",
+    "Latitude": 42.375603,
+    "Longitude": -71.064608,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2012.0
+  },
+  "D32036:Main St at Baldwin St": {
+    "id": "D32036",
+    "name": "Main St at Baldwin St",
+    "Latitude": 42.380857,
+    "Longitude": -71.070629,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "F32001:Main St at Brooks Park": {
+    "id": "F32001",
+    "name": "Main St at Brooks Park",
+    "Latitude": 42.411709,
+    "Longitude": -71.110444,
+    "District": "Medford",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "D32038:Main St at Thompson Sq": {
+    "id": "D32038",
+    "name": "Main St at Thompson Sq",
+    "Latitude": 42.37487847,
+    "Longitude": -71.06383499,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32080:Main Street/Albany Street/Technology Square": {
+    "id": "M32080",
+    "name": "Main Street/Albany Street/Technology Square",
+    "Latitude": 42.3629016,
+    "Longitude": -71.0915669,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2022.0
+  },
+  "G32001:Malden Center T Station": {
+    "id": "G32001",
+    "name": "Malden Center T Station",
+    "Latitude": 42.426541,
+    "Longitude": -71.073179,
+    "District": "Malden",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "G32003:Malden High School": {
+    "id": "G32003",
+    "name": "Malden High School",
+    "Latitude": 42.42653766,
+    "Longitude": -71.06393695,
+    "District": "Malden",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "K32012:Marion St at Harvard St": {
+    "id": "K32012",
+    "name": "Marion St at Harvard St",
+    "Latitude": 42.34012243,
+    "Longitude": -71.12070564,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "A32048:Marion St at White St": {
+    "id": "A32048",
+    "name": "Marion St at White St",
+    "Latitude": 42.38066931,
+    "Longitude": -71.03907316,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "E32012:Martha Eliot Health Center": {
+    "id": "E32012",
+    "name": "Martha Eliot Health Center",
+    "Latitude": 42.324173,
+    "Longitude": -71.10196,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2020.0
+  },
+  "M32061:Mass Ave at Albany St": {
+    "id": "M32061",
+    "name": "Mass Ave at Albany St",
+    "Latitude": 42.36135838,
+    "Longitude": -71.09670274,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2019.0
+  },
+  "L32006:Mass Ave at Broadway": {
+    "id": "L32006",
+    "name": "Mass Ave at Broadway",
+    "Latitude": 42.41420213,
+    "Longitude": -71.15051883,
+    "District": "Arlington",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "L32003:Mass Ave at Grafton St": {
+    "id": "L32003",
+    "name": "Mass Ave at Grafton St",
+    "Latitude": 42.40726052,
+    "Longitude": -71.14382132,
+    "District": "Arlington",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "M32056:Mass Ave at Hadley/Walden": {
+    "id": "M32056",
+    "name": "Mass Ave at Hadley/Walden",
+    "Latitude": 42.39120972,
+    "Longitude": -71.12260755,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32063:Mass Ave T Station": {
+    "id": "C32063",
+    "name": "Mass Ave T Station",
+    "Latitude": 42.34135616,
+    "Longitude": -71.08336953,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2019.0
+  },
+  "M32085:Mass Ave/Lafayette Square": {
+    "id": "M32085",
+    "name": "Mass Ave/Lafayette Square",
+    "Latitude": 42.36356499,
+    "Longitude": -71.10044184,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2023.0
+  },
+  "C32004:Massachusetts Ave at Columbus Ave": {
+    "id": "C32004",
+    "name": "Massachusetts Ave at Columbus Ave",
+    "Latitude": 42.340814,
+    "Longitude": -71.0816197,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2011.0
+  },
+  "C32050:Mattapan Library": {
+    "id": "C32050",
+    "name": "Mattapan Library",
+    "Latitude": 42.2773889,
+    "Longitude": -71.09325,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32045:Mattapan T Stop": {
+    "id": "C32045",
+    "name": "Mattapan T Stop",
+    "Latitude": 42.267902,
+    "Longitude": -71.093641,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "A32030:Maverick Square - Lewis Mall": {
+    "id": "A32030",
+    "name": "Maverick Square - Lewis Mall",
+    "Latitude": 42.36884408,
+    "Longitude": -71.03977829,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 33.0,
+    "Deployment Year": 2016.0
+  },
+  "A32044:Maverick St at Massport Path": {
+    "id": "A32044",
+    "name": "Maverick St at Massport Path",
+    "Latitude": 42.36774122,
+    "Longitude": -71.03335975,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "T32004:Mayor Salvo Path at Mill St": {
+    "id": "T32004",
+    "name": "Mayor Salvo Path at Mill St",
+    "Latitude": 42.5180352,
+    "Longitude": -70.89570075,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "F32002:Medford Sq - Riverside Ave at River St": {
+    "id": "F32002",
+    "name": "Medford Sq - Riverside Ave at River St",
+    "Latitude": 42.417724,
+    "Longitude": -71.108102,
+    "District": "Medford",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "D32037:Medford St at Charlestown BCYF": {
+    "id": "D32037",
+    "name": "Medford St at Charlestown BCYF",
+    "Latitude": 42.38042947,
+    "Longitude": -71.06055722,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "M32006:MIT at Mass Ave / Amherst St": {
+    "id": "M32006",
+    "name": "MIT at Mass Ave / Amherst St",
+    "Latitude": 42.3581,
+    "Longitude": -71.093198,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2012.0
+  },
+  "M32070:MIT Carleton St at Amherst St": {
+    "id": "M32070",
+    "name": "MIT Carleton St at Amherst St",
+    "Latitude": 42.36054174,
+    "Longitude": -71.08669817,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2020.0
+  },
+  "M32071:MIT Hayward St at Amherst St": {
+    "id": "M32071",
+    "name": "MIT Hayward St at Amherst St",
+    "Latitude": 42.36085937,
+    "Longitude": -71.08551858,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2020.0
+  },
+  "M32041:MIT Pacific St at Purrington St": {
+    "id": "M32041",
+    "name": "MIT Pacific St at Purrington St",
+    "Latitude": 42.3595732,
+    "Longitude": -71.10129476,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2015.0
+  },
+  "M32005:MIT Stata Center at Vassar St / Main St": {
+    "id": "M32005",
+    "name": "MIT Stata Center at Vassar St / Main St",
+    "Latitude": 42.36213123,
+    "Longitude": -71.09115601,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 35.0,
+    "Deployment Year": 2012.0
+  },
+  "M32042:MIT Vassar St": {
+    "id": "M32042",
+    "name": "MIT Vassar St",
+    "Latitude": 42.35560121,
+    "Longitude": -71.10394478,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 53.0,
+    "Deployment Year": 2015.0
+  },
+  "B32023:MLK Blvd at Washington St": {
+    "id": "B32023",
+    "name": "MLK Blvd at Washington St",
+    "Latitude": 42.32143814,
+    "Longitude": -71.09126061,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "C32103:Morton St at Gallivan Blvd": {
+    "id": "C32103",
+    "name": "Morton St at Gallivan Blvd",
+    "Latitude": 42.278747,
+    "Longitude": -71.080286,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "C23045:Morton St T": {
+    "id": "C23045",
+    "name": "Morton St T",
+    "Latitude": 42.28072514,
+    "Longitude": -71.08617242,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32043:Mt Auburn": {
+    "id": "M32043",
+    "name": "Mt Auburn",
+    "Latitude": 42.37478629,
+    "Longitude": -71.13320231,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2015.0
+  },
+  "C32080:Mt. Hope St at Hyde Park Ave": {
+    "id": "C32080",
+    "name": "Mt. Hope St at Hyde Park Ave",
+    "Latitude": 42.28484472,
+    "Longitude": -71.11874517,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "D32017:Mugar Way at Beacon St": {
+    "id": "D32017",
+    "name": "Mugar Way at Beacon St",
+    "Latitude": 42.35553628,
+    "Longitude": -71.0728687,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "C32023:Murphy Skating Rink - 1880 Day Blvd": {
+    "id": "C32023",
+    "name": "Murphy Skating Rink - 1880 Day Blvd",
+    "Latitude": 42.336448,
+    "Longitude": -71.023739,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2014.0
+  },
+  "M32045:Museum of Science": {
+    "id": "M32045",
+    "name": "Museum of Science",
+    "Latitude": 42.36769018,
+    "Longitude": -71.07116282,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2017.0
+  },
+  "A32025:Nashua Street at Red Auerbach Way": {
+    "id": "A32025",
+    "name": "Nashua Street at Red Auerbach Way",
+    "Latitude": 42.365673,
+    "Longitude": -71.064263,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 35.0,
+    "Deployment Year": 2016.0
+  },
+  "B32027:NCAAA - Walnut Ave at Crawford St": {
+    "id": "B32027",
+    "name": "NCAAA - Walnut Ave at Crawford St",
+    "Latitude": 42.316902,
+    "Longitude": -71.091946,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "D32001:New Balance - 20 Guest St": {
+    "id": "D32001",
+    "name": "New Balance - 20 Guest St",
+    "Latitude": 42.35732922,
+    "Longitude": -71.1467354,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "B32000:Newbury St at Hereford St": {
+    "id": "B32000",
+    "name": "Newbury St at Hereford St",
+    "Latitude": 42.348717,
+    "Longitude": -71.085954,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 22.0,
+    "Deployment Year": 2011.0
+  },
+  "C32022:Newmarket Square T Stop - Massachusetts Ave at Newmarket Square": {
+    "id": "C32022",
+    "name": "Newmarket Square T Stop - Massachusetts Ave at Newmarket Square",
+    "Latitude": 42.326599,
+    "Longitude": -71.066498,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2014.0
+  },
+  "N32010:Newton Highlands T": {
+    "id": "N32010",
+    "name": "Newton Highlands T",
+    "Latitude": 42.32206566,
+    "Longitude": -71.20637298,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "N32013:Newton Library": {
+    "id": "N32013",
+    "name": "Newton Library",
+    "Latitude": 42.33620337,
+    "Longitude": -71.20779455,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 13.0,
+    "Deployment Year": 2021.0
+  },
+  "W32007:Nichols Ave. at Watertown Greenway": {
+    "id": "W32007",
+    "name": "Nichols Ave. at Watertown Greenway",
+    "Latitude": 42.36762049,
+    "Longitude": -71.15656637,
+    "District": "Watertown",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2021.0
+  },
+  "N32002:Nonantum Library": {
+    "id": "N32002",
+    "name": "Nonantum Library",
+    "Latitude": 42.36068456,
+    "Longitude": -71.201462,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2020.0
+  },
+  "T32015:North St at Liberty Hill Ave": {
+    "id": "T32015",
+    "name": "North St at Liberty Hill Ave",
+    "Latitude": 42.52989965,
+    "Longitude": -70.90614259,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "C32078:Northbourne Rd at Hyde Park Ave": {
+    "id": "C32078",
+    "name": "Northbourne Rd at Hyde Park Ave",
+    "Latitude": 42.29118035,
+    "Longitude": -71.11773666,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "B32012:Northeastern University - North Parking Lot": {
+    "id": "B32012",
+    "name": "Northeastern University - North Parking Lot",
+    "Latitude": 42.341814,
+    "Longitude": -71.090179,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "G32002:Northern Strand at Main St": {
+    "id": "G32002",
+    "name": "Northern Strand at Main St",
+    "Latitude": 42.42386,
+    "Longitude": -71.067793,
+    "District": "Malden",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "D32031:Oak Square - 615 Washington St": {
+    "id": "D32031",
+    "name": "Oak Square - 615 Washington St",
+    "Latitude": 42.35057,
+    "Longitude": -71.166491,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2016.0
+  },
+  "M32076:Old Morse Park at Putnam Ave": {
+    "id": "M32076",
+    "name": "Old Morse Park at Putnam Ave",
+    "Latitude": 42.35766248,
+    "Longitude": -71.10841334,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "B32061:One Beacon St": {
+    "id": "B32061",
+    "name": "One Beacon St",
+    "Latitude": 42.35847764,
+    "Longitude": -71.0613513,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2021.0
+  },
+  "B32036:One Brigham Circle": {
+    "id": "B32036",
+    "name": "One Brigham Circle",
+    "Latitude": 42.3339227,
+    "Longitude": -71.10446509,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32003:One Broadway / Kendall Sq at Main St / 3rd St": {
+    "id": "M32003",
+    "name": "One Broadway / Kendall Sq at Main St / 3rd St",
+    "Latitude": 42.36224179,
+    "Longitude": -71.08311072,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2012.0
+  },
+  "M32002:One Kendall Square at Hampshire St / Portland St": {
+    "id": "M32002",
+    "name": "One Kendall Square at Hampshire St / Portland St",
+    "Latitude": 42.366277,
+    "Longitude": -71.09169,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "M32053:One Memorial Drive": {
+    "id": "M32053",
+    "name": "One Memorial Drive",
+    "Latitude": 42.36161932,
+    "Longitude": -71.08043551,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2017.0
+  },
+  "A32035:Orient Heights T Stop - Bennington St at Saratoga St": {
+    "id": "A32035",
+    "name": "Orient Heights T Stop - Bennington St at Saratoga St",
+    "Latitude": 42.386781,
+    "Longitude": -71.006098,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "R32002:Orr Sq (Shirley Ave)": {
+    "id": "R32002",
+    "name": "Orr Sq (Shirley Ave)",
+    "Latitude": 42.40715656,
+    "Longitude": -70.9927243,
+    "District": "Revere",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "S32009:Packard Ave at Powderhouse Blvd": {
+    "id": "S32009",
+    "name": "Packard Ave at Powderhouse Blvd",
+    "Latitude": 42.40449,
+    "Longitude": -71.123413,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "A32012:Packard's Corner - Commonwealth Ave at Brighton Ave": {
+    "id": "A32012",
+    "name": "Packard's Corner - Commonwealth Ave at Brighton Ave",
+    "Latitude": 42.352261,
+    "Longitude": -71.123831,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2011.0
+  },
+  "A32008:Park Dr at Buswell St": {
+    "id": "A32008",
+    "name": "Park Dr at Buswell St",
+    "Latitude": 42.347241,
+    "Longitude": -71.105301,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  },
+  "D32042:Park Plaza at Charles St S.": {
+    "id": "D32042",
+    "name": "Park Plaza at Charles St S.",
+    "Latitude": 42.35182807,
+    "Longitude": -71.06781138,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32039:Park St at Norwell St": {
+    "id": "C32039",
+    "name": "Park St at Norwell St",
+    "Latitude": 42.29442579,
+    "Longitude": -71.07821761,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "S32034:Perry Park": {
+    "id": "S32034",
+    "name": "Perry Park",
+    "Latitude": 42.37927325,
+    "Longitude": -71.10341903,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32107:Pier 4 Blvd at Autumn Ln": {
+    "id": "C32107",
+    "name": "Pier 4 Blvd at Autumn Ln",
+    "Latitude": 42.3502102,
+    "Longitude": -71.0446705,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "A32029:Piers Park": {
+    "id": "A32029",
+    "name": "Piers Park",
+    "Latitude": 42.3650112,
+    "Longitude": -71.03528559,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "M32029:Porter Square Station": {
+    "id": "M32029",
+    "name": "Porter Square Station",
+    "Latitude": 42.387995,
+    "Longitude": -71.119084,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2013.0
+  },
+  "A32050:Porzio Park": {
+    "id": "A32050",
+    "name": "Porzio Park",
+    "Latitude": 42.36411904,
+    "Longitude": -71.02876782,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2020.0
+  },
+  "D32012:Post Office Square": {
+    "id": "D32012",
+    "name": "Post Office Square",
+    "Latitude": 42.35585436,
+    "Longitude": -71.05459746,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "S32008:Powder House Circle - Nathan Tufts Park": {
+    "id": "S32008",
+    "name": "Powder House Circle - Nathan Tufts Park",
+    "Latitude": 42.400877,
+    "Longitude": -71.116772,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 13.0,
+    "Deployment Year": 2012.0
+  },
+  "C32007:Prudential Center - 101 Huntington Ave": {
+    "id": "C32007",
+    "name": "Prudential Center - 101 Huntington Ave",
+    "Latitude": 42.34652004,
+    "Longitude": -71.08065777,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2011.0
+  },
+  "A32026:Purchase St at Pearl St": {
+    "id": "A32026",
+    "name": "Purchase St at Pearl St",
+    "Latitude": 42.354659,
+    "Longitude": -71.053181,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "L32001:Railroad Lot and Minuteman Bikeway": {
+    "id": "L32001",
+    "name": "Railroad Lot and Minuteman Bikeway",
+    "Latitude": 42.41606457,
+    "Longitude": -71.15336637,
+    "District": "Arlington",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "M32079:Raymond Park at Walden St": {
+    "id": "M32079",
+    "name": "Raymond Park at Walden St",
+    "Latitude": 42.38736954,
+    "Longitude": -71.12761001,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "R32006:Revere City Hall": {
+    "id": "R32006",
+    "name": "Revere City Hall",
+    "Latitude": 42.40741,
+    "Longitude": -71.0139,
+    "District": "Revere",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "R32007:Revere Public Library": {
+    "id": "R32007",
+    "name": "Revere Public Library",
+    "Latitude": 42.408088,
+    "Longitude": -71.008942,
+    "District": "Revere",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "M32036:Rindge Avenue - O'Neill Library": {
+    "id": "M32036",
+    "name": "Rindge Avenue - O'Neill Library",
+    "Latitude": 42.392766,
+    "Longitude": -71.129042,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2014.0
+  },
+  "C32058:Ring Rd": {
+    "id": "C32058",
+    "name": "Ring Rd",
+    "Latitude": 42.34827839,
+    "Longitude": -71.08044855,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 3.0,
+    "Deployment Year": 2018.0
+  },
+  "A32056:Riverway at Brookline Ave": {
+    "id": "A32056",
+    "name": "Riverway at Brookline Ave",
+    "Latitude": 42.33661006,
+    "Longitude": -71.1100468,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 25.0,
+    "Deployment Year": 2023.0
+  },
+  "M32035:Rogers St & Land Blvd": {
+    "id": "M32035",
+    "name": "Rogers St & Land Blvd",
+    "Latitude": 42.36644674,
+    "Longitude": -71.07654601,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32097:Roseland St At Dorchester Ave": {
+    "id": "C32097",
+    "name": "Roseland St At Dorchester Ave",
+    "Latitude": 42.29116853,
+    "Longitude": -71.0630089,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2021.0
+  },
+  "C32047:Roslindale Village - South St": {
+    "id": "C32047",
+    "name": "Roslindale Village - South St",
+    "Latitude": 42.287072,
+    "Longitude": -71.127754,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32046:Roslindale Village - Washington St": {
+    "id": "C32046",
+    "name": "Roslindale Village - Washington St",
+    "Latitude": 42.28630716,
+    "Longitude": -71.12820532,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "E32014:Ross Playground": {
+    "id": "E32014",
+    "name": "Ross Playground",
+    "Latitude": 42.2645666,
+    "Longitude": -71.1145523,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "D32008:Rowes Wharf at Atlantic Ave": {
+    "id": "D32008",
+    "name": "Rowes Wharf at Atlantic Ave",
+    "Latitude": 42.357143,
+    "Longitude": -71.050699,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2011.0
+  },
+  "C32001:Roxbury Crossing T Stop - Columbus Ave at Tremont St": {
+    "id": "C32001",
+    "name": "Roxbury Crossing T Stop - Columbus Ave at Tremont St",
+    "Latitude": 42.331184,
+    "Longitude": -71.095171,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2011.0
+  },
+  "B32022:Roxbury YMCA - Warren St at MLK Blvd": {
+    "id": "B32022",
+    "name": "Roxbury YMCA - Warren St at MLK Blvd",
+    "Latitude": 42.31787329,
+    "Longitude": -71.08243078,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 10.0,
+    "Deployment Year": 2016.0
+  },
+  "B32002:Ruggles T Stop - Columbus Ave at Melnea Cass Blvd": {
+    "id": "B32002",
+    "name": "Ruggles T Stop - Columbus Ave at Melnea Cass Blvd",
+    "Latitude": 42.33624445,
+    "Longitude": -71.08798563,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 26.0,
+    "Deployment Year": 2011.0
+  },
+  "C32031:Ryan Playground - Dorchester Ave at Harbor View St": {
+    "id": "C32031",
+    "name": "Ryan Playground - Dorchester Ave at Harbor View St",
+    "Latitude": 42.317642,
+    "Longitude": -71.056664,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2015.0
+  },
+  "E32007:S Huntington Ave at Heath St": {
+    "id": "E32007",
+    "name": "S Huntington Ave at Heath St",
+    "Latitude": 42.32760387,
+    "Longitude": -71.1108917,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2015.0
+  },
+  "T32001:Salem Ferry Landing": {
+    "id": "T32001",
+    "name": "Salem Ferry Landing",
+    "Latitude": 42.52189284,
+    "Longitude": -70.88069111,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "T32012:Salem MBTA - Lower Level": {
+    "id": "T32012",
+    "name": "Salem MBTA - Lower Level",
+    "Latitude": 42.523994,
+    "Longitude": -70.89684,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "T32005:Salem MBTA - Washington at Federal St": {
+    "id": "T32005",
+    "name": "Salem MBTA - Washington at Federal St",
+    "Latitude": 42.52345239,
+    "Longitude": -70.89611113,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 13.0,
+    "Deployment Year": 2021.0
+  },
+  "T32007:Salem State University - Bike Path at Loring Ave": {
+    "id": "T32007",
+    "name": "Salem State University - Bike Path at Loring Ave",
+    "Latitude": 42.50182399,
+    "Longitude": -70.89478076,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "T32009:Salem State University - North Campus": {
+    "id": "T32009",
+    "name": "Salem State University - North Campus",
+    "Latitude": 42.503332,
+    "Longitude": -70.891444,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "T32002:Salem Willows Park": {
+    "id": "T32002",
+    "name": "Salem Willows Park",
+    "Latitude": 42.53466911,
+    "Longitude": -70.8702144,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2021.0
+  },
+  "C32033:Savin Hill T Stop - S Sydney St at Bay St": {
+    "id": "C32033",
+    "name": "Savin Hill T Stop - S Sydney St at Bay St",
+    "Latitude": 42.3106,
+    "Longitude": -71.0539,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2016.0
+  },
+  "C32036:Seaport Blvd at Sleeper St": {
+    "id": "C32036",
+    "name": "Seaport Blvd at Sleeper St",
+    "Latitude": 42.35317809,
+    "Longitude": -71.04817357,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2017.0
+  },
+  "B32014:Seaport Hotel - Congress St at Seaport Ln": {
+    "id": "B32014",
+    "name": "Seaport Hotel - Congress St at Seaport Ln",
+    "Latitude": 42.34881026,
+    "Longitude": -71.04167744,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "B32007:Seaport Square - Seaport Blvd at Northern Ave": {
+    "id": "B32007",
+    "name": "Seaport Square - Seaport Blvd at Northern Ave",
+    "Latitude": 42.35148193,
+    "Longitude": -71.04436085,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2011.0
+  },
+  "M32063:Sennott Park Broadway at Norfolk Street": {
+    "id": "M32063",
+    "name": "Sennott Park Broadway at Norfolk Street",
+    "Latitude": 42.36860524,
+    "Longitude": -71.09930186,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "D32059:Shawmut Ave at Lenox St": {
+    "id": "D32059",
+    "name": "Shawmut Ave at Lenox St",
+    "Latitude": 42.33584613,
+    "Longitude": -71.08038157,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "D32048:Shawmut Ave at Oak St W": {
+    "id": "D32048",
+    "name": "Shawmut Ave at Oak St W",
+    "Latitude": 42.34854543,
+    "Longitude": -71.06559185,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "E32009:Shawmut T Stop": {
+    "id": "E32009",
+    "name": "Shawmut T Stop",
+    "Latitude": 42.292917,
+    "Longitude": -71.06575,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "T32003:Shetland Park - Congress at Peabody St": {
+    "id": "T32003",
+    "name": "Shetland Park - Congress at Peabody St",
+    "Latitude": 42.51836788,
+    "Longitude": -70.88952363,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "M32047:Sidney Research Campus/Erie Street at Waverly": {
+    "id": "M32047",
+    "name": "Sidney Research Campus/Erie Street at Waverly",
+    "Latitude": 42.35775309,
+    "Longitude": -71.10393405,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "D32032:Silber Way": {
+    "id": "D32032",
+    "name": "Silber Way",
+    "Latitude": 42.349496,
+    "Longitude": -71.10057592,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2017.0
+  },
+  "M32069:Smith Pl at Wilson Rd": {
+    "id": "M32069",
+    "name": "Smith Pl at Wilson Rd",
+    "Latitude": 42.39239749,
+    "Longitude": -71.15058332,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2020.0
+  },
+  "A32006:Soldiers Field Park - 111 Western Ave": {
+    "id": "A32006",
+    "name": "Soldiers Field Park - 111 Western Ave",
+    "Latitude": 42.36426344,
+    "Longitude": -71.1182757,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "S32001:Somerville City Hall": {
+    "id": "S32001",
+    "name": "Somerville City Hall",
+    "Latitude": 42.386844,
+    "Longitude": -71.09812,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "S32036:Somerville City Hall Annex": {
+    "id": "S32036",
+    "name": "Somerville City Hall Annex",
+    "Latitude": 42.39189812,
+    "Longitude": -71.09745376,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "S32048:Somerville High School & Central Library": {
+    "id": "S32048",
+    "name": "Somerville High School & Central Library",
+    "Latitude": 42.3864,
+    "Longitude": -71.09601,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2021.0
+  },
+  "S32020:Somerville Hospital": {
+    "id": "S32020",
+    "name": "Somerville Hospital",
+    "Latitude": 42.39044622,
+    "Longitude": -71.10856622,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32017:South Boston Library - 646 E Broadway": {
+    "id": "C32017",
+    "name": "South Boston Library - 646 E Broadway",
+    "Latitude": 42.335741,
+    "Longitude": -71.03877,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "A32009:South End Library - Tremont St at W Newton St": {
+    "id": "A32009",
+    "name": "South End Library - Tremont St at W Newton St",
+    "Latitude": 42.341332,
+    "Longitude": -71.076847,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "A32010:South Station - 700 Atlantic Ave": {
+    "id": "A32010",
+    "name": "South Station - 700 Atlantic Ave",
+    "Latitude": 42.352175,
+    "Longitude": -71.055547,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 43.0,
+    "Deployment Year": 2011.0
+  },
+  "D32023:Spaulding Rehabilitation Hospital - Charlestown Navy Yard": {
+    "id": "D32023",
+    "name": "Spaulding Rehabilitation Hospital - Charlestown Navy Yard",
+    "Latitude": 42.378338,
+    "Longitude": -71.048927,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "C32087:Spring St at Powell St": {
+    "id": "C32087",
+    "name": "Spring St at Powell St",
+    "Latitude": 42.27748444,
+    "Longitude": -71.16341468,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "K32007:St Mary's": {
+    "id": "K32007",
+    "name": "St Mary's",
+    "Latitude": 42.34619708,
+    "Longitude": -71.10728681,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "B32063:St. Alphonsus St at Tremont St": {
+    "id": "B32063",
+    "name": "St. Alphonsus St at Tremont St",
+    "Latitude": 42.33329255,
+    "Longitude": -71.10124648,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2022.0
+  },
+  "C32024:State Street at Channel Center": {
+    "id": "C32024",
+    "name": "State Street at Channel Center",
+    "Latitude": 42.344137,
+    "Longitude": -71.052608,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2014.0
+  },
+  "D32041:Stony Brook T Stop": {
+    "id": "D32041",
+    "name": "Stony Brook T Stop",
+    "Latitude": 42.316966,
+    "Longitude": -71.104374,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "D32049:Stuart St at Berkeley St": {
+    "id": "D32049",
+    "name": "Stuart St at Berkeley St",
+    "Latitude": 42.34954403,
+    "Longitude": -71.07242074,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2019.0
+  },
+  "D32011:Stuart St at Charles St": {
+    "id": "D32011",
+    "name": "Stuart St at Charles St",
+    "Latitude": 42.351146,
+    "Longitude": -71.066289,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 14.0,
+    "Deployment Year": 2011.0
+  },
+  "D32053:Sullivan Square": {
+    "id": "D32053",
+    "name": "Sullivan Square",
+    "Latitude": 42.38445226,
+    "Longitude": -71.07514855,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "R32001:Sumner St at Shirley Ave": {
+    "id": "R32001",
+    "name": "Sumner St at Shirley Ave",
+    "Latitude": 42.40833706,
+    "Longitude": -70.99804848,
+    "District": "Revere",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "A32013:Surface Rd at India St": {
+    "id": "A32013",
+    "name": "Surface Rd at India St",
+    "Latitude": 42.358155,
+    "Longitude": -71.052163,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2015.0
+  },
+  "A32042:Surface Rd at Summer St": {
+    "id": "A32042",
+    "name": "Surface Rd at Summer St",
+    "Latitude": 42.3529457,
+    "Longitude": -71.05656401,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 26.0,
+    "Deployment Year": 2019.0
+  },
+  "V32007:Swan St. Park": {
+    "id": "V32007",
+    "name": "Swan St. Park",
+    "Latitude": 42.41250451,
+    "Longitude": -71.05842225,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "C32064:Sydney St at Carson St": {
+    "id": "C32064",
+    "name": "Sydney St at Carson St",
+    "Latitude": 42.32039374,
+    "Longitude": -71.05355408,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "C32043:Talbot Ave At Blue Hill Ave": {
+    "id": "C32043",
+    "name": "Talbot Ave At Blue Hill Ave",
+    "Latitude": 42.2945833,
+    "Longitude": -71.087111,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "K32008:Tappan St at Brookline Hills MBTA": {
+    "id": "K32008",
+    "name": "Tappan St at Brookline Hills MBTA",
+    "Latitude": 42.33137017,
+    "Longitude": -71.12688361,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "S32011:Teele Square": {
+    "id": "S32011",
+    "name": "Teele Square",
+    "Latitude": 42.4008795,
+    "Longitude": -71.12590793,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "E32011:The Dimock Center": {
+    "id": "E32011",
+    "name": "The Dimock Center",
+    "Latitude": 42.31930943,
+    "Longitude": -71.09639924,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 16.0,
+    "Deployment Year": 2019.0
+  },
+  "A32033:The Eddy - New St at Sumner St": {
+    "id": "A32033",
+    "name": "The Eddy - New St at Sumner St",
+    "Latitude": 42.370744,
+    "Longitude": -71.044201,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "C32028:The Lawn on D": {
+    "id": "C32028",
+    "name": "The Lawn on D",
+    "Latitude": 42.344792,
+    "Longitude": -71.044024,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2015.0
+  },
+  "D32054:The Overlook at St. Gabriel's": {
+    "id": "D32054",
+    "name": "The Overlook at St. Gabriel's",
+    "Latitude": 42.34679008,
+    "Longitude": -71.14549814,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 18.0,
+    "Deployment Year": 2020.0
+  },
+  "C32049:Thetford Ave at Norfolk St": {
+    "id": "C32049",
+    "name": "Thetford Ave at Norfolk St",
+    "Latitude": 42.28621295,
+    "Longitude": -71.07942931,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "M32048:Third at Binney": {
+    "id": "M32048",
+    "name": "Third at Binney",
+    "Latitude": 42.36544486,
+    "Longitude": -71.08277142,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "L32005:Thorndike Field at Minuteman Bikeway": {
+    "id": "L32005",
+    "name": "Thorndike Field at Minuteman Bikeway",
+    "Latitude": 42.40016805,
+    "Longitude": -71.14456963,
+    "District": "Arlington",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "C32000:Tremont St at E Berkeley St": {
+    "id": "C32000",
+    "name": "Tremont St at E Berkeley St",
+    "Latitude": 42.345392,
+    "Longitude": -71.069616,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "B32056:Tremont St at Hamilton Pl": {
+    "id": "B32056",
+    "name": "Tremont St at Hamilton Pl",
+    "Latitude": 42.35668335,
+    "Longitude": -71.06166646,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32056:Tremont St at Northampton St": {
+    "id": "C32056",
+    "name": "Tremont St at Northampton St",
+    "Latitude": 42.3384318,
+    "Longitude": -71.0816905,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "C32060:Tremont St at W. Dedham St": {
+    "id": "C32060",
+    "name": "Tremont St at W. Dedham St",
+    "Latitude": 42.34254914,
+    "Longitude": -71.07421449,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "D32014:Tremont St at West St": {
+    "id": "D32014",
+    "name": "Tremont St at West St",
+    "Latitude": 42.354979,
+    "Longitude": -71.063348,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "C32035:Troy Boston": {
+    "id": "C32035",
+    "name": "Troy Boston",
+    "Latitude": 42.343749,
+    "Longitude": -71.062256,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2017.0
+  },
+  "F32003:Tufts Sq - Main St at Medford St": {
+    "id": "F32003",
+    "name": "Tufts Sq - Main St at Medford St",
+    "Latitude": 42.401697,
+    "Longitude": -71.106128,
+    "District": "Medford",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "A32001:Union Square - Brighton Ave at Cambridge St": {
+    "id": "A32001",
+    "name": "Union Square - Brighton Ave at Cambridge St",
+    "Latitude": 42.353334,
+    "Longitude": -71.137313,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2011.0
+  },
+  "S32002:Union Square - Somerville": {
+    "id": "S32002",
+    "name": "Union Square - Somerville",
+    "Latitude": 42.3796479,
+    "Longitude": -71.09540476,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "S32041:Union Square East": {
+    "id": "S32041",
+    "name": "Union Square East",
+    "Latitude": 42.380078,
+    "Longitude": -71.090098,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "C32014:University of Massachusetts Boston - Campus Center": {
+    "id": "C32014",
+    "name": "University of Massachusetts Boston - Campus Center",
+    "Latitude": 42.31218918,
+    "Longitude": -71.03648586,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2012.0
+  },
+  "M32040:University Park": {
+    "id": "M32040",
+    "name": "University Park",
+    "Latitude": 42.36264779,
+    "Longitude": -71.10006094,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2015.0
+  },
+  "C32019:Uphams Corner": {
+    "id": "C32019",
+    "name": "Uphams Corner",
+    "Latitude": 42.31727474,
+    "Longitude": -71.06537004,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2013.0
+  },
+  "B32025:Uphams Corner T Stop - Magnolia St at Dudley St": {
+    "id": "B32025",
+    "name": "Uphams Corner T Stop - Magnolia St at Dudley St",
+    "Latitude": 42.31869734,
+    "Longitude": -71.06978148,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "A32053:Valenti Way at Haverhill St": {
+    "id": "A32053",
+    "name": "Valenti Way at Haverhill St",
+    "Latitude": 42.36473899,
+    "Longitude": -71.05934903,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 24.0,
+    "Deployment Year": 2021.0
+  },
+  "M32057:Vassal Lane at Tobin/VLUS": {
+    "id": "M32057",
+    "name": "Vassal Lane at Tobin/VLUS",
+    "Latitude": 42.38536765,
+    "Longitude": -71.13775671,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2018.0
+  },
+  "M32050:Verizon Innovation Hub 10 Ware Street": {
+    "id": "M32050",
+    "name": "Verizon Innovation Hub 10 Ware Street",
+    "Latitude": 42.37250865,
+    "Longitude": -71.11305356,
+    "District": "Cambridge",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2017.0
+  },
+  "T32017:Vinnin Square": {
+    "id": "T32017",
+    "name": "Vinnin Square",
+    "Latitude": 42.48628785,
+    "Longitude": -70.90166733,
+    "District": "Salem",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2023.0
+  },
+  "C32029:W Broadway at D St": {
+    "id": "C32029",
+    "name": "W Broadway at D St",
+    "Latitude": 42.3391085,
+    "Longitude": -71.0514432,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2015.0
+  },
+  "C32016:W Broadway at Dorchester St": {
+    "id": "C32016",
+    "name": "W Broadway at Dorchester St",
+    "Latitude": 42.33595898,
+    "Longitude": -71.046229,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2013.0
+  },
+  "C32102:Walnut Ave at School St": {
+    "id": "C32102",
+    "name": "Walnut Ave at School St",
+    "Latitude": 42.31242399,
+    "Longitude": -71.09616905,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2021.0
+  },
+  "B32030:Walnut Ave at Warren St": {
+    "id": "B32030",
+    "name": "Walnut Ave at Warren St",
+    "Latitude": 42.324081,
+    "Longitude": -71.083235,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "D32021:Warren St at Chelsea St": {
+    "id": "D32021",
+    "name": "Warren St at Chelsea St",
+    "Latitude": 42.371848,
+    "Longitude": -71.060292,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2012.0
+  },
+  "V32010:Wasgott Playground": {
+    "id": "V32010",
+    "name": "Wasgott Playground",
+    "Latitude": 42.40933007,
+    "Longitude": -71.06381878,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "K32011:Washington Sq": {
+    "id": "K32011",
+    "name": "Washington Sq",
+    "Latitude": 42.33985827,
+    "Longitude": -71.13421171,
+    "District": "Brookline",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2020.0
+  },
+  "C32042:Washington St at Bowdoin St": {
+    "id": "C32042",
+    "name": "Washington St at Bowdoin St",
+    "Latitude": 42.29916498,
+    "Longitude": -71.07345872,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "D32029:Washington St at Brock St": {
+    "id": "D32029",
+    "name": "Washington St at Brock St",
+    "Latitude": 42.34895285,
+    "Longitude": -71.16031677,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2015.0
+  },
+  "N32001:Washington St at Crafts St": {
+    "id": "N32001",
+    "name": "Washington St at Crafts St",
+    "Latitude": 42.35389024,
+    "Longitude": -71.19943707,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "C32081:Washington St at Denton Terr": {
+    "id": "C32081",
+    "name": "Washington St at Denton Terr",
+    "Latitude": 42.28072815,
+    "Longitude": -71.13423757,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "A32037:Washington St at Egremont Rd": {
+    "id": "A32037",
+    "name": "Washington St at Egremont Rd",
+    "Latitude": 42.34286835,
+    "Longitude": -71.14127841,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32084:Washington St at Fuller St": {
+    "id": "C32084",
+    "name": "Washington St at Fuller St",
+    "Latitude": 42.28198628,
+    "Longitude": -71.07147925,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2019.0
+  },
+  "C32005:Washington St at Lenox St": {
+    "id": "C32005",
+    "name": "Washington St at Lenox St",
+    "Latitude": 42.33509899,
+    "Longitude": -71.07903779,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "B32026:Washington St at Melnea Cass Blvd": {
+    "id": "B32026",
+    "name": "Washington St at Melnea Cass Blvd",
+    "Latitude": 42.332817,
+    "Longitude": -71.081198,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2016.0
+  },
+  "S32021:Washington St at Myrtle St": {
+    "id": "S32021",
+    "name": "Washington St at Myrtle St",
+    "Latitude": 42.3817508,
+    "Longitude": -71.0839523,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2018.0
+  },
+  "C32067:Washington St at Peters Park": {
+    "id": "C32067",
+    "name": "Washington St at Peters Park",
+    "Latitude": 42.3438524,
+    "Longitude": -71.06764555,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "C32006:Washington St at Rutland St": {
+    "id": "C32006",
+    "name": "Washington St at Rutland St",
+    "Latitude": 42.3385146,
+    "Longitude": -71.07404083,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 27.0,
+    "Deployment Year": 2011.0
+  },
+  "C32038:Washington St at Talbot Ave": {
+    "id": "C32038",
+    "name": "Washington St at Talbot Ave",
+    "Latitude": 42.290333,
+    "Longitude": -71.071806,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 17.0,
+    "Deployment Year": 2018.0
+  },
+  "N32014:Washington St at Walnut St": {
+    "id": "N32014",
+    "name": "Washington St at Walnut St",
+    "Latitude": 42.35145812,
+    "Longitude": -71.20764971,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2021.0
+  },
+  "C32083:Washington St at Walsh Playground": {
+    "id": "C32083",
+    "name": "Washington St at Walsh Playground",
+    "Latitude": 42.2771947,
+    "Longitude": -71.06955614,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "D32002:Washington St at Waltham St": {
+    "id": "D32002",
+    "name": "Washington St at Waltham St",
+    "Latitude": 42.34157472,
+    "Longitude": -71.0689044,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2011.0
+  },
+  "C32034:Watermark Seaport - Boston Wharf Rd at Seaport Blvd": {
+    "id": "C32034",
+    "name": "Watermark Seaport - Boston Wharf Rd at Seaport Blvd",
+    "Latitude": 42.351586,
+    "Longitude": -71.04569256,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2016.0
+  },
+  "W32002:Watertown Sq": {
+    "id": "W32002",
+    "name": "Watertown Sq",
+    "Latitude": 42.36526032,
+    "Longitude": -71.18573324,
+    "District": "Watertown",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2020.0
+  },
+  "N32006:Watertown St at Albemarle Rd": {
+    "id": "N32006",
+    "name": "Watertown St at Albemarle Rd",
+    "Latitude": 42.35410408,
+    "Longitude": -71.21382214,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2022.0
+  },
+  "W32005:Watertown Town Hall": {
+    "id": "W32005",
+    "name": "Watertown Town Hall",
+    "Latitude": 42.36759308,
+    "Longitude": -71.18751436,
+    "District": "Watertown",
+    "Public": "Yes",
+    "Total docks": 11.0,
+    "Deployment Year": 2020.0
+  },
+  "V32014:Wellington MBTA": {
+    "id": "V32014",
+    "name": "Wellington MBTA",
+    "Latitude": 42.4023682,
+    "Longitude": -71.07573182,
+    "District": "Everett",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2022.0
+  },
+  "B32021:Wentworth Institute of Technology - Huntington Ave at Vancouver St": {
+    "id": "B32021",
+    "name": "Wentworth Institute of Technology - Huntington Ave at Vancouver St",
+    "Latitude": 42.33758601,
+    "Longitude": -71.09627098,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 13.0,
+    "Deployment Year": 2015.0
+  },
+  "D32022:West End Park": {
+    "id": "D32022",
+    "name": "West End Park",
+    "Latitude": 42.36590788,
+    "Longitude": -71.06446669,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 35.0,
+    "Deployment Year": 2012.0
+  },
+  "N32005:West Newton": {
+    "id": "N32005",
+    "name": "West Newton",
+    "Latitude": 42.3496005,
+    "Longitude": -71.22627497,
+    "District": "Newton",
+    "Public": "Yes",
+    "Total docks": 12.0,
+    "Deployment Year": 2020.0
+  },
+  "A32043:Western Ave at Richardson St": {
+    "id": "A32043",
+    "name": "Western Ave at Richardson St",
+    "Latitude": 42.36178741,
+    "Longitude": -71.14393111,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "B32059:Whittier St Health Center": {
+    "id": "B32059",
+    "name": "Whittier St Health Center",
+    "Latitude": 42.33286288,
+    "Longitude": -71.09218862,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 19.0,
+    "Deployment Year": 2019.0
+  },
+  "D32040:Williams St at Washington St": {
+    "id": "D32040",
+    "name": "Williams St at Washington St",
+    "Latitude": 42.306539,
+    "Longitude": -71.107669,
+    "District": "Boston",
+    "Public": "Yes",
+    "Total docks": 23.0,
+    "Deployment Year": 2018.0
+  },
+  "S32005:Wilson Square": {
+    "id": "S32005",
+    "name": "Wilson Square",
+    "Latitude": 42.38567579,
+    "Longitude": -71.11412136,
+    "District": "Somerville",
+    "Public": "Yes",
+    "Total docks": 15.0,
+    "Deployment Year": 2012.0
+  }
+}

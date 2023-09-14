@@ -26,5 +26,3 @@ server/cfn/*
 server/requirements.txt
 server/requirements-dev.txt
 server/__pycache__/*
-
-/public/static
