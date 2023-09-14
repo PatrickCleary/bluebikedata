@@ -7,7 +7,6 @@ import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
-
 import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{

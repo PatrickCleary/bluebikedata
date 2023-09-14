@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactGA from 'react-ga4';
 import "./App.css";
 import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
@@ -27,6 +28,10 @@ export const Main = () => {
         }
     }, [searchParams, setSearchParams, setConfigFromId])
 
+    useEffect(() => {
+        ReactGA.send({ hitType: "pageview" });
+
+    }, [])
 
     return (
         <div className="h-full w-[100vw] bg-[#222122] gap-y-4 flex flex-col">
