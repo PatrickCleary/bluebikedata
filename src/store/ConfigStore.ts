@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { CURRENT_MAX } from "../constants";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { DateOptions } from "../types/Data";
 import { useMapStore } from "./MapStore";
@@ -78,4 +79,8 @@ export const useClearStartStations = () => {
     setStartStations(undefined);
     clearStartShape();
   };
+};
+
+export const isMaxDate = (date) => {
+  return date.month === CURRENT_MAX[0] && date.year === CURRENT_MAX[1];
 };

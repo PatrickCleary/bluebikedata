@@ -7,7 +7,7 @@ export const MAX_STATIONS = 15;
 
 export const YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
 
-export const CURRENT_MAX = [7, "2023"];
+export const CURRENT_MAX = [6, 2023];
 
 export const MONTHS = [
   {

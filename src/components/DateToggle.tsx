@@ -1,15 +1,35 @@
+import React, { Fragment, useEffect, useState } from "react";
 import dayjs from 'dayjs';
 import { Listbox, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
-import { useConfigStore } from "../store/ConfigStore";
+import { isMaxDate, useConfigStore } from "../store/ConfigStore";
 import localeData from 'dayjs/plugin/localeData';
 import { MONTHS, YEARS } from '../constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 
 dayjs.extend(localeData);
 
 export const DateToggle: React.FC = () => {
   const configStore = useConfigStore((store) => store);
+  const [isPlaying, setIsPlaying] = useState(false);
+  useEffect(() => {
+    let interval;
+    if (isPlaying && !interval && !isMaxDate(configStore.date)) {
+      interval = setInterval(() => {
+        configStore.incrementMonth();
+      }, 300)
+    }
+    if (!isPlaying) {
+      clearInterval(interval)
+    }
+    if (isMaxDate(configStore.date)) {
+      clearInterval(interval)
+      setIsPlaying(false)
+    }
+    return () => clearInterval(interval)
+  }, [configStore, isPlaying])
+
   return (
     <div className="relative flex-col gap-2 w-full text-sm text-black">
       <div className="flex flex-row items-center justify-center md:justify-start w-full bg-gray-500 gap-[1px] rounded-md border border-gray-500">
@@ -93,6 +113,7 @@ export const DateToggle: React.FC = () => {
         </Listbox>
       </div>
       <button onClick={() => { configStore.incrementMonth() }} className="bg-white text-black w-12 h-12">+</button>
+      <button onClick={() => { setIsPlaying(!isPlaying) }} className="bg-white text-black w-12 h-12"><FontAwesomeIcon icon={isPlaying ? faPause : faPlay} /></button>
     </div>
   );
 };

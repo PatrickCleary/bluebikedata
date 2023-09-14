@@ -28,18 +28,20 @@ export const useMonthlyDestinations = (
   stations: string[] | undefined,
   year: number,
   month: number
-): { [key: string]: number } | string[] | undefined => {
+): { docks: string[]; totals: { [key: string]: number } } | undefined => {
   const destinationsData = useQuery(["destinations", year, month], () =>
     fetchMonthlyDestinations(year, month)
   );
-  if (!stations)
-    // If no start stations selected, just return all stations.
-    return destinationsData.data
-      ? Object.keys(destinationsData.data)
-      : undefined;
+  const preFetchNextMonth = useQuery(["destinations", year, month + 1], () =>
+    fetchMonthlyDestinations(year, month + 1)
+  );
+  const currentDocks = destinationsData.data
+    ? Object.keys(destinationsData.data)
+    : [];
+
   if (!destinationsData.data) return undefined;
   const totals = {};
-  stations.forEach((station) => {
+  stations?.forEach((station) => {
     if (!destinationsData.data[station]) return undefined;
     destinationsData.data[station].forEach((value) => {
       const [station, count] = Object.entries(value).flat();
@@ -47,5 +49,5 @@ export const useMonthlyDestinations = (
       else totals[station] += count;
     });
   });
-  return totals;
+  return { docks: currentDocks, totals: totals };
 };

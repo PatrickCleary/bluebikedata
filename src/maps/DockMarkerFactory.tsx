@@ -7,7 +7,7 @@ import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
-import { StationTrip } from "../types/Data";
+
 import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{
@@ -38,18 +38,15 @@ export const StationMarkerFactory: React.FC<{
     <LayerGroup>
       {Object.values(all_docks.data)
         .map((station) => {
-          console.log(station.id)
           if (
             // startStationsSelected &&
-            !data.includes[station.id.toString()]
+            !data.docks.includes(station.id)
           ) {
             // console.log('no', station.id)
             return null;
-          } else {
-            console.log(station.id)
           }
           const inside = configStore.startStations?.includes(station.id)
-          let absValue = data ? data[station.id] : undefined;
+          let absValue = data ? data.totals[station.id] : undefined;
           if (
             startStationsSelected &&
             absValue &&
