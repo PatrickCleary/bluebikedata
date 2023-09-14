@@ -31,7 +31,7 @@ export const DateLabel = () => {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-full"
             >
-                <h3 className="fixed font-bold font-mono text-5xl text-white">{`${dayjs.monthsShort()[date.month]} ${date.year}`}</h3>
+                <h3 className="fixed font-bold font-mono text-xl md:text-3xl lg:text-5xl text-white">{`${dayjs.monthsShort()[date.month]} ${date.year}`}</h3>
             </Transition>
         </div>
     );

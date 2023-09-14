@@ -63,7 +63,7 @@ export const DockMarker: React.FC<DockMarkerProps> = ({
       {!isMobile ? (
         <Tooltip >
           <p className="text-base">
-            {id}{name} {absValue ? `- ${absValue}` : ""}
+            {name} {absValue ? `- ${absValue}` : ""}
           </p>
         </Tooltip>
       ) : null}

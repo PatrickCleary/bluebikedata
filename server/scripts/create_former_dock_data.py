@@ -3,10 +3,19 @@ import glob
 import os
 import pandas as pd
 
+def clean_strings(df):
+    #TODO: Probably don't need these to be separate, but it wasn't working.
+    df =  df.apply(lambda x: x.str.replace(u'\u2013', '-', regex=False) if x.dtype == 'object' else x)
+    df =  df.apply(lambda x: x.str.replace(u'–', '-', regex=False) if x.dtype == 'object' else x)
+    return df.apply(lambda x: x.str.strip() if x.dtype == 'object' else x)
+
 output_folder = './output/'
 
 # Read the stations CSV into a pandas DataFrame. TODO: get this live (and remove first row which contains lastUpdated)
-current_stations_df = pd.read_csv("../../../../current_bluebikes_stations.csv", index_col=['Name','Number'])
+current_stations_df = pd.read_csv("../../../../current_bluebikes_stations.csv", encoding="utf8")
+current_stations_df = clean_strings(current_stations_df)
+current_stations_df.set_index(['Name','Number'], inplace=True)
+
 former_stations_columns = ['Number','Name','Latitude','Longitude', 'LastUsed']
 former_docks_df = pd.DataFrame(columns=former_stations_columns).set_index(['Name','Number'])
 
@@ -14,7 +23,6 @@ former_docks_df = pd.DataFrame(columns=former_stations_columns).set_index(['Name
 files = sorted(glob.glob('../../../../BBData/*.csv'))
 if(not os.path.exists('./output/')):
     os.makedirs(output_folder)
-
 
 def get_old_docks(df):
     if 'tripduration' in df.columns:
@@ -34,13 +42,14 @@ def get_old_docks(df):
 for file in files:
     output_file_name = 'former_docks.csv'
     # Step 4: Read the CSV and perform the calculations
-    all_docks = pd.read_csv(f'{file}')
+    all_docks = pd.read_csv(f'{file}', encoding='utf8')
+    all_docks = clean_strings(all_docks)
+
     former_docks = get_old_docks(all_docks)
     former_docks_df  = former_docks.combine_first(former_docks_df)
 former_docks_df.to_csv('../../../../former_bb_docks.csv')
 all_docks = pd.concat([former_docks_df, current_stations_df])
 with open('../../public/static/all_docks.json', 'w') as output_file:
-    print(all_docks)
     result = {}
     for name, row in all_docks.iterrows():
         key = f'{name[1]}:{name[0]}'

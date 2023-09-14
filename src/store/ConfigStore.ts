@@ -17,7 +17,7 @@ interface ConfigStore {
   date: DateOptions;
   startStations: string[] | undefined;
   project?: string;
-  incrementMonth: () => void;
+  incrementMonth: (amount: number) => void;
   setRidership: (ridershipMin: string | number) => void;
   setProject: (shape?: string) => void;
   setDate: (date: DateOptions) => void;
@@ -31,7 +31,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   ridershipMin: 0,
   metric: "total",
   project: undefined,
-  date: { year: 2015, month: 0 },
+  date: CURRENT_MAX,
   startStations: undefined,
   setProject: (project) => set(() => ({ project: project })),
   setRidership: (ridershipMin) => {
@@ -42,12 +42,13 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     }));
   },
   setDate: (date) => set(() => ({ date: date })),
-  incrementMonth: () => {
+  incrementMonth: (amount) => {
     const date = get().date;
-    if (date.month < 11)
-      return set(() => ({ date: { month: date.month + 1, year: date.year } }));
-    if (date.month === 11)
-      return set(() => ({ date: { month: 0, year: date.year + 1 } }));
+    const newMonth = (((date.month + amount) % 12) + 12) % 12;
+    const newYear = date.year + Math.floor((date.month + amount) / 12);
+    return set(() => ({
+      date: { month: newMonth, year: newYear },
+    }));
   },
   setOrClearStartStation: (startStation) => {
     const startStations = get().startStations;
@@ -82,5 +83,5 @@ export const useClearStartStations = () => {
 };
 
 export const isMaxDate = (date) => {
-  return date.month === CURRENT_MAX[0] && date.year === CURRENT_MAX[1];
+  return date.month === CURRENT_MAX.month && date.year === CURRENT_MAX.year;
 };

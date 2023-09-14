@@ -39,10 +39,8 @@ export const StationMarkerFactory: React.FC<{
       {Object.values(all_docks.data)
         .map((station) => {
           if (
-            // startStationsSelected &&
             !data.docks.includes(station.id)
           ) {
-            // console.log('no', station.id)
             return null;
           }
           const inside = configStore.startStations?.includes(station.id)
@@ -68,8 +66,8 @@ export const StationMarkerFactory: React.FC<{
                     mapStore.clearStartShape();
                   }
               }
-              key={station["id"]}
-              id={station["id"]}
+              key={`${station["id"]}${station["name"]}`}
+              id={`${station["id"]}${station["name"]}`}
               absValue={absValue}
               startStationsSelected={Boolean(startStationsSelected)}
               isMobile={isMobile}

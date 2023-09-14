@@ -32,8 +32,18 @@ export const useMonthlyDestinations = (
   const destinationsData = useQuery(["destinations", year, month], () =>
     fetchMonthlyDestinations(year, month)
   );
-  const preFetchNextMonth = useQuery(["destinations", year, month + 1], () =>
-    fetchMonthlyDestinations(year, month + 1)
+
+  const preFetchNextMonth = useQuery(
+    ["destinations", year, month + 1],
+    () => fetchMonthlyDestinations(year, month + 1),
+    { enabled: month < 11 }
+  );
+
+  const preFetchNextYear = useQuery(
+    ["destinations", year + 1, 0],
+    () => fetchMonthlyDestinations(year + 1, 0),
+
+    { enabled: month === 11 }
   );
   const currentDocks = destinationsData.data
     ? Object.keys(destinationsData.data)

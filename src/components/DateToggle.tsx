@@ -1,119 +1,105 @@
 import React, { Fragment, useEffect, useState } from "react";
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 import { Listbox, Transition } from "@headlessui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import localeData from "dayjs/plugin/localeData";
 import { isMaxDate, useConfigStore } from "../store/ConfigStore";
-import localeData from 'dayjs/plugin/localeData';
-import { MONTHS, YEARS } from '../constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
-
+import { CURRENT_MAX, CURRENT_MIN, MONTHS, YEARS } from "../constants";
+import { ChangeMonthButton } from "./ChangeMonthButton";
+import { DateDropdown } from "./DateDropdown";
 
 dayjs.extend(localeData);
 
-export const DateToggle: React.FC = () => {
+export const DateControl: React.FC = () => {
   const configStore = useConfigStore((store) => store);
   const [isPlaying, setIsPlaying] = useState(false);
   useEffect(() => {
     let interval;
     if (isPlaying && !interval && !isMaxDate(configStore.date)) {
       interval = setInterval(() => {
-        configStore.incrementMonth();
-      }, 300)
+        configStore.incrementMonth(1);
+      }, 300);
     }
     if (!isPlaying) {
-      clearInterval(interval)
+      clearInterval(interval);
     }
     if (isMaxDate(configStore.date)) {
-      clearInterval(interval)
-      setIsPlaying(false)
+      clearInterval(interval);
+      setIsPlaying(false);
     }
-    return () => clearInterval(interval)
-  }, [configStore, isPlaying])
+    return () => clearInterval(interval);
+  }, [configStore, isPlaying]);
+
+  const hitPlay = () => {
+    if (isMaxDate(configStore.date)) {
+      configStore.setDate(CURRENT_MIN);
+      setIsPlaying(true);
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
-    <div className="relative flex-col gap-2 w-full text-sm text-black">
-      <div className="flex flex-row items-center justify-center md:justify-start w-full bg-gray-500 gap-[1px] rounded-md border border-gray-500">
-        <Listbox value={configStore.date.month} onChange={(value) => configStore.setDate({ ...configStore.date, month: value })}>
-          <div className="relative mt-1">
-            <Listbox.Button className="relative cursor-default rounded-lg bg-white py-2 pl-3 pr-3 w-16 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-              <span className="block truncate">{dayjs.monthsShort()[configStore.date.month]}</span>
-              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              </span>
-            </Listbox.Button>
-            <Transition
-              as={Fragment}
-              leave="transition ease-in duration-100"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {MONTHS.map((month, index) => (
-                  <Listbox.Option
-                    key={index}
-                    className={({ active }) =>
-                      `relative cursor-default select-none py-2 px-2 ${active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
-                      }`
-                    }
-                    value={index}
-                  >
-                    {({ selected }) => (
-                      <>
-                        <span
-                          className={`block truncate ${selected ? 'font-bold' : 'font-normal'
-                            }`}
-                        >
-                          {month.short}
-                        </span>
-                      </>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Transition>
-          </div>
-        </Listbox>
-        <Listbox value={configStore.date.year} onChange={(value) => configStore.setDate({ ...configStore.date, year: value })}>
-          <div className="relative mt-1">
-            <Listbox.Button className="relative cursor-default rounded-lg bg-white py-2 pl-3 pr-3 w-16 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-              <span className="block truncate">{configStore.date.year}</span>
-              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              </span>
-            </Listbox.Button>
-            <Transition
-              as={Fragment}
-              leave="transition ease-in duration-100"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {YEARS.map((year, index) => (
-                  <Listbox.Option
-                    key={index}
-                    className={({ active }) =>
-                      `relative cursor-default select-none py-2 px-2 ${active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
-                      }`
-                    }
-                    value={year}
-                  >
-                    {({ selected }) => (
-                      <>
-                        <span
-                          className={`block truncate ${selected ? 'font-bold' : 'font-normal'
-                            }`}
-                        >
-                          {year}
-                        </span>
-                      </>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Transition>
-          </div>
-        </Listbox>
+    <div className="relative flex-col gap-2 text-sm text-white">
+      <div className="flex flex-row items-center justify-center md:justify-start h-10 w-full bg-gray-500 gap-[2px] p-[1px]  rounded-lg border border-gray-700">
+        <div className="flex flex-row items-center  border border-gray-700 justify-center w-full h-full rounded-md overflow-hidden">
+          <ChangeMonthButton
+            amount={-1}
+            disabled={
+              configStore.date.year === CURRENT_MIN.year &&
+              configStore.date.month === CURRENT_MIN.month
+            }
+          />
+
+          <DateDropdown
+            value={configStore.date.month}
+            displayValue={dayjs.monthsShort()[configStore.date.month]}
+            onChange={(value) =>
+              configStore.setDate({ ...configStore.date, month: value })
+            }
+            listItem={(item) => item.short}
+            options={MONTHS}
+          />
+          <ChangeMonthButton amount={1} disabled={
+            configStore.date.year === CURRENT_MAX.year &&
+            configStore.date.month === CURRENT_MAX.month
+          } />
+        </div>
+
+        <div className="flex h-full flex-row items-center justify-center w-full rounded-md overflow-hidden border border-gray-700 ">
+          <ChangeMonthButton
+            amount={-12}
+            disabled={configStore.date.year === CURRENT_MIN.year}
+          />
+          <DateDropdown
+            value={configStore.date.year}
+            displayValue={configStore.date.year.toString()}
+            onChange={(value) =>
+              configStore.setDate({ ...configStore.date, year: YEARS[value] })
+            }
+            listItem={(item) => item}
+            options={YEARS}
+          />
+
+          <ChangeMonthButton
+            amount={12}
+            disabled={
+              configStore.date.year === CURRENT_MAX.year ||
+              (configStore.date.month > CURRENT_MAX.month &&
+                configStore.date.year === CURRENT_MAX.year - 1)
+            }
+          />
+        </div>
+        <button
+          onClick={hitPlay}
+          className="bg-gray-700 hover:bg-gray-500 border border-gray-700 text-white px-2 shrink h-full rounded-md"
+        >
+          <FontAwesomeIcon
+            icon={isPlaying ? faPause : faPlay}
+            className="w-4"
+          />
+        </button>
       </div>
-      <button onClick={() => { configStore.incrementMonth() }} className="bg-white text-black w-12 h-12">+</button>
-      <button onClick={() => { setIsPlaying(!isPlaying) }} className="bg-white text-black w-12 h-12"><FontAwesomeIcon icon={isPlaying ? faPause : faPlay} /></button>
     </div>
   );
 };
