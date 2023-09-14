@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { CURRENT_MAX } from "../constants";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { DateOptions } from "../types/Data";
 import { useMapStore } from "./MapStore";
@@ -16,7 +17,7 @@ interface ConfigStore {
   date: DateOptions;
   startStations: string[] | undefined;
   project?: string;
-
+  incrementMonth: (amount: number) => void;
   setRidership: (ridershipMin: string | number) => void;
   setProject: (shape?: string) => void;
   setDate: (date: DateOptions) => void;
@@ -30,7 +31,7 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
   ridershipMin: 0,
   metric: "total",
   project: undefined,
-  date: "2023",
+  date: CURRENT_MAX,
   startStations: undefined,
   setProject: (project) => set(() => ({ project: project })),
   setRidership: (ridershipMin) => {
@@ -41,6 +42,14 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     }));
   },
   setDate: (date) => set(() => ({ date: date })),
+  incrementMonth: (amount) => {
+    const date = get().date;
+    const newMonth = (((date.month + amount) % 12) + 12) % 12;
+    const newYear = date.year + Math.floor((date.month + amount) / 12);
+    return set(() => ({
+      date: { month: newMonth, year: newYear },
+    }));
+  },
   setOrClearStartStation: (startStation) => {
     const startStations = get().startStations;
     if (startStations?.includes(startStation))
@@ -71,4 +80,8 @@ export const useClearStartStations = () => {
     setStartStations(undefined);
     clearStartShape();
   };
+};
+
+export const isMaxDate = (date) => {
+  return date.month === CURRENT_MAX.month && date.year === CURRENT_MAX.year;
 };

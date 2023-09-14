@@ -14,8 +14,8 @@ export const ProjectOutlines = () => {
           return (
             <div
               className={classNames(
-                selected ? "bg-gray-500" : "bg-gray-700",
-                "px-4 py-1  flex flex-row gap-2  text-gray-100 items-center select-none cursor-pointer w-full rounded-md "
+                selected ? "bg-gray-500" : "bg-gray-700 hover:bg-gray-500",
+                "px-4 py-1  flex flex-row gap-2  text-gray-100  items-center select-none cursor-pointer w-full rounded-md "
               )}
               onClick={() => {
                 if (selected) {

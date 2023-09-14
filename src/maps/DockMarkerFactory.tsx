@@ -2,12 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import React, { SetStateAction } from "react";
 
 import { LayerGroup } from "react-leaflet";
-import { fetchAllData, useMonthlyDestinations } from "../api/all_data";
+import { fetchAllDocks, useMonthlyDestinations } from "../api/all_data";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
 import { useMapStore } from "../store/MapStore";
-import { StationTrip } from "../types/Data";
 import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{
@@ -17,38 +16,34 @@ export const StationMarkerFactory: React.FC<{
 
 
   const mapStore = useMapStore((store) => store);
-  const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
-  const data_22_static = useMonthlyDestinations(
-    configStore.startStations ?? [],
-    "2022"
-  );
-  const data_23_static = useMonthlyDestinations(
-    configStore.startStations ?? [],
-    "2023"
+  const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
+
+  const data = useMonthlyDestinations(
+    configStore.startStations ?? undefined,
+    configStore.date.year,
+    configStore.date.month
   );
   const isMobile = !useBreakpoint("md");
   const startStationsSelected =
     configStore.startStations && configStore.startStations.length > 0;
 
-  if (!data_23_static || !data_22_static || !data_23.data || data_23.isError)
+  if (!data || !all_docks || !all_docks.data)
     return null;
-  const data = configStore.date === "2023" ? data_23_static : data_22_static;
 
   const maxSizeMultiplier = Math.log(.0001) / 100;
   setIsLoading(false);
+
   return (
     <LayerGroup>
-      {Object.values(data_23.data)
-        .map((station: StationTrip) => {
+      {Object.values(all_docks.data)
+        .map((station) => {
           if (
-            startStationsSelected &&
-            !data_23_static[station.id] &&
-            !data_22_static[station.id]
-          )
+            !data.docks.includes(station.id)
+          ) {
             return null;
-
+          }
           const inside = configStore.startStations?.includes(station.id)
-          let absValue = data ? data[station.id] : undefined;
+          let absValue = data ? data.totals[station.id] : undefined;
           if (
             startStationsSelected &&
             absValue &&
@@ -61,7 +56,7 @@ export const StationMarkerFactory: React.FC<{
           const size = getSize(inside, isMobile, startStationsSelected, absValue, percentageValue)
           return (
             <DockMarker
-              position={[station["latitude"], station["longitude"]]}
+              position={[station["Latitude"], station["Longitude"]]}
               select={
                 mapStore.isDrawing
                   ? undefined
@@ -70,7 +65,8 @@ export const StationMarkerFactory: React.FC<{
                     mapStore.clearStartShape();
                   }
               }
-              key={station["id"]}
+              key={`${station["id"]}${station["name"]}`}
+              id={`${station["id"]}${station["name"]}`}
               absValue={absValue}
               startStationsSelected={Boolean(startStationsSelected)}
               isMobile={isMobile}

@@ -1,6 +1,6 @@
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
-import { fetchAllData } from "../api/all_data";
+import { fetchAllDocks } from "../api/all_data";
 import { getConfig } from "../api/config";
 import { pointInsidePolygon } from "../helpers/testLocation";
 import { useConfigStore } from "./ConfigStore";
@@ -63,13 +63,13 @@ export const useSetStartStations = () => {
   const { startShape } = useMapStore((store) => store);
   const setStartStations = useConfigStore((store) => store.setStartStations);
   return async (shape?: { id: string; loc: LatLngExpression }[]) => {
-    const docks = await fetchAllData("2023");
+    const docks = await fetchAllDocks();
     const loadedShapeOrCurrent = shape ?? startShape;
     if (docks && loadedShapeOrCurrent) {
       const originDocks = Object.values(docks)
         ?.filter((dock) =>
           pointInsidePolygon(
-            [dock.latitude, dock.longitude],
+            [dock.Latitude, dock.Longitude],
             loadedShapeOrCurrent
           )
         )

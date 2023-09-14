@@ -1,29 +1,104 @@
-import classNames from "classnames";
-import React from "react";
-import { useConfigStore } from "../store/ConfigStore";
+import React, { Fragment, useEffect, useState } from "react";
+import dayjs from "dayjs";
+import { Listbox, Transition } from "@headlessui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import localeData from "dayjs/plugin/localeData";
+import { isMaxDate, useConfigStore } from "../store/ConfigStore";
+import { CURRENT_MAX, CURRENT_MIN, MONTHS, YEARS } from "../constants";
+import { ChangeMonthButton } from "./ChangeMonthButton";
+import { DateDropdown } from "./DateDropdown";
 
-export const DateToggle: React.FC = () => {
+dayjs.extend(localeData);
+
+export const DateControl: React.FC = () => {
   const configStore = useConfigStore((store) => store);
-  return (
-    <div className="flex flex-col gap-2 w-full text-sm">
-      <div className="flex flex-row items-center justify-center md:justify-start w-full bg-gray-500 gap-[1px] rounded-md overflow-hidden border border-gray-500">
+  const [isPlaying, setIsPlaying] = useState(false);
+  useEffect(() => {
+    let interval;
+    if (isPlaying && !interval && !isMaxDate(configStore.date)) {
+      interval = setInterval(() => {
+        configStore.incrementMonth(1);
+      }, 300);
+    }
+    if (!isPlaying) {
+      clearInterval(interval);
+    }
+    if (isMaxDate(configStore.date)) {
+      clearInterval(interval);
+      setIsPlaying(false);
+    }
+    return () => clearInterval(interval);
+  }, [configStore, isPlaying]);
 
-        <div
-          onClick={() => configStore.setDate("2022")}
-          className={classNames(configStore.date === '2022' ? 'bg-gray-500 ' : 'bg-gray-700', "cursor-pointer w-full items-center justify-center flex border border-gray-700 rounded-l-md")}
-        >
-          <p>
-            {"June 2022"}
-          </p>
+  const hitPlay = () => {
+    if (isMaxDate(configStore.date)) {
+      configStore.setDate(CURRENT_MIN);
+      setIsPlaying(true);
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  return (
+    <div className="relative flex-col gap-2 text-sm text-white">
+      <div className="flex flex-row items-center justify-center md:justify-start h-10 w-full bg-gray-500 gap-[2px] p-[1px]  rounded-lg border border-gray-700">
+        <div className="flex flex-row items-center  border border-gray-700 justify-center w-full h-full rounded-md overflow-hidden">
+          <ChangeMonthButton
+            amount={-1}
+            disabled={
+              configStore.date.year === CURRENT_MIN.year &&
+              configStore.date.month === CURRENT_MIN.month
+            }
+          />
+
+          <DateDropdown
+            value={configStore.date.month}
+            displayValue={dayjs.monthsShort()[configStore.date.month]}
+            onChange={(value) =>
+              configStore.setDate({ ...configStore.date, month: value })
+            }
+            listItem={(item) => item.short}
+            options={MONTHS}
+          />
+          <ChangeMonthButton amount={1} disabled={
+            configStore.date.year === CURRENT_MAX.year &&
+            configStore.date.month === CURRENT_MAX.month
+          } />
         </div>
-        <div
-          onClick={() => configStore.setDate("2023")}
-          className={classNames(configStore.date === '2023' ? 'bg-gray-500 ' : 'bg-gray-700', "cursor-pointer w-full items-center justify-center flex border border-gray-700 rounded-r-md")}
+
+        <div className="flex h-full flex-row items-center justify-center w-full rounded-md overflow-hidden border border-gray-700 ">
+          <ChangeMonthButton
+            amount={-12}
+            disabled={configStore.date.year === CURRENT_MIN.year}
+          />
+          <DateDropdown
+            value={configStore.date.year}
+            displayValue={configStore.date.year.toString()}
+            onChange={(value) =>
+              configStore.setDate({ ...configStore.date, year: YEARS[value] })
+            }
+            listItem={(item) => item}
+            options={YEARS}
+          />
+
+          <ChangeMonthButton
+            amount={12}
+            disabled={
+              configStore.date.year === CURRENT_MAX.year ||
+              (configStore.date.month > CURRENT_MAX.month &&
+                configStore.date.year === CURRENT_MAX.year - 1)
+            }
+          />
+        </div>
+        <button
+          onClick={hitPlay}
+          className="bg-gray-700 hover:bg-gray-500 border border-gray-700 text-white px-2 shrink h-full rounded-md"
         >
-          <p
-          >
-            {"June 2023"}
-          </p></div>
+          <FontAwesomeIcon
+            icon={isPlaying ? faPause : faPlay}
+            className="w-4"
+          />
+        </button>
       </div>
     </div>
   );

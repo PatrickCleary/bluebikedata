@@ -18,6 +18,7 @@
     "chart.js": "^4.3.1",
     "classnames": "^2.3.2",
     "concurrently": "^8.2.0",
+    "dayjs": "^1.11.9",
     "font-awesome": "^4.7.0",
     "leaflet": "^1.9.4",
     "rc-slider": "^10.2.1",

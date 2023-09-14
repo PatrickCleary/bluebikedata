@@ -13,11 +13,14 @@ export interface StationTripMap {
 export interface StationTrip {
   name: string;
   id: string;
-  latitude: number;
-  longitude: number;
-  values: { [key in TripDistancesType]: AggregatedTripData };
+  Latitude: number;
+  Longitude: number;
+  "Deployment Year"?: string;
+  District?: string;
+  Public?: boolean;
+  Total?: number;
+  LastUsed?: string;
 }
-
 export interface AggregatedTripData {
   total: number;
   median_trip_duration: number;
@@ -28,7 +31,10 @@ export interface AggregatedTripData {
   mean_distance_miles: number;
 }
 
-export type DateOptions = "2022" | "2023";
+export type DateOptions = {
+  month: number;
+  year: number;
+};
 
 export interface Destinations {
   [startStation: string]: { [endStation: string]: number }[];
