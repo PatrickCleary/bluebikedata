@@ -13,10 +13,11 @@ export const fetchAllDocks = (): Promise<StationTripMap> => {
 
 export const fetchMonthlyDestinations = (
   year: number,
-  month: number
+  month: number,
+  type: "origins" | "destinations"
 ): Promise<Destinations> => {
   const url = new URL(
-    `/static/destinations_data/output_${year.toString()}${(month + 1)
+    `/static/${type}_data/output_${year.toString()}${(month + 1)
       .toString()
       .padStart(2, "0")}.json`,
     window.location.origin
@@ -24,24 +25,25 @@ export const fetchMonthlyDestinations = (
   return fetch(url.toString()).then((resp) => resp.json());
 };
 
-export const useMonthlyDestinations = (
+export const useMonthlyData = (
   stations: string[] | undefined,
   year: number,
-  month: number
+  month: number,
+  type: "origins" | "destinations"
 ): { docks: string[]; totals: { [key: string]: number } } | undefined => {
-  const destinationsData = useQuery(["destinations", year, month], () =>
-    fetchMonthlyDestinations(year, month)
+  const destinationsData = useQuery([type, year, month], () =>
+    fetchMonthlyDestinations(year, month, type)
   );
 
   const preFetchNextMonth = useQuery(
-    ["destinations", year, month + 1],
-    () => fetchMonthlyDestinations(year, month + 1),
+    [type, year, month + 1],
+    () => fetchMonthlyDestinations(year, month + 1, type),
     { enabled: month < 11 }
   );
 
   const preFetchNextYear = useQuery(
-    ["destinations", year + 1, 0],
-    () => fetchMonthlyDestinations(year + 1, 0),
+    [type, year + 1, 0],
+    () => fetchMonthlyDestinations(year + 1, 0, type),
 
     { enabled: month === 11 }
   );

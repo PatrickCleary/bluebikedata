@@ -5,7 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Main } from "./main";
 
 function App() {
-  ReactGA.initialize('G-YLTKJQHRYM')
+  if (window.location.hostname !== "localhost")
+    ReactGA.initialize('G-YLTKJQHRYM')
 
   const queryClient = new QueryClient({
     defaultOptions: {

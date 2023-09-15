@@ -30,7 +30,6 @@ export const Main = () => {
 
     useEffect(() => {
         ReactGA.send({ hitType: "pageview" });
-
     }, [])
 
     return (

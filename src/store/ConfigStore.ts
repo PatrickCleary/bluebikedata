@@ -15,10 +15,12 @@ export type paramsMap = {
 interface ConfigStore {
   ridershipMin: number;
   date: DateOptions;
+  direction: "destinations" | "origins";
   startStations: string[] | undefined;
   project?: string;
   incrementMonth: (amount: number) => void;
   setRidership: (ridershipMin: string | number) => void;
+  switchDirections: () => void;
   setProject: (shape?: string) => void;
   setDate: (date: DateOptions) => void;
   setStartStations: (startStations: string[] | undefined) => void;
@@ -29,7 +31,7 @@ interface ConfigStore {
 export const useConfigStore = create<ConfigStore>((set, get) => ({
   distance: "all",
   ridershipMin: 0,
-  metric: "total",
+  direction: "destinations",
   project: undefined,
   date: CURRENT_MAX,
   startStations: undefined,
@@ -40,6 +42,11 @@ export const useConfigStore = create<ConfigStore>((set, get) => ({
     return set(() => ({
       ridershipMin: _ridershipMin,
     }));
+  },
+  switchDirections: () => {
+    if (get().direction === "origins")
+      return set(() => ({ direction: "destinations" }));
+    return set(() => ({ direction: "origins" }));
   },
   setDate: (date) => set(() => ({ date: date })),
   incrementMonth: (amount) => {

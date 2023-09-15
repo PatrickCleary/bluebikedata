@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import React, { SetStateAction } from "react";
 
 import { LayerGroup } from "react-leaflet";
-import { fetchAllDocks, useMonthlyDestinations } from "../api/all_data";
+import { fetchAllDocks, useMonthlyData } from "../api/all_data";
+import { COLORS } from "../constants";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
@@ -18,10 +19,11 @@ export const StationMarkerFactory: React.FC<{
   const mapStore = useMapStore((store) => store);
   const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
 
-  const data = useMonthlyDestinations(
+  const data = useMonthlyData(
     configStore.startStations ?? undefined,
     configStore.date.year,
-    configStore.date.month
+    configStore.date.month,
+    configStore.direction
   );
   const isMobile = !useBreakpoint("md");
   const startStationsSelected =
@@ -72,6 +74,7 @@ export const StationMarkerFactory: React.FC<{
               isMobile={isMobile}
               name={station["name"]}
               inside={inside ?? false}
+              color={inside ? COLORS[configStore.direction] : "#38bdf8"}
               size={size}
             />
           );

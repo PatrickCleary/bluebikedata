@@ -17,6 +17,7 @@ import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { useConfigStore } from "../store/ConfigStore";
+import { COLORS } from "../constants";
 
 const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 
@@ -25,7 +26,7 @@ export const MapView: React.FC<{
 }> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
-  const project = useConfigStore((store) => store.project);
+  const { project, direction } = useConfigStore((store) => store);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
@@ -62,7 +63,7 @@ export const MapView: React.FC<{
 
           <Pane name={"originDocks"}>
             <Polygon
-              pathOptions={{ color: "#f59e0b80" }}
+              pathOptions={{ color: `${COLORS[direction]}80` }}
               positions={mapStore.startShape?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices />
@@ -75,7 +76,7 @@ export const MapView: React.FC<{
         </MapContainer>
       </>
     ),
-    [mapStore, project]
+    [mapStore, project, direction]
   );
 
   return displayMap;
