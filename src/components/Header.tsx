@@ -14,7 +14,7 @@ import { StationTripMap } from "../types/Data";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAllData } from "../api/all_data";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectionStore } from "../store/ShapeStore";
 
 interface HeaderProps { }
 

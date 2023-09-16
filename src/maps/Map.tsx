@@ -18,7 +18,7 @@ import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { useConfigStore } from "../store/ConfigStore";
 import { COLORS } from "../constants";
-import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
+import { useSelectionStore, useSetDocks } from "../store/ShapeStore";
 
 const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 

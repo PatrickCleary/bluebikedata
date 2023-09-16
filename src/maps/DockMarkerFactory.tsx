@@ -7,7 +7,7 @@ import { COLORS } from "../constants";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectionStore } from "../store/ShapeStore";
 import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{
@@ -20,13 +20,13 @@ export const StationMarkerFactory: React.FC<{
   const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
 
   const data = useMonthlyData(
-    selectedDocks.destination ?? selectedDocks.origin ?? undefined,
+    selectedDocks.destination.length ? selectedDocks.destination : selectedDocks.origin ?? undefined,
     configStore.date.year,
     configStore.date.month
   );
   const isMobile = !useBreakpoint("md");
   const docksSelected =
-    Boolean(selectedDocks[direction]?.length > 0)
+    Boolean(Object.values(selectedDocks).some((docks) => docks?.length > 0))
 
   if (!data || !all_docks || !all_docks.data)
     return null;
@@ -44,7 +44,7 @@ export const StationMarkerFactory: React.FC<{
           ) {
             return null;
           }
-          const inside = selectedDocks[direction]?.includes(station.id)
+          const inside = Object.values(selectedDocks).some((docks) => docks?.includes(station.id))
           let absValue = data ? data.totals[station.id] : undefined;
           if (
             docksSelected &&
@@ -74,7 +74,7 @@ export const StationMarkerFactory: React.FC<{
               isMobile={isMobile}
               name={station["name"]}
               inside={inside ?? false}
-              color={inside ? COLORS[direction] : "#38bdf8"}
+              color={inside ? COLORS['destination'] : "#38bdf8"}
               size={size}
             />
           );

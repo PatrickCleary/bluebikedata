@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectionStore } from "../store/ShapeStore";
 import { Destinations, StationTripMap } from "../types/Data";
 
 export const fetchAllData = (year: string): Promise<StationTripMap> => {
@@ -15,7 +15,7 @@ export const fetchAllDocks = (): Promise<StationTripMap> => {
 export const fetchMonthlyDestinations = (
   year: number,
   month: number
-): { destination: Promise<Destinations>; origin: Promise<Destinations> } => {
+): Promise<Destinations[]> => {
   const destinationUrl = new URL(
     `/static/destination_data/output_${year.toString()}${(month + 1)
       .toString()
@@ -28,10 +28,11 @@ export const fetchMonthlyDestinations = (
       .padStart(2, "0")}.json`,
     window.location.origin
   );
-  return {
-    destination: fetch(destinationUrl.toString()).then((resp) => resp.json()),
-    origin: fetch(originUrl.toString()).then((resp) => resp.json()),
-  };
+
+  return Promise.all([
+    fetch(destinationUrl.toString()).then((resp) => resp.json()),
+    fetch(originUrl.toString()).then((resp) => resp.json()),
+  ]);
 };
 
 export const useMonthlyData = (
@@ -39,13 +40,17 @@ export const useMonthlyData = (
   year: number,
   month: number
 ): { docks: string[]; totals: { [key: string]: number } } | undefined => {
-  const { selectedDocks } = useSelectionStore((store) => store);
-  let type = "destination";
+  const { selectedDocks, shape } = useSelectionStore((store) => store);
+  let type = 0;
+  const doubleSelection = ["destination", "origin"].every(
+    (direction) =>
+      selectedDocks[direction].length > 0 || shape[direction].length > 0
+  );
   if (
     selectedDocks.origin.length > 0 &&
     selectedDocks.origin.length > selectedDocks.destination.length
   ) {
-    type = "origin";
+    type = 1;
   }
   const data = useQuery([type, year, month], () =>
     fetchMonthlyDestinations(year, month)
@@ -62,19 +67,25 @@ export const useMonthlyData = (
 
     { enabled: month === 11 }
   );
+
   if (!data.data) return undefined;
   const dockData = data.data[type];
   const currentDocks = Object.keys(dockData);
   const totals = {};
-  console.log(currentDocks);
+  let sum = 0;
   stations?.forEach((station) => {
-    console.log(dockData);
     if (!dockData[station]) return undefined;
     dockData[station].forEach((value) => {
       const [_station, count] = Object.entries(value).flat();
-      if (!totals[station]) totals[station] = count;
-      else totals[station] += count;
+      if (doubleSelection) {
+        if (selectedDocks.origin.includes(_station.toString())) sum += count;
+      } else {
+        sum += count;
+        if (!totals[_station]) totals[_station] = count;
+        else totals[_station] += count;
+      }
     });
   });
+  console.log(sum);
   return { docks: currentDocks, totals: totals };
 };

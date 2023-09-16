@@ -1,7 +1,7 @@
 import React from "react";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectionStore } from "../store/ShapeStore";
 import { ContactAndInfo } from "./ContactAndInfo";
 import { DateControl } from "./DateToggle";
 import { DrawingMenu } from "./DrawingMenu";

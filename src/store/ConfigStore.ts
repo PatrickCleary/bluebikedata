@@ -2,8 +2,6 @@ import { create } from "zustand";
 import { CURRENT_MAX } from "../constants";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { DateOptions } from "../types/Data";
-import { useMapStore } from "./MapStore";
-import { useSelectionStore } from "./SelectionStore";
 
 export type paramsType = keyof typeof Params;
 

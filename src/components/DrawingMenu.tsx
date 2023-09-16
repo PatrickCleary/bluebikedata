@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { useNotificationStore } from "../store/NotificationStore";
-import { useClearDocks, useSelectionStore } from "../store/SelectionStore";
+import { useClearDocks, useSelectionStore } from "../store/ShapeStore";
 import { DirectionToggle } from "./DirectionToggle";
 
 export const DrawingMenu = () => {

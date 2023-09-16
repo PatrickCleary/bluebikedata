@@ -9,7 +9,7 @@ import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectionStore } from "../store/ShapeStore";
 export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);

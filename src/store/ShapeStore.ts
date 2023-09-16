@@ -1,8 +1,8 @@
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllDocks } from "../api/all_data";
-import { ShapeSelection } from "../components/ShapeSelection";
 import { pointInsidePolygon } from "../helpers/testLocation";
+import { Shape } from "../types/apis";
 
 interface SelectionStore {
   direction: "destination" | "origin";
@@ -20,7 +20,7 @@ interface SelectionStore {
     destination: { id: string; loc: LatLngExpression }[];
   };
   switchDirections: () => void;
-  setDocks: (stations: string[] | undefined) => void;
+  setDocks: (docks: { origin: string[]; destination: string[] }) => void;
   setOrClearSingleDock: (startStation: string) => void;
   setIsDrawing: (isDrawing: boolean) => void;
   addShapeVertex: (latLng: LatLngExpression) => void;
@@ -44,13 +44,10 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
       return set(() => ({ direction: "destination" }));
     return set(() => ({ direction: "origin" }));
   },
-
-  setDocks: (docks) => {
-    const { direction, selectedDocks } = get();
-    return set(() => ({
-      selectedDocks: { ...selectedDocks, [direction]: docks },
-    }));
-  },
+  setDocks: (docks) =>
+    set(() => ({
+      selectedDocks: docks,
+    })),
   setIsDrawing: (isDrawing) => {
     return set(() => ({ isDrawing: isDrawing }));
   },
@@ -110,26 +107,32 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
 export const useClearDocks = () => {
   const { setDocks, deleteShape } = useSelectionStore((store) => store);
   return () => {
-    setDocks(undefined);
+    setDocks({ destination: [], origin: [] });
     deleteShape();
   };
 };
 
 export const useSetDocks = () => {
-  const { shape, setDocks, direction } = useSelectionStore((store) => store);
-  return async (newShape?: { id: string; loc: LatLngExpression }[]) => {
+  const { shape, setDocks } = useSelectionStore((store) => store);
+  return async (newShape?: Shape) => {
     const docks = await fetchAllDocks();
-    const loadedShapeOrCurrent = newShape ?? shape[direction];
-    if (docks && loadedShapeOrCurrent) {
-      const docksToSet = Object.values(docks)
-        ?.filter((dock) =>
-          pointInsidePolygon(
-            [dock.Latitude, dock.Longitude],
-            loadedShapeOrCurrent
-          )
-        )
-        .map((dock) => dock.id);
-      setDocks(docksToSet);
-    }
+    const loadedShapeOrCurrent = newShape ?? shape;
+    if (!docks || !loadedShapeOrCurrent) return null;
+    const newDocks = { origin: [], destination: [] };
+    Object.entries(loadedShapeOrCurrent).forEach(
+      ([direction, directionalShape]) => {
+        newDocks[direction] = Object.values(docks)
+          ?.filter((dock) => {
+            if (!directionalShape) return null;
+            return pointInsidePolygon(
+              [dock.Latitude, dock.Longitude],
+              directionalShape
+            );
+          })
+          .map((dock) => dock.id);
+      }
+    );
+
+    setDocks(newDocks);
   };
 };
