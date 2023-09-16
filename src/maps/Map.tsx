@@ -11,13 +11,14 @@ import {
 
 import { StationMarkerFactory } from "./DockMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
-import { useMapStore, useSetStartStations } from "../store/MapStore";
+import { useMapStore } from "../store/MapStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { useConfigStore } from "../store/ConfigStore";
 import { COLORS } from "../constants";
+import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
 
 const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 
@@ -26,7 +27,8 @@ export const MapView: React.FC<{
 }> = ({ setIsLoading }) => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
-  const { project, direction } = useConfigStore((store) => store);
+  const { project } = useConfigStore((store) => store);
+  const { direction, shape } = useSelectionStore(store => store);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
@@ -63,10 +65,17 @@ export const MapView: React.FC<{
 
           <Pane name={"originDocks"}>
             <Polygon
-              pathOptions={{ color: `${COLORS[direction]}80` }}
-              positions={mapStore.startShape?.map((entry) => entry.loc) || []}
+              pathOptions={{ color: "#be0bf580" }}
+              positions={shape['origin']?.map((entry) => entry.loc) || []}
             />
-            <PolygonVertices />
+            <PolygonVertices direction='origin' />
+          </Pane>
+          <Pane name={"destinationDocks"}>
+            <Polygon
+              pathOptions={{ color: "#f59e0b80" }}
+              positions={shape['destination']?.map((entry) => entry.loc) || []}
+            />
+            <PolygonVertices direction='destination' />
           </Pane>
           <TileLayer
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
@@ -76,7 +85,7 @@ export const MapView: React.FC<{
         </MapContainer>
       </>
     ),
-    [mapStore, project, direction]
+    [mapStore, project, setIsLoading, shape]
   );
 
   return displayMap;
@@ -84,18 +93,19 @@ export const MapView: React.FC<{
 
 const UpdateMapValues: React.FC = () => {
   const mapStore = useMapStore((store) => store);
+  const { addShapeVertex, isDrawing } = useSelectionStore((store) => store)
   const map = useMap();
-  const setStartStations = useSetStartStations();
+  const setDocks = useSetDocks();
   const onZoom = useCallback(() => {
     mapStore.setZoom(map.getZoom());
   }, [map, mapStore]);
   useMapEvent("zoom", onZoom);
 
   useMapEvent("click", (e) => {
-    if (!mapStore.isDrawing) return null;
+    if (!isDrawing) return null;
     const latLng = e.latlng;
-    mapStore.addToStartShape([parseFloat(latLng.lat.toPrecision(7)), parseFloat(latLng.lng.toPrecision(7))]);
-    setStartStations();
+    addShapeVertex([parseFloat(latLng.lat.toPrecision(7)), parseFloat(latLng.lng.toPrecision(7))]);
+    setDocks();
   });
 
   return <></>;

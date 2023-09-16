@@ -9,11 +9,13 @@ import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";
 import { useConfigStore } from "../store/ConfigStore";
+import { useSelectionStore } from "../store/SelectionStore";
 export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
     const setNotification = useNotificationStore((store) => store.setNotification);
     const mapStore = useMapStore((store) => store);
+    const selectionStore = useSelectionStore((store) => store)
     const configStore = useConfigStore((store) => store);
     const isMobile = !useBreakpoint("md");
     useEffect(() => {
@@ -33,7 +35,8 @@ export const ShareButton = () => {
             const newID = uuidv4().slice(0, 8);
             url.searchParams.set("id", newID);
             navigator.clipboard.writeText(url.toString());
-            const station = mapStore.startShape?.length ? undefined : configStore.startStations?.[0]
+            const destinationDock = selectionStore.shape['destination']?.length ? undefined : selectionStore.selectedDocks['destination']?.[0]
+            const originDock = selectionStore.shape['origin']?.length ? undefined : selectionStore.selectedDocks['origin']?.[0]
 
             await saveConfig({
                 id: newID,
@@ -42,10 +45,11 @@ export const ShareButton = () => {
                     center: [40, -71],
                     zoom: 13,
                     ridershipMin: configStore.ridershipMin,
-                    shape: mapStore.startShape,
+                    shape: selectionStore.shape,
                     project: configStore.project,
                     date: configStore.date,
-                    station: station,
+                    originDock: originDock,
+                    destinationDock: destinationDock,
                 }
             });
             setShareID(newID);

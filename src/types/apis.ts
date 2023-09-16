@@ -18,15 +18,26 @@ export type FetchDestinationsResponse = {
 export type ConfigParams = {
   center: LatLngExpression;
   zoom: number;
-  shape?: { id: string; loc: LatLngExpression }[];
+  shape?: Shape;
   project?: string;
   ridershipMin?: number;
   date?: { year: number; month: number };
-  station?: string; // Only used when no shape is drawn and there is a station selected.
+  originDock?: string; // Only used when no shape is drawn and there is a station selected.
+  destinationDock?: string; // Only used when no shape is drawn and there is a station selected.
 };
 
 export type SaveConfigParams = {
   id: string;
   version: string;
   configParams: ConfigParams;
+};
+
+export type Shape = {
+  origin: ShapeVertex[] | undefined;
+  destination: ShapeVertex[] | undefined;
+};
+
+export type ShapeVertex = {
+  id: string;
+  loc: LatLngExpression;
 };

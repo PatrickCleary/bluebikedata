@@ -62,6 +62,6 @@ export const MONTHS = [
 ];
 
 export const COLORS = {
-  destinations: "#f59e0b",
-  origins: "#be0bf5",
+  destination: "#f59e0b",
+  origin: "#be0bf5",
 };

@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useSelectionStore } from "../store/SelectionStore";
 import { Destinations, StationTripMap } from "../types/Data";
 
 export const fetchAllData = (year: string): Promise<StationTripMap> => {
@@ -13,50 +14,64 @@ export const fetchAllDocks = (): Promise<StationTripMap> => {
 
 export const fetchMonthlyDestinations = (
   year: number,
-  month: number,
-  type: "origins" | "destinations"
-): Promise<Destinations> => {
-  const url = new URL(
-    `/static/${type}_data/output_${year.toString()}${(month + 1)
+  month: number
+): { destination: Promise<Destinations>; origin: Promise<Destinations> } => {
+  const destinationUrl = new URL(
+    `/static/destination_data/output_${year.toString()}${(month + 1)
       .toString()
       .padStart(2, "0")}.json`,
     window.location.origin
   );
-  return fetch(url.toString()).then((resp) => resp.json());
+  const originUrl = new URL(
+    `/static/origin_data/output_${year.toString()}${(month + 1)
+      .toString()
+      .padStart(2, "0")}.json`,
+    window.location.origin
+  );
+  return {
+    destination: fetch(destinationUrl.toString()).then((resp) => resp.json()),
+    origin: fetch(originUrl.toString()).then((resp) => resp.json()),
+  };
 };
 
 export const useMonthlyData = (
   stations: string[] | undefined,
   year: number,
-  month: number,
-  type: "origins" | "destinations"
+  month: number
 ): { docks: string[]; totals: { [key: string]: number } } | undefined => {
-  const destinationsData = useQuery([type, year, month], () =>
-    fetchMonthlyDestinations(year, month, type)
+  const { selectedDocks } = useSelectionStore((store) => store);
+  let type = "destination";
+  if (
+    selectedDocks.origin.length > 0 &&
+    selectedDocks.origin.length > selectedDocks.destination.length
+  ) {
+    type = "origin";
+  }
+  const data = useQuery([type, year, month], () =>
+    fetchMonthlyDestinations(year, month)
   );
-
   const preFetchNextMonth = useQuery(
     [type, year, month + 1],
-    () => fetchMonthlyDestinations(year, month + 1, type),
+    () => fetchMonthlyDestinations(year, month + 1),
     { enabled: month < 11 }
   );
 
   const preFetchNextYear = useQuery(
     [type, year + 1, 0],
-    () => fetchMonthlyDestinations(year + 1, 0, type),
+    () => fetchMonthlyDestinations(year + 1, 0),
 
     { enabled: month === 11 }
   );
-  const currentDocks = destinationsData.data
-    ? Object.keys(destinationsData.data)
-    : [];
-
-  if (!destinationsData.data) return undefined;
+  if (!data.data) return undefined;
+  const dockData = data.data[type];
+  const currentDocks = Object.keys(dockData);
   const totals = {};
+  console.log(currentDocks);
   stations?.forEach((station) => {
-    if (!destinationsData.data[station]) return undefined;
-    destinationsData.data[station].forEach((value) => {
-      const [station, count] = Object.entries(value).flat();
+    console.log(dockData);
+    if (!dockData[station]) return undefined;
+    dockData[station].forEach((value) => {
+      const [_station, count] = Object.entries(value).flat();
       if (!totals[station]) totals[station] = count;
       else totals[station] += count;
     });

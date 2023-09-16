@@ -14,11 +14,12 @@ import { StationTripMap } from "../types/Data";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAllData } from "../api/all_data";
+import { useSelectionStore } from "../store/SelectionStore";
 
 interface HeaderProps { }
 
 export const Header: React.FC<HeaderProps> = () => {
-  const configStore = useConfigStore((store) => store);
+  const selectionStore = useSelectionStore((store) => store);
   const data_23 = useQuery(["all_stations_2023"], () => fetchAllData("2023"));
 
   const isMobile = !useBreakpoint("md");
@@ -28,7 +29,7 @@ export const Header: React.FC<HeaderProps> = () => {
         <div className="flex flex-col ">
           <div className="flex flex-row gap-2 items-center">
             <h1 className="text-lg md:text-2xl truncate items-baseline">
-              {getTitle(configStore.startStations, data_23.data)}
+              {getTitle(selectionStore.selectedDocks['origin'], data_23.data)}
             </h1>
             <InfoModal />
           </div>
