@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSelectionStore } from "../store/ShapeStore";
+import { useStatisticStore } from "../store/StatisticStore";
 import { Destinations, StationTripMap } from "../types/Data";
 
 export const fetchAllData = (year: string): Promise<StationTripMap> => {
@@ -36,11 +37,15 @@ export const fetchMonthlyDestinations = (
 };
 
 export const useMonthlyData = (
-  stations: string[] | undefined,
+  selectedDocks: {
+    origin: string[];
+    destination: string[];
+  },
   year: number,
   month: number
 ): { docks: string[]; totals: { [key: string]: number } } | undefined => {
-  const { selectedDocks, shape } = useSelectionStore((store) => store);
+  const { shape } = useSelectionStore((store) => store);
+  const setStatistic = useStatisticStore((store) => store.setStatistic);
   let type = 0;
   const doubleSelection = ["destination", "origin"].every(
     (direction) =>
@@ -67,25 +72,35 @@ export const useMonthlyData = (
 
     { enabled: month === 11 }
   );
-
   if (!data.data) return undefined;
   const dockData = data.data[type];
   const currentDocks = Object.keys(dockData);
   const totals = {};
-  let sum = 0;
-  stations?.forEach((station) => {
-    if (!dockData[station]) return undefined;
-    dockData[station].forEach((value) => {
+  const docksToUse =
+    selectedDocks.origin.length > 0
+      ? selectedDocks.origin
+      : selectedDocks.destination;
+  let total = 0;
+  let outwardTotal = 0;
+  let toDestination = 0;
+  docksToUse?.forEach((dock) => {
+    if (!dockData[dock]) return undefined;
+    dockData[dock].forEach((value) => {
       const [_station, count] = Object.entries(value).flat();
+      total += count;
+      if (!docksToUse.includes(_station)) outwardTotal += count;
+
       if (doubleSelection) {
-        if (selectedDocks.origin.includes(_station.toString())) sum += count;
+        if (selectedDocks.destination.includes(_station.toString()))
+          toDestination += count;
       } else {
-        sum += count;
         if (!totals[_station]) totals[_station] = count;
         else totals[_station] += count;
       }
     });
   });
-  console.log(sum);
+  setStatistic("total", total);
+  setStatistic("out", outwardTotal);
+  setStatistic("dest", toDestination);
   return { docks: currentDocks, totals: totals };
 };

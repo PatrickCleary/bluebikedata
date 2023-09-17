@@ -65,14 +65,14 @@ export const MapView: React.FC<{
 
           <Pane name={"originDocks"}>
             <Polygon
-              pathOptions={{ color: "#be0bf580" }}
+              pathOptions={{ color: `${COLORS['origin']}80` }}
               positions={shape['origin']?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices direction='origin' />
           </Pane>
           <Pane name={"destinationDocks"}>
             <Polygon
-              pathOptions={{ color: "#f59e0b80" }}
+              pathOptions={{ color: `${COLORS['destination']}80` }}
               positions={shape['destination']?.map((entry) => entry.loc) || []}
             />
             <PolygonVertices direction='destination' />

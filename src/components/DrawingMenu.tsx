@@ -16,7 +16,7 @@ export const DrawingMenu = () => {
   const setNotification = useNotificationStore(
     (store) => store.setNotification
   );
-  const color = selectionStore.direction === 'destination' ? 'text-amber-500' : 'text-fuchsia-500'
+  const color = selectionStore.direction === 'origin' ? 'text-amber-500' : 'text-fuchsia-500'
   const clearEnabled = selectionStore.selectedDocks[selectionStore.direction]?.length || selectionStore.shape[selectionStore.direction]?.length
 
   return (

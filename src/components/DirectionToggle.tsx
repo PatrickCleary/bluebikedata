@@ -14,25 +14,25 @@ export const DirectionToggle = () => {
                 <div
                     className={classNames(
                         "h-5 w-5 cursor-pointer rounded-md shadow-sm",
-                        selectionStore.direction === "destination"
+                        selectionStore.direction === "origin"
                             ? "bg-amber-500 "
                             : "bg-amber-500 bg-opacity-20"
                     )}
                     onClick={() => {
                         selectionStore.switchDirections();
-                        setNotification({ text: "Selecting destination" });
+                        setNotification({ text: "Selecting origin" });
                     }}
                 />
                 <div
                     className={classNames(
                         "h-5 w-5 cursor-pointer rounded-md shadow-sm",
-                        selectionStore.direction === "origin"
+                        selectionStore.direction === "destination"
                             ? "bg-fuchsia-500 "
                             : "bg-fuchsia-500 bg-opacity-20"
                     )}
                     onClick={() => {
                         selectionStore.switchDirections();
-                        setNotification({ text: "Selecting origin" });
+                        setNotification({ text: "Selecting destination" });
                     }}
                 />
             </div>
@@ -42,8 +42,7 @@ export const DirectionToggle = () => {
                     "rounded-full gap-1 flex flex-row px-1 sm:px-2 pr-2  items-center py-[2px] "
                 )}
                 onClick={() => {
-                    selectionStore.flipShapes();
-                    setDocks()
+                    selectionStore.flipDocks();
                 }}
             >
                 <FontAwesomeIcon icon={faRepeat} className="h-5 w-5" />

@@ -9,7 +9,7 @@ import { NotificationPopUp } from "./components/NowDrawingPopup";
 import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetConfigFromId } from "./store/MapStore";
-import { DateLabel } from "./components/DateLabel";
+import { DataWidget } from "./components/DataLabel";
 import { ShareButton } from "./components/ShareButton";
 
 export const Main = () => {
@@ -37,7 +37,7 @@ export const Main = () => {
             <div className="absolute z-10 h-full w-full pointer-events-none p-2 flex gap-1 md:gap-0  flex-col pb-5">
                 <Header />
                 <div className="md:w-full md:justify-between md:flex md:h-full">
-                    <DateLabel />
+                    <DataWidget />
                     <DesktopMenu />
                 </div>
                 <div className="w-full flex justify-between md:hidden">

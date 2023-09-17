@@ -27,11 +27,11 @@ interface SelectionStore {
   deleteShapeVertex: (id: string) => void;
   setShape: (shape: { id: string; loc: LatLngExpression }[]) => void;
   deleteShape: () => void;
-  flipShapes: () => void;
+  flipDocks: () => void;
 }
 
 export const useSelectionStore = create<SelectionStore>((set, get) => ({
-  direction: "destination",
+  direction: "origin",
   selectedDocks: { origin: [], destination: [] },
   isDrawing: false,
   id: {
@@ -51,14 +51,14 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
   setIsDrawing: (isDrawing) => {
     return set(() => ({ isDrawing: isDrawing }));
   },
-  setOrClearSingleDock: (newDocks) => {
+  setOrClearSingleDock: (newDock) => {
     const direction = get().direction;
     const docks = get().selectedDocks;
-    if (docks[direction]?.includes(newDocks))
+    if (docks[direction]?.includes(newDock))
       return set(() => ({
         selectedDocks: { ...docks, [direction]: undefined },
       }));
-    return set(() => ({ selectedDocks: { ...docks, [direction]: undefined } }));
+    return set(() => ({ selectedDocks: { ...docks, [direction]: [newDock] } }));
   },
   addShapeVertex: (latLng) => {
     const { direction, shape, id } = get();
@@ -96,10 +96,14 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
       id: { ...id, [direction]: 0 },
     }));
   },
-  flipShapes: () => {
-    const shape = get().shape;
+  flipDocks: () => {
+    const { shape, selectedDocks } = get();
     return set(() => ({
       shape: { origin: shape.destination, destination: shape.origin },
+      selectedDocks: {
+        origin: selectedDocks.destination,
+        destination: selectedDocks.origin,
+      },
     }));
   },
 }));
@@ -114,6 +118,7 @@ export const useClearDocks = () => {
 
 export const useSetDocks = () => {
   const { shape, setDocks } = useSelectionStore((store) => store);
+
   return async (newShape?: Shape) => {
     const docks = await fetchAllDocks();
     const loadedShapeOrCurrent = newShape ?? shape;

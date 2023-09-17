@@ -1,11 +1,13 @@
 export const getSize = (
-  inside: boolean | undefined,
+  inside: boolean,
   isMobile: boolean,
   startStationsSelected: boolean | undefined,
   absValue: number | undefined,
-  percentageValue: number
+  percentageValue: number,
+  isFullSelection: boolean
 ) => {
-  if (inside) return isMobile ? 4 : 6;
+  if (isFullSelection && !inside) return 2;
+  if (isFullSelection || inside) return isMobile ? 4 : 6;
   if (startStationsSelected && absValue === undefined) {
     return 0;
   }

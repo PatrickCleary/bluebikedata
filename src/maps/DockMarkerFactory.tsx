@@ -14,13 +14,13 @@ export const StationMarkerFactory: React.FC<{
   setIsLoading: React.Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsLoading }) => {
   const configStore = useConfigStore((store) => store);
-  const { selectedDocks, direction, isDrawing, setOrClearSingleDock, deleteShape } = useSelectionStore((store) => store);
+  const { selectedDocks, isDrawing, setOrClearSingleDock, deleteShape } = useSelectionStore((store) => store);
 
 
   const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
 
   const data = useMonthlyData(
-    selectedDocks.destination.length ? selectedDocks.destination : selectedDocks.origin ?? undefined,
+    selectedDocks,
     configStore.date.year,
     configStore.date.month
   );
@@ -34,6 +34,7 @@ export const StationMarkerFactory: React.FC<{
   const maxSizeMultiplier = Math.log(.0001) / 100;
   setIsLoading(false);
 
+  const isFullSelection = selectedDocks.destination.length > 0 && selectedDocks.origin.length > 0;
 
   return (
     <LayerGroup>
@@ -44,7 +45,9 @@ export const StationMarkerFactory: React.FC<{
           ) {
             return null;
           }
-          const inside = Object.values(selectedDocks).some((docks) => docks?.includes(station.id))
+          const insideDestination = selectedDocks.destination.includes(station.id)
+          const insideOrigin = selectedDocks.origin.includes(station.id)
+          const inside = insideDestination || insideOrigin
           let absValue = data ? data.totals[station.id] : undefined;
           if (
             docksSelected &&
@@ -55,7 +58,7 @@ export const StationMarkerFactory: React.FC<{
           const percentageValue = absValue
             ? Math.max(0.1, 1 - Math.pow(1.2, maxSizeMultiplier * absValue))
             : 0;
-          const size = getSize(inside, isMobile, docksSelected, absValue, percentageValue)
+          const size = getSize(inside, isMobile, docksSelected, absValue, percentageValue, isFullSelection)
           return (
             <DockMarker
               position={[station["Latitude"], station["Longitude"]]}
@@ -74,7 +77,7 @@ export const StationMarkerFactory: React.FC<{
               isMobile={isMobile}
               name={station["name"]}
               inside={inside ?? false}
-              color={inside ? COLORS['destination'] : "#38bdf8"}
+              color={inside ? COLORS[insideOrigin ? 'origin' : 'destination'] : "#38bdf8"}
               size={size}
             />
           );
