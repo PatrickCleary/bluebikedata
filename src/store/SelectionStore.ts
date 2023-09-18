@@ -152,13 +152,7 @@ export const useSelectionType = () => {
     return "both";
   if (selectedDocks.origin.length > 0 || shape.origin.length > 0)
     return "origin";
-  return "destination";
-};
-
-export const useIsDoubleSelection = () => {
-  const { shape, selectedDocks } = useSelectionStore((store) => store);
-  return (
-    (shape.origin.length > 0 || selectedDocks.origin.length > 0) &&
-    (shape.destination.length > 0 || selectedDocks.destination.length > 0)
-  );
+  if (selectedDocks.origin.length > 0 || shape.origin.length > 0)
+    return "destination";
+  return "none";
 };

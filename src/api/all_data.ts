@@ -1,8 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import {
-  useIsDoubleSelection,
-  useSelectionStore,
-} from "../store/SelectionStore";
+import { useSelectionStore, useSelectionType } from "../store/SelectionStore";
 import { useStatisticStore } from "../store/StatisticStore";
 import { Destinations, StationTripMap } from "../types/Data";
 
@@ -49,7 +46,7 @@ export const useMonthlyData = (
   month: number
 ): { docks: string[]; totals: { [key: string]: number } } | undefined => {
   const { shape } = useSelectionStore((store) => store);
-  const isDoubleSelection = useIsDoubleSelection();
+  const isDoubleSelection = useSelectionType() === "both";
   const setStatistic = useStatisticStore((store) => store.setStatistic);
   const originOrDestination = ["origin", "destination"];
   let type = 0; // 0 === origin
