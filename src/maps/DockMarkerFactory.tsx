@@ -7,7 +7,7 @@ import { COLORS } from "../constants";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/ShapeStore";
+import { useSelectionStore } from "../store/SelectionStore";
 import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{

@@ -4,9 +4,9 @@ import { Listbox, Transition } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import localeData from "dayjs/plugin/localeData";
-import { isMaxDate, useConfigStore } from "../store/ConfigStore";
-import { CURRENT_MAX, CURRENT_MIN, MONTHS, YEARS } from "../constants";
-import { ChangeMonthButton } from "./ChangeMonthButton";
+import { isMaxDate, useConfigStore } from "../../store/ConfigStore";
+import { CURRENT_MAX, CURRENT_MIN, MONTHS, YEARS } from "../../constants";
+import { ChangeMonthButton } from "../ChangeMonthButton";
 import { DateDropdown } from "./DateDropdown";
 
 dayjs.extend(localeData);

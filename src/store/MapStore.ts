@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { getConfig } from "../api/config";
 import { useConfigStore } from "./ConfigStore";
-import { useSelectionStore, useSetDocks } from "./ShapeStore";
+import { useSelectionStore, useSetDocks } from "./SelectionStore";
 
 interface MapStore {
   zoom: number;

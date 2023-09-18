@@ -12,13 +12,11 @@ import {
 import { StationMarkerFactory } from "./DockMarkerFactory";
 import { LatLngExpression, Map } from "leaflet";
 import { useMapStore } from "../store/MapStore";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { useConfigStore } from "../store/ConfigStore";
 import { COLORS } from "../constants";
-import { useSelectionStore, useSetDocks } from "../store/ShapeStore";
+import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
 
 const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 
@@ -28,24 +26,12 @@ export const MapView: React.FC<{
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
   const { project } = useConfigStore((store) => store);
-  const { direction, shape } = useSelectionStore(store => store);
+  const { shape } = useSelectionStore(store => store);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
     () => (
       <>
-        <div className="rounded-full shadow-sm h-6 bg-gradient-to-r from-sky-400 to-amber-500 via-neutral-400 absolute top-4 right-4 z-10 justify-between flex flex-row text-gray-100 text-sm gap-12 items-center px-2 font-bold">
-          <FontAwesomeIcon
-            icon={faArrowDown}
-            className="text-neutral-100 px-3"
-            size={"lg"}
-          />
-          <FontAwesomeIcon
-            icon={faArrowUp}
-            className="text-neutral-100 px-3"
-            size={"lg"}
-          />
-        </div>
 
         <MapContainer
           id="map-container"

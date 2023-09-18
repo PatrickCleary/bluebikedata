@@ -2,7 +2,7 @@ import { Transition } from "@headlessui/react";
 import React, { Fragment, useEffect, useState } from "react";
 import { useNotificationStore } from "../store/NotificationStore";
 
-export const NotificationPopUp = () => {
+export const Notifications = () => {
   const notification = useNotificationStore((store) => store.notification)
   const [isShowing, setIsShowing] = useState(false);
 

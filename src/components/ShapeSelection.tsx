@@ -1,9 +1,9 @@
 import React from "react";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/ShapeStore";
+import { useSelectionStore } from "../store/SelectionStore";
 import { ContactAndInfo } from "./ContactAndInfo";
-import { DateControl } from "./DateToggle";
+import { DateControl } from "./date/DateToggle";
 import { DrawingMenu } from "./DrawingMenu";
 import { ProjectOutlines } from "./ProjectOutlines";
 import { ShareButton } from "./ShareButton";
@@ -12,7 +12,7 @@ export const ShapeSelection = () => {
   const isMobile = !useBreakpoint("md");
   const { switchDirections, direction } = useSelectionStore((store) => store)
   return (
-    <div className="relative md:h-full md:my-2 flex flex-row md:flex-col z-10 w-full md:w-fit bg-gray-800 md:gap-4 px-2 md:px-4 py-2 text-gray-100 rounded-md pointer-events-auto  items-center border border-gray-500 shadow-md">
+    <div className="relative md:h-full md:my-2 flex flex-row md:flex-col z-10 w-full md:w-fit bg-gray-800 md:gap-4 px-2 md:px-4 py-2 text-gray-100 rounded-md pointer-events-auto  items-center border border-gray-700 shadow-md">
       <DrawingMenu />
       <hr className="md:h-[1px] h-full invisible md:visible md:w-full border-gray-600" />
       <DateControl />

@@ -12,7 +12,7 @@ export const MobileFilters = () => {
     <>
       <button
         type="button"
-        className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md"
+        className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-700  p-2 pointer-events-auto shadow-md rounded-md"
         onClick={() => setIsOpen(true)}
       >
         <FontAwesomeIcon

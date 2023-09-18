@@ -9,7 +9,7 @@ import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/ShapeStore";
+import { useSelectionStore } from "../store/SelectionStore";
 export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
@@ -67,7 +67,7 @@ export const ShareButton = () => {
             <>
                 <button
                     type="button"
-                    className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md"
+                    className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-700  p-2 pointer-events-auto shadow-md rounded-md"
                     onClick={() => {
                         saveShapeById()
                         setNotification({ text: 'Link copied to clipboard' })
@@ -97,7 +97,7 @@ export const ShareButton = () => {
 
                 <p>Share</p>
             </button>
-            <div className="absolute top-0 left-0 overflow-hidden h-full w-full rounded-md pointer-events-none	border-gray-500 border border-transparent box-border">
+            <div className="absolute top-0 left-0 overflow-hidden h-full w-full rounded-md pointer-events-none	border-gray-700 border border-transparent box-border">
                 <Transition
                     as={Fragment}
                     show={showMsg}

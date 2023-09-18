@@ -56,7 +56,7 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
     const docks = get().selectedDocks;
     if (docks[direction]?.includes(newDock))
       return set(() => ({
-        selectedDocks: { ...docks, [direction]: undefined },
+        selectedDocks: { ...docks, [direction]: [] },
       }));
     return set(() => ({ selectedDocks: { ...docks, [direction]: [newDock] } }));
   },
@@ -109,16 +109,17 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
 }));
 
 export const useClearDocks = () => {
-  const { setDocks, deleteShape } = useSelectionStore((store) => store);
+  const { setDocks, direction, selectedDocks, deleteShape } = useSelectionStore(
+    (store) => store
+  );
   return () => {
-    setDocks({ destination: [], origin: [] });
+    setDocks({ ...selectedDocks, [direction]: [] });
     deleteShape();
   };
 };
 
 export const useSetDocks = () => {
   const { shape, setDocks } = useSelectionStore((store) => store);
-
   return async (newShape?: Shape) => {
     const docks = await fetchAllDocks();
     const loadedShapeOrCurrent = newShape ?? shape;
@@ -140,4 +141,24 @@ export const useSetDocks = () => {
 
     setDocks(newDocks);
   };
+};
+
+export const useSelectionType = () => {
+  const { shape, selectedDocks } = useSelectionStore((store) => store);
+  if (
+    (shape.origin.length > 0 || selectedDocks.origin.length > 0) &&
+    (shape.destination.length > 0 || selectedDocks.destination.length > 0)
+  )
+    return "both";
+  if (selectedDocks.origin.length > 0 || shape.origin.length > 0)
+    return "origin";
+  return "destination";
+};
+
+export const useIsDoubleSelection = () => {
+  const { shape, selectedDocks } = useSelectionStore((store) => store);
+  return (
+    (shape.origin.length > 0 || selectedDocks.origin.length > 0) &&
+    (shape.destination.length > 0 || selectedDocks.destination.length > 0)
+  );
 };

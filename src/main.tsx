@@ -5,11 +5,11 @@ import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
 import { ShapeSelection as DesktopMenu } from "./components/ShapeSelection";
-import { NotificationPopUp } from "./components/NowDrawingPopup";
+import { Notifications } from "./components/Notifications";
 import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetConfigFromId } from "./store/MapStore";
-import { DataWidget } from "./components/DataLabel";
+import { DataWidget } from "./components/statistics/DataLabel";
 import { ShareButton } from "./components/ShareButton";
 
 export const Main = () => {
@@ -48,7 +48,7 @@ export const Main = () => {
             <div className="absolute z-0 h-full w-full">
                 <MapView setIsLoading={setIsLoading} />
             </div>
-            <NotificationPopUp />
+            <Notifications />
 
             {isLoading ? <Loading /> : null}
         </div>

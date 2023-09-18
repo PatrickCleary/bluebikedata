@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { useNotificationStore } from "../store/NotificationStore";
-import { useClearDocks, useSelectionStore } from "../store/ShapeStore";
+import { useClearDocks, useSelectionStore } from "../store/SelectionStore";
 import { DirectionToggle } from "./DirectionToggle";
 
 export const DrawingMenu = () => {
@@ -22,7 +22,7 @@ export const DrawingMenu = () => {
   return (
     <div className="flex flex-row gap-2 w-full items-center">
       <div className="w-full flex flex-row ">
-        <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-gray-500 border border-gray-500 overflow-hidden">
+        <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-gray-500 border border-gray-700 overflow-hidden">
           <FontAwesomeIcon
             icon={faCircle}
             className={classNames(
