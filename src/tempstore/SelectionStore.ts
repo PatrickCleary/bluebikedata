@@ -2,10 +2,12 @@ import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllDocks } from "../api/all_data";
 import { pointInsidePolygon } from "../helpers/testLocation";
-import { Shape } from "../types/apis";
+import { Shape, ShapeVertex } from "../types/apis";
+
+export type Direction = "destination" | "origin";
 
 interface SelectionStore {
-  direction: "destination" | "origin";
+  direction: Direction;
   selectedDocks: {
     origin: string[];
     destination: string[];
@@ -25,7 +27,10 @@ interface SelectionStore {
   setIsDrawing: (isDrawing: boolean) => void;
   addShapeVertex: (latLng: LatLngExpression) => void;
   deleteShapeVertex: (id: string) => void;
-  setShape: (shape: { id: string; loc: LatLngExpression }[]) => void;
+  setShape: (
+    shape: { id: string; loc: LatLngExpression }[],
+    directionInput?: Direction
+  ) => void;
   deleteShape: () => void;
   flipDocks: () => void;
 }
@@ -70,12 +75,13 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
       shape: { ...shape, [direction]: currentShape },
     }));
   },
-  setShape: (newShape) => {
+  setShape: (newShape, directionInput) => {
     const { direction, shape, id } = get();
+    const directionToSet = directionInput ?? direction;
 
     return set(() => ({
-      shape: { ...shape, [direction]: newShape },
-      id: { ...id, [direction]: newShape.length },
+      shape: { ...shape, [directionToSet]: newShape },
+      id: { ...id, [directionToSet]: newShape.length },
     }));
   },
   deleteShapeVertex: (id) => {
@@ -86,7 +92,7 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
       1
     );
     return set(() => ({
-      shape: { ...shape, direction: currentShape },
+      shape: { ...shape, [direction]: currentShape },
     }));
   },
   deleteShape: () => {
@@ -138,7 +144,6 @@ export const useSetDocks = () => {
           .map((dock) => dock.id);
       }
     );
-
     setDocks(newDocks);
   };
 };
@@ -152,7 +157,27 @@ export const useSelectionType = () => {
     return "both";
   if (selectedDocks.origin.length > 0 || shape.origin.length > 0)
     return "origin";
-  if (selectedDocks.origin.length > 0 || shape.origin.length > 0)
+  if (selectedDocks.destination.length > 0 || shape.destination.length > 0)
     return "destination";
   return "none";
+};
+
+export const useSetNewShapeAndDocks = () => {
+  const { selectedDocks, setDocks, setShape, direction } = useSelectionStore(
+    (store) => store
+  );
+  return async (
+    shapeInput: ShapeVertex[],
+    directionInput?: "origin" | "destination"
+  ) => {
+    const directionToSet = directionInput ?? direction;
+    const docks = await fetchAllDocks();
+    setShape(shapeInput, directionToSet);
+    const newDocks = Object.values(docks)
+      ?.filter((dock) => {
+        return pointInsidePolygon([dock.Latitude, dock.Longitude], shapeInput);
+      })
+      .map((dock) => dock.id);
+    setDocks({ ...selectedDocks, [directionToSet]: newDocks });
+  };
 };
