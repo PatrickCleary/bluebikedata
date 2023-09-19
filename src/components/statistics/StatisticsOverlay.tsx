@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import { useSelectionType } from "../../store/SelectionStore";
 import { useStatisticStore } from "../../store/StatisticStore";
@@ -30,6 +31,7 @@ export const StatisticsOverlay = () => {
                         <span className="text-sm">%</span></span>
                         <span className="text-sm"> of trips departing <span className="text-amber-500">origin</span></span>
                     </p>
+
                     {/* <p> <span><span className="">{pctOfTotal}</span>
                         <span className="text-sm">%</span></span>
                         <span className="text-sm"> of total trips from <span className="text-amber-500">origin</span></span>
@@ -60,16 +62,18 @@ export const StatisticsOverlay = () => {
                 </span>
                 <span>({pctOfTotal}
                     <span className="text-sm">%</span>)</span>
-                <span className="text-sm">Departing region</span>
+                <span className="text-sm">{selectionType === 'origin' ? "Departing region" : "from out of region"}</span>
             </p>
             <p className="flex flex-row items-baseline gap-2 text-lg">
-                <span className="text-xl font-mono text-amber-500">
+                <span className={classNames("text-xl font-mono", selectionType === 'origin' ? 'text-amber-500' : 'text-fuchsia-400')}>
+
                     {within?.toLocaleString()}
                 </span>
                 <span>({pctOfTotalWithin}
                     <span className="text-sm">%</span>)</span>
-                <span className="text-sm">Within region</span>
+                <span className="text-sm">{"Within region"}</span>
             </p>
+
         </div>
     );
 };

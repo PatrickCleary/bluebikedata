@@ -3,13 +3,11 @@ import React, { Fragment } from "react";
 import dayjs from "dayjs";
 import { useConfigStore } from "../../store/ConfigStore";
 import { StatisticsOverlay } from "./StatisticsOverlay";
-import { useSelectionType } from "../../store/SelectionStore";
 import { StatisticsHeader } from "./StatisticsHeader";
 
 // TODO: Fix this for
 export const DataWidget = () => {
     const date = useConfigStore((store) => store.date);
-    const selectionType = useSelectionType();
     return (
         <div className="absolute bottom-7 left-2 md:bottom-0 md:left-0 md:m-0 md:relative md:h-full flex flex-end items-end">
             <Transition

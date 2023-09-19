@@ -6,6 +6,7 @@ import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
 export const PolygonVertices: React.FC<{ direction: 'origin' | 'destination' }> = ({ direction }) => {
   const { shape, deleteShapeVertex } = useSelectionStore((store) => store);
   const setDocks = useSetDocks();
+  if (shape[direction].length > 25) return null;
   return (
     <>{
       shape[direction]?.map((point) => {

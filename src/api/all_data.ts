@@ -83,21 +83,20 @@ export const useMonthlyData = (
   docksToUse?.forEach((dock) => {
     if (!dockData[dock]) return undefined;
     dockData[dock].forEach((value) => {
-      let [_station, count] = Object.entries(value).flat();
+      let [_dock, count] = Object.entries(value).flat();
       if (typeof count === "string") count = parseInt(count);
       total += count;
-      if (!docksToUse.includes(_station)) outwardTotal += count;
-
+      if (!docksToUse.includes(_dock)) outwardTotal += count;
       if (isDoubleSelection) {
         if (
           selectedDocks[originOrDestination[(type + 1) % 2]].includes(
-            _station.toString()
+            _dock.toString()
           )
         )
           toDestination += count;
       } else {
-        if (!totals[_station]) totals[_station] = count;
-        else totals[_station] += count;
+        if (!totals[_dock]) totals[_dock] = count;
+        else totals[_dock] += count;
       }
     });
   });

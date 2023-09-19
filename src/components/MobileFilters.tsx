@@ -57,8 +57,6 @@ export const MobileFilters = () => {
                   >
                     Settings
                   </Dialog.Title>
-                  <TripSlider />
-                  <ProjectOutlines />
                   <div className="mt-4">
                     <button
                       type="button"

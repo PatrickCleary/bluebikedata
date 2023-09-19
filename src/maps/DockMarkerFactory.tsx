@@ -16,7 +16,6 @@ export const StationMarkerFactory: React.FC<{
   const configStore = useConfigStore((store) => store);
   const { selectedDocks, isDrawing, setOrClearSingleDock, deleteShape } = useSelectionStore((store) => store);
 
-
   const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
 
   const data = useMonthlyData(
