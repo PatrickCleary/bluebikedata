@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelectionType } from "../../store/SelectionStore";
+import { RegionSelection } from "../RegionSelection";
 
 export const StatisticsHeader = () => {
     const selectionType = useSelectionType();
@@ -7,30 +8,34 @@ export const StatisticsHeader = () => {
     if (selectionType === "both")
         return (
             <span>
-                from{" "}
-                <span className="bg-amber-500 px-1 rounded-sm shadow-sm"> origin</span>{" "}
-                to{" "}
-                <span className="bg-fuchsia-500 px-1 rounded-sm shadow-sm">
-                    destination
-                </span>
+                from
+                <RegionSelection direction="origin" />
+                to
+                <RegionSelection direction="destination" />
+
             </span>
         );
     if (selectionType === "origin")
         return (
             <span>
                 from{" "}
-                <span className="bg-amber-500 px-1 rounded-sm shadow-sm"> origin</span>{" "}
+                <RegionSelection direction="origin" />
+                <RegionSelection direction="destination" active={false} />
+
             </span>
         );
     if (selectionType === "destination")
         return (
             <span>
                 to{" "}
-                <span className="bg-fuchsia-500 px-1 rounded-sm shadow-sm">
-                    {" "}
-                    destination
-                </span>{" "}
+                <RegionSelection direction="destination" />
+                <RegionSelection direction="origin" active={false} />
             </span>
         );
-    return null;
-};
+    return (
+        <span>
+            <RegionSelection direction="origin" active={false} />
+            <RegionSelection direction="destination" active={false} />
+        </span>
+    );
+}

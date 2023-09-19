@@ -21,7 +21,7 @@ interface SelectionStore {
     origin: { id: string; loc: LatLngExpression }[];
     destination: { id: string; loc: LatLngExpression }[];
   };
-  switchDirections: () => void;
+  setDirection: (direction?: Direction) => void;
   setDocks: (docks: { origin: string[]; destination: string[] }) => void;
   setOrClearSingleDock: (startStation: string) => void;
   setIsDrawing: (isDrawing: boolean) => void;
@@ -44,7 +44,8 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
     destination: 0,
   },
   shape: { origin: [], destination: [] },
-  switchDirections: () => {
+  setDirection: (direction) => {
+    if (direction) return set(() => ({ direction: direction }));
     if (get().direction === "origin")
       return set(() => ({ direction: "destination" }));
     return set(() => ({ direction: "origin" }));

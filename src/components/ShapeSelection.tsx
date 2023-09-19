@@ -20,17 +20,7 @@ export const ShapeSelection = () => {
       <hr className="md:h-[1px] h-full invisible md:visible md:w-full border-gray-600" />
       <DateControl />
       <hr className="md:h-[1px] h-full invisible md:visible md:w-full border-gray-600" />
-      <div className="h-64 flex flex-col overflow-y-scroll items-start">
-        {Object.entries(presets).map(([name, value]) => (
-          <button
-            onClick={() => {
-              setShapeAndDocks(value.coords)
-            }}
-          >
-            {name}
-          </button>
-        ))}
-      </div>
+
       <div className="absolute flex-col  gap-2 items-center flex bottom-4 invisible md:visible">
         <ShareButton />
         <ContactAndInfo />

@@ -18,7 +18,7 @@ export const DirectionToggle = () => {
                             : "bg-amber-500 bg-opacity-20"
                     )}
                     onClick={() => {
-                        selectionStore.switchDirections();
+                        selectionStore.setDirection();
                         setNotification({ text: "Selecting origin" });
                     }}
                 />
@@ -30,7 +30,7 @@ export const DirectionToggle = () => {
                             : "bg-fuchsia-500 bg-opacity-20"
                     )}
                     onClick={() => {
-                        selectionStore.switchDirections();
+                        selectionStore.setDirection();
                         setNotification({ text: "Selecting destination" });
                     }}
                 />
