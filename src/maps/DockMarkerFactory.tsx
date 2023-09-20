@@ -40,7 +40,7 @@ export const StationMarkerFactory: React.FC<{
       {Object.values(all_docks.data)
         .map((station) => {
           if (
-            !data.docks.includes(station.id)
+            !data.docks.includes(station.id.toString())
           ) {
             return null;
           }
