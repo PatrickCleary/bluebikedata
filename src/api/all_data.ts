@@ -52,8 +52,9 @@ export const useMonthlyData = (
   let type = 0; // 0 === origin
   if (
     // If no origin docks selected, use destination data.
-    shape.destination.length > 0 &&
-    shape.origin.length === 0
+    (shape.destination.length > 0 || selectedDocks.destination.length > 0) &&
+    shape.origin.length === 0 &&
+    selectedDocks.origin.length === 0
   ) {
     type = 1;
   }
@@ -81,7 +82,9 @@ export const useMonthlyData = (
   let outwardTotal = 0;
   let toDestination = 0;
   docksToUse?.forEach((dock) => {
-    if (!dockData[dock]) return undefined;
+    if (!dockData[dock]) {
+      return undefined;
+    }
     dockData[dock].forEach((value) => {
       let [_dock, count] = Object.entries(value).flat();
       if (typeof count === "string") count = parseInt(count);
