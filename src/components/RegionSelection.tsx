@@ -57,7 +57,7 @@ export const RegionSelection: React.FC<{
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Listbox.Options className="flex absolute bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 shadow-lg top-10 md:top-auto md:bottom-10 flex-col max-h-96 overflow-y-scroll w-48 sm:w-52">
+                    <Listbox.Options className="flex absolute z-20 bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 shadow-lg top-10 md:top-auto md:bottom-10 flex-col max-h-96 overflow-y-scroll w-48 sm:w-52">
                         <Listbox.Option
                             value={null}
                             onClick={() => {

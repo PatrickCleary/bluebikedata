@@ -72,7 +72,7 @@ export const StatisticsOverlay = () => {
                     <span className="text-sm">
                         {selectionType === "origin"
                             ? "Departing region"
-                            : "from out of region"}
+                            : "From out of region"}
                     </span>
                 </p>
 
