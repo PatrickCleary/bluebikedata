@@ -7,6 +7,7 @@ interface DockMarkerProps {
   position: LatLngExpression;
   name: string;
   id: string;
+  color: string;
   select: (() => void) | undefined;
   inside: boolean;
   isMobile: boolean;
@@ -19,6 +20,7 @@ export const DockMarker: React.FC<DockMarkerProps> = ({
   position,
   name,
   id,
+  color,
   select,
   startStationsSelected,
   absValue,
@@ -27,9 +29,9 @@ export const DockMarker: React.FC<DockMarkerProps> = ({
   size,
 }) => {
   const getOpacity = () => {
+    if (inside) return "opacity-100";
     if (absValue === undefined && startStationsSelected) return "opacity-50";
     if (!startStationsSelected) return "opacity-100";
-    if (inside) return "opacity-100";
     return "opacity-50";
   };
   const opacity = getOpacity();
@@ -45,7 +47,7 @@ export const DockMarker: React.FC<DockMarkerProps> = ({
   return (
     <CircleMarker
       center={position}
-      color={inside ? "#f59e0b" : "#38bdf8"}
+      color={color}
       className={classNames(opacity)}
       eventHandlers={
         select
@@ -55,7 +57,7 @@ export const DockMarker: React.FC<DockMarkerProps> = ({
           : undefined
       }
 
-      key={`${name}-${inside}-${absValue}-${isMobile}-${size}-${startStationsSelected}`}
+      key={`${name}-${inside}-${absValue}-${isMobile}-${size}-${startStationsSelected}-${color}`}
       stroke={false}
       fillOpacity={1}
       radius={currentSize}

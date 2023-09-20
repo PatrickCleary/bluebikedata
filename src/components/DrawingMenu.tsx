@@ -2,38 +2,36 @@ import React from "react";
 import {
   faCircle,
   faCircleNodes,
-  faRotateLeft,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
-import { useClearStartStations, useConfigStore } from "../store/ConfigStore";
-import { useMapStore } from "../store/MapStore";
 import { useNotificationStore } from "../store/NotificationStore";
+import { useClearDocks, useSelectionStore } from "../store/SelectionStore";
 
 export const DrawingMenu = () => {
-  const clearStartStations = useClearStartStations();
-  const mapStore = useMapStore((store) => store);
+  const clearDocks = useClearDocks();
+  const selectionStore = useSelectionStore((store) => store)
   const setNotification = useNotificationStore(
     (store) => store.setNotification
   );
-  const configStore = useConfigStore((store) => store);
-  const clearEnabled =
-    configStore.startStations?.length || mapStore.startShape?.length;
+  const color = selectionStore.direction === 'origin' ? 'text-amber-500' : 'text-fuchsia-500'
+  const clearEnabled = selectionStore.selectedDocks[selectionStore.direction]?.length || selectionStore.shape[selectionStore.direction]?.length
 
   return (
-    <div className="flex flex-col gap-2 w-full items-center">
+    <div className="flex flex-row gap-2 w-full items-center">
       <div className="w-full flex flex-row ">
-        <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-gray-500 border border-gray-500 overflow-hidden">
+        <div className="flex flex-row justify-center md:justify-start rounded-md gap-[1px] bg-gray-500 border border-gray-700 overflow-hidden">
           <FontAwesomeIcon
             icon={faCircle}
             className={classNames(
               "h-3 w-3 cursor-pointer py-2 px-3 rounded-md",
-              mapStore.isDrawing
+              selectionStore.isDrawing
                 ? "text-white bg-gray-500 hover:bg-gray-700 rounded-md"
-                : "text-amber-500 bg-gray-700"
+                : `${color} bg-gray-700`
             )}
             onClick={() => {
-              mapStore.setIsDrawing(false);
+              selectionStore.setIsDrawing(false);
               setNotification({ text: "Tap/click a dock to select." });
             }}
           />
@@ -41,12 +39,12 @@ export const DrawingMenu = () => {
             icon={faCircleNodes}
             className={classNames(
               "h-5 w-5 cursor-pointer py-1 px-2  rounded-md",
-              !mapStore.isDrawing
+              !selectionStore.isDrawing
                 ? "text-white bg-gray-500 hover:bg-gray-700 "
-                : "text-amber-500 bg-gray-700"
+                : `${color} bg-gray-700`
             )}
             onClick={() => {
-              mapStore.setIsDrawing(true);
+              selectionStore.setIsDrawing(true);
               setNotification({ text: "Click/tap on the map to draw." });
             }}
           />
@@ -58,12 +56,13 @@ export const DrawingMenu = () => {
             "rounded-full gap-1 flex flex-row px-1 sm:px-2 pr-2  items-center py-[2px] "
           )}
           onClick={() => {
-            clearStartStations();
+            clearDocks();
           }}
         >
-          <FontAwesomeIcon icon={faRotateLeft} className="h-5 w-5" />
+          <FontAwesomeIcon icon={faTrash} className="h-5 w-5" />
         </button>
       </div>
+
     </div>
   );
 };

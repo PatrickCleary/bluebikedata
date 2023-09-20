@@ -25,6 +25,5 @@ export const pointInsidePolygon = (
       }
     }
   }
-
   return inside;
 };

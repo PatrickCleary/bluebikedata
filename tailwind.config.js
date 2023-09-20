@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      mono: ["Rubik", "mono"],
+      numbers: ["Rubik Mono One", "mono"],
+    },
     screens: {
       sm: "640px",
       // => @media (min-width: 640px) { ... }

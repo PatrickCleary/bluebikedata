@@ -1,25 +1,27 @@
 import React from "react";
 import { CircleMarker } from "react-leaflet";
-import { useMapStore, useSetStartStations } from "../store/MapStore";
+import { COLORS } from "../constants";
+import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
 
-export const PolygonVertices: React.FC = () => {
-  const { startShape, removeStartShape } = useMapStore((store) => store);
-  const setStartStations = useSetStartStations();
+export const PolygonVertices: React.FC<{ direction: 'origin' | 'destination' }> = ({ direction }) => {
+  const { shape, deleteShapeVertex } = useSelectionStore((store) => store);
+  const setDocks = useSetDocks();
+  if (shape[direction].length > 25) return null;
   return (
     <>{
-      startShape?.map((point) => {
+      shape[direction]?.map((point) => {
         return (
           <CircleMarker
             key={point.id}
             center={point.loc}
-            pathOptions={{ color: "#f59e0b80", fillOpacity: 1 }}
+            pathOptions={{ color: `${COLORS[direction]}80`, fillOpacity: 1 }}
             radius={5}
             stroke={false}
             bubblingMouseEvents={false}
             eventHandlers={{
               click: (e) => {
-                removeStartShape(point.id);
-                setStartStations();
+                deleteShapeVertex(point.id);
+                setDocks();
               },
             }}
           ></CircleMarker>

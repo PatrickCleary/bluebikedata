@@ -6,6 +6,7 @@ import pandas as pd
 def clean_strings(df):
     #TODO: Probably don't need these to be separate, but it wasn't working.
     df =  df.apply(lambda x: x.str.replace(u'\u2013', '-', regex=False) if x.dtype == 'object' else x)
+    df =  df.apply(lambda x: x.str.replace(u'?', '-', regex=False) if x.dtype == 'object' else x)
     df =  df.apply(lambda x: x.str.replace(u'–', '-', regex=False) if x.dtype == 'object' else x)
     return df.apply(lambda x: x.str.strip() if x.dtype == 'object' else x)
 

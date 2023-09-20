@@ -9,11 +9,13 @@ import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";
 import { useConfigStore } from "../store/ConfigStore";
+import { useSelectionStore } from "../store/SelectionStore";
 export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
     const setNotification = useNotificationStore((store) => store.setNotification);
     const mapStore = useMapStore((store) => store);
+    const selectionStore = useSelectionStore((store) => store)
     const configStore = useConfigStore((store) => store);
     const isMobile = !useBreakpoint("md");
     useEffect(() => {
@@ -33,7 +35,8 @@ export const ShareButton = () => {
             const newID = uuidv4().slice(0, 8);
             url.searchParams.set("id", newID);
             navigator.clipboard.writeText(url.toString());
-            const station = mapStore.startShape?.length ? undefined : configStore.startStations?.[0]
+            const destinationDock = selectionStore.shape['destination']?.length ? undefined : selectionStore.selectedDocks['destination']?.[0]
+            const originDock = selectionStore.shape['origin']?.length ? undefined : selectionStore.selectedDocks['origin']?.[0]
 
             await saveConfig({
                 id: newID,
@@ -42,10 +45,11 @@ export const ShareButton = () => {
                     center: [40, -71],
                     zoom: 13,
                     ridershipMin: configStore.ridershipMin,
-                    shape: mapStore.startShape,
+                    shape: selectionStore.shape,
                     project: configStore.project,
                     date: configStore.date,
-                    station: station,
+                    originDock: originDock,
+                    destinationDock: destinationDock,
                 }
             });
             setShareID(newID);
@@ -63,7 +67,7 @@ export const ShareButton = () => {
             <>
                 <button
                     type="button"
-                    className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-500  p-2 pointer-events-auto shadow-md rounded-md"
+                    className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-700  p-2 pointer-events-auto shadow-md rounded-md"
                     onClick={() => {
                         saveShapeById()
                         setNotification({ text: 'Link copied to clipboard' })
@@ -77,23 +81,23 @@ export const ShareButton = () => {
             </>
         );
     return (
-        <div className="flex flex-row py-1 border box-border border-gray-600 rounded-md hover:bg-gray-500 relative">
+        <div className="relative w-full flex justify-center">
             <button
                 className={classNames(
-                    "rounded-full gap-2 flex flex-row px-10 items-center py-[2px] text-neutral-100"
+                    "w-full flex justify-center gap-2 flex-row border rounded-sm hover:bg-gray-700 border-gray-700 items-center text-neutral-100 py-1 text-sm"
                 )}
                 onClick={saveShapeById}
             >
                 <FontAwesomeIcon
                     icon={faShareFromSquare}
                     className={classNames(
-                        "h-4 w-4 cursor-pointer text-neutral-100"
+                        "h-3 w-3 cursor-pointer text-neutral-100"
                     )}
                 />
 
                 <p>Share</p>
             </button>
-            <div className="absolute top-0 left-0 overflow-hidden h-full w-full rounded-md pointer-events-none	border-gray-500 border border-transparent box-border">
+            <div className="absolute top-0 left-0 overflow-hidden h-full w-full rounded-md pointer-events-none	border-gray-700 border border-transparent box-border">
                 <Transition
                     as={Fragment}
                     show={showMsg}
@@ -102,7 +106,7 @@ export const ShareButton = () => {
                     enterTo="opacity-100 scale-100 bg-gray-700"
                     leave="transform duration-[600ms] transition ease-in-out"
                     leaveFrom="opacity-100 bg-gray-700 text-gray-200"
-                    leaveTo=" scale-150 bg-gray-500 text-gray-500"
+                    leaveTo=" scale-150 bg-gray-700 text-gray-700"
                 >
                     <div className="absolute top-0 left-0 h-full w-full rounded-[.25rem] text-gray-200 rounded-smbg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none">
                         <p className=" text-sm">Copied to clipboard</p>

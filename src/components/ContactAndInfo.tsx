@@ -15,11 +15,10 @@ export const ContactAndInfo = () => {
   return (
     <>
       <button
-        type="button"
-        className="flex items-start justify-start pointer-events-auto"
+        className={"w-full flex flex-row border rounded-sm hover:bg-gray-700 border-gray-700 justify-center text-neutral-100 py-1"}
         onClick={openModal}
       >
-        <p className="text-gray-100 text-sm underline">Contact</p>
+        <p className="text-gray-100 text-sm">Contact</p>
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
