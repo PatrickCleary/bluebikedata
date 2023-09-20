@@ -25,7 +25,7 @@ export const StationMarkerFactory: React.FC<{
   );
   const isMobile = !useBreakpoint("md");
   const docksSelected =
-    Boolean(Object.values(selectedDocks).some((docks) => docks?.length > 0))
+    Boolean(Object.values(selectedDocks).some((dockList) => dockList?.length > 0))
 
   if (!data || !all_docks || !all_docks.data)
     return null;

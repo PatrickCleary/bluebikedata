@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { useNotificationStore } from "../store/NotificationStore";
 import { useClearDocks, useSelectionStore } from "../store/SelectionStore";
-import { DirectionToggle } from "./DirectionToggle";
 
 export const DrawingMenu = () => {
   const clearDocks = useClearDocks();
@@ -63,7 +62,6 @@ export const DrawingMenu = () => {
           <FontAwesomeIcon icon={faTrash} className="h-5 w-5" />
         </button>
       </div>
-      <DirectionToggle />
 
     </div>
   );

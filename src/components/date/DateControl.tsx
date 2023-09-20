@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
 import dayjs from "dayjs";
-import { Listbox, Transition } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import localeData from "dayjs/plugin/localeData";
@@ -40,9 +39,9 @@ export const DateControl: React.FC = () => {
   };
 
   return (
-    <div className="relative flex-col gap-2 text-sm text-white">
-      <div className="flex flex-row items-center justify-center md:justify-start h-10 w-full bg-gray-500 gap-[2px] p-[1px]  rounded-lg border border-gray-700">
-        <div className="flex flex-row items-center  border border-gray-700 justify-center w-full h-full rounded-md overflow-hidden">
+    <div className="relative flex-col gap-2 text-sm text-white w-fit pointer-events-auto">
+      <div className="flex flex-row items-center justify-center md:justify-start h-10 w-full bg-gray-800 gap-[2px] p-1 md:p-0  rounded-sm md:border-0 border border-gray-700">
+        <div className="flex flex-row items-center  border border-gray-700 justify-center w-full h-full rounded-sm overflow-hidden">
           <ChangeMonthButton
             amount={-1}
             disabled={
@@ -66,7 +65,7 @@ export const DateControl: React.FC = () => {
           } />
         </div>
 
-        <div className="flex h-full flex-row items-center justify-center w-full rounded-md overflow-hidden border border-gray-700 ">
+        <div className="flex h-full flex-row items-center justify-center w-full rounded-sm overflow-hidden border border-gray-700 ">
           <ChangeMonthButton
             amount={-12}
             disabled={configStore.date.year === CURRENT_MIN.year}
@@ -92,7 +91,7 @@ export const DateControl: React.FC = () => {
         </div>
         <button
           onClick={hitPlay}
-          className="bg-gray-700 hover:bg-gray-500 border border-gray-700 text-white px-2 shrink h-full rounded-md"
+          className="bg-gray-700 hover:bg-gray-500 border border-gray-700 text-white px-2 shrink h-full rounded-sm"
         >
           <FontAwesomeIcon
             icon={isPlaying ? faPause : faPlay}

@@ -29,7 +29,7 @@ export const DateDropdown: React.FC<DateDropdownProps> = ({
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Listbox.Options className="absolute mt-1 max-h-90 w-auto overflow-auto rounded-md bg-gray-500 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute bottom-12 max-h-90 w-auto overflow-auto rounded-md bg-gray-500 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                         {options.map((option, index) => (
                             <Listbox.Option
                                 key={index}
