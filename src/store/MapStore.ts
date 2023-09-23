@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { getConfig } from "../api/config";
+import { Shape } from "../types/apis";
 import { useConfigStore } from "./ConfigStore";
-import { useSelectionStore, useSetDocks } from "./SelectionStore";
+import { useSetBothShapesAndDocks } from "./SelectionStore";
 
 interface MapStore {
   zoom: number;
@@ -21,20 +22,25 @@ export const useMapStore = create<MapStore>((set, get) => ({
 }));
 
 export const useSetConfigFromId = () => {
-  const { shape, setShape } = useSelectionStore((store) => store);
   const setFromConfig = useConfigStore((store) => store.setFromConfig);
-  const setDocks = useSetDocks();
+  const setBothShapesAndDocks = useSetBothShapesAndDocks();
   return async (id: string) => {
     const config = await getConfig(id);
     const formattedShape = config[0].shape;
-    if (formattedShape.length) {
-      const reassignIds = formattedShape.map((point, index) => ({
-        ...point,
-        id: index,
-      }));
-      setShape(reassignIds);
-      setDocks(reassignIds);
-    }
+    const shapesToSet: Shape = { origin: [], destination: [] };
+    Object.keys(formattedShape).forEach((direction) => {
+      if (formattedShape[direction].length) {
+        const reassignIds = formattedShape[direction].map((point, index) => ({
+          ...point,
+          id: index,
+        }));
+        shapesToSet[direction] = reassignIds;
+      }
+    });
+    setBothShapesAndDocks(shapesToSet, {
+      destination: config[0].destinationDock,
+      origin: config[0].originDock,
+    });
     setFromConfig(config[0]);
   };
 };

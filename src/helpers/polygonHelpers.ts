@@ -27,3 +27,17 @@ export const pointInsidePolygon = (
   }
   return inside;
 };
+
+export const getArea = (polygon: { id: string; loc: LatLngExpression }[]) => {
+  let total = 0;
+  for (let i = 0, l = polygon.length; i < l; i++) {
+    let addX = polygon[i].loc[0];
+    let addY = polygon[i === polygon.length - 1 ? 0 : i + 1].loc[1];
+    let subX = polygon[i === polygon.length - 1 ? 0 : i + 1].loc[0];
+    let subY = polygon[i].loc[1];
+
+    total += addX * addY * 0.5;
+    total -= subX * subY * 0.5;
+  }
+  return Math.abs(total);
+};
