@@ -1,7 +1,8 @@
+import { Console } from "console";
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllDocks } from "../api/all_data";
-import { pointInsidePolygon } from "../helpers/testLocation";
+import { getArea, pointInsidePolygon } from "../helpers/polygonHelpers";
 import { Shape, ShapeVertex } from "../types/apis";
 
 export type Direction = "destination" | "origin";
@@ -21,6 +22,14 @@ interface SelectionStore {
     origin: { id: string; loc: LatLngExpression }[];
     destination: { id: string; loc: LatLngExpression }[];
   };
+  shapeArea: {
+    origin: number;
+    destination: number;
+  };
+  setBothShapeArea: (shapeArea: {
+    origin: number;
+    destination: number;
+  }) => void;
   setDirection: (direction?: Direction) => void;
   setDocks: (docks: { origin: string[]; destination: string[] }) => void;
   setOrClearSingleDock: (startStation: string) => void;
@@ -31,6 +40,7 @@ interface SelectionStore {
     shape: { id: string; loc: LatLngExpression }[],
     directionInput?: Direction
   ) => void;
+  setBothShapes: (shape: Shape) => void;
   deleteShape: () => void;
   flipDocks: () => void;
 }
@@ -39,11 +49,13 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
   direction: "origin",
   selectedDocks: { origin: [], destination: [] },
   isDrawing: false,
+  shapeArea: { origin: 0, destination: 0 },
   id: {
     origin: 0,
     destination: 0,
   },
   shape: { origin: [], destination: [] },
+  setBothShapeArea: (shapeArea) => set(() => ({ shapeArea: shapeArea })),
   setDirection: (direction) => {
     if (direction) return set(() => ({ direction: direction }));
     if (get().direction === "origin")
@@ -57,6 +69,7 @@ export const useSelectionStore = create<SelectionStore>((set, get) => ({
   setIsDrawing: (isDrawing) => {
     return set(() => ({ isDrawing: isDrawing }));
   },
+  setBothShapes: (shape) => set(() => ({ shape: shape })),
   setOrClearSingleDock: (newDock) => {
     const direction = get().direction;
     const docks = get().selectedDocks;
@@ -130,6 +143,7 @@ export const useSetDocks = () => {
   return async (newShape?: Shape) => {
     const docks = await fetchAllDocks();
     const loadedShapeOrCurrent = newShape ?? shape;
+    getArea(loadedShapeOrCurrent.destination);
     if (!docks || !loadedShapeOrCurrent) return null;
     const newDocks = { origin: [], destination: [] };
     Object.entries(loadedShapeOrCurrent).forEach(
@@ -181,4 +195,53 @@ export const useSetNewShapeAndDocks = () => {
       .map((dock) => dock.id);
     setDocks({ ...selectedDocks, [directionToSet]: newDocks });
   };
+};
+
+export const useShapeArea = () => {
+  const selectionType = useSelectionType();
+  const shapeArea = useSelectionStore((store) => store.shapeArea);
+  if (selectionType !== "origin" && selectionType !== "destination")
+    return 0.0005;
+  console.log(shapeArea[selectionType]);
+  if (shapeArea[selectionType]) return shapeArea[selectionType];
+  return 0.0005;
+};
+
+export const useSetBothShapesAndDocks = () => {
+  const { setBothShapes, setDocks } = useSelectionStore((store) => store);
+  return async (
+    shapeInput: Shape,
+    singleDocks: {
+      origin: string | undefined;
+      destination: string | undefined;
+    }
+  ) => {
+    const docks = await fetchAllDocks();
+    setBothShapes(shapeInput);
+    const docksToSet: { origin: string[]; destination: string[] } = {
+      origin: singleDocks.origin ? [singleDocks.origin] : [],
+      destination: singleDocks.destination ? [singleDocks.destination] : [],
+    };
+    Object.entries(shapeInput).forEach(([direction, shape]) => {
+      if (!shape.length) return;
+      const newDocks = Object.values(docks)
+        ?.filter((dock) => {
+          return pointInsidePolygon([dock.Latitude, dock.Longitude], shape);
+        })
+        .map((dock) => dock.id);
+      docksToSet[direction] = newDocks;
+    });
+    setDocks(docksToSet);
+  };
+};
+
+export const setShapeAreas = (
+  shape: Shape,
+  setBothShapeArea: (shapeArea: { origin: number; destination: number }) => void
+) => {
+  const shapeArea = { origin: 0, destination: 0 };
+  Object.entries(shape).forEach(([label, value]) => {
+    shapeArea[label] = getArea(value);
+  });
+  setBothShapeArea(shapeArea);
 };

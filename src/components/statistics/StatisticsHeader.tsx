@@ -4,8 +4,6 @@ import { RegionSelection } from "../RegionSelection";
 
 export const StatisticsHeader = () => {
     const selectionType = useSelectionType();
-    const setShapeAndDocks = useSetNewShapeAndDocks();
-
     if (selectionType === "both")
         return (
             <span className="flex flex-row w-full">

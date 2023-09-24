@@ -40,7 +40,7 @@ export const ShareButton = () => {
 
             await saveConfig({
                 id: newID,
-                version: '1',
+                version: '2',
                 configParams: {
                     center: [40, -71],
                     zoom: 13,

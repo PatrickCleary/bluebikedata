@@ -33,8 +33,8 @@ export type SaveConfigParams = {
 };
 
 export type Shape = {
-  origin: ShapeVertex[] | undefined;
-  destination: ShapeVertex[] | undefined;
+  origin: ShapeVertex[];
+  destination: ShapeVertex[];
 };
 
 export type ShapeVertex = {
