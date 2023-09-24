@@ -1,3 +1,4 @@
+import { Console } from "console";
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllDocks } from "../api/all_data";
@@ -194,6 +195,16 @@ export const useSetNewShapeAndDocks = () => {
       .map((dock) => dock.id);
     setDocks({ ...selectedDocks, [directionToSet]: newDocks });
   };
+};
+
+export const useShapeArea = () => {
+  const selectionType = useSelectionType();
+  const shapeArea = useSelectionStore((store) => store.shapeArea);
+  if (selectionType !== "origin" && selectionType !== "destination")
+    return 0.0005;
+  console.log(shapeArea[selectionType]);
+  if (shapeArea[selectionType]) return shapeArea[selectionType];
+  return 0.0005;
 };
 
 export const useSetBothShapesAndDocks = () => {

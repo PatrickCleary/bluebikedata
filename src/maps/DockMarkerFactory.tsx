@@ -7,7 +7,7 @@ import { COLORS } from "../constants";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
-import { setShapeAreas, useSelectionStore } from "../store/SelectionStore";
+import { setShapeAreas, useSelectionStore, useSelectionType, useShapeArea } from "../store/SelectionStore";
 import { DockMarker } from "./DockMarker";
 
 export const StationMarkerFactory: React.FC<{
@@ -15,6 +15,7 @@ export const StationMarkerFactory: React.FC<{
 }> = ({ setIsLoading }) => {
   const configStore = useConfigStore((store) => store);
   const { selectedDocks, isDrawing, setOrClearSingleDock, deleteShape, shape, setBothShapeArea, shapeArea } = useSelectionStore((store) => store);
+  const currentShapeArea = useShapeArea();
   const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
   useEffect(() => {
     setShapeAreas(shape, setBothShapeArea)
@@ -31,7 +32,7 @@ export const StationMarkerFactory: React.FC<{
   if (!data || !all_docks || !all_docks.data)
     return null;
 
-  const maxSizeMultiplier = Math.log(.0001) / Math.max(50, (300000 * shapeArea['destination']));
+  const maxSizeMultiplier = Math.log(.0001) / Math.max(50, (300000 * currentShapeArea));
 
   setIsLoading(false);
 
