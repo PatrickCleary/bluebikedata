@@ -1,10 +1,10 @@
 import React from "react";
 import { CircleMarker } from "react-leaflet";
 import { COLORS } from "../constants";
-import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
+import { useSelectStore, useSetDocks } from "../store/SelectStore";
 
 export const PolygonVertices: React.FC<{ direction: 'origin' | 'destination' }> = ({ direction }) => {
-  const { shape, deleteShapeVertex } = useSelectionStore((store) => store);
+  const { shape, deleteShapeVertex } = useSelectStore((store) => store);
   const setDocks = useSetDocks();
   if (shape[direction].length > 25) return null;
   return (

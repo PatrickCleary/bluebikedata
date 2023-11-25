@@ -2,9 +2,7 @@ import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { ContactAndInfo } from "./ContactAndInfo";
-import { ProjectOutlines } from "./ProjectOutlines";
-import { TripSlider } from "./Slider";
+import { Contact } from "./Contact";
 
 export const MobileFilters = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +64,7 @@ export const MobileFilters = () => {
                       Go{" "}
                     </button>
                   </div>
-                  <ContactAndInfo />
+                  <Contact />
                 </Dialog.Panel>
               </Transition.Child>
             </div>

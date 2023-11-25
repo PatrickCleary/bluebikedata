@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-export const ContactAndInfo = () => {
+export const Contact = () => {
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -18,7 +18,7 @@ export const ContactAndInfo = () => {
         className={"w-full flex flex-row border rounded-sm hover:bg-gray-700 border-gray-700 justify-center text-neutral-100 py-1"}
         onClick={openModal}
       >
-        <p className="text-gray-100 text-sm">Info</p>
+        <p className="text-gray-100 text-sm">Contact</p>
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>

@@ -1,16 +1,41 @@
 import { useQuery } from "@tanstack/react-query";
-import { useSelectionStore, useSelectionType } from "../store/SelectionStore";
+import dayjs from "dayjs";
+import {
+  useSelectStore,
+  useSelectionType,
+  DockSelection,
+} from "../store/SelectStore";
 import { useStatisticStore } from "../store/StatisticStore";
-import { Destinations, StationTripMap } from "../types/Data";
+import {
+  DateOptions,
+  Destinations,
+  StationTrip,
+  StationTripMap,
+} from "../types/Data";
 
 export const fetchAllData = (year: string): Promise<StationTripMap> => {
   const url = new URL(`/static/${year}_data.json`, window.location.origin);
   return fetch(url.toString()).then((resp) => resp.json());
 };
 
-export const fetchAllDocks = (): Promise<StationTripMap> => {
+export const fetchAllDocks = async (
+  date: DateOptions
+): Promise<StationTripMap> => {
   const url = new URL(`/static/all_docks.json`, window.location.origin);
-  return fetch(url.toString()).then((resp) => resp.json());
+  const docks = await fetch(url.toString()).then((resp) => resp.json());
+  const currentDocks: StationTripMap = {};
+  Object.values(docks)
+    .filter((dock: StationTrip) => {
+      if (!dock.LastUsed) return true;
+      const day = dayjs(dock.LastUsed);
+      const month = day.get("month");
+      const year = day.get("year");
+      return year <= date.year || (month <= date.month && year === date.year);
+    })
+    .forEach((dock: StationTrip) => {
+      currentDocks[`${dock.id}:${dock.name}`] = { ...dock };
+    });
+  return currentDocks;
 };
 
 export const fetchMonthlyDestinations = (
@@ -38,23 +63,20 @@ export const fetchMonthlyDestinations = (
 
 // This is absolute spaghetti and should be burned with fire.
 export const useMonthlyData = (
-  selectedDocks: {
-    origin: string[];
-    destination: string[];
-  },
+  selectedDocks: DockSelection,
   year: number,
   month: number
 ): { docks: string[]; totals: { [key: string]: number } } | undefined => {
-  const { shape } = useSelectionStore((store) => store);
+  const { shape } = useSelectStore((store) => store);
   const isDoubleSelection = useSelectionType() === "both";
   const setStatistic = useStatisticStore((store) => store.setStatistic);
   const originOrDestination = ["origin", "destination"];
   let type = 0; // 0 === origin
   if (
     // If no origin docks selected, use destination data.
-    (shape.destination.length > 0 || selectedDocks.destination.length > 0) &&
+    (shape.destination.length > 0 || selectedDocks.destination.size > 0) &&
     shape.origin.length === 0 &&
-    selectedDocks.origin.length === 0
+    selectedDocks.origin.size === 0
   ) {
     type = 1;
   }
@@ -81,7 +103,7 @@ export const useMonthlyData = (
   let total = 0;
   let outwardTotal = 0;
   let toDestination = 0;
-  docksToUse?.forEach((dock) => {
+  docksToUse?.forEach((dock: string) => {
     if (!dockData[dock]) {
       return undefined;
     }
@@ -89,10 +111,11 @@ export const useMonthlyData = (
       let [_dock, count] = Object.entries(value).flat();
       if (typeof count === "string") count = parseInt(count);
       total += count;
-      if (!docksToUse.includes(_dock)) outwardTotal += count;
+
+      if (!docksToUse.has(_dock)) outwardTotal += count;
       if (isDoubleSelection) {
         if (
-          selectedDocks[originOrDestination[(type + 1) % 2]].includes(
+          selectedDocks[originOrDestination[(type + 1) % 2]].has(
             _dock.toString()
           )
         )

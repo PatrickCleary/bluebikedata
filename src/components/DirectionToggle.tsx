@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import React from "react";
 import { useNotificationStore } from "../store/NotificationStore";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectStore } from "../store/SelectStore";
 export const DirectionToggle = () => {
-    const selectionStore = useSelectionStore((store) => store);
+    const SelectStore = useSelectStore((store) => store);
     const { setNotification } = useNotificationStore((store) => store);
     return (
         <div className="w-full flex flex-row ">
@@ -13,24 +13,24 @@ export const DirectionToggle = () => {
                 <div
                     className={classNames(
                         "h-5 w-5 cursor-pointer rounded-md shadow-sm",
-                        selectionStore.direction === "origin"
+                        SelectStore.direction === "origin"
                             ? "bg-amber-500 "
                             : "bg-amber-500 bg-opacity-20"
                     )}
                     onClick={() => {
-                        selectionStore.setDirection();
+                        SelectStore.setDirection();
                         setNotification({ text: "Selecting origin" });
                     }}
                 />
                 <div
                     className={classNames(
                         "h-5 w-5 cursor-pointer rounded-md shadow-sm",
-                        selectionStore.direction === "destination"
+                        SelectStore.direction === "destination"
                             ? "bg-fuchsia-500 "
                             : "bg-fuchsia-500 bg-opacity-20"
                     )}
                     onClick={() => {
-                        selectionStore.setDirection();
+                        SelectStore.setDirection();
                         setNotification({ text: "Selecting destination" });
                     }}
                 />
@@ -41,7 +41,7 @@ export const DirectionToggle = () => {
                     "rounded-full gap-1 flex flex-row px-1 sm:px-2 pr-2  items-center py-[2px] "
                 )}
                 onClick={() => {
-                    selectionStore.flipDocks();
+                    SelectStore.flipDocks();
                 }}
             >
                 <FontAwesomeIcon icon={faRepeat} className="h-5 w-5" />

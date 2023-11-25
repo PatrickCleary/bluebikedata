@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { useSelectionType } from "../../store/SelectionStore";
+import { useSelectionType } from "../../store/SelectStore";
 import { useStatisticStore } from "../../store/StatisticStore";
 
 export const StatisticsOverlay = () => {

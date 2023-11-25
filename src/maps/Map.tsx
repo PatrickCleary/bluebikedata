@@ -16,17 +16,15 @@ import { PolygonVertices } from "../shapes/PolygonVertices";
 import { PROJECT_OUTLINES } from "../constants/shapes";
 import { useConfigStore } from "../store/ConfigStore";
 import { COLORS } from "../constants";
-import { useSelectionStore, useSetDocks } from "../store/SelectionStore";
+import { useSelectStore, useSetDocks } from "../store/SelectStore";
 
 const center: LatLngExpression = [42.371298659713226, -71.09789436448169];
 
-export const MapView: React.FC<{
-  setIsLoading: React.Dispatch<SetStateAction<boolean>>;
-}> = ({ setIsLoading }) => {
+export const MapView: React.FC = () => {
   const [map, setMap] = useState<Map | null>(null);
   const mapStore = useMapStore((store) => store);
   const { project } = useConfigStore((store) => store);
-  const { shape } = useSelectionStore(store => store);
+  const { shape } = useSelectStore(store => store);
   map?.zoomControl.setPosition("bottomright");
 
   const displayMap = useMemo(
@@ -47,7 +45,7 @@ export const MapView: React.FC<{
           <Pane name="projects">
             {project ? PROJECT_OUTLINES[project].shape : null}
           </Pane>
-          <StationMarkerFactory setIsLoading={setIsLoading} />
+          <StationMarkerFactory />
 
           <Pane name={"originDocks"}>
             <Polygon
@@ -71,7 +69,7 @@ export const MapView: React.FC<{
         </MapContainer>
       </>
     ),
-    [mapStore, project, setIsLoading, shape]
+    [mapStore, project, shape]
   );
 
   return displayMap;
@@ -79,7 +77,7 @@ export const MapView: React.FC<{
 
 const UpdateMapValues: React.FC = () => {
   const mapStore = useMapStore((store) => store);
-  const { addShapeVertex, isDrawing } = useSelectionStore((store) => store)
+  const { addShapeVertex, isDrawing } = useSelectStore((store) => store)
   const map = useMap();
   const setDocks = useSetDocks();
   const onZoom = useCallback(() => {
