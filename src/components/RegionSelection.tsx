@@ -7,16 +7,16 @@ import { presets } from "../constants/presets";
 import { useNotificationStore } from "../store/NotificationStore";
 import {
     Direction,
-    useSelectionStore,
+    useSelectStore,
     useSetNewShapeAndDocks,
-} from "../store/SelectionStore";
+} from "../store/SelectStore";
 
 export const RegionSelection: React.FC<{
     direction: Direction;
     active?: boolean;
 }> = ({ direction, active = true }) => {
     const setShapeAndDocks = useSetNewShapeAndDocks();
-    const { setIsDrawing, setDirection } = useSelectionStore();
+    const { setIsDrawing, setDirection } = useSelectStore();
     const { setNotification } = useNotificationStore(store => store)
     const color =
         direction === "origin"

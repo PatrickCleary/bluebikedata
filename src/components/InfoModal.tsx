@@ -1,14 +1,13 @@
 import {
   faCircle,
   faCircleNodes,
-  faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
 export const InfoModal = () => {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -21,14 +20,10 @@ export const InfoModal = () => {
   return (
     <>
       <button
-        type="button"
-        className="flex items-start justify-start"
+        className={"w-full flex flex-row border rounded-sm hover:bg-gray-700 border-gray-700 justify-center text-neutral-100 py-1"}
         onClick={openModal}
       >
-        <FontAwesomeIcon
-          icon={faInfoCircle}
-          className="md:h-6 md:w-6 h-4 w-4 text-gray-100 pl-2"
-        />
+        <p className="text-gray-100 text-sm">Info</p>
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>

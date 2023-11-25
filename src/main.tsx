@@ -4,30 +4,32 @@ import "./App.css";
 import { MapView } from "./maps/Map";
 import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
-import { ShapeSelection as DesktopMenu } from "./components/ShapeSelection";
+import { DesktopMenu } from "./components/DesktopMenu";
 import { Notifications } from "./components/Notifications";
-import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetConfigFromId } from "./store/MapStore";
 import { DataWidget } from "./components/statistics/DataLabel";
 import { ShareButton } from "./components/ShareButton";
 import { DateControl } from "./components/date/DateControl";
+import { useLoadingStore } from "./store/LoadingStore";
 
 export const Main = () => {
     const [searchParams, setSearchParams] = useSearchParams();
+    const { isLoading, setIsLoading } = useLoadingStore((store) => store);
     const setConfigFromId = useSetConfigFromId();
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+
     useEffect(() => {
         const url = new URL(window.location.toString())
         url.searchParams.delete('id')
         window.history.replaceState(null, '', url);
         const id = searchParams.get('id')
         if (id) {
+            setIsLoading(true)
             setConfigFromId(id);
             searchParams.delete('id')
             setSearchParams(searchParams)
         }
-    }, [searchParams, setSearchParams, setConfigFromId])
+    }, [searchParams, setSearchParams, setConfigFromId, setIsLoading])
 
     useEffect(() => {
         ReactGA.send({ hitType: "pageview" });
@@ -50,7 +52,7 @@ export const Main = () => {
 
             </div>
             <div className="absolute z-0 h-full w-full">
-                <MapView setIsLoading={setIsLoading} />
+                <MapView />
             </div>
             <Notifications />
 

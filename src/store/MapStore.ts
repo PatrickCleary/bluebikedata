@@ -2,7 +2,8 @@ import { create } from "zustand";
 import { getConfig } from "../api/config";
 import { Shape } from "../types/apis";
 import { useConfigStore } from "./ConfigStore";
-import { useSetBothShapesAndDocks } from "./SelectionStore";
+import { useLoadingStore } from "./LoadingStore";
+import { useSetBothShapesAndDocks } from "./SelectStore";
 
 interface MapStore {
   zoom: number;
@@ -23,6 +24,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
 export const useSetConfigFromId = () => {
   const setFromConfig = useConfigStore((store) => store.setFromConfig);
+  const setIsLoading = useLoadingStore((store) => store.setIsLoading);
   const setBothShapesAndDocks = useSetBothShapesAndDocks();
   return async (id: string) => {
     const config = await getConfig(id);
@@ -42,5 +44,6 @@ export const useSetConfigFromId = () => {
       origin: config[0].originDock,
     });
     setFromConfig(config[0]);
+    setIsLoading(false);
   };
 };
