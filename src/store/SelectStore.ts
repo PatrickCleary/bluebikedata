@@ -240,7 +240,7 @@ export const useSetBothShapesAndDocks = () => {
           return pointInsidePolygon([dock.Latitude, dock.Longitude], shape);
         })
         .map((dock) => dock.id);
-      docksToSet[direction] = newDocks;
+      docksToSet[direction] = new Set(newDocks);
     });
     setDocks(docksToSet);
   };

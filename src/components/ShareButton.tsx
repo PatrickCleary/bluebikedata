@@ -70,7 +70,7 @@ export const ShareButton = () => {
                     className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-700  p-2 pointer-events-auto shadow-md rounded-md"
                     onClick={() => {
                         saveShapeById()
-                        setNotification({ text: 'Link copied to clipboard' })
+                        setNotification({ text: 'Copied link' })
                     }}
                 >
                     <FontAwesomeIcon
@@ -109,7 +109,7 @@ export const ShareButton = () => {
                     leaveTo=" scale-150 bg-gray-700 text-gray-700"
                 >
                     <div className="absolute top-0 left-0 h-full w-full rounded-[.25rem] text-gray-200 rounded-smbg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none">
-                        <p className=" text-sm">Copied to clipboard</p>
+                        <p className=" text-sm">Copied link</p>
                     </div>
                 </Transition>
             </div>

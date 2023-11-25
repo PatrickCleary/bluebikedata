@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { SetStateAction, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { LayerGroup } from "react-leaflet";
 import { fetchAllDocks, useMonthlyData } from "../api/all_data";
@@ -7,16 +7,14 @@ import { COLORS } from "../constants";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { getSize } from "../helpers/stationMarkerSize";
 import { useConfigStore } from "../store/ConfigStore";
-import { setShapeAreas, useSelectionStore, useSelectionType, useShapeArea } from "../store/SelectionStore";
+import { setShapeAreas, useSelectStore, useShapeArea } from "../store/SelectStore";
 import { DockMarker } from "./DockMarker";
 
-export const StationMarkerFactory: React.FC<{
-  setIsLoading: React.Dispatch<SetStateAction<boolean>>;
-}> = ({ setIsLoading }) => {
+export const StationMarkerFactory: React.FC = () => {
   const configStore = useConfigStore((store) => store);
-  const { selectedDocks, isDrawing, setOrClearSingleDock, deleteShape, shape, setBothShapeArea, shapeArea } = useSelectionStore((store) => store);
+  const { selectedDocks, isDrawing, setOrClearSingleDock, deleteShape, shape, setBothShapeArea } = useSelectStore((store) => store);
   const currentShapeArea = useShapeArea();
-  const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
+  const all_docks = useQuery(["all_docks", configStore.date], () => fetchAllDocks(configStore.date));
   useEffect(() => {
     setShapeAreas(shape, setBothShapeArea)
   }, [shape, setBothShapeArea])
@@ -27,16 +25,13 @@ export const StationMarkerFactory: React.FC<{
   );
   const isMobile = !useBreakpoint("md");
   const docksSelected =
-    Boolean(Object.values(selectedDocks).some((dockList) => dockList?.length > 0))
-
+    Boolean(Object.values(selectedDocks).some((dockList) => dockList?.size > 0))
   if (!data || !all_docks || !all_docks.data)
     return null;
 
   const maxSizeMultiplier = Math.log(.0001) / Math.max(50, (300000 * currentShapeArea));
 
-  setIsLoading(false);
-
-  const isFullSelection = selectedDocks.destination.length > 0 && selectedDocks.origin.length > 0;
+  const isFullSelection = selectedDocks.destination.size > 0 && selectedDocks.origin.size > 0;
 
   return (
     <LayerGroup>
@@ -47,8 +42,8 @@ export const StationMarkerFactory: React.FC<{
           ) {
             return null;
           }
-          const insideDestination = selectedDocks.destination.includes(station.id)
-          const insideOrigin = selectedDocks.origin.includes(station.id)
+          const insideDestination = selectedDocks.destination.has(station.id)
+          const insideOrigin = selectedDocks.origin.has(station.id)
           const inside = insideDestination || insideOrigin
           let absValue = data ? data.totals[station.id] : undefined;
           if (

@@ -39,9 +39,10 @@ export const useSetConfigFromId = () => {
         shapesToSet[direction] = reassignIds;
       }
     });
+    
     setBothShapesAndDocks(shapesToSet, {
-      destination: config[0].destinationDock,
-      origin: config[0].originDock,
+      destination: config[0]?.destinationDock,
+      origin: config[0]?.originDock,
     });
     setFromConfig(config[0]);
     setIsLoading(false);

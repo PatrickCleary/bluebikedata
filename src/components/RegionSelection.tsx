@@ -23,8 +23,8 @@ export const RegionSelection: React.FC<{
             ? "bg-amber-500 border-amber-500"
             : " border-fuchsia-400 bg-fuchsia-400";
     const activeStyle = active
-        ? "rounded-sm"
-        : "bg-opacity-0 border border-opacity-50 rounded-full right-0 hover:bg-opacity-50 text-gray-300";
+        ? "bg-opacity-80"
+        : "border border-opacity-50 rounded-full right-0 hover:bg-opacity-50 text-gray-300";
     return (
         <div className="relative self-end">
             <Listbox
@@ -34,7 +34,7 @@ export const RegionSelection: React.FC<{
                         : setShapeAndDocks([], direction)
                 }
             >
-                <span className={classNames(activeStyle, color, "mx-1 shadow-sm")}>
+                <span className={classNames(activeStyle, color, "mx-1 shadow-sm  bg-opacity-20 border rounded-md")}>
                     <Listbox.Button>
                         <span className='px-2'>
                             {!active ? "add " : ""}
