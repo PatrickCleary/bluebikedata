@@ -5,9 +5,9 @@ export const DATE_RANGES = {
 
 export const MAX_STATIONS = 15;
 
-export const YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
+export const YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
 
-export const CURRENT_MAX = { month: 6, year: 2023 };
+export const CURRENT_MAX = { month: 9, year: 2024 };
 export const CURRENT_MIN = { month: 0, year: 2015 };
 
 export const MONTHS = [
