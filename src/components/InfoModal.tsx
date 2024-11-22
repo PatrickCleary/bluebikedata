@@ -66,7 +66,7 @@ export const InfoModal = () => {
                   <div className="mt-2">
                     <p className="text-sm ">
                       Use this tool to discover insights into Blue Bike
-                      ridership in June 2022 and June 2023 (more dates to come).
+                      ridership.
                     </p>
                     <br />
                     <p className="font-bold text-sm">How to use:</p>
