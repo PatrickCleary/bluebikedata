@@ -16,7 +16,7 @@ export const StationMarkerFactory: React.FC<{
   const configStore = useConfigStore((store) => store);
   const { selectedDocks, isDrawing, setOrClearSingleDock, deleteShape, shape, setBothShapeArea, shapeArea } = useSelectionStore((store) => store);
   const currentShapeArea = useShapeArea();
-  const all_docks = useQuery(["all_docks"], () => fetchAllDocks());
+  const all_docks = useQuery(["all_docks"], () => fetchAllDocks(), {staleTime: Infinity});
   useEffect(() => {
     setShapeAreas(shape, setBothShapeArea)
   }, [shape, setBothShapeArea])
