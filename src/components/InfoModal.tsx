@@ -61,11 +61,11 @@ export const InfoModal = () => {
                     as="h3"
                     className="text-lg font-medium leading-6 "
                   >
-                    Blue Bike Data
+                    Bluebike Data
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm ">
-                      Use this tool to discover insights into Blue Bike
+                      Use this tool to discover insights into Bluebike
                       ridership.
                     </p>
                     <br />
@@ -85,8 +85,9 @@ export const InfoModal = () => {
                         <FontAwesomeIcon
                           icon={faCircle}
                           className="text-sky-400 opacity-60"
-                        /> will inflate according to the number of trips which end at that dock.
-
+                        />{" "}
+                        will inflate according to the number of trips which end
+                        at that dock.
                       </li>
                       <li>hover over a dock to see exact numbers.</li>
                     </ul>
