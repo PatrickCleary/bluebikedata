@@ -7,24 +7,24 @@ import { presets } from "../constants/presets";
 import { useNotificationStore } from "../store/NotificationStore";
 import {
     Direction,
-    useSelectionStore,
+    useSelectStore,
     useSetNewShapeAndDocks,
-} from "../store/SelectionStore";
+} from "../store/SelectStore";
 
 export const RegionSelection: React.FC<{
     direction: Direction;
     active?: boolean;
 }> = ({ direction, active = true }) => {
     const setShapeAndDocks = useSetNewShapeAndDocks();
-    const { setIsDrawing, setDirection } = useSelectionStore();
+    const { setIsDrawing, setDirection } = useSelectStore();
     const { setNotification } = useNotificationStore(store => store)
     const color =
         direction === "origin"
             ? "bg-amber-500 border-amber-500"
             : " border-fuchsia-400 bg-fuchsia-400";
     const activeStyle = active
-        ? "rounded-sm"
-        : "bg-opacity-0 border border-opacity-50 rounded-full right-0 hover:bg-opacity-50 text-gray-300";
+        ? "bg-opacity-80"
+        : "border border-opacity-50 rounded-full right-0 hover:bg-opacity-50 text-gray-300";
     return (
         <div className="relative self-end">
             <Listbox
@@ -34,7 +34,7 @@ export const RegionSelection: React.FC<{
                         : setShapeAndDocks([], direction)
                 }
             >
-                <span className={classNames(activeStyle, color, "mx-1 shadow-sm")}>
+                <span className={classNames(activeStyle, color, "mx-1 shadow-sm  bg-opacity-20 border rounded-md")}>
                     <Listbox.Button>
                         <span className='px-2'>
                             {!active ? "add " : ""}

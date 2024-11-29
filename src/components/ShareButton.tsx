@@ -9,13 +9,13 @@ import { useMapStore } from "../store/MapStore";
 import { useBreakpoint } from "../helpers/breakpoints";
 import { useNotificationStore } from "../store/NotificationStore";
 import { useConfigStore } from "../store/ConfigStore";
-import { useSelectionStore } from "../store/SelectionStore";
+import { useSelectStore } from "../store/SelectStore";
 export const ShareButton = () => {
     const [shareID, setShareID] = useState<string | undefined>(undefined);
     const [showMsg, setShowMsg] = useState(false);
     const setNotification = useNotificationStore((store) => store.setNotification);
     const mapStore = useMapStore((store) => store);
-    const selectionStore = useSelectionStore((store) => store)
+    const SelectStore = useSelectStore((store) => store)
     const configStore = useConfigStore((store) => store);
     const isMobile = !useBreakpoint("md");
     useEffect(() => {
@@ -35,8 +35,8 @@ export const ShareButton = () => {
             const newID = uuidv4().slice(0, 8);
             url.searchParams.set("id", newID);
             navigator.clipboard.writeText(url.toString());
-            const destinationDock = selectionStore.shape['destination']?.length ? undefined : selectionStore.selectedDocks['destination']?.[0]
-            const originDock = selectionStore.shape['origin']?.length ? undefined : selectionStore.selectedDocks['origin']?.[0]
+            const destinationDock = SelectStore.shape['destination']?.length ? undefined : [...SelectStore.selectedDocks['destination']][0]
+            const originDock = SelectStore.shape['origin']?.length ? undefined : [...SelectStore.selectedDocks['origin']][0]
 
             await saveConfig({
                 id: newID,
@@ -45,7 +45,7 @@ export const ShareButton = () => {
                     center: [40, -71],
                     zoom: 13,
                     ridershipMin: configStore.ridershipMin,
-                    shape: selectionStore.shape,
+                    shape: SelectStore.shape,
                     project: configStore.project,
                     date: configStore.date,
                     originDock: originDock,
@@ -70,7 +70,7 @@ export const ShareButton = () => {
                     className="flex items-center justify-center w-fit md:hidden bg-gray-800 border border-gray-700  p-2 pointer-events-auto shadow-md rounded-md"
                     onClick={() => {
                         saveShapeById()
-                        setNotification({ text: 'Link copied to clipboard' })
+                        setNotification({ text: 'Copied link' })
                     }}
                 >
                     <FontAwesomeIcon
@@ -109,7 +109,7 @@ export const ShareButton = () => {
                     leaveTo=" scale-150 bg-gray-700 text-gray-700"
                 >
                     <div className="absolute top-0 left-0 h-full w-full rounded-[.25rem] text-gray-200 rounded-smbg-gray-700 shadow-lg items-center justify-center flex pointer-events-auto select-none">
-                        <p className=" text-sm">Copied to clipboard</p>
+                        <p className=" text-sm">Copied link</p>
                     </div>
                 </Transition>
             </div>
