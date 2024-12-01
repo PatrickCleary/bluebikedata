@@ -60,10 +60,8 @@ export const useMonthlyData = (
     type = 1;
   }
 
-  const data = useQuery(
-    [year, month],
-    () => fetchMonthlyDestinations(year, month),
-    { staleTime: Infinity }
+  const data = useQuery([year, month], () =>
+    fetchMonthlyDestinations(year, month)
   );
 
   const nextMonth = {
@@ -79,7 +77,6 @@ export const useMonthlyData = (
       enabled:
         nextMonth.year < CURRENT_MAX.year ||
         nextMonth.month <= CURRENT_MAX.month,
-      staleTime: Infinity,
     }
   );
 
