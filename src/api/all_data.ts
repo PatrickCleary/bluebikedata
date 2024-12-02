@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { CURRENT_MAX } from "../constants";
 import { useSelectionStore, useSelectionType } from "../store/SelectionStore";
 import { useStatisticStore } from "../store/StatisticStore";
 import { Destinations, StationTripMap } from "../types/Data";
@@ -58,21 +59,27 @@ export const useMonthlyData = (
   ) {
     type = 1;
   }
+
   const data = useQuery([year, month], () =>
     fetchMonthlyDestinations(year, month)
   );
-  const preFetchNextMonth = useQuery(
-    [year, month + 1],
-    () => fetchMonthlyDestinations(year, month + 1),
-    { enabled: month < 11 }
+
+  const nextMonth = {
+    month: (month + 1) % 12,
+    year: month < 11 ? year : year + 1,
+  };
+
+  // pre-fetch next month
+  useQuery(
+    [nextMonth.year, nextMonth.month],
+    () => fetchMonthlyDestinations(nextMonth.year, nextMonth.month),
+    {
+      enabled:
+        nextMonth.year < CURRENT_MAX.year ||
+        nextMonth.month <= CURRENT_MAX.month,
+    }
   );
 
-  const preFetchNextYear = useQuery(
-    [year + 1, 0],
-    () => fetchMonthlyDestinations(year + 1, 0),
-
-    { enabled: month === 11 }
-  );
   if (!data.data) return undefined;
   const dockData = data.data[type];
   const currentDocks = Object.keys(dockData);

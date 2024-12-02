@@ -13,7 +13,7 @@ function App() {
       queries: {
         refetchOnWindowFocus: false,
         retry: 0,
-        staleTime: 10000, // 10 seconds
+        staleTime: Infinity,
       },
     },
   });
