@@ -10,8 +10,8 @@ def read_and_clean_csv(file_name):
     return df.apply(lambda x: x.str.strip() if x.dtype == 'object' else x)
 
 # Read the stations CSV into a pandas DataFrame
-stations_df = read_and_clean_csv("../../../../current_bluebikes_stations.csv")
-former_stations_df = pd.read_csv("../../../../former_bb_docks.csv", encoding="utf8")
+stations_df = read_and_clean_csv("../data/current_bluebikes_stations.csv")
+former_stations_df = pd.read_csv("./output/former_docks.csv", encoding="utf8")
 all_stations_df = pd.concat([stations_df, former_stations_df])
 
 # Create dictionaries to map Station Names to Numbers and coordinates.

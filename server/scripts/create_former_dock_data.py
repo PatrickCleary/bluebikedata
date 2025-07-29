@@ -13,17 +13,12 @@ def clean_strings(df):
 output_folder = './output/'
 
 # Read the stations CSV into a pandas DataFrame. TODO: get this live (and remove first row which contains lastUpdated)
-current_stations_df = pd.read_csv("../../../../current_bluebikes_stations.csv", encoding="utf8")
+current_stations_df = pd.read_csv("../data/current_stations.csv", encoding="utf8")
 current_stations_df = clean_strings(current_stations_df)
 current_stations_df.set_index(['Name','Number'], inplace=True)
 
 former_stations_columns = ['Number','Name','Latitude','Longitude', 'LastUsed']
 former_docks_df = pd.DataFrame(columns=former_stations_columns).set_index(['Name','Number'])
-
-
-files = sorted(glob.glob('../../../../BBData/*.csv'))
-if(not os.path.exists('./output/')):
-    os.makedirs(output_folder)
 
 def get_old_docks(df):
     if 'tripduration' in df.columns:
@@ -39,16 +34,19 @@ def get_old_docks(df):
         former_docks.set_index(['Name','Number'],inplace=True)
         return former_docks
 
+files = sorted(glob.glob('../data/BBData/*.csv'))
+if(not os.path.exists('./output/')):
+    os.makedirs(output_folder)
 
 for file in files:
-    output_file_name = 'former_docks.csv'
     # Step 4: Read the CSV and perform the calculations
     all_docks = pd.read_csv(f'{file}', encoding='utf8')
     all_docks = clean_strings(all_docks)
 
     former_docks = get_old_docks(all_docks)
-    former_docks_df  = former_docks.combine_first(former_docks_df)
-former_docks_df.to_csv('../../../../former_bb_docks.csv')
+    former_docks_df = former_docks.combine_first(former_docks_df)
+
+former_docks_df.to_csv('./output/former_docks.csv')
 all_docks = pd.concat([former_docks_df, current_stations_df])
 with open('../../public/static/all_docks.json', 'w') as output_file:
     result = {}
