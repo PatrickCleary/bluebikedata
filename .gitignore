@@ -26,3 +26,5 @@ server/cfn/*
 server/requirements.txt
 server/requirements-dev.txt
 server/__pycache__/*
+server/data/
+server/scripts/__pycache__/*

@@ -1,3 +1,10 @@
+### Generating data
+- Download any months you want to add from: https://s3.amazonaws.com/hubway-data/index.html
+- Update the script in `generate_current_docks_from_trip_data.ipynb` to use the latest trip file and then run the script to output current docks CSV (the one on the bluebikes website is out of date).
+- Run `create_former_dock_data.py`
+- Run `ingest_bb_data.py`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

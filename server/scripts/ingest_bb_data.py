@@ -7,7 +7,7 @@ from helpers import update_station_ids, read_and_clean_csv
 destination_output_folder = '../../public/static/destination_data/'
 origin_output_folder = '../../public/static/origin_data/'
 
-files = sorted(glob.glob('../../../../BBData/*.csv'))
+files = sorted(glob.glob('../data/BBData/*.csv'))
 if(not os.path.exists(destination_output_folder)):
     os.makedirs(destination_output_folder)
 if(not os.path.exists(origin_output_folder)):
