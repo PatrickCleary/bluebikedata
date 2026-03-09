@@ -3,8 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      mono: ["Rubik", "mono"],
-      numbers: ["Rubik Mono One", "mono"],
+      sans: ["DM Sans", "sans-serif"],
+      mono: ["DM Mono", "monospace"],
+      numbers: ["DM Mono", "monospace"],
     },
     screens: {
       sm: "640px",
