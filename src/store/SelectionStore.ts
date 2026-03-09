@@ -1,4 +1,3 @@
-import { Console } from "console";
 import { LatLngExpression } from "leaflet";
 import { create } from "zustand";
 import { fetchAllDocks } from "../api/all_data";
