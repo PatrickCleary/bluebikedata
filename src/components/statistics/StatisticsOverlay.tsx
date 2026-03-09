@@ -52,7 +52,7 @@ export const StatisticsOverlay = () => {
     return (
         <div className="text-white flex flex-col gap-1 md:gap-2 px-4 w-full">
             <p className="flex flex-row items-baseline gap-2 justify-center md:justify-start">
-                <span className="text-2xl md:text-3xl font-numbers">
+                <span className="text-2xl font-bold md:text-3xl font-numbers">
                     {statistics["total"]?.toLocaleString()}
                 </span>
                 <span>Total trips</span>
