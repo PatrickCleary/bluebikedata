@@ -24,7 +24,7 @@ export const RegionSelection: React.FC<{
             : " border-fuchsia-400 bg-fuchsia-400";
     const activeStyle = active
         ? "rounded-sm"
-        : "bg-opacity-0 border border-opacity-50 rounded-full right-0 hover:bg-opacity-50 text-gray-300";
+        : "bg-opacity-0 border border-opacity-50 rounded-sm right-0 hover:bg-opacity-50 text-gray-300";
     return (
         <div className="relative self-end">
             <Listbox
@@ -37,7 +37,7 @@ export const RegionSelection: React.FC<{
                 <span className={classNames(activeStyle, color, "mx-1 shadow-sm")}>
                     <Listbox.Button>
                         <span className='px-2'>
-                            {!active ? "add " : ""}
+
                             {direction}
                         </span>
                     </Listbox.Button>
@@ -57,7 +57,7 @@ export const RegionSelection: React.FC<{
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Listbox.Options className="flex absolute z-20 bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 shadow-lg top-10 md:top-auto md:bottom-10 flex-col max-h-96 overflow-y-scroll w-48 sm:w-52">
+                    <Listbox.Options className="flex absolute z-20 bg-gray-800 px-4 py-2 rounded-sm border border-gray-700 shadow-lg top-10 md:top-auto md:bottom-10 flex-col max-h-96 overflow-y-scroll w-48 sm:w-52">
                         <Listbox.Option
                             value={null}
                             onClick={() => {
