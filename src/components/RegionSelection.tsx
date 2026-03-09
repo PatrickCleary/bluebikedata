@@ -2,8 +2,8 @@ import { faCircleNodes, faHandPointer, faXmark } from "@fortawesome/free-solid-s
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Listbox, Transition } from "@headlessui/react";
 import classNames from "classnames";
+import { useQuery } from "@tanstack/react-query";
 import React, { Fragment } from "react";
-import { presets } from "../constants/presets";
 import { useNotificationStore } from "../store/NotificationStore";
 import {
     Direction,
@@ -18,6 +18,10 @@ export const RegionSelection: React.FC<{
     const setShapeAndDocks = useSetNewShapeAndDocks();
     const { setIsDrawing, setDirection } = useSelectionStore();
     const { setNotification } = useNotificationStore(store => store)
+    const { data: presets = {} } = useQuery({
+        queryKey: ["regions"],
+        queryFn: () => fetch("/regions.json").then((r) => r.json()),
+    });
     const color =
         direction === "origin"
             ? "bg-amber-500 border-amber-500"

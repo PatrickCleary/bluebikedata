@@ -1,5 +1,6 @@
 import React from "react";
 import ReactGA from 'react-ga4';
+import { Analytics } from '@vercel/analytics/react';
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Main } from "./main";
@@ -21,6 +22,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Main />
+      <Analytics />
     </QueryClientProvider>
   );
 }
