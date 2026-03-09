@@ -1,7 +1,10 @@
 import json
 import glob
+import logging
 import os
 import pandas as pd
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 
 def clean_strings(df):
     #TODO: Probably don't need these to be separate, but it wasn't working.
@@ -16,6 +19,7 @@ output_folder = './output/'
 current_stations_df = pd.read_csv("../data/current_stations.csv", encoding="utf8")
 current_stations_df = clean_strings(current_stations_df)
 current_stations_df.set_index(['Name','Number'], inplace=True)
+logging.info(f"Loaded {len(current_stations_df)} current stations")
 
 former_stations_columns = ['Number','Name','Latitude','Longitude', 'LastUsed']
 former_docks_df = pd.DataFrame(columns=former_stations_columns).set_index(['Name','Number'])
@@ -35,20 +39,24 @@ def get_old_docks(df):
         return former_docks
 
 files = sorted(glob.glob('../data/BBData/*.csv'))
+logging.info(f"Found {len(files)} trip data files to process")
 if(not os.path.exists('./output/')):
     os.makedirs(output_folder)
 
 for file in files:
-    # Step 4: Read the CSV and perform the calculations
+    logging.info(f"Processing {file}")
     all_docks = pd.read_csv(f'{file}', encoding='utf8')
     all_docks = clean_strings(all_docks)
 
     former_docks = get_old_docks(all_docks)
+    logging.info(f"  Found {len(former_docks)} former docks in {os.path.basename(file)}")
     former_docks_df = former_docks.combine_first(former_docks_df)
 
+logging.info(f"Total former docks: {len(former_docks_df)}")
 former_docks_df.to_csv('./output/former_docks.csv')
 all_docks = pd.concat([former_docks_df, current_stations_df])
-with open('../../public/static/all_docks.json', 'w') as output_file:
+logging.info(f"Writing {len(all_docks)} total docks to all_docks.json")
+with open('../../public/static/all_docks.json', 'w') as output_file:    
     result = {}
     for name, row in all_docks.iterrows():
         key = f'{name[1]}:{name[0]}'
