@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelectionType, useSetNewShapeAndDocks } from "../../store/SelectionStore";
+import { useSelectionType } from "../../store/SelectionStore";
 import { RegionSelection } from "../RegionSelection";
 
 export const StatisticsHeader = () => {

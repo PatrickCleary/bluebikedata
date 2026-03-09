@@ -6,7 +6,6 @@ import { Header } from "./components/Header";
 import { useSearchParams } from "react-router-dom";
 import { ShapeSelection as DesktopMenu } from "./components/ShapeSelection";
 import { Notifications } from "./components/Notifications";
-import { MobileFilters } from "./components/MobileFilters";
 import { Loading } from "./components/Loading";
 import { useSetConfigFromId } from "./store/MapStore";
 import { DataWidget } from "./components/statistics/DataLabel";
